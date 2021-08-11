@@ -6,6 +6,12 @@ const bodyParser = require("body-parser");
 
 const sequelize = require("./utils/database");
 
+const ProductsModel = require("./models/productsModel");
+const UsersModel = require("./models/usersModel");
+const CategoriesModel = require("./models/categoriesModel");
+
+CategoriesModel.hasMany(ProductsModel);
+
 app.use(
   bodyParser.urlencoded({
     extended: true,
@@ -20,14 +26,14 @@ var corsOptions = {
 
 app.use(cors(corsOptions));
 
-const UsersRoute = require("./routs/UsersRoute.js");
-app.use("/users", UsersRoute);
+// const UsersRoute = require("./routs/UsersRoute.js");
+// app.use("/users", UsersRoute);
 
-const ProductsRoute = require("./routs/ProductsRoute.js");
-app.use("/products", ProductsRoute);
+// const ProductsRoute = require("./routs/ProductsRoute.js");
+// app.use("/products", ProductsRoute);
 
-const CartsRoute = require("./routs/CartsRoute.js");
-app.use("/carts", CartsRoute);
+// const CartsRoute = require("./routs/CartsRoute.js");
+// app.use("/carts", CartsRoute);
 
 app.use((req, res) => {
   res.send("Page NotFound");
