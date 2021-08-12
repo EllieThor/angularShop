@@ -6,11 +6,20 @@ const bodyParser = require("body-parser");
 
 const sequelize = require("./utils/database");
 
-const ProductsModel = require("./models/productsModel");
-const UsersModel = require("./models/usersModel");
-const CategoriesModel = require("./models/categoriesModel");
+const CategoriesModel = require("./models/CategoriesModel");
+const ProductsModel = require("./models/ProductsModel");
+const UsersModel = require("./models/UsersModel");
+const CartsModel = require("./models/CartsModel");
+const CartsProductsModel = require("./models/CartsProductsModel");
+const OrdersModel = require("./models/OrdersModel");
 
 CategoriesModel.hasMany(ProductsModel);
+CartsModel.belongsTo(UsersModel);
+CartsModel.belongsTo(UsersModel);
+CartsProductsModel.belongsTo(ProductsModel);
+CartsModel.hasMany(CartsProductsModel);
+OrdersModel.belongsTo(CartsModel);
+UsersModel.hasMany(OrdersModel);
 
 app.use(
   bodyParser.urlencoded({

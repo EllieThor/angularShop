@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
-const productsController = require("../controllers/productsController");
-const categoriesController = require("../controllers/productsController");
+const productsController = require("../controllers/ProductsController.js");
+const categoriesController = require("../controllers/CategoriesController.js");
 
 router.post("/getCategoriesFromDb", categoriesController.getCategoriesFromDb);
 router.post("/getProductsFromDb", productsController.getProductsFromDb);
