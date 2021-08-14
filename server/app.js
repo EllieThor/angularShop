@@ -35,8 +35,8 @@ var corsOptions = {
 
 app.use(cors(corsOptions));
 
-// const UsersRoute = require("./routs/UsersRoute.js");
-// app.use("/users", UsersRoute);
+const UsersRoute = require("./routs/UsersRoute.js");
+app.use("/users", UsersRoute);
 
 // const ProductsRoute = require("./routs/ProductsRoute.js");
 // app.use("/products", ProductsRoute);

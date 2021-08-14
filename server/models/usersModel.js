@@ -4,8 +4,9 @@ const sequelize = require("../utils/database");
 const UsersModel = sequelize.define("users", {
   ID: {
     type: Sequelize.INTEGER(11),
-    allowNull: false,
+    autoIncrement: true,
     primaryKey: true,
+    allowNull: false,
   },
   Role: {
     type: Sequelize.INTEGER(1),
