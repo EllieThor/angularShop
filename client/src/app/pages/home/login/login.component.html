@@ -1,1 +1,30 @@
-<p>login works!</p>
+<div class="myfForm mx-auto mt-5 p-5">
+  <abbr title="Close">
+    <i class="fas fa-times float-end"></i>
+  </abbr>
+  <h1 class="h3 mb-3 fw-normal">Please Log In</h1>
+  <input
+    [(ngModel)]="usersService._logInEmail"
+    type="email"
+    class="form-control m-2"
+    placeholder="Email address"
+    required=""
+    autoFocus=""
+  />
+  <input
+    [(ngModel)]="usersService._logInPassword"
+    type="password"
+    class="form-control m-2"
+    placeholder="Password"
+    required=""
+    autoComplete=""
+  />
+  <button
+    class="w-100 btn btn-lg m-2 btn-primary"
+    type="submit"
+    (click)="usersService.gatUserFromDB('/users/getUser')"
+  >
+    Log in
+  </button>
+  <button class="w-100 btn btn-lg m-2 btn-primary">Add New Account</button>
+</div>
