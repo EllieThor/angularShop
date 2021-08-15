@@ -11,9 +11,8 @@ export class UsersServiceService {
   _currentUser: Array<User> = [];
   _logInEmail: string = '';
   _logInPassword: string = '';
-  _currentUserId: number = 0;
-  logInFormStatus: boolean = false;
-  logOutFormStatus: boolean = false;
+  _currentUserID: number = 0;
+
   constructor(
     public apiService: ApiService,
     public settingsService: SettingsService
@@ -30,9 +29,9 @@ export class UsersServiceService {
       getByPatterns
     )) as Array<User>;
     console.log('Current User: ', this._currentUser);
-    this.logInFormStatus = false;
-    this._currentUserId = this._currentUser[0].ID;
-    console.log('UserID: ${this._userId} more text', this._currentUserId);
+
+    this._currentUserID = this._currentUser[0].ID;
+    console.log('current user ID: ', this._currentUserID);
   }
 
   addUserClicked = () => {};
