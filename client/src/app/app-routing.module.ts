@@ -5,9 +5,9 @@ import { RegistrationComponent } from './pages/home/registration/registration.co
 import { ShopComponent } from './pages/shop/shop.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '', pathMatch: 'prefix' },
+  { path: '', redirectTo: 'home', pathMatch: 'prefix' },
   {
-    path: '',
+    path: 'home',
     component: HomeComponent,
   },
   {

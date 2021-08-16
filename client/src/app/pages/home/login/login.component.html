@@ -1,4 +1,4 @@
-<form method="posts" class="p-2">
+<form method="post" class="p-2">
   <h5 class="mb-3 fw-normal text-center">Login</h5>
   <input
     [(ngModel)]="usersService._logInEmail"
@@ -24,6 +24,9 @@
     (click)="usersService.gatUserFromDB('/users/getUser', $event)"
   >
     Log in
+  </button>
+  <button class="btn btn-success m-2" routerLink="/registration">
+    Sing Up
   </button>
 </form>
 <!--"myfForm mx-auto mt-5 p-5"  -->
