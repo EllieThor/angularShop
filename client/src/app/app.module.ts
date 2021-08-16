@@ -10,9 +10,10 @@ import { ShopComponent } from './pages/shop/shop.component';
 import { HeaderComponent } from './pages/home/header/header.component';
 import { LoginComponent } from './pages/home/login/login.component';
 import { AboutComponent } from './pages/home/about/about.component';
+import { RegistrationComponent } from './pages/home/registration/registration.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, ShopComponent, HeaderComponent, LoginComponent, AboutComponent],
+  declarations: [AppComponent, HomeComponent, ShopComponent, HeaderComponent, LoginComponent, AboutComponent, RegistrationComponent],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],

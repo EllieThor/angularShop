@@ -1,10 +1,8 @@
-<div class="myfForm mx-auto mt-5 p-5">
-  <abbr title="Close">
-    <i class="fas fa-times float-end"></i>
-  </abbr>
-  <h1 class="h3 mb-3 fw-normal">Please Log In</h1>
+<form method="posts">
+  <h6 class="h3 mb-3 fw-normal">Login</h6>
   <input
     [(ngModel)]="usersService._logInEmail"
+    [ngModelOptions]="{ standalone: true }"
     type="email"
     class="form-control m-2"
     placeholder="Email address"
@@ -13,6 +11,7 @@
   />
   <input
     [(ngModel)]="usersService._logInPassword"
+    [ngModelOptions]="{ standalone: true }"
     type="password"
     class="form-control m-2"
     placeholder="Password"
@@ -22,9 +21,9 @@
   <button
     class="w-100 btn btn-lg m-2 btn-primary"
     type="submit"
-    (click)="usersService.gatUserFromDB('/users/getUser')"
+    (click)="usersService.gatUserFromDB('/users/getUser', $event)"
   >
     Log in
   </button>
-  <button class="w-100 btn btn-lg m-2 btn-primary">Add New Account</button>
-</div>
+</form>
+<!--"myfForm mx-auto mt-5 p-5"  -->

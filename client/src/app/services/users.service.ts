@@ -18,7 +18,8 @@ export class UsersServiceService {
     public settingsService: SettingsService
   ) {}
 
-  async gatUserFromDB(url: string, ob?: any) {
+  async gatUserFromDB(url: string, event?: any) {
+    event.preventDefault();
     let getByPatterns = {
       userEmail: this._logInEmail,
       userPassword: this._logInPassword,
