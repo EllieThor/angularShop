@@ -1,5 +1,5 @@
-<form method="posts">
-  <h6 class="h3 mb-3 fw-normal">Login</h6>
+<form method="posts" class="p-2">
+  <h5 class="mb-3 fw-normal text-center">Login</h5>
   <input
     [(ngModel)]="usersService._logInEmail"
     [ngModelOptions]="{ standalone: true }"
@@ -19,7 +19,7 @@
     autoComplete=""
   />
   <button
-    class="w-100 btn btn-lg m-2 btn-primary"
+    class="btn btn-success m-2"
     type="submit"
     (click)="usersService.gatUserFromDB('/users/getUser', $event)"
   >
