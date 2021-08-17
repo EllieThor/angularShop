@@ -7,13 +7,15 @@ import { SettingsService } from './settings.service';
   providedIn: 'root',
 })
 export class UsersServiceService {
-  // _currentUser: User = new User();
   _currentUser: Array<User> = [];
   _logInEmail: string = '';
   _logInPassword: string = '';
-  _currentUserID: number = 0;
+  _currentUserID?: number;
   _newUserObject: User = new User();
+  _newID: any = null;
 
+  _newPassword: string = '';
+  _newPasswordRepeat: string = '';
   constructor(
     public apiService: ApiService,
     public settingsService: SettingsService
@@ -62,4 +64,7 @@ export class UsersServiceService {
     this._currentUserID = this._currentUser[0].ID;
     console.log('current user ID: ', this._currentUserID);
   }
+  checkPassword = () => {
+    if (this._newPassword !== this._newPasswordRepeat) alert('password');
+  };
 }
