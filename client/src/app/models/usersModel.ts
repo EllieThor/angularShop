@@ -1,13 +1,25 @@
+export class City {
+  Symbol: string = '';
+  name: string = '';
+  population: string = '';
+
+  constructor(Symbol: string, name: string, population: string) {
+    this.Symbol = Symbol || '';
+    this.name = name || '';
+    this.population = population || '';
+  }
+}
+
 export class User {
   ID?: number;
   FirstName: string = '';
   LastName: string = '';
   Email: string = '';
   Password: string = '';
-  Phone: number = 0;
+  Phone?: number;
   Street: string = '';
-  StreetNumber: number = 0;
-  FlatNumber: number = 0;
+  StreetNumber?: number;
+  FlatNumber?: number;
   City: string = '';
   createdAt: string = '';
   updatedAt: string = '';
@@ -28,31 +40,18 @@ export class User {
     updatedAt?: string,
     Role?: number
   ) {
-    this.ID = ID || 0;
+    this.ID = ID;
     this.FirstName = FirstName || '';
     this.LastName = LastName || '';
     this.Email = Email || '';
     this.Password = Password || '';
-    this.Phone = Phone || 0;
+    this.Phone = Phone;
     this.Street = Street || '';
-    this.StreetNumber = StreetNumber || 0;
-    this.FlatNumber = FlatNumber || 0;
+    this.StreetNumber = StreetNumber;
+    this.FlatNumber = FlatNumber;
     this.City = City || '';
     this.createdAt = createdAt || '';
     this.updatedAt = updatedAt || '';
     this.Role = Role || 0;
   }
 }
-// `ID`,
-//   `Role`,
-//   `FirstName`,
-//   `LastName`,
-//   `Email`,
-//   `Password`,
-//   `Phone`,
-//   `Street`,
-//   `StreetNumber`,
-//   `FlatNumber`,
-//   `City`,
-//   `createdAt`,
-//   `updatedAt`;

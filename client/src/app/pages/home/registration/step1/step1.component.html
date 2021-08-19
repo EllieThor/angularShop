@@ -1,0 +1,68 @@
+<form ngNativeValidate class="formStep1 p-2">
+  <label for="ID" class="text-end">
+    :תעודת זהות כולל ספרת ביקורת
+    <input
+      [(ngModel)]="usersService._newUserObject.ID"
+      [ngModelOptions]="{ standalone: true }"
+      id="ID"
+      type="text"
+      class="form-control m-2"
+      placeholder="ID"
+      autoFocus=""
+      required
+      pattern="[0-9]{9}"
+      title="יש להכניס ת.ז כולל ספרת ביקורת"
+    />
+  </label>
+  <br />
+  <label for="userEmail" class="text-end">
+    :הכנס כתובת מייל
+    <input
+      ngModel
+      email
+      [(ngModel)]="usersService._newUserObject.Email"
+      [ngModelOptions]="{ standalone: true }"
+      id="userEmail"
+      type="email"
+      class="form-control m-2"
+      placeholder="Email"
+      required
+    />
+  </label>
+  <br />
+  <label for="userPassword" class="text-end">
+    :הכנס סיסמה
+    <input
+      [(ngModel)]="usersService._newUserObject.Password"
+      [ngModelOptions]="{ standalone: true }"
+      id="userPassword"
+      type="password"
+      class="form-control m-2"
+      placeholder="password"
+      required
+    />
+  </label>
+  <br />
+  <label for="userRepeatPass" class="text-end">
+    :אימות סיסמה
+    <input
+      [(ngModel)]="usersService._newPasswordRepeat"
+      [ngModelOptions]="{ standalone: true }"
+      id="userRepeatPass"
+      type="password"
+      class="form-control m-2"
+      placeholder="confirm password"
+      required
+      (change)="usersService.checkPassword()"
+    />
+  </label>
+  <br />
+  <!--עם הקליק מתבטלים הפרטנים -->
+  <button
+    class="btn btn-success m-2"
+    type="submit"
+    (click)="usersService.isIDExist('/users/isIDExist', $event)"
+  >
+    Next
+  </button>
+</form>

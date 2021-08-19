@@ -1,5 +1,18 @@
 const Users = require("../models/usersModel");
 
+// READ
+exports.isIDExist = async (req, res, next) => {
+  await Users.findAll({
+    where: { ID: req.body.ID },
+  })
+    .then((users) => {
+      res.send(users);
+    })
+    .catch((err) => {
+      res.send(err);
+    });
+};
+
 // CREATE
 exports.insertUser = async (req, res, next) => {
   let newUserOBJ = {
@@ -19,7 +32,7 @@ exports.insertUser = async (req, res, next) => {
   await Users.create(newUserOBJ)
     .then((user) => {
       res.send(user);
-      console.log("Jane's auto-generated ID:", user.id);
+      console.log("Jane's auto-generated ID:", user.ID);
     })
     .catch((err) => {
       console.log("Error:", err);

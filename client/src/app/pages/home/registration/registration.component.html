@@ -1,45 +1,196 @@
-<form ngNativeValidate class="p-2">
-  <h5 class="mb-3 fw-normal text-center">Register</h5>
-  <input
-    [(ngModel)]="usersService._newUserObject.ID"
-    [ngModelOptions]="{ standalone: true }"
-    id="ID"
-    type="text"
-    class="form-control m-2"
-    placeholder="ID"
-    autoFocus=""
-    required
-    pattern="[0-9]{9}"
-    title="יש להכניס ת.ז כולל ספרת ביקורת"
-  />
+<h5 class="m-3 text-center">Register</h5>
+<div class="p-5 mx-auto">
+  <app-step1
+    [ngClass]="usersService._currentStep === 0 ? '' : 'hideMe'"
+  ></app-step1>
+  <app-step2
+    [ngClass]="usersService._currentStep === 0 ? 'hideMe' : ''"
+  ></app-step2>
+</div>
 
-  <input
-    [(ngModel)]="usersService._newUserObject.Email"
-    [ngModelOptions]="{ standalone: true }"
-    type="email"
-    name="userEmail"
-    id="userEmail"
-    required="required"
-    placeholder="Email"
-  />
-  <hr />
-  <input
-    [(ngModel)]="usersService._newPassword"
-    [ngModelOptions]="{ standalone: true }"
-    id="pass"
-    type="password"
-    required
-    placeholder="password"
-    autocomplete=""
-  />
-  <input
-    [(ngModel)]="usersService._newPasswordRepeat"
-    [ngModelOptions]="{ standalone: true }"
-    id="pass_repeat"
-    type="password"
-    required
-    placeholder="confirm password"
-    (change)="(usersService.checkPassword)"
-  />
-  <button class="btn btn-success m-2" type="submit">Log in</button>
-</form>
+<!-- <form ngNativeValidate class="p-2">
+  <h5 class="mb-3 fw-normal text-center">Register</h5>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-6">
+        <label for="ID" class="text-end">
+          :תעודת זהות כולל ספרת ביקורת
+          <input
+            [(ngModel)]="usersService._newUserObject.ID"
+            [ngModelOptions]="{ standalone: true }"
+            id="ID"
+            type="text"
+            class="form-control m-2"
+            placeholder="ID"
+            autoFocus=""
+            required
+            pattern="[0-9]{9}"
+            title="יש להכניס ת.ז כולל ספרת ביקורת"
+          />
+        </label>
+        <br />
+        <label for="userEmail" class="text-end">
+          :הכנס כתובת מייל
+          <input
+            ngModel
+            email
+            [(ngModel)]="usersService._newUserObject.Email"
+            [ngModelOptions]="{ standalone: true }"
+            id="userEmail"
+            type="email"
+            class="form-control m-2"
+            placeholder="Email"
+            required
+          />
+        </label>
+        <br />
+        <label for="userPassword" class="text-end">
+          :הכנס סיסמה
+          <input
+            [(ngModel)]="usersService._newPassword"
+            [ngModelOptions]="{ standalone: true }"
+            id="userPassword"
+            type="password"
+            class="form-control m-2"
+            placeholder="password"
+            required
+          />
+        </label>
+        <br />
+        <label for="userRepeatPass" class="text-end">
+          :אימות סיסמה
+          <input
+            [(ngModel)]="usersService._newPasswordRepeat"
+            [ngModelOptions]="{ standalone: true }"
+            id="userRepeatPass"
+            type="password"
+            class="form-control m-2"
+            placeholder="confirm password"
+            required
+            (change)="usersService.checkPassword()"
+          />
+        </label>
+        <br />
+       
+        <button
+          class="btn btn-success m-2"
+          type="submit"
+          (click)="usersService.isIDExist('/users/isIDExist', $event)"
+        >
+          Next
+        </button>
+      </div>
+      <div class="col-6">
+        <label for="FirstName" class="text-end">
+          :שם פרטי
+          <input
+            [(ngModel)]="usersService._newUserObject.FirstName"
+            [ngModelOptions]="{ standalone: true }"
+            id="FirstName"
+            type="text"
+            class="form-control m-2"
+            placeholder="שם פרטי"
+            autoFocus=""
+            required
+          />
+        </label>
+        <br />
+        <label for="LastName" class="text-end">
+          :שם משפחה
+          <input
+            [(ngModel)]="usersService._newUserObject.LastName"
+            [ngModelOptions]="{ standalone: true }"
+            id="LastName"
+            type="text"
+            class="form-control m-2"
+            placeholder="שם משפחה"
+            autoFocus=""
+            required
+          />
+        </label>
+        <br />
+        <label for="Phone" class="text-end">
+          :מספר טלפון
+          <input
+            [(ngModel)]="usersService._newUserObject.Phone"
+            [ngModelOptions]="{ standalone: true }"
+            id="Phone"
+            type="text"
+            class="form-control m-2"
+            placeholder="מספר טלפון"
+            autoFocus=""
+            required
+            pattern="[0-9]{20}"
+            title="יש להכניס מספר טלפון"
+          />
+        </label>
+        <br />
+        <label for="city">
+          : בחר עיר
+          <select
+            class="form-select m-2"
+            id="city"
+            aria-label="Default select example"
+          >
+            <option
+              *ngFor="let city of cities; let i = index"
+              value="{{ city.name }}"
+            >
+              {{ city.name }}
+            </option>
+          </select>
+        </label>
+        <br />
+        <label for="Street" class="text-end">
+          :שם רחוב
+          <input
+            [(ngModel)]="usersService._newUserObject.Street"
+            [ngModelOptions]="{ standalone: true }"
+            id="Street"
+            type="text"
+            class="form-control m-2"
+            placeholder="שם רחוב"
+            autoFocus=""
+            required
+          />
+        </label>
+        <br />
+        <label for="StreetNumber" class="text-end">
+          :מספר רחוב
+          <input
+            [(ngModel)]="usersService._newUserObject.StreetNumber"
+            [ngModelOptions]="{ standalone: true }"
+            id="StreetNumber"
+            type="number"
+            min="1"
+            class="form-control m-2"
+            required
+          />
+        </label>
+        <br />
+        <label for="FlatNumber" class="text-end">
+          :מספר דירה
+          <input
+            [(ngModel)]="usersService._newUserObject.FlatNumber"
+            [ngModelOptions]="{ standalone: true }"
+            id="FlatNumber"
+            type="number"
+            min="1"
+            class="form-control m-2"
+            required
+          />
+        </label>
+        <br />
+
+        <button
+          class="btn btn-success m-2"
+          type="submit"
+          (click)="usersService.isIDExist('/users/isIDExist', $event)"
+        >
+          Next
+        </button>
+      </div>
+    </div>
+  </div>
+</form> -->

@@ -11,9 +11,11 @@ import { HeaderComponent } from './pages/home/header/header.component';
 import { LoginComponent } from './pages/home/login/login.component';
 import { AboutComponent } from './pages/home/about/about.component';
 import { RegistrationComponent } from './pages/home/registration/registration.component';
+import { Step1Component } from './pages/home/registration/step1/step1.component';
+import { Step2Component } from './pages/home/registration/step2/step2.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, ShopComponent, HeaderComponent, LoginComponent, AboutComponent, RegistrationComponent],
+  declarations: [AppComponent, HomeComponent, ShopComponent, HeaderComponent, LoginComponent, AboutComponent, RegistrationComponent, Step1Component, Step2Component],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],

@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const usersController = require("../controllers/usersController");
 
+router.post("/isIDExist", usersController.isIDExist);
 router.post("/insertUser", usersController.insertUser);
 router.post("/getUser", usersController.getUser);
 // router.post("/getAllUsersFromDb", usersController.getAllUsersFromDb);

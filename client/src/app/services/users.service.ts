@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { User } from '../models/usersModel';
 import { ApiService } from './api.service';
 import { SettingsService } from './settings.service';
@@ -12,13 +13,16 @@ export class UsersServiceService {
   _logInPassword: string = '';
   _currentUserID?: number;
   _newUserObject: User = new User();
-  _newID: any = null;
 
+  result: any = {};
+
+  _currentStep: number = 0;
   _newPassword: string = '';
   _newPasswordRepeat: string = '';
   constructor(
     public apiService: ApiService,
-    public settingsService: SettingsService
+    public settingsService: SettingsService,
+    public nav: Router
   ) {}
 
   // CREATE
@@ -42,7 +46,7 @@ export class UsersServiceService {
       url,
       newUserOBJ
     )) as Array<User>;
-    console.log('Current User: ', this._currentUser);
+    console.log('new User: ', this._currentUser);
 
     this._currentUserID = this._currentUser[0].ID;
     console.log('current user ID: ', this._currentUserID);
@@ -64,7 +68,36 @@ export class UsersServiceService {
     this._currentUserID = this._currentUser[0].ID;
     console.log('current user ID: ', this._currentUserID);
   }
+  //READ
+  async isIDExist(url: string, event?: any) {
+    event.preventDefault();
+    let getByPatterns = {
+      ID: this._newUserObject.ID,
+    };
+    if (
+      this._newUserObject.ID === 0 ||
+      this._newUserObject.Email === '' ||
+      this._newUserObject.Password === '' ||
+      this._newPasswordRepeat === ''
+    ) {
+      alert('all felids must be felid');
+    } else {
+      this.result = (await this.apiService.createPostService(
+        url,
+        getByPatterns
+      )) as Array<User>;
+      console.log('this.result: ', this.result);
+      if (this.result.length > 0) {
+        alert('user is already exist');
+        this.nav.navigate(['/home']);
+      } else {
+        this._currentStep = 1;
+      }
+    }
+  }
+
   checkPassword = () => {
-    if (this._newPassword !== this._newPasswordRepeat) alert('password');
+    if (this._newPassword !== this._newPasswordRepeat)
+      console.log('password not match');
   };
 }
