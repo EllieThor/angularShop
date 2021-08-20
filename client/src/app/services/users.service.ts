@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { User } from '../models/usersModel';
 import { ApiService } from './api.service';
+import { CartsService } from './carts.service';
 import { SettingsService } from './settings.service';
 
 @Injectable({
@@ -23,7 +24,8 @@ export class UsersServiceService {
   constructor(
     public apiService: ApiService,
     public settingsService: SettingsService,
-    public nav: Router
+    public nav: Router,
+    public cartService: CartsService
   ) {}
 
   // CREATE
@@ -102,8 +104,11 @@ export class UsersServiceService {
       alert('all felids must be felid');
     } else {
       this.result = await this.apiService.createPostService(url, getByPatterns);
-      if (this.result.emailCount !== 0 || this.result.IDCount !== 0) {
-        alert('user is already exist');
+      if (this.result.emailCount !== 0) {
+        alert('email is already exist');
+        this.nav.navigate(['/home']);
+      } else if (this.result.IDCount !== 0) {
+        alert('ID is already exist');
         this.nav.navigate(['/home']);
       } else {
         this._currentStep = 1;
