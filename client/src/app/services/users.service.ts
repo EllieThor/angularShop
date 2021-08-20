@@ -11,14 +11,15 @@ export class UsersServiceService {
   _currentUser: Array<User> = [];
   _logInEmail: string = '';
   _logInPassword: string = '';
-  _currentUserID?: number;
+
   _newUserObject: User = new User();
-
-  result: any = {};
-
   _currentStep: number = 0;
   _newPassword: string = '';
   _newPasswordRepeat: string = '';
+
+  result: any;
+  _currentUserID?: number;
+  _current_User: User = new User();
   constructor(
     public apiService: ApiService,
     public settingsService: SettingsService,
@@ -30,7 +31,7 @@ export class UsersServiceService {
     event.preventDefault();
 
     let newUserOBJ = {
-      ID: this._newUserObject.ID,
+      ID: Number(this._newUserObject.ID),
       FirstName: this._newUserObject.FirstName,
       LastName: this._newUserObject.LastName,
       Email: this._newUserObject.Email,
@@ -42,15 +43,28 @@ export class UsersServiceService {
       City: this._newUserObject.City,
     };
 
-    this._currentUser = (await this.apiService.createPostService(
-      url,
-      newUserOBJ
-    )) as Array<User>;
-    console.log('new User: ', this._currentUser);
+    this.result = await this.apiService.createPostService(url, newUserOBJ);
+    console.log('new User: ', this.result);
 
-    this._currentUserID = this._currentUser[0].ID;
-    console.log('current user ID: ', this._currentUserID);
+    let getByPatterns = {
+      userEmail: this.result.Email,
+      userPassword: this.result.Password,
+    };
+
+    this._currentUser = (await this.apiService.createPostService(
+      '/users/getUser',
+      getByPatterns
+    )) as Array<User>;
+    console.log('Current User: ', this._currentUser);
+    if (this._currentUser.length > 0) {
+      this._currentUserID = this._currentUser[0].ID;
+      console.log('current user ID: ', this._currentUserID);
+      this._logInEmail = '';
+      this._logInPassword = '';
+      this.nav.navigate(['/home']);
+    }
   }
+
   // READ
   async gatUserFromDB(url: string, event?: any) {
     event.preventDefault();
@@ -64,15 +78,20 @@ export class UsersServiceService {
       getByPatterns
     )) as Array<User>;
     console.log('Current User: ', this._currentUser);
-
-    this._currentUserID = this._currentUser[0].ID;
-    console.log('current user ID: ', this._currentUserID);
+    if (this._currentUser.length > 0) {
+      this._currentUserID = this._currentUser[0].ID;
+      console.log('current user ID: ', this._currentUserID);
+      this._logInEmail = '';
+      this._logInPassword = '';
+    }
   }
+
   //READ
   async isIDExist(url: string, event?: any) {
     event.preventDefault();
     let getByPatterns = {
       ID: this._newUserObject.ID,
+      Email: this._newUserObject.Email,
     };
     if (
       this._newUserObject.ID === 0 ||
@@ -82,12 +101,8 @@ export class UsersServiceService {
     ) {
       alert('all felids must be felid');
     } else {
-      this.result = (await this.apiService.createPostService(
-        url,
-        getByPatterns
-      )) as Array<User>;
-      console.log('this.result: ', this.result);
-      if (this.result.length > 0) {
+      this.result = await this.apiService.createPostService(url, getByPatterns);
+      if (this.result.emailCount !== 0 || this.result.IDCount !== 0) {
         alert('user is already exist');
         this.nav.navigate(['/home']);
       } else {

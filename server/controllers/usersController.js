@@ -2,15 +2,25 @@ const Users = require("../models/usersModel");
 
 // READ
 exports.isIDExist = async (req, res, next) => {
-  await Users.findAll({
-    where: { ID: req.body.ID },
-  })
-    .then((users) => {
-      res.send(users);
+  const idCount = await Users.count({ where: { ID: req.body.ID } });
+  await Users.count({ where: { Email: req.body.Email } })
+    .then((count) => {
+      console.log("countEmail: ", count);
+      res.send({ emailCount: count, IDCount: idCount });
     })
     .catch((err) => {
       res.send(err);
     });
+
+  // await Users.findAll({
+  //   where: { ID: req.body.ID },
+  // })
+  //   .then((users) => {
+  //     res.send(users);
+  //   })
+  //   .catch((err) => {
+  //     res.send(err);
+  //   });
 };
 
 // CREATE
