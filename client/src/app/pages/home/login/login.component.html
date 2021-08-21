@@ -1,4 +1,11 @@
-<h4>hello</h4>
+<h4>
+  hello,
+  {{
+    usersService._currentUser.length === 0
+      ? ""
+      : usersService._currentUser[0].FirstName
+  }}
+</h4>
 <button class="btn btn-success"></button>
 <form method="post" class="p-2">
   <h5 class="mb-3 fw-normal text-center">Login</h5>

@@ -38,11 +38,11 @@ app.use(cors(corsOptions));
 const UsersRoute = require("./routs/UsersRoute.js");
 app.use("/users", UsersRoute);
 
+const CartsRoute = require("./routs/CartsRoute.js");
+app.use("/carts", CartsRoute);
+
 // const ProductsRoute = require("./routs/ProductsRoute.js");
 // app.use("/products", ProductsRoute);
-
-// const CartsRoute = require("./routs/CartsRoute.js");
-// app.use("/carts", CartsRoute);
 
 app.use((req, res) => {
   res.send("Page NotFound");

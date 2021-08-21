@@ -85,6 +85,10 @@ export class UsersServiceService {
       console.log('current user ID: ', this._currentUserID);
       this._logInEmail = '';
       this._logInPassword = '';
+      let getByPatterns = {
+        userID: this._currentUserID,
+      };
+      this.cartService.statusCartCheck('/carts/getCarts', getByPatterns);
     }
   }
 
