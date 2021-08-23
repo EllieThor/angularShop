@@ -1,4 +1,5 @@
 const Users = require("../models/usersModel");
+const Carts = require("../models/CartsModel");
 
 // READ
 exports.isIDExist = async (req, res, next) => {
@@ -62,6 +63,22 @@ exports.getUser = async (req, res, next) => {
       res.send(err);
     });
 };
+// // READ
+exports.getUserTest = async (req, res, next) => {
+  // await VacationsModel.findAll({ include: [{ model: FollowsModel, attributes: ["userID"] }] });
+
+  // await Users.findAll({
+  //   where: { Email: req.body.userEmail, Password: req.body.userPassword },
+  // })
+  await Users.findAll({ include: [{ model: Carts, where: { userID: 222222222, Password: req.body.userPassword } }], where: { Email: req.body.userEmail, Password: req.body.userPassword } })
+    .then((users) => {
+      res.send(users);
+    })
+    .catch((err) => {
+      res.send(err);
+    });
+};
+
 // // `ID`, `FirstName`, `LastName`, `Email`, `Password`, `Phone`, `Street`, `StreetNumber`, `FlatNumber`, `City`, `createdAt`, `updatedAt`;
 // exports.getAllUsersFromDb = async (req, res, next) => {
 //   let getByOBJ = req.body;
