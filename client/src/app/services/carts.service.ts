@@ -8,8 +8,9 @@ import { SettingsService } from './settings.service';
   providedIn: 'root',
 })
 export class CartsService {
-  _currentCarts: Array<Cart> = [];
+  _userCarts: Array<Cart> = [];
   // _currentCart: Cart = new Cart();
+  _currentCart: Array<Cart> = [];
   constructor(
     public apiService: ApiService,
     public settingsService: SettingsService,
@@ -22,19 +23,31 @@ export class CartsService {
       userID: ob.userID,
     };
 
-    this._currentCarts = (await this.apiService.createPostService(
+    this._userCarts = (await this.apiService.createPostService(
       url,
       getByPatterns
     )) as Array<Cart>;
-    if (this._currentCarts.length === 0) {
+
+    if (this._userCarts.length === 0) {
+      // welcome for your first time
+      console.log(' welcome for your first time');
       this.createCart('/carts/createCart', getByPatterns);
     } else {
-      let recentCart = this._currentCarts.find((cart) => {
-        cart.IsPaid === 0;
-      });
+      // 0-unpaid 1-paid
+      let recentCart = this._userCarts.filter((cart) => cart.IsPaid === 0);
       console.log('recentCart: ', recentCart);
+      // if recentCart is undefined-there is no unpaid cart
+
+      if (recentCart === undefined) {
+        // create new cart
+        this.createCart('/carts/createCart', getByPatterns);
+      } else {
+        // resume shopping
+        console.log('resume shopping');
+        this._currentCart = recentCart;
+      }
     }
-    console.log('this cart: ', this._currentCarts);
+    console.log('this cart: ', this._userCarts);
   }
 
   // CREATE
@@ -43,11 +56,11 @@ export class CartsService {
       userID: ob.userID,
     };
 
-    this._currentCarts = (await this.apiService.createPostService(
+    this._userCarts = (await this.apiService.createPostService(
       url,
       getByPatterns
     )) as Array<Cart>;
 
-    console.log('this cart: ', this._currentCarts);
+    console.log('this cart: ', this._userCarts);
   }
 }
