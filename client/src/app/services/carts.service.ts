@@ -10,7 +10,7 @@ import { SettingsService } from './settings.service';
 export class CartsService {
   _userCarts: Array<Cart> = [];
   _currentCart: Cart = new Cart();
-  // _currentCart: Array<Cart> = [];
+  _recentCart: Cart = new Cart();
   result: any;
   constructor(
     public apiService: ApiService,
@@ -21,11 +21,8 @@ export class CartsService {
   // READ
   async statusCartCheck(url: string, ob: any) {
     await this.getCarts(url, ob);
+
     console.log('all carts in statusCartCheck : ', this._userCarts);
-    // this._userCarts = (await this.apiService.createPostService(
-    //   url,
-    //   ob
-    // )) as Array<Cart>;
 
     if (this._userCarts.length === 0) {
       // welcome for your first time
@@ -35,15 +32,18 @@ export class CartsService {
       // 0-unpaid 1-paid
       let recentCart = this._userCarts.find((cart) => cart.IsPaid === 0);
       console.log('recentCartVAR: ', recentCart);
-      // if recentCart var is undefined-there is no unpaid cart
 
+      // if recentCart var is undefined - there is no unpaid cart
       if (recentCart === undefined) {
+        console.log('start shop again');
         // create new cart
         await this.createCart('/carts/createCart', ob);
-        console.log('start shop again');
+        // get recent cart
         this.getRecentCart();
+        // get all cart again (with the new cart)
         await this.getCarts(url, ob);
       } else {
+        // if recentCart var is defined - there is unpaid cart
         // resume shopping
         console.log('resume shopping');
         this._currentCart = recentCart;
@@ -64,18 +64,17 @@ export class CartsService {
 
   getRecentCart() {
     console.log('getRecentCart');
-    // this._userCarts.find((cart) => cart.createdAt === 0);
+    // item 0 is the last one (date) because sequelize order the carts : order: [["createdAt", "DESC"]]
+    this._recentCart = this._userCarts[0];
+    console.log('your recent cart : ', this._recentCart);
+    console.log('recent Cart DATE : ', this._recentCart.createdAt);
   }
 
   // CREATE
   async createCart(url: string, ob: any) {
-    let getByPatterns = {
-      userID: ob.userID,
-    };
-
     this.result = (await this.apiService.createPostService(
       url,
-      getByPatterns
+      ob
     )) as Array<Cart>;
 
     console.log('this.result after create cart: ', this.result);
