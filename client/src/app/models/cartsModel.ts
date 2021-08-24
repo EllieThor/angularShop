@@ -5,18 +5,18 @@ export class Cart {
   createdAt: string = '';
   updatedAt: string = '';
 
-  constructor(
-    ID: number,
-    IsPaid: number,
-    userID: number,
-    createdAt: string,
-    updatedAt: string
-  ) {
-    this.ID = ID || 0;
-    this.IsPaid = IsPaid || 0;
-    this.userID = userID || 0;
-    this.createdAt = createdAt || '';
-    this.updatedAt = updatedAt || '';
-  }
+  // constructor(
+  //   ID: number,
+  //   IsPaid: number,
+  //   userID: number,
+  //   createdAt: string,
+  //   updatedAt: string
+  // ) {
+  //   this.ID = ID || 0;
+  //   this.IsPaid = IsPaid || 0;
+  //   this.userID = userID || 0;
+  //   this.createdAt = createdAt || '';
+  //   this.updatedAt = updatedAt || '';
+  // }
 }
 // `ID`, `IsPaid`, `createdAt`, `updatedAt`, `userID`;

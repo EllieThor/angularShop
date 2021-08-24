@@ -14,7 +14,7 @@ const CartsProductsModel = require("./models/CartsProductsModel");
 const OrdersModel = require("./models/OrdersModel");
 
 CategoriesModel.hasMany(ProductsModel);
-CartsModel.belongsTo(UsersModel);
+// UsersModel.belongsTo(CartsModel);
 CartsModel.belongsTo(UsersModel);
 CartsProductsModel.belongsTo(ProductsModel);
 CartsModel.hasMany(CartsProductsModel);
