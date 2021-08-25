@@ -41,8 +41,11 @@ app.use("/users", UsersRoute);
 const CartsRoute = require("./routs/CartsRoute.js");
 app.use("/carts", CartsRoute);
 
-// const ProductsRoute = require("./routs/ProductsRoute.js");
-// app.use("/products", ProductsRoute);
+const ProductsRoute = require("./routs/ProductsRoute.js");
+app.use("/products", ProductsRoute);
+
+const OrdersRoute = require("./routs/OrdersRoute");
+app.use("/orders", OrdersRoute);
 
 app.use((req, res) => {
   res.send("Page NotFound");

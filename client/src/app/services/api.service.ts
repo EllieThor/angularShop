@@ -13,7 +13,7 @@ export class ApiService {
     public errorService: ErrorsService
   ) {}
 
-  createPostService(url: string, ob: any) {
+  createPostService(url: string, ob?: any) {
     return new Promise(async (resolve, reject) => {
       try {
         await this.httpClient

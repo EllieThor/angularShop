@@ -51,7 +51,7 @@ exports.insertUser = async (req, res, next) => {
     });
 };
 
-// // READ
+// READ
 exports.getUser = async (req, res, next) => {
   await Users.findAll({
     where: { Email: req.body.userEmail, Password: req.body.userPassword },
