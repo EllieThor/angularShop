@@ -11,12 +11,16 @@ export class CartsService {
   _userCarts: Array<Cart> = [];
   _currentCart: Cart = new Cart();
   _recentCart: Cart = new Cart();
-  result: any;
+  _welcomeByCartStatus: number = 0;
+
   constructor(
     public apiService: ApiService,
     public settingsService: SettingsService,
     public nav: Router
-  ) {}
+  ) {
+    console.log('_currentCart: ', this._currentCart);
+    console.log('_recentCart: ', this._recentCart);
+  }
 
   // READ
   async statusCartCheck(url: string, ob: any) {
@@ -26,7 +30,8 @@ export class CartsService {
 
     if (this._userCarts.length === 0) {
       // welcome for your first time
-      console.log(' welcome for your first time');
+      console.log('welcome for your first time');
+      this._welcomeByCartStatus = 1;
       this.createCart('/carts/createCart', ob);
     } else {
       // 0-unpaid 1-paid
@@ -36,6 +41,7 @@ export class CartsService {
       // if recentCart var is undefined - there is no unpaid cart
       if (recentCart === undefined) {
         console.log('start shop again');
+        this._welcomeByCartStatus = 3;
         // create new cart
         await this.createCart('/carts/createCart', ob);
         // get recent cart
@@ -46,12 +52,16 @@ export class CartsService {
         // if recentCart var is defined - there is unpaid cart
         // resume shopping
         console.log('resume shopping');
+        this._welcomeByCartStatus = 2;
         this._currentCart = recentCart;
         console.log('this._currentCart : ', this._currentCart);
       }
     }
+    console.log('_welcomeByCartStatus: ', this._welcomeByCartStatus);
     console.log('_userCarts: ', this._userCarts);
+    console.log('_currentCart: ', this._currentCart);
   }
+  // statusCartCheck with console.log's
 
   //READ
   async getCarts(url: string, ob: any) {
@@ -62,21 +72,21 @@ export class CartsService {
     console.log('getCartFN: ', this._userCarts);
   }
 
+  // CREATE
+  async createCart(url: string, ob: any) {
+    this._currentCart = (await this.apiService.createPostService(
+      url,
+      ob
+    )) as Cart;
+
+    console.log('this._currentCart after create cart: ', this._currentCart);
+  }
+
   getRecentCart() {
     console.log('getRecentCart');
     // item 0 is the last one (date) because sequelize order the carts : order: [["createdAt", "DESC"]]
     this._recentCart = this._userCarts[0];
     console.log('your recent cart : ', this._recentCart);
     console.log('recent Cart DATE : ', this._recentCart.createdAt);
-  }
-
-  // CREATE
-  async createCart(url: string, ob: any) {
-    this.result = (await this.apiService.createPostService(
-      url,
-      ob
-    )) as Array<Cart>;
-
-    console.log('this.result after create cart: ', this.result);
   }
 }

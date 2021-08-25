@@ -26,7 +26,6 @@ export class User {
   createdAt: string = '';
   updatedAt: string = '';
   Role: number = 0;
-  // Carts: Array<Cart> = [];
 
   constructor(
     ID?: number,
@@ -42,7 +41,6 @@ export class User {
     createdAt?: string,
     updatedAt?: string,
     Role?: number
-    // Carts?: Array<Cart>
   ) {
     this.ID = ID;
     this.FirstName = FirstName || '';
@@ -57,6 +55,5 @@ export class User {
     this.createdAt = createdAt || '';
     this.updatedAt = updatedAt || '';
     this.Role = Role || 0;
-    // this.Carts = Carts || [];
   }
 }

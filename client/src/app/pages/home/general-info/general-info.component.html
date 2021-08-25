@@ -1,0 +1,29 @@
+<p>notifications</p>
+<h4>
+  {{
+    usersService._currentUser.length === 0
+      ? ""
+      : "Hello, " + usersService._currentUser[0].FirstName
+  }}
+</h4>
+<p>
+  {{
+    cartService._welcomeByCartStatus === 1
+      ? "welcome for your first purchase"
+      : ""
+  }}
+</p>
+<p>
+  {{
+    cartService._welcomeByCartStatus === 2
+      ? "you have an open cart from  " + cartService._currentCart.createdAt
+      : ""
+  }}
+</p>
+<p>
+  {{
+    cartService._welcomeByCartStatus === 3
+      ? "your last purchase was on  " + cartService._recentCart.createdAt
+      : ""
+  }}
+</p>

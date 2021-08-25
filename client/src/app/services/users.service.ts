@@ -29,6 +29,7 @@ export class UsersServiceService {
   ) {}
 
   // CREATE
+  // registration step 2
   async addNewUserToDB(url: string, event?: any) {
     event.preventDefault();
 
@@ -92,7 +93,7 @@ export class UsersServiceService {
     }
   }
 
-  //READ
+  // registration step 1
   async isIDExist(url: string, event?: any) {
     event.preventDefault();
     let getByPatterns = {

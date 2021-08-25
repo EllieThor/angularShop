@@ -5,10 +5,6 @@ exports.getCarts = async (req, res, next) => {
   await Carts.findAll({
     where: { userID: req.body.userID },
     order: [["createdAt", "DESC"]],
-    // order: [
-    //   ["ID", "ASC"],
-    //   ["createdAt", "DESC"],
-    // ],
   })
     .then((cart) => {
       res.send(cart);
@@ -17,7 +13,7 @@ exports.getCarts = async (req, res, next) => {
       res.send(err);
     });
 };
-// , IsPaid: 0
+
 // CREATE
 exports.createCart = async (req, res, next) => {
   let newUserOBJ = {
