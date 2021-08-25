@@ -10,7 +10,6 @@ export class ProductsService {
   _productsQnt: any = {};
   _products: Array<Product> = [];
   _categories: Array<Category> = [];
-  _categoryToOpen: number = 0;
   constructor(
     public apiService: ApiService,
     public settingsService: SettingsService
