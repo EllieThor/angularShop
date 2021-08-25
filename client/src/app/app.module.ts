@@ -13,6 +13,9 @@ import { RegistrationComponent } from './pages/home/registration/registration.co
 import { Step1Component } from './pages/home/registration/step1/step1.component';
 import { Step2Component } from './pages/home/registration/step2/step2.component';
 import { GeneralInfoComponent } from './pages/home/general-info/general-info.component';
+import { CategoriesNavComponent } from './pages/shop/categories-nav/categories-nav.component';
+import { CartComponent } from './pages/shop/cart/cart.component';
+import { ProductsAreaComponent } from './pages/shop/products-area/products-area.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +28,9 @@ import { GeneralInfoComponent } from './pages/home/general-info/general-info.com
     Step1Component,
     Step2Component,
     GeneralInfoComponent,
+    CategoriesNavComponent,
+    CartComponent,
+    ProductsAreaComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],

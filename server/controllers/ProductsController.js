@@ -5,8 +5,7 @@ const Orders = require("../models/OrdersModel");
 
 // READ products
 exports.getProducts = async (req, res, next) => {
-  // await Products.findAndCountAll()
-  await Products.findAll()
+  await Products.findAll({ where: { categoryID: req.body.categoryID } })
     .then((prod) => {
       res.send(prod);
     })
@@ -17,7 +16,7 @@ exports.getProducts = async (req, res, next) => {
 
 // READ (categories)
 exports.getCategories = async (req, res, next) => {
-  await Categories.findAll()
+  await Categories.findAll({ order: [["ID", "DESC"]] })
     .then((categories) => {
       res.send(categories);
     })

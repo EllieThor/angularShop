@@ -5,11 +5,11 @@ import { ProductsService } from 'src/app/services/products.service';
 import { UsersServiceService } from 'src/app/services/users.service';
 
 @Component({
-  selector: 'app-shop',
-  templateUrl: './shop.component.html',
-  styleUrls: ['./shop.component.css'],
+  selector: 'app-categories-nav',
+  templateUrl: './categories-nav.component.html',
+  styleUrls: ['./categories-nav.component.css'],
 })
-export class ShopComponent implements OnInit {
+export class CategoriesNavComponent implements OnInit {
   constructor(
     public usersService: UsersServiceService,
     public cartService: CartsService,
@@ -17,8 +17,5 @@ export class ShopComponent implements OnInit {
     public productsService: ProductsService
   ) {}
 
-  ngOnInit(): void {
-    this.productsService.getCategories('/products/getCategories');
-  }
+  ngOnInit(): void {}
 }
-//

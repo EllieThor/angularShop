@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Cart } from '../models/cartsModel';
+import { Product } from '../models/productsModel';
 import { ApiService } from './api.service';
 import { SettingsService } from './settings.service';
 
@@ -9,6 +10,7 @@ import { SettingsService } from './settings.service';
 })
 export class CartsService {
   _userCarts: Array<Cart> = [];
+  _cartItems: Array<Product> = [];
   _currentCart: Cart = new Cart();
   _recentCart: Cart = new Cart();
   _welcomeByCartStatus: number = 0;
@@ -108,6 +110,15 @@ export class CartsService {
     console.log('your recent cart : ', this._recentCart);
     console.log('recent Cart DATE : ', this._recentCart.createdAt);
   }
+  //TODO:check
+  async gatCartItems(url: string) {
+    let getByPatterns = {
+      cartID: this._currentCart.ID,
+    };
+    this._cartItems = (await this.apiService.createPostService(
+      url,
+      getByPatterns
+    )) as Array<Product>;
+    console.log('_cartItems: ', this._cartItems);
+  }
 }
-// products/getProductsAndOrdersQnt
-// products/getProducts

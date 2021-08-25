@@ -1,5 +1,3 @@
-import { Cart } from './cartsModel';
-
 export class City {
   Symbol: string = '';
   name: string = '';

@@ -20,6 +20,5 @@ export class OrdersService {
 
   async getOrdersQnt(url: string) {
     this._ordersQnt = (await this.apiService.createPostService(url)) as any;
-    console.log('getOrdersQnt: ', this._ordersQnt);
   }
 }

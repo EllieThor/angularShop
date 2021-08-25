@@ -12,7 +12,7 @@ export class LoginComponent implements OnInit {
   constructor(
     public usersService: UsersServiceService,
     public nav: Router,
-    public cartService: CartsService
+    public cartsService: CartsService
   ) {}
 
   ngOnInit(): void {}
