@@ -77,7 +77,6 @@ exports.changeQnt = async (req, res) => {
   await CartsProductsModal.update(changesOBJ, { where: { cartID: req.body.cartID, productID: req.body.productID } })
     .then((result) => {
       res.send(result);
-      console.log(changesOBJ);
     })
     .catch((err) => {
       console.log(err);
@@ -85,5 +84,15 @@ exports.changeQnt = async (req, res) => {
     });
 };
 // DELETE (cartItems)
+exports.deleteProductFromCart = async (req, res) => {
+  await CartsProductsModal.destroy({ where: req.body })
+    .then((result) => {
+      res.send({ result });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.send(err);
+    });
+};
 
 //  `Qnt`, `TotalPrice`, `createdAt`, `updatedAt`, `productID`, `cartID`;

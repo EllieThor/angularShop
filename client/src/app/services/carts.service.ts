@@ -129,5 +129,16 @@ export class CartsService {
       getByPatterns
     )) as any;
     console.log('changeQnt result: ', this.result);
+    this.gatCartProducts('/carts/getCartProducts');
+  }
+
+  async deleteProductFromCart(url: string, ob?: any) {
+    this.result = (await this.apiService.createPostService(url, ob)) as any;
+    this.gatCartProducts('/carts/getCartProducts');
+  }
+
+  async deleteAllCartProducts(url: string, ob?: any) {
+    this.result = (await this.apiService.createPostService(url, ob)) as any;
+    this.gatCartProducts('/carts/getCartProducts');
   }
 }

@@ -1,1 +1,3 @@
-<p>cart works!</p>
+<div *ngFor="let item of cartsService._cartItems">
+  <app-single-cart-prod [item]="item"></app-single-cart-prod>
+</div>

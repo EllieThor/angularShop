@@ -1,0 +1,77 @@
+<i
+  class="fas fa-minus-circle"
+  (click)="
+    cartsService.deleteProductFromCart('/carts/deleteProductFromCart', {
+      cartID: item.cartID
+    })
+  "
+></i>
+<div class="p-3">
+  <div class="row">
+    <h6 class="text-center">{{ item.product.ProductName }}</h6>
+  </div>
+
+  <div class="row">
+    <div class="col-8">
+      <div class="text-end">{{ item.Qnt }} :כמות</div>
+
+      <div class="text-end">&#8362; :סה"כ</div>
+    </div>
+    <div class="col-4">
+      <img
+        class="card-img-top productImg"
+        alt="{{ item.product.ProductName }}"
+      />
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-7">
+      <button
+        class="btn btn-primary mt-2"
+        (click)="
+          cartsService.deleteProductFromCart('/carts/deleteProductFromCart', {
+            productID: item.productID,
+            cartID: item.cartID
+          })
+        "
+      >
+        הסר מעגלה
+      </button>
+    </div>
+
+    <div class="col-5">
+      <div class="row pt-4">
+        <div class="col-4 align-self-center">
+          <i
+            class="fas fa-plus-circle"
+            (click)="
+              cartsService.changeQnt('/carts/changeQnt', {
+                productID: item.productID,
+                type: 1,
+                quantity: item.Qnt
+              })
+            "
+          ></i>
+        </div>
+
+        <div class="col-4 align-self-end">
+          <h6>{{ item.Qnt }}</h6>
+        </div>
+
+        <div class="col-4 align-self-center">
+          <i
+            class="fas fa-minus-circle"
+            (click)="
+              cartsService.changeQnt('/carts/changeQnt', {
+                productID: item.productID,
+                type: 2,
+                quantity: item.Qnt
+              })
+            "
+          ></i>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
