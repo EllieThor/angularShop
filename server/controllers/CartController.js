@@ -2,7 +2,7 @@ const Carts = require("../models/CartsModel");
 const CartsProductsModal = require("../models/CartsProductsModel");
 const ProductsModel = require("../models/ProductsModel");
 
-// READ
+// READ (carts)
 exports.getCarts = async (req, res, next) => {
   await Carts.findAll({
     where: { userID: req.body.userID },
@@ -16,7 +16,7 @@ exports.getCarts = async (req, res, next) => {
     });
 };
 
-// READ
+// READ (cartProducts)
 exports.getCartProducts = async (req, res, next) => {
   await CartsProductsModal.findAll({
     include: [{ model: ProductsModel, attributes: ["ProductName", "Price", "ImageName"] }],
@@ -30,7 +30,7 @@ exports.getCartProducts = async (req, res, next) => {
     });
 };
 
-// CREATE
+// CREATE (carts)
 exports.createCart = async (req, res, next) => {
   let newUserOBJ = {
     userID: req.body.userID,
@@ -47,7 +47,7 @@ exports.createCart = async (req, res, next) => {
     });
 };
 
-// CREATE (cartItems)
+// CREATE (cartProducts)
 exports.insertProdToCartProducts = async (req, res, next) => {
   let addOBJ = {
     cartID: req.body.cartID,
@@ -66,4 +66,24 @@ exports.insertProdToCartProducts = async (req, res, next) => {
       console.log(err);
     });
 };
+// UPDATE (cartItems)
+exports.changeQnt = async (req, res) => {
+  let setQuantity = req.body.quantity;
+  req.body.type == 2 && req.body.quantity > 1 ? (setQuantity = setQuantity - 1) : req.body.type == 2 && req.body.quantity == 1 ? (setQuantity = 1) : (setQuantity = setQuantity + 1);
+  let changesOBJ = {
+    Qnt: setQuantity,
+  };
+
+  await CartsProductsModal.update(changesOBJ, { where: { cartID: req.body.cartID, productID: req.body.productID } })
+    .then((result) => {
+      res.send(result);
+      console.log(changesOBJ);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.send(err);
+    });
+};
+// DELETE (cartItems)
+
 //  `Qnt`, `TotalPrice`, `createdAt`, `updatedAt`, `productID`, `cartID`;

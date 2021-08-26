@@ -106,7 +106,28 @@ export class CartsService {
     } else {
       qnt = this._cartItems[findIndex].Qnt;
       console.log('index ', findIndex, 'need to change qnt to : ', qnt + 1);
+      this.changeQnt('/carts/changeQnt', {
+        productID: ob.productID,
+        type: 1,
+        quantity: qnt,
+      });
     }
     this.gatCartProducts('/carts/getCartProducts');
+  }
+
+  // READ (CartProducts)
+  async changeQnt(url: string, ob?: any) {
+    let getByPatterns = {
+      cartID: this._currentCart.ID,
+      productID: ob.productID,
+      type: ob.type,
+      quantity: ob.quantity,
+    };
+
+    this.result = (await this.apiService.createPostService(
+      url,
+      getByPatterns
+    )) as any;
+    console.log('changeQnt result: ', this.result);
   }
 }
