@@ -19,6 +19,9 @@ export class ShopComponent implements OnInit {
 
   ngOnInit(): void {
     this.productsService.getCategories('/products/getCategories');
+    this.productsService.getProducts('/products/getProducts', {
+      categoryID: 1,
+    });
   }
 }
 //

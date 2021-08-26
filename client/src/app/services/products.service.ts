@@ -23,7 +23,6 @@ export class ProductsService {
     this._categories = (await this.apiService.createPostService(
       url
     )) as Array<Category>;
-    console.log('_categories: ', this._categories);
   }
 
   async getProducts(url: string, ob: any) {
@@ -31,6 +30,5 @@ export class ProductsService {
       url,
       ob
     )) as Array<Product>;
-    console.log('products: ', this._products);
   }
 }

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { CartProduct } from '../models/cartProductsModel';
 import { Cart } from '../models/cartsModel';
-import { Product } from '../models/productsModel';
 import { ApiService } from './api.service';
 import { SettingsService } from './settings.service';
 
@@ -10,12 +10,11 @@ import { SettingsService } from './settings.service';
 })
 export class CartsService {
   _userCarts: Array<Cart> = [];
-  _cartItems: Array<Product> = [];
+  _cartItems: Array<CartProduct> = [];
   _currentCart: Cart = new Cart();
   _recentCart: Cart = new Cart();
   _welcomeByCartStatus: number = 0;
   result: any;
-  result2: any;
 
   constructor(
     public apiService: ApiService,
@@ -23,7 +22,7 @@ export class CartsService {
     public nav: Router
   ) {}
 
-  // READ
+  // cart status check
   async statusCartCheck(url: string, ob: any) {
     await this.getCarts(url, ob);
 
@@ -46,47 +45,8 @@ export class CartsService {
       }
     }
   }
-  // statusCartCheck with console.log's
-  // async statusCartCheck(url: string, ob: any) {
-  //   await this.getCarts(url, ob);
 
-  //   console.log('all carts in statusCartCheck : ', this._userCarts);
-
-  //   if (this._userCarts.length === 0) {
-  //     // welcome for your first time
-  //     console.log('welcome for your first time');
-  //     this._welcomeByCartStatus = 1;
-  //     this.createCart('/carts/createCart', ob);
-  //   } else {
-  //     // 0-unpaid 1-paid
-  //     let recentCart = this._userCarts.find((cart) => cart.IsPaid === 0);
-  //     console.log('recentCartVAR: ', recentCart);
-
-  //     // if recentCart var is undefined - there is no unpaid cart
-  //     if (recentCart === undefined) {
-  //       console.log('start shop again');
-  //       this._welcomeByCartStatus = 3;
-  //       // create new cart
-  //       await this.createCart('/carts/createCart', ob);
-  //       // get recent cart
-  //       this.getRecentCart();
-  //       // get all cart again (with the new cart)
-  //       await this.getCarts(url, ob);
-  //     } else {
-  //       // if recentCart var is defined - there is unpaid cart
-  //       // resume shopping
-  //       console.log('resume shopping');
-  //       this._welcomeByCartStatus = 2;
-  //       this._currentCart = recentCart;
-  //       console.log('this._currentCart : ', this._currentCart);
-  //     }
-  //   }
-  //   console.log('_welcomeByCartStatus: ', this._welcomeByCartStatus);
-  //   console.log('_userCarts: ', this._userCarts);
-  //   console.log('_currentCart: ', this._currentCart);
-  // }
-  //READ
-
+  // READ (carts)
   async getCarts(url: string, ob: any) {
     this._userCarts = (await this.apiService.createPostService(
       url,
@@ -95,7 +55,7 @@ export class CartsService {
     console.log('getCartFN: ', this._userCarts);
   }
 
-  // CREATE
+  // CREATE (carts)
   async createCart(url: string, ob: any) {
     this._currentCart = (await this.apiService.createPostService(
       url,
@@ -112,30 +72,41 @@ export class CartsService {
     console.log('your recent cart : ', this._recentCart);
     console.log('recent Cart DATE : ', this._recentCart.createdAt);
   }
-  //FIXME: _cartItems and not result2 not work yet because there is not include work
+
+  // READ (CartProducts)
   async gatCartProducts(url: string) {
     let getByPatterns = {
       cartID: this._currentCart.ID,
     };
-    this.result2 = (await this.apiService.createPostService(
+    this._cartItems = (await this.apiService.createPostService(
       url,
       getByPatterns
-    )) as any;
-    console.log('_cartItems: ', this.result2);
+    )) as Array<CartProduct>;
+    console.log('_cartItems: ', this._cartItems);
   }
 
+  // CREATE (CartProducts)
   async addProdToCart(url: string, ob: any) {
     let getByPatterns = {
       cartID: this._currentCart.ID,
       productID: ob.productID,
       TotalPrice: ob.Price,
     };
-    console.log('getByPatterns: ', getByPatterns);
-
-    this.result = (await this.apiService.createPostService(
-      url,
-      getByPatterns
-    )) as any;
-    console.log('result: ', this.result);
+    let qnt;
+    let findIndex = this._cartItems.findIndex(
+      (item) => item.productID == ob.productID
+    );
+    console.log('findIndex: ', findIndex);
+    if (findIndex == -1) {
+      this.result = (await this.apiService.createPostService(
+        url,
+        getByPatterns
+      )) as any;
+      console.log('result: ', this.result);
+    } else {
+      qnt = this._cartItems[findIndex].Qnt;
+      console.log('index ', findIndex, 'need to change qnt to : ', qnt + 1);
+    }
+    this.gatCartProducts('/carts/getCartProducts');
   }
 }

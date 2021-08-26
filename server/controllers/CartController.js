@@ -1,6 +1,6 @@
 const Carts = require("../models/CartsModel");
-const CartsProducts = require("../models/CartsProductsModel");
-const ProductsModel = require("../models/CartsProductsModel");
+const CartsProductsModal = require("../models/CartsProductsModel");
+const ProductsModel = require("../models/ProductsModel");
 
 // READ
 exports.getCarts = async (req, res, next) => {
@@ -18,8 +18,8 @@ exports.getCarts = async (req, res, next) => {
 
 // READ
 exports.getCartProducts = async (req, res, next) => {
-  await CartsProducts.findAll({
-    // include: [{ model: ProductsModel, attributes: ["ProductName", "Price", "ImageName"] }],
+  await CartsProductsModal.findAll({
+    include: [{ model: ProductsModel, attributes: ["ProductName", "Price", "ImageName"] }],
     where: { cartID: req.body.cartID },
   })
     .then((cart) => {
@@ -56,7 +56,7 @@ exports.insertProdToCartProducts = async (req, res, next) => {
     TotalPrice: req.body.TotalPrice,
   };
 
-  await CartsProducts.create(addOBJ)
+  await CartsProductsModal.create(addOBJ)
     .then((products) => {
       res.send(products);
       console.log("Product 25/08/21: ", products);
