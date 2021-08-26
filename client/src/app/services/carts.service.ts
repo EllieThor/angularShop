@@ -14,6 +14,8 @@ export class CartsService {
   _currentCart: Cart = new Cart();
   _recentCart: Cart = new Cart();
   _welcomeByCartStatus: number = 0;
+  result: any;
+  result2: any;
 
   constructor(
     public apiService: ApiService,
@@ -110,15 +112,30 @@ export class CartsService {
     console.log('your recent cart : ', this._recentCart);
     console.log('recent Cart DATE : ', this._recentCart.createdAt);
   }
-  //TODO:check
-  async gatCartItems(url: string) {
+  //FIXME: _cartItems and not result2 not work yet because there is not include work
+  async gatCartProducts(url: string) {
     let getByPatterns = {
       cartID: this._currentCart.ID,
     };
-    this._cartItems = (await this.apiService.createPostService(
+    this.result2 = (await this.apiService.createPostService(
       url,
       getByPatterns
-    )) as Array<Product>;
-    console.log('_cartItems: ', this._cartItems);
+    )) as any;
+    console.log('_cartItems: ', this.result2);
+  }
+
+  async addProdToCart(url: string, ob: any) {
+    let getByPatterns = {
+      cartID: this._currentCart.ID,
+      productID: ob.productID,
+      TotalPrice: ob.Price,
+    };
+    console.log('getByPatterns: ', getByPatterns);
+
+    this.result = (await this.apiService.createPostService(
+      url,
+      getByPatterns
+    )) as any;
+    console.log('result: ', this.result);
   }
 }

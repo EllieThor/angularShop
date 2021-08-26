@@ -2,6 +2,7 @@
   class="btn btn-success m-2"
   [ngClass]="usersService._currentUser.length > 0 ? '' : 'hide'"
   routerLink="/shop"
+  (click)="cartsService.gatCartProducts('/carts/getCartProducts')"
 >
   {{
     cartsService._welcomeByCartStatus === 2
@@ -41,4 +42,4 @@
     Sing Up
   </button>
 </form>
-<!--  (click)="cartsService.gatCartItems('/carts/gatCartItems')" -->
+<!--  (click)="cartsService.gatCartProducts('/carts/gatCartItems')" -->
