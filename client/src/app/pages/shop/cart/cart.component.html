@@ -1,3 +1,13 @@
+<button
+  class="btn btn-danger"
+  (click)="
+    cartsService.deleteProductFromCart('/carts/deleteProductFromCart', {
+      cartID: cartsService._currentCart.ID
+    })
+  "
+>
+  מחק הכל
+</button>
 <div *ngFor="let item of cartsService._cartItems">
   <app-single-cart-prod [item]="item"></app-single-cart-prod>
 </div>

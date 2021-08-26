@@ -105,7 +105,6 @@ export class CartsService {
       console.log('result: ', this.result);
     } else {
       qnt = this._cartItems[findIndex].Qnt;
-      console.log('index ', findIndex, 'need to change qnt to : ', qnt + 1);
       this.changeQnt('/carts/changeQnt', {
         productID: ob.productID,
         type: 1,
@@ -128,16 +127,11 @@ export class CartsService {
       url,
       getByPatterns
     )) as any;
-    console.log('changeQnt result: ', this.result);
     this.gatCartProducts('/carts/getCartProducts');
   }
 
+  // DELETE (CartProducts)
   async deleteProductFromCart(url: string, ob?: any) {
-    this.result = (await this.apiService.createPostService(url, ob)) as any;
-    this.gatCartProducts('/carts/getCartProducts');
-  }
-
-  async deleteAllCartProducts(url: string, ob?: any) {
     this.result = (await this.apiService.createPostService(url, ob)) as any;
     this.gatCartProducts('/carts/getCartProducts');
   }
