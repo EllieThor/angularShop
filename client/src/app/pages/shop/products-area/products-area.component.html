@@ -4,11 +4,7 @@
     *ngFor="let product of productsService._products"
   >
     <div class="card">
-      <!-- <img
-        class="card-img-top productImg"
-        src="{{ }}"
-        alt="{{ product.ProductName }}"
-      /> -->
+      <img class="card-img-top productImg" alt="{{ product.ProductName }}" />
       <div class="card-body productCard d-grid gap-2">
         <h6 class="card-title">{{ product.ProductName }}</h6>
         <p class="card-text cardDescription">{{ product.Description }}</p>
@@ -22,7 +18,7 @@
             })
           "
         >
-          add to cart
+          הוספה לעגלה
         </button>
       </div>
     </div>

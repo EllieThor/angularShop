@@ -17,6 +17,7 @@ import { CategoriesNavComponent } from './pages/shop/categories-nav/categories-n
 import { CartComponent } from './pages/shop/cart/cart.component';
 import { ProductsAreaComponent } from './pages/shop/products-area/products-area.component';
 import { SingleCartProdComponent } from './pages/shop/cart/single-cart-prod/single-cart-prod.component';
+import { SearchProductsComponent } from './pages/shop/search-products/search-products.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { SingleCartProdComponent } from './pages/shop/cart/single-cart-prod/sing
     CartComponent,
     ProductsAreaComponent,
     SingleCartProdComponent,
+    SearchProductsComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],

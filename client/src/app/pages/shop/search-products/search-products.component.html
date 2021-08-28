@@ -1,0 +1,9 @@
+<input
+  [(ngModel)]="productsService._searchFor"
+  [ngModelOptions]="{ standalone: true }"
+  type="text"
+  class="form-control m-2"
+  placeholder="חפש מוצר"
+  autoFocus=""
+  (change)="productsService.searchForProd('/products/searchForProd')"
+/>
