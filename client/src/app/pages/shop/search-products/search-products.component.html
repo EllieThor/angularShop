@@ -5,5 +5,6 @@
   class="form-control m-2"
   placeholder="חפש מוצר"
   autoFocus=""
-  (change)="productsService.searchForProd('/products/searchForProd')"
+  (keyup)="productsService.searchForProd('/products/searchForProd')"
 />
+<!-- (change)="productsService.searchForProd('/products/searchForProd')" -->

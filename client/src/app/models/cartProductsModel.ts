@@ -46,3 +46,4 @@ export class CartProduct {
 //             "ImageName": "1596962647453_ESB34_L_P_5839108_1.png"
 //         }
 //     }
+// item.Qnt * item.product.Price;

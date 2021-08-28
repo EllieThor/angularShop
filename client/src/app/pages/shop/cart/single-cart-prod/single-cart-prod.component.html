@@ -6,8 +6,11 @@
   <div class="row">
     <div class="col-8">
       <div class="text-end">{{ item.Qnt }} :כמות</div>
+      <div class="text-end">&#8362;{{ item.product.Price }} :מחיר ליחידה</div>
 
-      <div class="text-end">&#8362; :סה"כ</div>
+      <div class="text-end">
+        &#8362;{{ item.product.Price * item.Qnt }} :סה"כ
+      </div>
     </div>
     <div class="col-4">
       <img
