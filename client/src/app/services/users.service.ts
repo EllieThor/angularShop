@@ -10,9 +10,12 @@ import { SettingsService } from './settings.service';
 })
 export class UsersServiceService {
   _currentUser: Array<User> = [];
+
+  // login
   _logInEmail: string = '';
   _logInPassword: string = '';
 
+  // registration
   _newUserObject: User = new User();
   _currentStep: number = 0;
   _newPassword: string = '';
@@ -21,8 +24,10 @@ export class UsersServiceService {
   _isPasswordMatching: boolean = false;
 
   result: any;
+
   _currentUserID?: number;
   _current_User: User = new User();
+  localStorageUser: any = {};
   constructor(
     public apiService: ApiService,
     public settingsService: SettingsService,
@@ -92,6 +97,10 @@ export class UsersServiceService {
         userID: this._currentUserID,
       };
       this.cartService.statusCartCheck('/carts/getCarts', getByPatterns);
+      // if (this.localStorageUser.user === null) {
+      //   localStorage.setItem('user', JSON.stringify(this._currentUser[0]));
+      //   console.log('after set : ', localStorage.getItem('user'));
+      // }
     }
   }
 

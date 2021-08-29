@@ -12,6 +12,21 @@ export class HomeComponent implements OnInit {
     public usersService: UsersServiceService,
     public cartService: CartsService
   ) {}
-
-  ngOnInit(): void {}
+  // _user: any;
+  ngOnInit(): void {
+    // this._user = localStorage.getItem('user');
+    // this._user = JSON.parse(this._user);
+    // this.usersService.localStorageUser = {
+    //   user: this._user,
+    // };
+    // console.log(
+    //   'user from local storage : ',
+    //   this.usersService.localStorageUser
+    // );
+    // this.usersService._currentUser[0] = this.usersService.localStorageUser;
+    // console.log(
+    //   'current user from local : ',
+    //   this.usersService._currentUser[0]
+    // );
+  }
 }

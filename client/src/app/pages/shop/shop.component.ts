@@ -24,6 +24,7 @@ export class ShopComponent implements OnInit {
     this.productsService.getProducts('/products/getProducts', {
       categoryID: 1,
     });
+    // TODO: אם המשתמש התנתק באופן לא מבוקר או סגר דפדפן בפעם הבאה שפותח- הפרטים כבר קיימים וכפתור התחל/חזרה לקנייה קיים
     if (this.usersService._currentUser.length <= 0) {
       this.nav.navigate(['/home']);
     }

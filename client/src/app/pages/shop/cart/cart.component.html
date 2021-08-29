@@ -1,4 +1,5 @@
 <button
+  *ngIf="cartsService._cartItems.length !== 0"
   class="btn btn-danger"
   (click)="
     cartsService.deleteProductFromCart('/carts/deleteProductFromCart', {
@@ -6,7 +7,7 @@
     })
   "
 >
-  מחק הכל
+  <i class="fas fa-trash-alt"></i> &nbsp;מחק הכל
 </button>
 <div *ngFor="let item of cartsService._cartItems">
   <app-single-cart-prod [item]="item"></app-single-cart-prod>
