@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { CartsService } from 'src/app/services/carts.service';
 import { OrdersService } from 'src/app/services/orders.service';
 import { ProductsService } from 'src/app/services/products.service';
@@ -14,7 +15,8 @@ export class ShopComponent implements OnInit {
     public usersService: UsersServiceService,
     public cartService: CartsService,
     public ordersService: OrdersService,
-    public productsService: ProductsService
+    public productsService: ProductsService,
+    public nav: Router
   ) {}
 
   ngOnInit(): void {
@@ -22,6 +24,9 @@ export class ShopComponent implements OnInit {
     this.productsService.getProducts('/products/getProducts', {
       categoryID: 1,
     });
+    if (this.usersService._currentUser.length <= 0) {
+      this.nav.navigate(['/home']);
+    }
   }
 }
 //

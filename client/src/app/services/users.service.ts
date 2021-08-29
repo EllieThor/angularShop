@@ -16,7 +16,9 @@ export class UsersServiceService {
   _newUserObject: User = new User();
   _currentStep: number = 0;
   _newPassword: string = '';
+
   _newPasswordRepeat: string = '';
+  _isPasswordMatching: boolean = false;
 
   result: any;
   _currentUserID?: number;
@@ -104,7 +106,7 @@ export class UsersServiceService {
       this._newUserObject.ID === 0 ||
       this._newUserObject.Email === '' ||
       this._newUserObject.Password === '' ||
-      this._newPasswordRepeat === ''
+      this._isPasswordMatching === false
     ) {
       alert('all felids must be felid');
     } else {
@@ -122,7 +124,8 @@ export class UsersServiceService {
   }
 
   checkPassword = () => {
-    if (this._newPassword !== this._newPasswordRepeat)
-      console.log('password not match');
+    this._newUserObject.Password !== this._newPasswordRepeat
+      ? (this._isPasswordMatching = false)
+      : (this._isPasswordMatching = true);
   };
 }

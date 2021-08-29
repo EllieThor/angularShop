@@ -40,6 +40,7 @@
       class="form-control m-2"
       placeholder="password"
       required
+      (keyup)="usersService.checkPassword()"
     />
   </label>
   <br />
@@ -53,7 +54,7 @@
       class="form-control m-2"
       placeholder="confirm password"
       required
-      (change)="usersService.checkPassword()"
+      (keyup)="usersService.checkPassword()"
     />
   </label>
   <br />
@@ -66,3 +67,9 @@
     Next
   </button>
 </form>
+<div
+  [ngClass]="usersService._isPasswordMatching ? 'text-success' : 'text-danger'"
+>
+  {{ usersService._isPasswordMatching ? "סיסמה תואמת" : "סיסמה לא תואמת" }}
+</div>
+<!-- *ngIf="usersService._isPasswordMatching" -->
