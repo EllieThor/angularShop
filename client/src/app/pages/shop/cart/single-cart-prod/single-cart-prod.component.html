@@ -9,7 +9,7 @@
       <div class="text-end">&#8362;{{ item.product.Price }} :מחיר ליחידה</div>
 
       <div class="text-end">
-        &#8362;{{ item.product.Price * item.Qnt }} :סה"כ
+        &#8362; {{ (item.product.Price * item.Qnt).toFixed(2) }} :סה"כ
       </div>
     </div>
     <div class="col-4">

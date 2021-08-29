@@ -1,0 +1,18 @@
+<div class="card">
+  <img class="card-img-top productImg" alt="{{ product.ProductName }}" />
+  <div class="card-body productCard d-grid gap-2">
+    <h6 class="card-title">{{ product.ProductName }}</h6>
+    <p class="card-text cardDescription">{{ product.Description }}</p>
+    <h4 class="card-text">{{ product.Price }} &#8362;</h4>
+    <i
+      class="cartPlusIcon fas fa-lg fa-cart-plus"
+      title="הוסף לעגלה"
+      (click)="
+        cartsService.addProdToCart('/carts/insertProdToCartProducts', {
+          productID: product.ID,
+          Price: product.Price
+        })
+      "
+    ></i>
+  </div>
+</div>

@@ -28,14 +28,14 @@ export class Product {
   categoryID: number = 0;
 
   constructor(
-    ID: number,
-    ProductName: string,
-    Price: number,
-    Description: string,
-    ImageName: string,
-    createdAt: string,
-    updatedAt: string,
-    categoryID: number
+    ID?: number,
+    ProductName?: string,
+    Price?: number,
+    Description?: string,
+    ImageName?: string,
+    createdAt?: string,
+    updatedAt?: string,
+    categoryID?: number
   ) {
     this.ID = ID || 0;
     this.ProductName = ProductName || '';

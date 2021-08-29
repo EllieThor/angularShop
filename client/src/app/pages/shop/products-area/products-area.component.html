@@ -3,25 +3,6 @@
     class="col-sm-12 col-md-6 col-xl-2 p-3"
     *ngFor="let product of productsService._products"
   >
-    <div class="card">
-      <img class="card-img-top productImg" alt="{{ product.ProductName }}" />
-      <div class="card-body productCard d-grid gap-2">
-        <h6 class="card-title">{{ product.ProductName }}</h6>
-        <p class="card-text cardDescription">{{ product.Description }}</p>
-        <h4 class="card-text">{{ product.Price }} &#8362;</h4>
-        <button
-          class="btn btn-primary"
-          (click)="
-            cartsService.addProdToCart('/carts/insertProdToCartProducts', {
-              productID: product.ID,
-              Price: product.Price
-            })
-          "
-        >
-          הוספה לעגלה
-        </button>
-      </div>
-    </div>
+    <app-single-prod-card [product]="product"></app-single-prod-card>
   </div>
-  <!-- onClick={() => props.addToCartInDb(product.ID)} -->
 </div>
