@@ -1,11 +1,12 @@
 <h5>orders in our shop: {{ ordersService._ordersQnt.ordersCount }}</h5>
 <h5>products in our shop: {{ productsService._productsQnt.prodCount }}</h5>
 <p>notifications</p>
+<!-- FIXME: למה שלום מופיע כל הזמן -->
 <h4>
   {{
-    usersService._currentUser.length === 0
+    usersService._currentUserObj.ID === 0
       ? ""
-      : "Hello, " + usersService._currentUser[0].FirstName
+      : "Hello, " + usersService._currentUserObj.FirstName
   }}
 </h4>
 <p>

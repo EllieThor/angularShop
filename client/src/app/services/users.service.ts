@@ -9,8 +9,8 @@ import { SettingsService } from './settings.service';
   providedIn: 'root',
 })
 export class UsersServiceService {
-  _currentUser: Array<User> = [];
-
+  _currentUserObj: User = new User();
+  _currentUserID?: number;
   // login
   _logInEmail: string = '';
   _logInPassword: string = '';
@@ -23,10 +23,8 @@ export class UsersServiceService {
   _newPasswordRepeat: string = '';
   _isPasswordMatching: boolean = false;
 
-  result: any;
+  serverResult: any;
 
-  _currentUserID?: number;
-  _current_User: User = new User();
   localStorageUser: any = {};
   constructor(
     public apiService: ApiService,
@@ -53,21 +51,25 @@ export class UsersServiceService {
       City: this._newUserObject.City,
     };
 
-    this.result = await this.apiService.createPostService(url, newUserOBJ);
-    console.log('new User: ', this.result);
+    this.serverResult = await this.apiService.createPostService(
+      url,
+      newUserOBJ
+    );
+    console.log('new User: ', this.serverResult);
 
     let getByPatterns = {
-      userEmail: this.result.Email,
-      userPassword: this.result.Password,
+      userEmail: this.serverResult.Email,
+      userPassword: this.serverResult.Password,
     };
 
-    this._currentUser = (await this.apiService.createPostService(
+    this.serverResult = await this.apiService.createPostService(
       '/users/getUser',
       getByPatterns
-    )) as Array<User>;
-    console.log('Current User: ', this._currentUser);
-    if (this._currentUser.length > 0) {
-      this._currentUserID = this._currentUser[0].ID;
+    );
+
+    console.log('this.serverResult : ', this.serverResult);
+    if (this._currentUserObj.ID) {
+      this._currentUserID = this._currentUserObj.ID;
       console.log('current user ID: ', this._currentUserID);
       this._logInEmail = '';
       this._logInPassword = '';
@@ -83,13 +85,17 @@ export class UsersServiceService {
       userPassword: this._logInPassword,
     };
 
-    this._currentUser = (await this.apiService.createPostService(
+    this.serverResult = await this.apiService.createPostService(
       url,
       getByPatterns
-    )) as Array<User>;
-    console.log('Current User: ', this._currentUser);
-    if (this._currentUser.length > 0) {
-      this._currentUserID = this._currentUser[0].ID;
+    );
+    console.log(
+      'this.serverResult!!!!!!!!!!!!!!!!!!!!!!: ',
+      this.serverResult[0]
+    );
+    this._currentUserObj = this.serverResult[0];
+    if (this._currentUserObj.ID) {
+      this._currentUserID = this._currentUserObj.ID;
       console.log('current user ID: ', this._currentUserID);
       this._logInEmail = '';
       this._logInPassword = '';
@@ -98,7 +104,7 @@ export class UsersServiceService {
       };
       this.cartService.statusCartCheck('/carts/getCarts', getByPatterns);
       // if (this.localStorageUser.user === null) {
-      //   localStorage.setItem('user', JSON.stringify(this._currentUser[0]));
+      //   localStorage.setItem('user', JSON.stringify(this._currentUserObj));
       //   console.log('after set : ', localStorage.getItem('user'));
       // }
     }
@@ -119,11 +125,14 @@ export class UsersServiceService {
     ) {
       alert('all felids must be felid');
     } else {
-      this.result = await this.apiService.createPostService(url, getByPatterns);
-      if (this.result.emailCount !== 0) {
+      this.serverResult = await this.apiService.createPostService(
+        url,
+        getByPatterns
+      );
+      if (this.serverResult.emailCount !== 0) {
         alert('email is already exist');
         this.nav.navigate(['/home']);
-      } else if (this.result.IDCount !== 0) {
+      } else if (this.serverResult.IDCount !== 0) {
         alert('ID is already exist');
         this.nav.navigate(['/home']);
       } else {
