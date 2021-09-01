@@ -15,6 +15,7 @@ export class CartsService {
   _recentCart: Cart = new Cart();
   _welcomeByCartStatus: number = 0;
   result: any;
+  _fixedTotalPrise: number = 0;
 
   constructor(
     public apiService: ApiService,
@@ -72,9 +73,10 @@ export class CartsService {
     console.log('your recent cart : ', this._recentCart);
     console.log('recent Cart DATE : ', this._recentCart.createdAt);
   }
-
+  //FIXME: .toFixed(2) not work with this._fixedTotalPrise
   // READ (CartProducts)
   async gatCartProducts(url: string) {
+    let totalPrise = 0;
     let getByPatterns = {
       cartID: this._currentCart.ID,
     };
@@ -83,6 +85,15 @@ export class CartsService {
       getByPatterns
     )) as Array<CartProduct>;
     console.log('_cartItems: ', this._cartItems);
+    // _fixedTotalPrise
+    this._cartItems.map((cartItem) => {
+      totalPrise += Number(cartItem.product.Price) * Number(cartItem.Qnt);
+      console.log('this._fixedTotalPrise : ', this._cartItems, totalPrise);
+      // (Number(product.product.Price) * Number(product.Quantity)).toFixed(2);
+    });
+    // this._fixedTotalPrise = Number(totalPrise).toFixed(2);
+    this._fixedTotalPrise = totalPrise;
+    console.log('this._fixedTotalPrise : ', this._fixedTotalPrise);
   }
 
   // CREATE (CartProducts)
@@ -92,7 +103,9 @@ export class CartsService {
       productID: ob.productID,
       TotalPrice: ob.Price,
     };
+
     let qnt;
+
     let findIndex = this._cartItems.findIndex(
       (item) => item.productID == ob.productID
     );

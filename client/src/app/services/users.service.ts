@@ -18,8 +18,8 @@ export class UsersServiceService {
   // registration
   _newUserObject: User = new User();
   _currentStep: number = 0;
-  _newPassword: string = '';
 
+  // registration password
   _newPasswordRepeat: string = '';
   _isPasswordMatching: boolean = false;
 
@@ -33,8 +33,46 @@ export class UsersServiceService {
     public cartService: CartsService
   ) {}
 
-  // CREATE
+  // registration step 1
+  async isIDExist(url: string, event?: any) {
+    event.preventDefault();
+    let getByPatterns = {
+      ID: this._newUserObject.ID,
+      Email: this._newUserObject.Email,
+    };
+    if (
+      this._newUserObject.ID === 0 ||
+      this._newUserObject.Email === '' ||
+      this._newUserObject.Password === '' ||
+      this._isPasswordMatching === false
+    ) {
+      alert('all felids must be felid');
+    } else {
+      this.serverResult = await this.apiService.createPostService(
+        url,
+        getByPatterns
+      );
+      if (this.serverResult.emailCount !== 0) {
+        alert('email is already exist');
+        this.nav.navigate(['/home']);
+      } else if (this.serverResult.IDCount !== 0) {
+        alert('ID is already exist');
+        this.nav.navigate(['/home']);
+      } else {
+        this._currentStep = 1;
+      }
+    }
+  }
+
+  checkPassword = () => {
+    this._newUserObject.Password !== this._newPasswordRepeat
+      ? (this._isPasswordMatching = false)
+      : (this._isPasswordMatching = true);
+  };
+
   // registration step 2
+
+  // CREATE
   async addNewUserToDB(url: string, event?: any) {
     event.preventDefault();
 
@@ -109,41 +147,4 @@ export class UsersServiceService {
       // }
     }
   }
-
-  // registration step 1
-  async isIDExist(url: string, event?: any) {
-    event.preventDefault();
-    let getByPatterns = {
-      ID: this._newUserObject.ID,
-      Email: this._newUserObject.Email,
-    };
-    if (
-      this._newUserObject.ID === 0 ||
-      this._newUserObject.Email === '' ||
-      this._newUserObject.Password === '' ||
-      this._isPasswordMatching === false
-    ) {
-      alert('all felids must be felid');
-    } else {
-      this.serverResult = await this.apiService.createPostService(
-        url,
-        getByPatterns
-      );
-      if (this.serverResult.emailCount !== 0) {
-        alert('email is already exist');
-        this.nav.navigate(['/home']);
-      } else if (this.serverResult.IDCount !== 0) {
-        alert('ID is already exist');
-        this.nav.navigate(['/home']);
-      } else {
-        this._currentStep = 1;
-      }
-    }
-  }
-
-  checkPassword = () => {
-    this._newUserObject.Password !== this._newPasswordRepeat
-      ? (this._isPasswordMatching = false)
-      : (this._isPasswordMatching = true);
-  };
 }

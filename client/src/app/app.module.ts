@@ -19,6 +19,8 @@ import { ProductsAreaComponent } from './pages/shop/products-area/products-area.
 import { SingleCartProdComponent } from './pages/shop/cart/single-cart-prod/single-cart-prod.component';
 import { SearchProductsComponent } from './pages/shop/search-products/search-products.component';
 import { SingleProdCardComponent } from './pages/shop/products-area/single-prod-card/single-prod-card.component';
+import { OrdersComponent } from './pages/orders/orders.component';
+import { ReceptionComponent } from './pages/orders/reception/reception.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +39,8 @@ import { SingleProdCardComponent } from './pages/shop/products-area/single-prod-
     SingleCartProdComponent,
     SearchProductsComponent,
     SingleProdCardComponent,
+    OrdersComponent,
+    ReceptionComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
