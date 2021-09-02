@@ -10,11 +10,32 @@ export class ProductsService {
   _productsQnt: any = {};
   _products: Array<Product> = [];
   _categories: Array<Category> = [];
+  _newProductObj: Product = new Product();
   _searchFor: string = '';
+  serverResult: any;
+
   constructor(
     public apiService: ApiService,
     public settingsService: SettingsService
   ) {}
+
+  async addNewProd(url: string, event?: any) {
+    event.preventDefault();
+    let newProdObj = {
+      ProductName: this._newProductObj.ProductName,
+      Price: this._newProductObj.Price,
+      Description: this._newProductObj.Description,
+      ImageName: this._newProductObj.ImageName,
+      CategoryID: this._newProductObj.CategoryID,
+    };
+    // `ProductName`, `Price`, `Description`, `ImageName`, `CategoryID`
+
+    this.serverResult = await this.apiService.createPostService(
+      url,
+      newProdObj
+    );
+    console.log('new Product: ', this.serverResult);
+  }
 
   async getProductsQnt(url: string) {
     this._productsQnt = (await this.apiService.createPostService(url)) as any;

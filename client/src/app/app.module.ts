@@ -23,6 +23,7 @@ import { OrdersComponent } from './pages/orders/orders.component';
 import { ReceptionComponent } from './pages/orders/reception/reception.component';
 import { ShippingDetailsComponent } from './pages/orders/shipping-details/shipping-details.component';
 import { SingleReceptionProdComponent } from './pages/orders/reception/single-reception-prod/single-reception-prod.component';
+import { FormProductComponent } from './components/form-product/form-product.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { SingleReceptionProdComponent } from './pages/orders/reception/single-re
     ReceptionComponent,
     ShippingDetailsComponent,
     SingleReceptionProdComponent,
+    FormProductComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],

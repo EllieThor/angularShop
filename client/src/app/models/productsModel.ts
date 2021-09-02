@@ -25,7 +25,7 @@ export class Product {
   ImageName: string = '';
   createdAt: string = '';
   updatedAt: string = '';
-  categoryID: number = 0;
+  CategoryID: number = 0;
 
   constructor(
     ID?: number,
@@ -35,7 +35,7 @@ export class Product {
     ImageName?: string,
     createdAt?: string,
     updatedAt?: string,
-    categoryID?: number
+    CategoryID?: number
   ) {
     this.ID = ID || 0;
     this.ProductName = ProductName || '';
@@ -44,6 +44,6 @@ export class Product {
     this.ImageName = ImageName || '';
     this.createdAt = createdAt || '';
     this.updatedAt = updatedAt || '';
-    this.categoryID = categoryID || 0;
+    this.CategoryID = CategoryID || 0;
   }
 }

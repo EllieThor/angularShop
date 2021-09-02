@@ -16,20 +16,6 @@ exports.getCarts = async (req, res, next) => {
     });
 };
 
-// READ (cartProducts)
-exports.getCartProducts = async (req, res, next) => {
-  await CartsProductsModal.findAll({
-    include: [{ model: ProductsModel, attributes: ["ProductName", "Price", "ImageName"] }],
-    where: { cartID: req.body.cartID },
-  })
-    .then((cart) => {
-      res.send(cart);
-    })
-    .catch((err) => {
-      res.send(err);
-    });
-};
-
 // CREATE (carts)
 exports.createCart = async (req, res, next) => {
   let newUserOBJ = {
@@ -46,6 +32,8 @@ exports.createCart = async (req, res, next) => {
       res.send(err);
     });
 };
+
+//carts products
 
 // CREATE (cartProducts)
 exports.insertProdToCartProducts = async (req, res, next) => {
@@ -66,10 +54,24 @@ exports.insertProdToCartProducts = async (req, res, next) => {
       console.log(err);
     });
 };
-// UPDATE (cartItems)
+
+// READ (cartProducts)
+exports.getCartProducts = async (req, res, next) => {
+  await CartsProductsModal.findAll({
+    include: [{ model: ProductsModel, attributes: ["ProductName", "Price", "ImageName"] }],
+    where: { cartID: req.body.cartID },
+  })
+    .then((cart) => {
+      res.send(cart);
+    })
+    .catch((err) => {
+      res.send(err);
+    });
+};
+
+// UPDATE (cartProducts)
 exports.changeQnt = async (req, res) => {
   let setQuantity = req.body.quantity;
-  console.log("%%%%%%%%% setQuantity", setQuantity, "%%%%%%%%%%%%%%%%  price  ", req.body.price);
   req.body.type == 2 && req.body.quantity > 1 ? (setQuantity = setQuantity - 1) : req.body.type == 2 && req.body.quantity == 1 ? (setQuantity = 1) : (setQuantity = setQuantity + 1);
   let changesOBJ = {
     Qnt: setQuantity,
@@ -85,7 +87,8 @@ exports.changeQnt = async (req, res) => {
       res.send(err);
     });
 };
-// DELETE (cartItems)
+
+// DELETE (cartProducts)
 exports.deleteProductFromCart = async (req, res) => {
   await CartsProductsModal.destroy({ where: req.body })
     .then((result) => {

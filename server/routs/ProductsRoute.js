@@ -6,6 +6,7 @@ router.post("/getCategories", productsController.getCategories);
 router.post("/getProducts", productsController.getProducts);
 router.post("/getProductsQnt", productsController.getProductsQnt);
 router.post("/searchForProd", productsController.searchForProd);
+router.post("/insertProd", productsController.insertProd);
 // router.post("/addProductToDb", productsController.getCategoriesFromDb);
 // router.post("/UpdateProductInDb", productsController.getCategoriesFromDb);
 

@@ -1,0 +1,40 @@
+<p>form-product works!</p>
+
+<form method="post" class="p-2">
+  <h5 class="mb-3 fw-normal text-center">הוסף מוצר</h5>
+  <input
+    [(ngModel)]="productsService._newProductObj.ProductName"
+    [ngModelOptions]="{ standalone: true }"
+    type="text"
+    class="form-control m-2"
+    placeholder="שם המוצר"
+    required=""
+    autoFocus=""
+  />
+
+  <input
+    [(ngModel)]="productsService._newProductObj.Price"
+    [ngModelOptions]="{ standalone: true }"
+    type="number"
+    class="form-control m-2"
+    placeholder="מחיר"
+    required=""
+    autoFocus=""
+  />
+  <input
+    [(ngModel)]="productsService._newProductObj.Description"
+    [ngModelOptions]="{ standalone: true }"
+    type="text"
+    class="form-control m-2"
+    placeholder="תיאור"
+    required=""
+    autoFocus=""
+  />
+  <!-- TODO: add image -->
+  <input type="file" id="filesToUpload" name="filesToUpload" />
+  <!-- // `ProductName`, `Price`, `Description`, `ImageName`, `CategoryID` -->
+
+  <button (click)="productsService.addNewProd('/products/insertProd')">
+    הוסף מוצר
+  </button>
+</form>

@@ -3,7 +3,7 @@ const Categories = require("../models/CategoriesModel");
 const Orders = require("../models/OrdersModel");
 const { Op } = require("sequelize");
 
-// READ products
+// READ (products)
 exports.getProducts = async (req, res, next) => {
   await Products.findAll({ where: { categoryID: req.body.categoryID } })
     .then((prod) => {
@@ -11,6 +11,27 @@ exports.getProducts = async (req, res, next) => {
     })
     .catch((err) => {
       res.send(err);
+    });
+};
+
+// CREATE (products)
+exports.insertProd = async (req, res, next) => {
+  let addOBJ = {
+    ProductName: req.body.ProductName,
+    Price: req.body.Price,
+    Description: req.body.Description,
+    ImageName: req.body.ImageName,
+    CategoryID: req.body.CategoryID,
+  };
+  // `ProductName`, `Price`, `Description`, `ImageName`, `CategoryID`
+  await Products.create(addOBJ)
+    .then((result) => {
+      res.send(result);
+      console.log("result: ", result);
+    })
+    .catch((err) => {
+      res.send(err);
+      console.log(err);
     });
 };
 
