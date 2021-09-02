@@ -13,7 +13,7 @@ const CartsProductsModel = sequelize.define("carts-products", {
     allowNull: false,
   },
   TotalPrice: {
-    type: Sequelize.INTEGER(11),
+    type: Sequelize.DOUBLE,
     allowNull: false,
   },
 });

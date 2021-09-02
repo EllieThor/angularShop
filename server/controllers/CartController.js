@@ -53,13 +53,13 @@ exports.insertProdToCartProducts = async (req, res, next) => {
     cartID: req.body.cartID,
     productID: req.body.productID,
     Qnt: 1,
-    TotalPrice: req.body.TotalPrice,
+    TotalPrice: req.body.priceForOne,
   };
 
   await CartsProductsModal.create(addOBJ)
-    .then((products) => {
-      res.send(products);
-      console.log("Product 25/08/21: ", products);
+    .then((result) => {
+      res.send(result);
+      console.log("result: ", result);
     })
     .catch((err) => {
       res.send(err);
@@ -69,9 +69,11 @@ exports.insertProdToCartProducts = async (req, res, next) => {
 // UPDATE (cartItems)
 exports.changeQnt = async (req, res) => {
   let setQuantity = req.body.quantity;
+  console.log("%%%%%%%%% setQuantity", setQuantity, "%%%%%%%%%%%%%%%%  price  ", req.body.price);
   req.body.type == 2 && req.body.quantity > 1 ? (setQuantity = setQuantity - 1) : req.body.type == 2 && req.body.quantity == 1 ? (setQuantity = 1) : (setQuantity = setQuantity + 1);
   let changesOBJ = {
     Qnt: setQuantity,
+    TotalPrice: setQuantity * req.body.price,
   };
 
   await CartsProductsModal.update(changesOBJ, { where: { cartID: req.body.cartID, productID: req.body.productID } })

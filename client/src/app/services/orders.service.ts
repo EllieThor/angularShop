@@ -10,6 +10,7 @@ import { UsersServiceService } from './users.service';
 })
 export class OrdersService {
   _ordersQnt: any = {};
+  _totalPrice: number = 0;
   constructor(
     public apiService: ApiService,
     public settingsService: SettingsService,
@@ -21,4 +22,8 @@ export class OrdersService {
   async getOrdersQnt(url: string) {
     this._ordersQnt = (await this.apiService.createPostService(url)) as any;
   }
+
+  // async getTotalPrice(url: string) {
+  //   this._totalPrice = (await this.apiService.createPostService(url)) as number;
+  // }
 }

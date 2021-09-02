@@ -13,7 +13,7 @@ import { UsersServiceService } from 'src/app/services/users.service';
 export class ShopComponent implements OnInit {
   constructor(
     public usersService: UsersServiceService,
-    public cartService: CartsService,
+    public cartsService: CartsService,
     public ordersService: OrdersService,
     public productsService: ProductsService,
     public nav: Router

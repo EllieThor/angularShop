@@ -21,6 +21,8 @@ import { SearchProductsComponent } from './pages/shop/search-products/search-pro
 import { SingleProdCardComponent } from './pages/shop/products-area/single-prod-card/single-prod-card.component';
 import { OrdersComponent } from './pages/orders/orders.component';
 import { ReceptionComponent } from './pages/orders/reception/reception.component';
+import { ShippingDetailsComponent } from './pages/orders/shipping-details/shipping-details.component';
+import { SingleReceptionProdComponent } from './pages/orders/reception/single-reception-prod/single-reception-prod.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +43,8 @@ import { ReceptionComponent } from './pages/orders/reception/reception.component
     SingleProdCardComponent,
     OrdersComponent,
     ReceptionComponent,
+    ShippingDetailsComponent,
+    SingleReceptionProdComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],

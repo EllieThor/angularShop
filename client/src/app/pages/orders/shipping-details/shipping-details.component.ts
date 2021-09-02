@@ -5,11 +5,11 @@ import { ProductsService } from 'src/app/services/products.service';
 import { UsersServiceService } from 'src/app/services/users.service';
 
 @Component({
-  selector: 'app-reception',
-  templateUrl: './reception.component.html',
-  styleUrls: ['./reception.component.css'],
+  selector: 'app-shipping-details',
+  templateUrl: './shipping-details.component.html',
+  styleUrls: ['./shipping-details.component.css'],
 })
-export class ReceptionComponent implements OnInit {
+export class ShippingDetailsComponent implements OnInit {
   constructor(
     public usersService: UsersServiceService,
     public cartsService: CartsService,

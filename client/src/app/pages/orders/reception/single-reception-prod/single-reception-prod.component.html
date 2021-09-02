@@ -1,0 +1,18 @@
+<div class="p-3">
+  <h6 class="text-center">{{ prod.product.ProductName }}</h6>
+  <div class="row">
+    <div class="col-8">
+      <div class="text-end">&#8362;{{ prod.product.Price }} :מחיר ליחידה</div>
+      <div class="text-end">{{ prod.Qnt }} :כמות</div>
+      <div class="text-end">
+        &#8362; {{ (prod.product.Price * prod.Qnt).toFixed(2) }} :סה"כ
+      </div>
+    </div>
+    <div class="col-4">
+      <img
+        class="card-img-top productImg"
+        alt="{{ prod.product.ProductName }}"
+      />
+    </div>
+  </div>
+</div>

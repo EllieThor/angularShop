@@ -101,27 +101,29 @@ export class CartsService {
     let getByPatterns = {
       cartID: this._currentCart.ID,
       productID: ob.productID,
-      TotalPrice: ob.Price,
+      priceForOne: ob.price,
     };
-
     let qnt;
-
     let findIndex = this._cartItems.findIndex(
       (item) => item.productID == ob.productID
     );
     console.log('findIndex: ', findIndex);
+
     if (findIndex == -1) {
+      // insert
       this.result = (await this.apiService.createPostService(
         url,
         getByPatterns
       )) as any;
       console.log('result: ', this.result);
     } else {
+      // change
       qnt = this._cartItems[findIndex].Qnt;
       this.changeQnt('/carts/changeQnt', {
         productID: ob.productID,
         type: 1,
         quantity: qnt,
+        price: ob.price,
       });
     }
     this.gatCartProducts('/carts/getCartProducts');
@@ -134,8 +136,8 @@ export class CartsService {
       productID: ob.productID,
       type: ob.type,
       quantity: ob.quantity,
+      price: ob.price,
     };
-
     this.result = (await this.apiService.createPostService(
       url,
       getByPatterns
