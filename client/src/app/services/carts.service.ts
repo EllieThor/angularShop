@@ -14,10 +14,9 @@ export class CartsService {
   _currentCart: Cart = new Cart();
   _recentCart: Cart = new Cart();
   _welcomeByCartStatus: number = 0;
-  result: any;
+  serverResult: any;
   _fixedTotalPrise: number = 0;
 
-  static _cartProducts: CartProduct[];
   constructor(
     public apiService: ApiService,
     public settingsService: SettingsService,
@@ -112,11 +111,11 @@ export class CartsService {
 
     if (findIndex == -1) {
       // insert
-      this.result = (await this.apiService.createPostService(
+      this.serverResult = (await this.apiService.createPostService(
         url,
         getByPatterns
       )) as any;
-      console.log('result: ', this.result);
+      console.log('serverResult: ', this.serverResult);
     } else {
       // change
       qnt = this._cartProducts[findIndex].Qnt;
@@ -139,7 +138,7 @@ export class CartsService {
       quantity: ob.quantity,
       price: ob.price,
     };
-    this.result = (await this.apiService.createPostService(
+    this.serverResult = (await this.apiService.createPostService(
       url,
       getByPatterns
     )) as any;
@@ -148,7 +147,10 @@ export class CartsService {
 
   // DELETE (CartProducts)
   async deleteProductFromCart(url: string, ob?: any) {
-    this.result = (await this.apiService.createPostService(url, ob)) as any;
+    this.serverResult = (await this.apiService.createPostService(
+      url,
+      ob
+    )) as any;
     this.gatCartProducts('/carts/getCartProducts');
   }
 }

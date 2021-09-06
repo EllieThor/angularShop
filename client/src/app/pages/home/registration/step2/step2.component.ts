@@ -18,6 +18,7 @@ export class Step2Component implements OnInit {
     public nav: Router,
     private httpClient: HttpClient
   ) {}
+  //FIXME: biggestCities should work properly but got the 10 first cities
 
   ngOnInit(): void {
     this.httpClient.get('assets/israelCities.json').subscribe((data) => {

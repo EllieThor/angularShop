@@ -8,7 +8,7 @@ const OrdersModel = sequelize.define("orders", {
     allowNull: false,
     primaryKey: true,
   },
-  Price: {
+  FinalPrice: {
     type: Sequelize.INTEGER(11),
     allowNull: false,
   },
@@ -25,7 +25,7 @@ const OrdersModel = sequelize.define("orders", {
     allowNull: false,
   },
   CreditCard: {
-    type: Sequelize.INTEGER(11),
+    type: Sequelize.STRING,
     allowNull: false,
   },
 });

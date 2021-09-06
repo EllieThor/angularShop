@@ -10,3 +10,14 @@ exports.getOrdersQnt = async (req, res, next) => {
       res.send(err);
     });
 };
+
+// CREATE order
+exports.insertNewOrder = async (req, res, next) => {
+  await Orders.create(req.body)
+    .then((order) => {
+      res.send(order);
+    })
+    .catch((err) => {
+      res.send(err);
+    });
+};
