@@ -4,6 +4,7 @@ import { SettingsService } from './settings.service';
 import { Router } from '@angular/router';
 import { CartsService } from './carts.service';
 import { UsersServiceService } from './users.service';
+import { CartProduct } from '../models/cartProductsModel';
 
 @Injectable({
   providedIn: 'root',
@@ -11,6 +12,9 @@ import { UsersServiceService } from './users.service';
 export class OrdersService {
   _ordersQnt: any = {};
   _totalPrice: number = 0;
+  _searchInCart: string = '';
+  _filteredProds: Array<CartProduct> = [];
+  static _searchInCart: any;
   constructor(
     public apiService: ApiService,
     public settingsService: SettingsService,

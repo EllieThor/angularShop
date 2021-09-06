@@ -10,13 +10,14 @@ import { SettingsService } from './settings.service';
 })
 export class CartsService {
   _userCarts: Array<Cart> = [];
-  _cartItems: Array<CartProduct> = [];
+  _cartProducts: Array<CartProduct> = [];
   _currentCart: Cart = new Cart();
   _recentCart: Cart = new Cart();
   _welcomeByCartStatus: number = 0;
   result: any;
   _fixedTotalPrise: number = 0;
 
+  static _cartProducts: CartProduct[];
   constructor(
     public apiService: ApiService,
     public settingsService: SettingsService,
@@ -80,15 +81,15 @@ export class CartsService {
     let getByPatterns = {
       cartID: this._currentCart.ID,
     };
-    this._cartItems = (await this.apiService.createPostService(
+    this._cartProducts = (await this.apiService.createPostService(
       url,
       getByPatterns
     )) as Array<CartProduct>;
-    console.log('_cartItems: ', this._cartItems);
+    console.log('_cartProducts: ', this._cartProducts);
     // _fixedTotalPrise
-    this._cartItems.map((cartItem) => {
+    this._cartProducts.map((cartItem) => {
       totalPrise += Number(cartItem.product.Price) * Number(cartItem.Qnt);
-      console.log('this._fixedTotalPrise : ', this._cartItems, totalPrise);
+      console.log('this._fixedTotalPrise : ', this._cartProducts, totalPrise);
       // (Number(product.product.Price) * Number(product.Quantity)).toFixed(2);
     });
     // this._fixedTotalPrise = Number(totalPrise).toFixed(2);
@@ -104,7 +105,7 @@ export class CartsService {
       priceForOne: ob.price,
     };
     let qnt;
-    let findIndex = this._cartItems.findIndex(
+    let findIndex = this._cartProducts.findIndex(
       (item) => item.productID == ob.productID
     );
     console.log('findIndex: ', findIndex);
@@ -118,7 +119,7 @@ export class CartsService {
       console.log('result: ', this.result);
     } else {
       // change
-      qnt = this._cartItems[findIndex].Qnt;
+      qnt = this._cartProducts[findIndex].Qnt;
       this.changeQnt('/carts/changeQnt', {
         productID: ob.productID,
         type: 1,

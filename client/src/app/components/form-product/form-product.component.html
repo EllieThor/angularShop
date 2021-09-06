@@ -1,6 +1,4 @@
-<p>form-product works!</p>
-
-<form method="post" class="p-2">
+<form method="post" class="p-2 addProdForm">
   <h5 class="mb-3 fw-normal text-center">הוסף מוצר</h5>
   <input
     [(ngModel)]="productsService._newProductObj.ProductName"
@@ -30,11 +28,41 @@
     required=""
     autoFocus=""
   />
+  <select
+    [(ngModel)]="productsService._newProductObj.CategoryID"
+    [ngModelOptions]="{ standalone: true }"
+    class="form-control m-2"
+  >
+    <option value="0" selected>בחר קטגוריה</option>
+    <option
+      value="{{ category.ID }}"
+      *ngFor="let category of productsService._categories"
+    >
+      {{ category.CategoryName }}
+    </option>
+  </select>
   <!-- TODO: add image -->
-  <input type="file" id="filesToUpload" name="filesToUpload" />
+  <input
+    type="file"
+    id="filesToUpload"
+    class="form-control m-2"
+    name="filesToUpload"
+    [(ngModel)]="productsService._newProductObj.ImageName"
+    [ngModelOptions]="{ standalone: true }"
+  />
+  <div>{{ productsService._newProductObj.ImageName }}</div>
   <!-- // `ProductName`, `Price`, `Description`, `ImageName`, `CategoryID` -->
 
-  <button (click)="productsService.addNewProd('/products/insertProd')">
+  <button
+    class="btn btn-outline-success m-2"
+    (click)="productsService.uploadIMG('/upload')"
+  >
+    העלה תמונה
+  </button>
+  <button
+    class="btn btn-outline-success m-2"
+    (click)="productsService.addNewProd('/products/insertProd')"
+  >
     הוסף מוצר
   </button>
 </form>

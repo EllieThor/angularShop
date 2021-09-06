@@ -4,6 +4,10 @@ const app = express();
 const cors = require("cors");
 const bodyParser = require("body-parser");
 
+// upload images plugins
+var multer = require("multer");
+var path = require("path");
+
 const sequelize = require("./utils/database");
 
 const CategoriesModel = require("./models/CategoriesModel");
@@ -49,6 +53,33 @@ app.use("/orders", OrdersRoute);
 
 app.use((req, res) => {
   res.send("Page NotFound");
+});
+
+// IMAGE UPLOADING
+// specify the folder
+app.use(express.static(path.join(__dirname, "uploads")));
+app.use(function (req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
+var storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, "./uploads/");
+  },
+  filename: function (req, file, cb) {
+    let imgEnd = file.originalname.split(".");
+    imgEnd = imgEnd[imgEnd.length - 1];
+    cb(null, file.originalname);
+  },
+});
+
+var upload = multer({ storage: storage });
+
+app.post("/upload", upload.array("uploads[]", 12), function (req, res) {
+  imgEnd = "";
+  res.send(req.files);
 });
 
 sequelize

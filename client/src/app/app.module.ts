@@ -24,6 +24,7 @@ import { ReceptionComponent } from './pages/orders/reception/reception.component
 import { ShippingDetailsComponent } from './pages/orders/shipping-details/shipping-details.component';
 import { SingleReceptionProdComponent } from './pages/orders/reception/single-reception-prod/single-reception-prod.component';
 import { FormProductComponent } from './components/form-product/form-product.component';
+import { FilteredArrayPipe } from './pipes/filtered-array.pipe';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { FormProductComponent } from './components/form-product/form-product.com
     ShippingDetailsComponent,
     SingleReceptionProdComponent,
     FormProductComponent,
+    FilteredArrayPipe,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],

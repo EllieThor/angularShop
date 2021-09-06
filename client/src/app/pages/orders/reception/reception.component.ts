@@ -10,6 +10,7 @@ import { UsersServiceService } from 'src/app/services/users.service';
   styleUrls: ['./reception.component.css'],
 })
 export class ReceptionComponent implements OnInit {
+  _searchInCart: string = '';
   constructor(
     public usersService: UsersServiceService,
     public cartsService: CartsService,

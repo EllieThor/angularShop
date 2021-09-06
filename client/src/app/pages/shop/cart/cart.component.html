@@ -9,7 +9,7 @@
 </div>
 <hr />
 <button
-  *ngIf="cartsService._cartItems.length !== 0"
+  *ngIf="cartsService._cartProducts.length !== 0"
   class="btn btn-danger"
   (click)="
     cartsService.deleteProductFromCart('/carts/deleteProductFromCart', {
@@ -21,6 +21,6 @@
 </button>
 <div></div>
 <hr />
-<div *ngFor="let item of cartsService._cartItems">
+<div *ngFor="let item of cartsService._cartProducts">
   <app-single-cart-prod [item]="item"></app-single-cart-prod>
 </div>
