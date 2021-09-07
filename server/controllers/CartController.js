@@ -33,6 +33,22 @@ exports.createCart = async (req, res, next) => {
     });
 };
 
+// UPDATE (carts)
+exports.updateCartIsPaid = async (req, res, next) => {
+  let changesOBJ = {
+    IsPaid: 1,
+  };
+  await Carts.update(changesOBJ, { where: { ID: req.body.ID } })
+    .then((user) => {
+      res.send(user);
+      console.log("Jane's auto-generated ID:", user.ID);
+    })
+    .catch((err) => {
+      console.log("Error:", err);
+      res.send(err);
+    });
+};
+
 //carts products
 
 // CREATE (cartProducts)

@@ -54,7 +54,8 @@ export class OrdersService {
     event.preventDefault();
 
     let newOrderObj = {
-      FinalPrice: this._newOrder.FinalPrice,
+      // FinalPrice: this._newOrder.FinalPrice, // TODO: not exist
+      FinalPrice: 50,
       ShippingCity: this._newOrder.ShippingCity,
       ShippingStreet: this._newOrder.ShippingStreet,
       ShippingDate: this._newOrder.ShippingDate,
@@ -69,5 +70,9 @@ export class OrdersService {
       newOrderObj
     );
     console.log('new order: ', this.serverResult);
+
+    this.cartsService.updateIsPaidCartStatus('/carts/updateCartIsPaid', {
+      IsPaid: 1,
+    });
   }
 }

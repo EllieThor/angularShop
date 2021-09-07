@@ -10,7 +10,6 @@ import { SettingsService } from './settings.service';
 })
 export class UsersServiceService {
   _currentUserObj: User = new User();
-  _currentUserID?: number;
   // login
   _logInEmail: string = '';
   _logInPassword: string = '';
@@ -107,8 +106,6 @@ export class UsersServiceService {
 
     console.log('this.serverResult : ', this.serverResult);
     if (this._currentUserObj.ID) {
-      this._currentUserID = this._currentUserObj.ID;
-      console.log('current user ID: ', this._currentUserID);
       this._logInEmail = '';
       this._logInPassword = '';
       this.nav.navigate(['/home']);
@@ -127,18 +124,15 @@ export class UsersServiceService {
       url,
       getByPatterns
     );
-    console.log(
-      'this.serverResult!!!!!!!!!!!!!!!!!!!!!!: ',
-      this.serverResult[0]
-    );
     this._currentUserObj = this.serverResult[0];
-    if (this._currentUserObj.ID) {
-      this._currentUserID = this._currentUserObj.ID;
-      console.log('current user ID: ', this._currentUserID);
+    console.log('this._currentUserObj: ', this._currentUserObj);
+    if (this._currentUserObj.Role === 1) {
+      this.nav.navigate(['/shop']);
+    } else if (this._currentUserObj.ID) {
       this._logInEmail = '';
       this._logInPassword = '';
       let getByPatterns = {
-        userID: this._currentUserID,
+        userID: this._currentUserObj.ID,
       };
       this.cartService.statusCartCheck('/carts/getCarts', getByPatterns);
       // if (this.localStorageUser.user === null) {

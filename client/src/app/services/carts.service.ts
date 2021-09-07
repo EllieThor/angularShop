@@ -153,4 +153,14 @@ export class CartsService {
     )) as any;
     this.gatCartProducts('/carts/getCartProducts');
   }
+
+  // UPDATE (carts)
+  async updateIsPaidCartStatus(url: string, ob?: any) {
+    this.serverResult = (await this.apiService.createPostService(
+      url,
+      ob
+    )) as Cart;
+
+    console.log('serverResult: ', this.serverResult);
+  }
 }
