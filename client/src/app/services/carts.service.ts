@@ -47,15 +47,7 @@ export class CartsService {
     }
   }
 
-  // READ (carts)
-  async getCarts(url: string, ob: any) {
-    this._userCarts = (await this.apiService.createPostService(
-      url,
-      ob
-    )) as Array<Cart>;
-    console.log('getCartFN: ', this._userCarts);
-  }
-
+  // carts
   // CREATE (carts)
   async createCart(url: string, ob: any) {
     this._currentCart = (await this.apiService.createPostService(
@@ -66,34 +58,31 @@ export class CartsService {
     console.log('this._currentCart after create cart: ', this._currentCart);
   }
 
+  // READ (carts)
+  async getCarts(url: string, ob: any) {
+    this._userCarts = (await this.apiService.createPostService(
+      url,
+      ob
+    )) as Array<Cart>;
+    console.log('getCartFN: ', this._userCarts);
+  }
+
+  // UPDATE (carts)
+  async updateIsPaidCartStatus(url: string, ob?: any) {
+    this.serverResult = (await this.apiService.createPostService(
+      url,
+      ob
+    )) as any;
+
+    console.log('updateIsPaidCartStatus serverResult: ', this.serverResult);
+  }
+
   getRecentCart() {
     console.log('getRecentCart');
     // item 0 is the last one (date) because sequelize order the carts : order: [["createdAt", "DESC"]]
     this._recentCart = this._userCarts[0];
     console.log('your recent cart : ', this._recentCart);
     console.log('recent Cart DATE : ', this._recentCart.createdAt);
-  }
-  //FIXME: .toFixed(2) not work with this._fixedTotalPrise
-  // READ (CartProducts)
-  async gatCartProducts(url: string) {
-    let totalPrise = 0;
-    let getByPatterns = {
-      cartID: this._currentCart.ID,
-    };
-    this._cartProducts = (await this.apiService.createPostService(
-      url,
-      getByPatterns
-    )) as Array<CartProduct>;
-    console.log('_cartProducts: ', this._cartProducts);
-    // _fixedTotalPrise
-    this._cartProducts.map((cartItem) => {
-      totalPrise += Number(cartItem.product.Price) * Number(cartItem.Qnt);
-      console.log('this._fixedTotalPrise : ', this._cartProducts, totalPrise);
-      // (Number(product.product.Price) * Number(product.Quantity)).toFixed(2);
-    });
-    // this._fixedTotalPrise = Number(totalPrise).toFixed(2);
-    this._fixedTotalPrise = totalPrise;
-    console.log('this._fixedTotalPrise : ', this._fixedTotalPrise);
   }
 
   // CREATE (CartProducts)
@@ -129,6 +118,29 @@ export class CartsService {
     this.gatCartProducts('/carts/getCartProducts');
   }
 
+  //FIXME: .toFixed(2) not work with this._fixedTotalPrise
+  // READ (CartProducts)
+  async gatCartProducts(url: string) {
+    let totalPrise = 0;
+    let getByPatterns = {
+      cartID: this._currentCart.ID,
+    };
+    this._cartProducts = (await this.apiService.createPostService(
+      url,
+      getByPatterns
+    )) as Array<CartProduct>;
+    console.log('_cartProducts: ', this._cartProducts);
+    // _fixedTotalPrise
+    this._cartProducts.map((cartItem) => {
+      totalPrise += Number(cartItem.product.Price) * Number(cartItem.Qnt);
+      console.log('this._fixedTotalPrise : ', this._cartProducts, totalPrise);
+      // (Number(product.product.Price) * Number(product.Quantity)).toFixed(2);
+    });
+    // this._fixedTotalPrise = Number(totalPrise).toFixed(2);
+    this._fixedTotalPrise = totalPrise;
+    console.log('this._fixedTotalPrise : ', this._fixedTotalPrise);
+  }
+
   // READ (CartProducts)
   async changeQnt(url: string, ob?: any) {
     let getByPatterns = {
@@ -152,15 +164,5 @@ export class CartsService {
       ob
     )) as any;
     this.gatCartProducts('/carts/getCartProducts');
-  }
-
-  // UPDATE (carts)
-  async updateIsPaidCartStatus(url: string, ob?: any) {
-    this.serverResult = (await this.apiService.createPostService(
-      url,
-      ob
-    )) as Cart;
-
-    console.log('serverResult: ', this.serverResult);
   }
 }

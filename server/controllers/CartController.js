@@ -34,14 +34,14 @@ exports.createCart = async (req, res, next) => {
 };
 
 // UPDATE (carts)
-exports.updateCartIsPaid = async (req, res, next) => {
+exports.updateIsPaidCartStatus = async (req, res, next) => {
   let changesOBJ = {
     IsPaid: 1,
   };
   await Carts.update(changesOBJ, { where: { ID: req.body.ID } })
-    .then((user) => {
-      res.send(user);
-      console.log("Jane's auto-generated ID:", user.ID);
+    .then((result) => {
+      res.send(result);
+      console.log("result:", result);
     })
     .catch((err) => {
       console.log("Error:", err);

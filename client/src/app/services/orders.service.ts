@@ -13,6 +13,7 @@ export class OrdersService {
   _ordersQnt: any = {};
   _totalPrice: number = 0;
   _newOrder: Order = new Order();
+  _successfulOrder: Order = new Order();
   serverResult: any;
   _isRegexp: boolean = false;
   constructor(
@@ -65,14 +66,14 @@ export class OrdersService {
     };
     // `ID`, `Price`, `ShippingCity`, `ShippingStreet`, `ShippingDate`, `CreditCard`, `createdAt`, `updatedAt`, `cartID`, `userID`
 
-    this.serverResult = await this.apiService.createPostService(
+    this._successfulOrder = (await this.apiService.createPostService(
       url,
       newOrderObj
-    );
-    console.log('new order: ', this.serverResult);
+    )) as Order;
+    console.log('_successfulOrder: ', this._successfulOrder);
 
-    this.cartsService.updateIsPaidCartStatus('/carts/updateCartIsPaid', {
-      IsPaid: 1,
+    this.cartsService.updateIsPaidCartStatus('/carts/updateIsPaidCartStatus', {
+      ID: this.cartsService._currentCart.ID,
     });
   }
 }

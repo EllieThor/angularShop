@@ -4,7 +4,7 @@ const cartsController = require("../controllers/CartController.js");
 // carts
 router.post("/createCart", cartsController.createCart);
 router.post("/getCarts", cartsController.getCarts);
-router.post("/updateCartIsPaid", cartsController.updateCartIsPaid);
+router.post("/updateIsPaidCartStatus", cartsController.updateIsPaidCartStatus);
 
 //cartsProducts
 router.post("/insertProdToCartProducts", cartsController.insertProdToCartProducts);
