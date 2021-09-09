@@ -25,12 +25,12 @@
       id="userEmail"
       type="email"
       class="form-control m-2"
-      placeholder='כתובת דוא"לך'
+      placeholder='כתובת דוא"ל'
       required
     />
   </label>
   <br />
-  <label for="userPassword" class="text-end">
+  <label for="userPassword" class="text-end me-3">
     :הכנס סיסמה
     <input
       [(ngModel)]="usersService._newUserObject.Password"
@@ -40,11 +40,31 @@
       class="form-control m-2"
       placeholder="סיסמה"
       required
-      (keyup)="usersService.checkPassword()"
+      [ngClass]="
+        usersService._newUserObject.Password ===
+          usersService._newPasswordRepeat &&
+        usersService._newUserObject.Password !== ''
+          ? 'border-success'
+          : 'border-danger'
+      "
     />
   </label>
+  <i
+    *ngIf="
+      usersService._newUserObject.Password ===
+        usersService._newPasswordRepeat &&
+      usersService._newUserObject.Password !== ''
+    "
+    class="far fa-check-circle text-success"
+  ></i>
+  <i
+    *ngIf="
+      usersService._newUserObject.Password !== usersService._newPasswordRepeat
+    "
+    class="far fa-times-circle text-danger"
+  ></i>
   <br />
-  <label for="userRepeatPass" class="text-end">
+  <label for="userRepeatPass" class="text-end me-3">
     :אימות סיסמה
     <input
       [(ngModel)]="usersService._newPasswordRepeat"
@@ -54,9 +74,48 @@
       class="form-control m-2"
       placeholder="אימות סיסמה"
       required
-      (keyup)="usersService.checkPassword()"
+      [ngClass]="
+        usersService._newUserObject.Password ===
+          usersService._newPasswordRepeat &&
+        usersService._newUserObject.Password !== ''
+          ? 'border-success'
+          : 'border-danger'
+      "
     />
   </label>
+  <i
+    *ngIf="
+      usersService._newUserObject.Password ===
+        usersService._newPasswordRepeat &&
+      usersService._newUserObject.Password !== ''
+    "
+    class="far fa-check-circle text-success"
+  ></i>
+  <i
+    *ngIf="
+      usersService._newUserObject.Password !== usersService._newPasswordRepeat
+    "
+    class="far fa-times-circle text-danger"
+  ></i>
+  <div
+    [ngClass]="
+      usersService._newUserObject.Password === usersService._newPasswordRepeat
+        ? 'text-success'
+        : 'text-danger'
+    "
+  >
+    {{
+      usersService._newUserObject.Password ===
+        usersService._newPasswordRepeat &&
+      usersService._newUserObject.Password !== ""
+        ? "סיסמאות תואמות"
+        : usersService._newUserObject.Password !==
+            usersService._newPasswordRepeat &&
+          usersService._newUserObject.Password !== ""
+        ? "סיסמאות לא תואמות"
+        : ""
+    }}
+  </div>
   <br />
   <!--עם הקליק מתבטלים הפרטנים -->
   <button
@@ -67,9 +126,11 @@
     הבא
   </button>
 </form>
-<div
+<!-- <div
   [ngClass]="usersService._isPasswordMatching ? 'text-success' : 'text-danger'"
 >
-  {{ usersService._isPasswordMatching ? "סיסמה תואמת" : "סיסמה לא תואמת" }}
-</div>
+  {{ usersService._isPasswordMatching ? "סיסמאות תואמות" : "סיסמאות לא תואמות" }}
+</div> -->
+
 <!-- *ngIf="usersService._isPasswordMatching" -->
+<!-- *ngIf="usersService._newUserObject.Password !== usersService._newPasswordRepeat" -->

@@ -26,18 +26,17 @@ export class SuccessfulOrderComponent implements OnInit {
 
   ngOnInit(): void {
     // _successfulOrder
-    let cartID = this.ordersService._successfulOrder.cartID;
     let _cartProducts = this.cartsService._cartProducts;
     let cart = this.cartsService._userCarts.find(
       (cart) => cart.ID === this.ordersService._successfulOrder.cartID
     );
     let prodList = '';
     _cartProducts.map((product) => this.printSingleProd(product));
-    console.log('app-successful-order cartID : ', cartID);
-    console.log('app-successful-order cart : ', cart);
-    console.log('app-successful-order _cartProducts : ', _cartProducts);
+    // console.log('app-successful-order cart : ', cart);
+    // console.log('app-successful-order _cartProducts : ', _cartProducts);
 
     const data = 'some text!!';
+
     // const blob = new Blob([data], { type: 'application/octet-stream' });
     const blob = new Blob([this._text], { type: 'application/octet-stream' });
 
@@ -47,19 +46,10 @@ export class SuccessfulOrderComponent implements OnInit {
   }
   // TODO: אם יש מאותו מוצר יותר מאחד- יהיה מחיר לאחד, סימן כפול וכמות
   printSingleProd(ob: CartProduct) {
-    // this._text = ob.product.ProductName;
-    this._text =
-      ob.product.ProductName +
-      'סכום: ' +
-      ob.TotalPrice +
-      ob.product.Price +
-      ' x' +
-      ob.Qnt +
-      '= ' +
-      ob.TotalPrice;
-    this._text += `${ob.product.ProductName}   סכום: ${ob.TotalPrice}    ${
-      ob.Qnt > 1 ? ob.Qnt + ' x ' + ob.product.Price : ''
-    }`;
+    let qntOverOne = `${ob.Qnt}  x  ${ob.product.Price}`;
+    this._text += `${ob.product.ProductName}   סכום: ${ob.TotalPrice}   ${
+      ob.Qnt > 1 ? qntOverOne : ''
+    }\n`;
   }
 }
 //  {

@@ -64,6 +64,7 @@ export class UsersServiceService {
     }
   }
 
+  // TODO: delete this fn
   checkPassword = () => {
     this._newUserObject.Password !== this._newPasswordRepeat
       ? (this._isPasswordMatching = false)

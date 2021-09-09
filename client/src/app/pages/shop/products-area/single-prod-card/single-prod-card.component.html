@@ -1,5 +1,9 @@
 <div class="card">
-  <img class="card-img-top productImg" alt="{{ product.ProductName }}" />
+  <img
+    class="card-img-top productImg"
+    src="assets/images/{{ product.ImageName }}"
+    alt="{{ product.ProductName }}"
+  />
   <div class="card-body productCard d-grid gap-2">
     <h6 class="card-title">{{ product.ProductName }}</h6>
     <p class="card-text cardDescription">{{ product.Description }}</p>
