@@ -57,6 +57,9 @@ export class SuccessfulOrderComponent implements OnInit {
       ob.Qnt +
       '= ' +
       ob.TotalPrice;
+    this._text += `${ob.product.ProductName}   סכום: ${ob.TotalPrice}    ${
+      ob.Qnt > 1 ? ob.Qnt + ' x ' + ob.product.Price : ''
+    }`;
   }
 }
 //  {

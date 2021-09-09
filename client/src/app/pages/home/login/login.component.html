@@ -5,19 +5,17 @@
   (click)="cartsService.gatCartProducts('/carts/getCartProducts')"
 >
   {{
-    cartsService._welcomeByCartStatus === 2
-      ? "Resume Shopping"
-      : "start Shopping"
+    cartsService._welcomeByCartStatus === 2 ? "המשכ.י לקנייה" : "התחל.י בקנייה"
   }}
 </button>
 <form method="post" class="p-2" *ngIf="!usersService._currentUserObj.ID">
-  <h5 class="mb-3 fw-normal text-center">Login</h5>
+  <h5 class="mb-3 fw-normal text-center">התחבר.י</h5>
   <input
     [(ngModel)]="usersService._logInEmail"
     [ngModelOptions]="{ standalone: true }"
     type="email"
     class="form-control m-2"
-    placeholder="Email address"
+    placeholder='כתובת דוא"ל'
     required=""
     autoFocus=""
   />
@@ -26,7 +24,7 @@
     [ngModelOptions]="{ standalone: true }"
     type="password"
     class="form-control m-2"
-    placeholder="Password"
+    placeholder="סיסמה"
     required=""
     autoComplete=""
   />
@@ -35,9 +33,7 @@
     type="submit"
     (click)="usersService.gatUserFromDB('/users/getUser', $event)"
   >
-    Log in
+    התחברות
   </button>
-  <button class="btn btn-success m-2" routerLink="/registration">
-    Sing Up
-  </button>
+  <button class="btn btn-success m-2" routerLink="/registration">הרשמה</button>
 </form>

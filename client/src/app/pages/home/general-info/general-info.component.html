@@ -1,32 +1,31 @@
-<h5>orders in our shop: {{ ordersService._ordersQnt.ordersCount }}</h5>
-<h5>products in our shop: {{ productsService._productsQnt.prodCount }}</h5>
-<p>notifications</p>
+<h5>כמות הזמנות בחנות: {{ ordersService._ordersQnt.ordersCount }}</h5>
+<h5>כמות מוצרים בחנות: {{ productsService._productsQnt.prodCount }}</h5>
+<p>: התראות</p>
 <!-- FIXME: למה שלום מופיע כל הזמן -->
 <h4>
   {{
     usersService._currentUserObj.ID === 0
       ? ""
-      : "Hello, " + usersService._currentUserObj.FirstName
+      : "שלום, " + usersService._currentUserObj.FirstName
   }}
 </h4>
+<!-- FIXME: מתכונת הזמן לא תקינה והטקסט נכתב באמצע התאריך -->
 <p>
   {{
-    cartService._welcomeByCartStatus === 1
-      ? "welcome for your first purchase"
-      : ""
+    cartService._welcomeByCartStatus === 1 ? "ברוכ.ה הבא.ה לקנייתך הראשונה" : ""
   }}
 </p>
 <p>
   {{
     cartService._welcomeByCartStatus === 2
-      ? "you have an open cart from  " + cartService._currentCart.createdAt
+      ? "  :יש לך עגלה פתוחה מ" + cartService._currentCart.createdAt
       : ""
   }}
 </p>
 <p>
   {{
     cartService._welcomeByCartStatus === 3
-      ? "your last purchase was on  " + cartService._recentCart.createdAt
+      ? ": רכישתך האחרונה בוצעה ב" + cartService._recentCart.createdAt
       : ""
   }}
 </p>

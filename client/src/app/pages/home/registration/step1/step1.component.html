@@ -7,7 +7,7 @@
       id="ID"
       type="text"
       class="form-control m-2"
-      placeholder="ID"
+      placeholder="תעודת זהות"
       autoFocus=""
       required
       pattern="[0-9]{9}"
@@ -25,7 +25,7 @@
       id="userEmail"
       type="email"
       class="form-control m-2"
-      placeholder="Email"
+      placeholder='כתובת דוא"לך'
       required
     />
   </label>
@@ -38,7 +38,7 @@
       id="userPassword"
       type="password"
       class="form-control m-2"
-      placeholder="password"
+      placeholder="סיסמה"
       required
       (keyup)="usersService.checkPassword()"
     />
@@ -52,7 +52,7 @@
       id="userRepeatPass"
       type="password"
       class="form-control m-2"
-      placeholder="confirm password"
+      placeholder="אימות סיסמה"
       required
       (keyup)="usersService.checkPassword()"
     />
@@ -64,7 +64,7 @@
     type="submit"
     (click)="usersService.isIDExist('/users/isIDExist', $event)"
   >
-    Next
+    הבא
   </button>
 </form>
 <div

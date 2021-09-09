@@ -9,6 +9,9 @@
       aria-label="Default select example"
       [(ngModel)]="ordersService._newOrder.ShippingCity"
       [ngModelOptions]="{ standalone: true }"
+      (dblclick)="
+        ordersService._newOrder.ShippingCity = usersService._currentUserObj.City
+      "
     >
       <option
         *ngFor="let city of cities; let i = index"
@@ -30,6 +33,10 @@
       placeholder="שם רחוב"
       autoFocus=""
       required
+      (dblclick)="
+        ordersService._newOrder.ShippingStreet =
+          usersService._currentUserObj.Street
+      "
     />
   </label>
   <br />

@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { User } from '../models/usersModel';
 import { ApiService } from './api.service';
 import { CartsService } from './carts.service';
+import { OrdersService } from './orders.service';
 import { SettingsService } from './settings.service';
 
 @Injectable({
