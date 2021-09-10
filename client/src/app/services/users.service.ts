@@ -21,7 +21,6 @@ export class UsersServiceService {
 
   // registration password
   _newPasswordRepeat: string = '';
-  _isPasswordMatching: boolean = false;
 
   serverResult: any;
 
@@ -44,7 +43,7 @@ export class UsersServiceService {
       this._newUserObject.ID === 0 ||
       this._newUserObject.Email === '' ||
       this._newUserObject.Password === '' ||
-      this._isPasswordMatching === false
+      this._newUserObject.Password !== this._newPasswordRepeat
     ) {
       alert('all felids must be felid');
     } else {
@@ -63,13 +62,6 @@ export class UsersServiceService {
       }
     }
   }
-
-  // TODO: delete this fn
-  checkPassword = () => {
-    this._newUserObject.Password !== this._newPasswordRepeat
-      ? (this._isPasswordMatching = false)
-      : (this._isPasswordMatching = true);
-  };
 
   // registration step 2
 

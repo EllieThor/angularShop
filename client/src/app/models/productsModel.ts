@@ -20,7 +20,7 @@ export class Category {
 export class Product {
   ID: number = 0;
   ProductName: string = '';
-  Price: number = 0;
+  Price?: number;
   Description: string = '';
   ImageName: string = '';
   createdAt: string = '';
@@ -39,7 +39,7 @@ export class Product {
   ) {
     this.ID = ID || 0;
     this.ProductName = ProductName || '';
-    this.Price = Price || 0;
+    this.Price = Price;
     this.Description = Description || '';
     this.ImageName = ImageName || '';
     this.createdAt = createdAt || '';

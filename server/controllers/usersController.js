@@ -63,16 +63,3 @@ exports.getUser = async (req, res, next) => {
       res.send(err);
     });
 };
-
-// // `ID`, `FirstName`, `LastName`, `Email`, `Password`, `Phone`, `Street`, `StreetNumber`, `FlatNumber`, `City`, `createdAt`, `updatedAt`;
-// exports.getAllUsersFromDb = async (req, res, next) => {
-//   let getByOBJ = req.body;
-
-//   await Users.findAll({ attributes: ["FirstName", "LastName", "Email", "Phone", "Street", "StreetNumber", "FlatNumber", "City"] })
-//     .then((users) => {
-//       res.send(users);
-//     })
-//     .catch((err) => {
-//       res.send(err);
-//     });
-// };

@@ -62,7 +62,7 @@
   <button
     *ngIf="productsService._addVsEdit === 0"
     class="btn btn-outline-success m-2"
-    (click)="productsService.addNewProd('/products/insertProd')"
+    (click)="productsService.addNewProd('/products/addProduct', $event)"
   >
     הוסף מוצר
   </button>
@@ -70,7 +70,7 @@
   <button
     *ngIf="productsService._addVsEdit === 1"
     class="btn btn-outline-success m-2"
-    (click)="productsService.updateProd('/products/insertProd')"
+    (click)="productsService.updateProd('/products/updateProduct', $event)"
   >
     עדכן פרטים
   </button>

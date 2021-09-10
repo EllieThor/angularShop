@@ -15,7 +15,7 @@ exports.getProducts = async (req, res, next) => {
 };
 
 // CREATE (products)
-exports.insertProd = async (req, res, next) => {
+exports.addProduct = async (req, res, next) => {
   let addOBJ = {
     ProductName: req.body.ProductName,
     Price: req.body.Price,

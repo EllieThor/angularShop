@@ -2,30 +2,26 @@
 <h5>כמות מוצרים בחנות: {{ productsService._productsQnt.prodCount }}</h5>
 <p>: התראות</p>
 <!-- FIXME: למה שלום מופיע כל הזמן -->
-<h4>
-  {{
-    usersService._currentUserObj.ID === 0
-      ? ""
-      : "שלום, " + usersService._currentUserObj.FirstName
-  }}
+<h4 *ngIf="usersService._currentUserObj.ID">
+  ,שלום
+  {{ usersService._currentUserObj.FirstName }}
 </h4>
-<!-- FIXME: מתכונת הזמן לא תקינה והטקסט נכתב באמצע התאריך -->
-<p>
-  {{
-    cartService._welcomeByCartStatus === 1 ? "ברוכ.ה הבא.ה לקנייתך הראשונה" : ""
-  }}
+<!-- FIXME: מתכונת הזמן לא תקינה -->
+
+<h6 *ngIf="cartService._welcomeByCartStatus === 1">
+  ברוכ.ה הבא.ה לקנייתך הראשונה
+</h6>
+<h6 *ngIf="cartService._welcomeByCartStatus === 2">:יש לך עגלה פתוחה מ</h6>
+<p *ngIf="cartService._welcomeByCartStatus === 2">
+  {{ cartService._currentCart.createdAt }}
 </p>
-<p>
-  {{
-    cartService._welcomeByCartStatus === 2
-      ? "  :יש לך עגלה פתוחה מ" + cartService._currentCart.createdAt
-      : ""
-  }}
+<h6 *ngIf="cartService._welcomeByCartStatus === 3">רכישתך האחרונה בוצעה ב</h6>
+<p *ngIf="cartService._welcomeByCartStatus === 3">
+  {{ cartService._recentCart.createdAt }}
 </p>
-<p>
-  {{
-    cartService._welcomeByCartStatus === 3
-      ? ": רכישתך האחרונה בוצעה ב" + cartService._recentCart.createdAt
-      : ""
-  }}
-</p>
+<!-- .moment().format("LLLL") -->
+<!-- .slice(0, 10)
+      .replace("-", "/")
+      .split("/")
+      .reverse()
+      .join("/") -->

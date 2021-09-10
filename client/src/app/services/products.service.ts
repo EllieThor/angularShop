@@ -3,6 +3,10 @@ import { Category, Product } from '../models/productsModel';
 import { ApiService } from './api.service';
 import { SettingsService } from './settings.service';
 
+import * as moment from 'moment';
+import 'moment/locale/pt-br';
+// moment().format('LLLL');
+
 @Injectable({
   providedIn: 'root',
 })
@@ -17,13 +21,17 @@ export class ProductsService {
   _showAdminForm: boolean = false;
   // add-0, edit-1
   _addVsEdit: number = 0;
-
+  _time: any;
   constructor(
     public apiService: ApiService,
     public settingsService: SettingsService
-  ) {}
+  ) {
+    // this._time = moment().format('LLLL');
+    // console.log('time: ', this._time);
+  }
 
   async addNewProd(url: string, event?: any) {
+    // TODO: validation
     event.preventDefault();
     let newProdObj = {
       ProductName: this._newProductObj.ProductName,
@@ -38,7 +46,11 @@ export class ProductsService {
       url,
       newProdObj
     );
-    console.log('new Product: ', this.serverResult);
+    console.log('this.serverResult addNewProd: ', this.serverResult);
+    this._newProductObj = new Product();
+    this.getProducts('/products/getProducts', {
+      categoryID: this.serverResult.categoryID,
+    });
   }
 
   async getProductsQnt(url: string) {
@@ -58,7 +70,9 @@ export class ProductsService {
     )) as Array<Product>;
   }
 
-  async updateProd(url: string) {
+  async updateProd(url: string, event?: any) {
+    // TODO: validation
+    event.preventDefault();
     let ob = {
       ID: this._newProductObj.ID,
       ProductName: this._newProductObj.ProductName,
@@ -67,13 +81,17 @@ export class ProductsService {
       ImageName: this._newProductObj.ImageName,
       categoryID: this._newProductObj.categoryID,
     };
-    console.log('obobobobobobobobobob: ', ob);
+    console.log('ob updateProd : ', ob);
 
     this.serverResult = (await this.apiService.createPostService(
       url,
       ob
     )) as any;
-    console.log('this.serverResult: ', this.serverResult);
+    console.log('this.serverResult updateProd: ', this.serverResult);
+    this.getProducts('/products/getProducts', {
+      categoryID: this._newProductObj.categoryID,
+    });
+    this._newProductObj = new Product();
   }
 
   async searchForProd(url: string) {

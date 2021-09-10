@@ -23,9 +23,9 @@ exports.createCart = async (req, res, next) => {
   };
   // await Carts.create(req.body)
   await Carts.create(newUserOBJ)
-    .then((user) => {
-      res.send(user);
-      console.log("Jane's auto-generated ID:", user.ID);
+    .then((cart) => {
+      res.send(cart);
+      console.log("cart ID:", cart.ID);
     })
     .catch((err) => {
       console.log("Error:", err);

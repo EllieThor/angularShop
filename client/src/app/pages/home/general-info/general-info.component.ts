@@ -3,7 +3,8 @@ import { CartsService } from 'src/app/services/carts.service';
 import { OrdersService } from 'src/app/services/orders.service';
 import { ProductsService } from 'src/app/services/products.service';
 import { UsersServiceService } from 'src/app/services/users.service';
-
+import * as moment from 'moment';
+import 'moment/locale/pt-br';
 @Component({
   selector: 'app-general-info',
   templateUrl: './general-info.component.html',

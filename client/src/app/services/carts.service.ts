@@ -50,6 +50,7 @@ export class CartsService {
   // carts
   // CREATE (carts)
   async createCart(url: string, ob: any) {
+    console.log('this._currentCart obobobobob: ', ob);
     this._currentCart = (await this.apiService.createPostService(
       url,
       ob
