@@ -18,6 +18,7 @@ export class Category {
 }
 
 export class Product {
+  [x: string]: any;
   ID: number = 0;
   ProductName: string = '';
   Price: number = 0;

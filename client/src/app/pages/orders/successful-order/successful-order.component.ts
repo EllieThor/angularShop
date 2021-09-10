@@ -30,14 +30,9 @@ export class SuccessfulOrderComponent implements OnInit {
     let cart = this.cartsService._userCarts.find(
       (cart) => cart.ID === this.ordersService._successfulOrder.cartID
     );
-    let prodList = '';
+    console.log('$$$$$$$$$$$$$$$$$$: ', cart);
     _cartProducts.map((product) => this.printSingleProd(product));
-    // console.log('app-successful-order cart : ', cart);
-    // console.log('app-successful-order _cartProducts : ', _cartProducts);
 
-    const data = 'some text!!';
-
-    // const blob = new Blob([data], { type: 'application/octet-stream' });
     const blob = new Blob([this._text], { type: 'application/octet-stream' });
 
     this.fileUrl = this.sanitizer.bypassSecurityTrustResourceUrl(

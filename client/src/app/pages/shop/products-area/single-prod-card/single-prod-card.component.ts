@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Product } from 'src/app/models/productsModel';
 import { CartsService } from 'src/app/services/carts.service';
 import { ProductsService } from 'src/app/services/products.service';
+import { UsersServiceService } from 'src/app/services/users.service';
 
 @Component({
   selector: 'app-single-prod-card',
@@ -12,7 +13,8 @@ export class SingleProdCardComponent implements OnInit {
   @Input() product: Product = new Product();
   constructor(
     public cartsService: CartsService,
-    public productsService: ProductsService
+    public productsService: ProductsService,
+    public usersService: UsersServiceService
   ) {}
 
   ngOnInit(): void {}

@@ -21,9 +21,9 @@ exports.insertProd = async (req, res, next) => {
     Price: req.body.Price,
     Description: req.body.Description,
     ImageName: req.body.ImageName,
-    CategoryID: req.body.CategoryID,
+    categoryID: req.body.CategoryID,
   };
-  // `ProductName`, `Price`, `Description`, `ImageName`, `CategoryID`
+  // `ProductName`, `Price`, `Description`, `ImageName`, `categoryID`
   await Products.create(addOBJ)
     .then((result) => {
       res.send(result);

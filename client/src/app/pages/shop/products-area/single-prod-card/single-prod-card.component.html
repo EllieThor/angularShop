@@ -9,6 +9,7 @@
     <p class="card-text cardDescription">{{ product.Description }}</p>
     <h4 class="card-text">{{ product.Price }} &#8362;</h4>
     <i
+      *ngIf="usersService._currentUserObj.Role === 0"
       class="cartPlusIcon fas fa-lg fa-cart-plus"
       title="הוסף לעגלה"
       (click)="
@@ -18,5 +19,17 @@
         })
       "
     ></i>
+    <i
+      *ngIf="usersService._currentUserObj.Role === 1"
+      class="far fa-edit"
+      (click)="
+        productsService._showAdminForm = true;
+        productsService._addVsEdit = 1;
+        productsService.editProdClick(product)
+      "
+    ></i>
   </div>
 </div>
+
+<!--  this.cartsService._cartProducts.find((prod) => prod.ID===product.ID) -->
+<!-- this.cartsService._cartProducts.find((prod) => prod.ID===product.ID)!==undefined -->

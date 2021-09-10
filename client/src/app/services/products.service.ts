@@ -13,6 +13,10 @@ export class ProductsService {
   _newProductObj: Product = new Product();
   _searchFor: string = '';
   serverResult: any;
+  // admin product form
+  _showAdminForm: boolean = false;
+  // add-0, edit-1
+  _addVsEdit: number = 0;
 
   constructor(
     public apiService: ApiService,
@@ -54,6 +58,22 @@ export class ProductsService {
     )) as Array<Product>;
   }
 
+  async updateProd(url: string) {
+    let ob = {
+      ID: this._newProductObj.ID,
+      ProductName: this._newProductObj.ProductName,
+      Price: this._newProductObj.Price,
+      Description: this._newProductObj.Description,
+      ImageName: this._newProductObj.ImageName,
+      CategoryID: this._newProductObj.CategoryID,
+    };
+
+    this.serverResult = (await this.apiService.createPostService(
+      url,
+      ob
+    )) as any;
+  }
+
   async searchForProd(url: string) {
     let searchFor = {
       searchFor: this._searchFor,
@@ -89,4 +109,22 @@ export class ProductsService {
       alert('Click to upload image please');
     }
   }
+
+  editProdClick(ob: any) {
+    console.log('obbbbbbbbbbbbbbbbbb: ', ob);
+    this._newProductObj.ID = ob.ID;
+    this._newProductObj.ProductName = ob.ProductName;
+    this._newProductObj.Price = ob.Price;
+    this._newProductObj.Description = ob.Description;
+    this._newProductObj.ImageName = ob.ImageName;
+    this._newProductObj.CategoryID = ob.categoryID;
+    console.log('aaaaaaaaaaaaaaaaa:', this._newProductObj);
+  }
+
+  addClick() {
+    this._showAdminForm = true;
+    this._addVsEdit = 0;
+    this._newProductObj = new Product();
+  }
+  // `ID`, `ProductName`, `Price`, `Description`, `ImageName`, `createdAt`, `updatedAt`, `categoryID`
 }

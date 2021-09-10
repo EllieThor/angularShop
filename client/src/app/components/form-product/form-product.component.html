@@ -60,9 +60,18 @@
     העלה תמונה
   </button>
   <button
+    *ngIf="productsService._addVsEdit === 0"
     class="btn btn-outline-success m-2"
     (click)="productsService.addNewProd('/products/insertProd')"
   >
     הוסף מוצר
+  </button>
+
+  <button
+    *ngIf="productsService._addVsEdit === 1"
+    class="btn btn-outline-success m-2"
+    (click)="productsService.updateProd('/products/insertProd')"
+  >
+    עדכן פרטים
   </button>
 </form>
