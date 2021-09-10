@@ -31,7 +31,7 @@
 <div *ngIf="usersService._currentUserObj.Role === 1">
   <div class="row">
     <div class="col-6">
-      <i class="fas fa-plus" (click)="productsService.addClick()"></i>
+      <i class="fas fa-plus" (click)="productsService.addProdClick()"></i>
     </div>
     <div class="col-6"></div>
   </div>
@@ -41,3 +41,9 @@
   </div>
 </div>
 <!-- (click)="productsService._showAdminForm = true; productsService._addVsEdit = 0 " -->
+<!--  <i
+        class="fas fa-plus"
+        (click)="
+          productsService._showAdminForm = true; productsService._addVsEdit = 0;productsService._newProductObj = new Product()
+        "
+      ></i> -->

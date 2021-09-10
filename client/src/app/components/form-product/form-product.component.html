@@ -29,7 +29,7 @@
     autoFocus=""
   />
   <select
-    [(ngModel)]="productsService._newProductObj.CategoryID"
+    [(ngModel)]="productsService._newProductObj.categoryID"
     [ngModelOptions]="{ standalone: true }"
     class="form-control m-2"
   >
@@ -51,7 +51,7 @@
     [ngModelOptions]="{ standalone: true }"
   />
   <div>{{ productsService._newProductObj.ImageName }}</div>
-  <!-- // `ProductName`, `Price`, `Description`, `ImageName`, `CategoryID` -->
+  <!-- // `ProductName`, `Price`, `Description`, `ImageName`, `categoryID` -->
 
   <button
     class="btn btn-outline-success m-2"

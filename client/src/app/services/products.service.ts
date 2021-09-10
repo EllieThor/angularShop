@@ -30,9 +30,9 @@ export class ProductsService {
       Price: this._newProductObj.Price,
       Description: this._newProductObj.Description,
       ImageName: this._newProductObj.ImageName,
-      CategoryID: this._newProductObj.CategoryID,
+      categoryID: this._newProductObj.categoryID,
     };
-    // `ProductName`, `Price`, `Description`, `ImageName`, `CategoryID`
+    // `ProductName`, `Price`, `Description`, `ImageName`, `categoryID`
 
     this.serverResult = await this.apiService.createPostService(
       url,
@@ -65,13 +65,15 @@ export class ProductsService {
       Price: this._newProductObj.Price,
       Description: this._newProductObj.Description,
       ImageName: this._newProductObj.ImageName,
-      CategoryID: this._newProductObj.CategoryID,
+      categoryID: this._newProductObj.categoryID,
     };
+    console.log('obobobobobobobobobob: ', ob);
 
     this.serverResult = (await this.apiService.createPostService(
       url,
       ob
     )) as any;
+    console.log('this.serverResult: ', this.serverResult);
   }
 
   async searchForProd(url: string) {
@@ -110,18 +112,7 @@ export class ProductsService {
     }
   }
 
-  editProdClick(ob: any) {
-    console.log('obbbbbbbbbbbbbbbbbb: ', ob);
-    this._newProductObj.ID = ob.ID;
-    this._newProductObj.ProductName = ob.ProductName;
-    this._newProductObj.Price = ob.Price;
-    this._newProductObj.Description = ob.Description;
-    this._newProductObj.ImageName = ob.ImageName;
-    this._newProductObj.CategoryID = ob.categoryID;
-    console.log('aaaaaaaaaaaaaaaaa:', this._newProductObj);
-  }
-
-  addClick() {
+  addProdClick() {
     this._showAdminForm = true;
     this._addVsEdit = 0;
     this._newProductObj = new Product();

@@ -18,7 +18,6 @@ export class Category {
 }
 
 export class Product {
-  [x: string]: any;
   ID: number = 0;
   ProductName: string = '';
   Price: number = 0;
@@ -26,7 +25,7 @@ export class Product {
   ImageName: string = '';
   createdAt: string = '';
   updatedAt: string = '';
-  CategoryID: number = 0;
+  categoryID: number = 0;
 
   constructor(
     ID?: number,
@@ -36,7 +35,7 @@ export class Product {
     ImageName?: string,
     createdAt?: string,
     updatedAt?: string,
-    CategoryID?: number
+    categoryID?: number
   ) {
     this.ID = ID || 0;
     this.ProductName = ProductName || '';
@@ -45,6 +44,6 @@ export class Product {
     this.ImageName = ImageName || '';
     this.createdAt = createdAt || '';
     this.updatedAt = updatedAt || '';
-    this.CategoryID = CategoryID || 0;
+    this.categoryID = categoryID || 0;
   }
 }

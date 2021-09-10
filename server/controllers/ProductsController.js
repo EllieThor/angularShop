@@ -21,7 +21,7 @@ exports.insertProd = async (req, res, next) => {
     Price: req.body.Price,
     Description: req.body.Description,
     ImageName: req.body.ImageName,
-    categoryID: req.body.CategoryID,
+    categoryID: req.body.categoryID,
   };
   // `ProductName`, `Price`, `Description`, `ImageName`, `categoryID`
   await Products.create(addOBJ)
@@ -70,6 +70,19 @@ exports.searchForProd = async (req, res, next) => {
       res.send(prod);
     })
     .catch((err) => {
+      res.send(err);
+    });
+};
+
+// UPDATE (product)
+exports.updateProduct = async (req, res, next) => {
+  await Products.update(req.body, { where: { ID: req.body.ID } })
+    .then((result) => {
+      res.send(result);
+      console.log("result:", result);
+    })
+    .catch((err) => {
+      console.log("Error:", err);
       res.send(err);
     });
 };
