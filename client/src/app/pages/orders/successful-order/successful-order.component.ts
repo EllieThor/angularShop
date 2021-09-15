@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { CartProduct } from 'src/app/models/cartProductsModel';
+import { Order } from 'src/app/models/ordersModel';
 import { CartsService } from 'src/app/services/carts.service';
 import { OrdersService } from 'src/app/services/orders.service';
 import { ProductsService } from 'src/app/services/products.service';
@@ -15,6 +16,8 @@ import { UsersServiceService } from 'src/app/services/users.service';
 export class SuccessfulOrderComponent implements OnInit {
   fileUrl!: SafeResourceUrl;
   _text: string = '';
+  _introduction: string = '';
+  _newOrder: Order = new Order();
   constructor(
     private sanitizer: DomSanitizer,
     public usersService: UsersServiceService,
@@ -26,14 +29,15 @@ export class SuccessfulOrderComponent implements OnInit {
 
   ngOnInit(): void {
     // _successfulOrder
-    let _cartProducts = this.cartsService._cartProducts;
-    let cart = this.cartsService._userCarts.find(
-      (cart) => cart.ID === this.ordersService._successfulOrder.cartID
-    );
-    console.log('$$$$$$$$$$$$$$$$$$: ', cart);
-    _cartProducts.map((product) => this.printSingleProd(product));
 
-    const blob = new Blob([this._text], { type: 'application/octet-stream' });
+    this.cartsService._cartProducts.map((product) =>
+      this.printSingleProd(product)
+    );
+
+    this._introduction = `SWEET HEART \n reception \n ${this.ordersService._successfulOrder.createdAt}\n \n`;
+    const blob = new Blob([this._introduction + this._text], {
+      type: 'application/octet-stream',
+    });
 
     this.fileUrl = this.sanitizer.bypassSecurityTrustResourceUrl(
       window.URL.createObjectURL(blob)
@@ -41,8 +45,8 @@ export class SuccessfulOrderComponent implements OnInit {
   }
   // TODO: אם יש מאותו מוצר יותר מאחד- יהיה מחיר לאחד, סימן כפול וכמות
   printSingleProd(ob: CartProduct) {
-    let qntOverOne = `${ob.Qnt}  x  ${ob.product.Price}`;
-    this._text += `${ob.product.ProductName}   סכום: ${ob.TotalPrice}   ${
+    let qntOverOne = ` \n${ob.product.Price}  x ${ob.Qnt}  `;
+    this._text += `${ob.product.ProductName}   סכום: ${ob.TotalPrice}  ${
       ob.Qnt > 1 ? qntOverOne : ''
     }\n`;
   }

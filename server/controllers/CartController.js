@@ -52,7 +52,7 @@ exports.updateIsPaidCartStatus = async (req, res, next) => {
 //carts products
 
 // CREATE (cartProducts)
-exports.insertProdToCartProducts = async (req, res, next) => {
+exports.insertProdToCart = async (req, res, next) => {
   let addOBJ = {
     cartID: req.body.cartID,
     productID: req.body.productID,

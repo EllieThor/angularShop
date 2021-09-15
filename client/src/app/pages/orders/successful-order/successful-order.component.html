@@ -1,3 +1,6 @@
 <h6>הזמנה התקבלה בהצלחה</h6>
 <a [href]="fileUrl" class="linksPointer" download="file.txt">להורדת קבלה לחץ</a>
-<div class="backToShop" class="linksPointer" routerLink="/home">אישור</div>
+<div class="backToShop" class="linksPointer" (click)="ordersService.goHome()">
+  אישור
+</div>
+<!--  routerLink="/home" -->

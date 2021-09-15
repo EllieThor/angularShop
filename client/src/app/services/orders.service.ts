@@ -32,10 +32,6 @@ export class OrdersService {
   //   this._totalPrice = (await this.apiService.createPostService(url)) as number;
   // }
 
-  autoCorrect() {
-    console.log('a');
-  }
-
   creditRegex(e: any) {
     let regexp =
       /^(?:(4[0-9]{12}(?:[0-9]{3})?)|(5[1-5][0-9]{14})|(6(?:011|5[0-9]{2})[0-9]{12})|(3[47][0-9]{13})|(3(?:0[0-5]|[68][0-9])[0-9]{11})|((?:2131|1800|35[0-9]{3})[0-9]{11}))$/;
@@ -70,10 +66,21 @@ export class OrdersService {
       url,
       newOrderObj
     )) as Order;
+
     console.log('_successfulOrder: ', this._successfulOrder);
 
     this.cartsService.updateIsPaidCartStatus('/carts/updateIsPaidCartStatus', {
       ID: this.cartsService._currentCart.ID,
     });
+
+    this.cartsService.statusCartCheck('/carts/getCarts', {
+      userID: this._successfulOrder.userID,
+    });
+  }
+
+  goHome() {
+    this._successfulOrder = new Order();
+    this._newOrder = new Order();
+    this.nav.navigate(['/home']);
   }
 }

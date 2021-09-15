@@ -1,12 +1,11 @@
 <!-- user cart -->
 <div *ngIf="usersService._currentUserObj.Role !== 1">
   <div class="row">
-    <div class="col-6"></div>
     <div class="col-6">
-      <i
-        class="fas fa-shopping-bag fa-2x shoppingBagIcon"
-        routerLink="/orders"
-      ></i>
+      {{ cartsService._fixedTotalToPay }}
+    </div>
+    <div class="col-6">
+      <i class="fas fa-shopping-bag fa-2x iconsColor" routerLink="/orders"></i>
     </div>
   </div>
   <hr />

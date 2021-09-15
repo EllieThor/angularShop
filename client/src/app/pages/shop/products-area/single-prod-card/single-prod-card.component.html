@@ -1,6 +1,6 @@
-<div class="card">
+<div class="card productCard">
   <img
-    class="card-img-top productImg"
+    class="card-img-top mt-3 productImg"
     src="assets/images/{{ product.ImageName }}"
     alt="{{ product.ProductName }}"
   />
@@ -13,7 +13,7 @@
       class="cartPlusIcon fas fa-lg fa-cart-plus"
       title="הוסף לעגלה"
       (click)="
-        cartsService.addProdToCart('/carts/insertProdToCartProducts', {
+        cartsService.addProdToCart('/carts/insertProdToCart', {
           productID: product.ID,
           price: product.Price
         })
@@ -29,7 +29,6 @@
       "
     ></i>
   </div>
+  <!-- <div #singleBTN (click)="btnClicked()">try me</div> -->
+  <div (click)="btnClicked()">try me</div>
 </div>
-
-<!--  this.cartsService._cartProducts.find((prod) => prod.ID===product.ID) -->
-<!-- this.cartsService._cartProducts.find((prod) => prod.ID===product.ID)!==undefined -->

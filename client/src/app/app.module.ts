@@ -26,6 +26,7 @@ import { SingleReceptionProdComponent } from './pages/orders/reception/single-re
 import { FormProductComponent } from './components/form-product/form-product.component';
 import { FilteredArrayPipe } from './pipes/filtered-array.pipe';
 import { SuccessfulOrderComponent } from './pages/orders/successful-order/successful-order.component';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { SuccessfulOrderComponent } from './pages/orders/successful-order/succes
     FormProductComponent,
     FilteredArrayPipe,
     SuccessfulOrderComponent,
+    HeaderComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],

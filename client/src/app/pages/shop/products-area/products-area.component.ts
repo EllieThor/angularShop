@@ -18,4 +18,28 @@ export class ProductsAreaComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {}
+  callBackFN(ob: any) {
+    this.cartsService._cartProducts.find((prod) => {
+      prod.productID === ob.ID;
+    });
+
+    // console.log(
+    //   'this.cartsService._cartProducts: ',
+    //   this.cartsService._cartProducts
+    // );
+    // console.log(
+    //   'product ob: ',
+    //   ob,
+    //   ' is ',
+    //   this.cartsService._cartProducts.findIndex((prod) => {
+    //     prod.productID == ob.ID;
+    //   })
+    // );
+    console.log(
+      'aaa:   ',
+      this.cartsService._cartProducts.find((prod) => {
+        prod.productID === ob.ID;
+      })
+    );
+  }
 }

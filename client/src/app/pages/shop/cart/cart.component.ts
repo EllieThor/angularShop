@@ -10,6 +10,7 @@ import { UsersServiceService } from 'src/app/services/users.service';
   styleUrls: ['./cart.component.css'],
 })
 export class CartComponent implements OnInit {
+  _totalToPay: number = 0;
   constructor(
     public usersService: UsersServiceService,
     public cartsService: CartsService,

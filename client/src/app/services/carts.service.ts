@@ -15,8 +15,8 @@ export class CartsService {
   _recentCart: Cart = new Cart();
   _welcomeByCartStatus: number = 0;
   serverResult: any;
-  _fixedTotalPrise: number = 0;
-
+  _fixedTotalPriseForProd: number = 0;
+  _fixedTotalToPay: number = 0;
   constructor(
     public apiService: ApiService,
     public settingsService: SettingsService,
@@ -86,7 +86,7 @@ export class CartsService {
     console.log('recent Cart DATE : ', this._recentCart.createdAt);
   }
 
-  // CREATE (CartProducts)
+  // CREATE (CartProducts) event handler
   async addProdToCart(url: string, ob: any) {
     let getByPatterns = {
       cartID: this._currentCart.ID,
@@ -101,11 +101,7 @@ export class CartsService {
 
     if (findIndex == -1) {
       // insert
-      this.serverResult = (await this.apiService.createPostService(
-        url,
-        getByPatterns
-      )) as any;
-      console.log('serverResult: ', this.serverResult);
+      this.insertProductToCart(url, getByPatterns);
     } else {
       // change
       qnt = this._cartProducts[findIndex].Qnt;
@@ -119,7 +115,7 @@ export class CartsService {
     this.gatCartProducts('/carts/getCartProducts');
   }
 
-  //FIXME: .toFixed(2) not work with this._fixedTotalPrise
+  //FIXME: .toFixed(2) not work with this._fixedTotalPriseForProd
   // READ (CartProducts)
   async gatCartProducts(url: string) {
     let totalPrise = 0;
@@ -131,15 +127,30 @@ export class CartsService {
       getByPatterns
     )) as Array<CartProduct>;
     console.log('_cartProducts: ', this._cartProducts);
-    // _fixedTotalPrise
+    // _fixedTotalPriseForProd
     this._cartProducts.map((cartItem) => {
       totalPrise += Number(cartItem.product.Price) * Number(cartItem.Qnt);
-      console.log('this._fixedTotalPrise : ', this._cartProducts, totalPrise);
-      // (Number(product.product.Price) * Number(product.Quantity)).toFixed(2);
     });
-    // this._fixedTotalPrise = Number(totalPrise).toFixed(2);
-    this._fixedTotalPrise = totalPrise;
-    console.log('this._fixedTotalPrise : ', this._fixedTotalPrise);
+    // this._fixedTotalPriseForProd = Number(totalPrise).toFixed(2);
+    this._fixedTotalPriseForProd = totalPrise;
+
+    this.calcTotalToPay();
+  }
+
+  calcTotalToPay() {
+    this._fixedTotalToPay = 0;
+    this._cartProducts.map((prod) => {
+      this._fixedTotalToPay += prod.TotalPrice;
+    });
+  }
+  // CREATE (CartProducts)
+  async insertProductToCart(url: string, ob?: any) {
+    this.serverResult = (await this.apiService.createPostService(
+      url,
+      ob
+    )) as any;
+    console.log('serverResult: ', this.serverResult);
+    this.gatCartProducts('/carts/getCartProducts');
   }
 
   // READ (CartProducts)
