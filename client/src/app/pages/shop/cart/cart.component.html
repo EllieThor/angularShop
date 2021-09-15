@@ -1,29 +1,30 @@
 <!-- user cart -->
-<div *ngIf="usersService._currentUserObj.Role !== 1">
+<div class="cartContainer" *ngIf="usersService._currentUserObj.Role !== 1">
   <div class="row">
     <div class="col-6">
-      {{ cartsService._fixedTotalToPay }}
+      <h6>:סה"כ</h6>
+      <h5>{{ cartsService._fixedTotalToPay.toFixed(2) }} &#8362;</h5>
     </div>
     <div class="col-6">
-      <i class="fas fa-shopping-bag fa-2x iconsColor" routerLink="/orders"></i>
+      <h3 class="amountCircle">{{ cartsService._cartProducts.length }}</h3>
+      <i class="fas fa-shopping-cart fa-2x iconsColor" routerLink="/orders"></i>
+      <i
+        title="מחק הכל"
+        *ngIf="cartsService._cartProducts.length !== 0"
+        class="fas fa-trash fa-lg ms-4 iconsColor"
+        (click)="
+          cartsService.deleteProductFromCart('/carts/deleteProductFromCart', {
+            cartID: cartsService._currentCart.ID
+          })
+        "
+      ></i>
     </div>
   </div>
   <hr />
-  <button
-    *ngIf="cartsService._cartProducts.length !== 0"
-    class="btn btn-danger"
-    (click)="
-      cartsService.deleteProductFromCart('/carts/deleteProductFromCart', {
-        cartID: cartsService._currentCart.ID
-      })
-    "
-  >
-    <i class="fas fa-trash-alt"></i> &nbsp;מחק הכל
-  </button>
-  <hr />
-
-  <div *ngFor="let item of cartsService._cartProducts">
-    <app-single-cart-prod [item]="item"></app-single-cart-prod>
+  <div class="cartProdArea">
+    <div *ngFor="let item of cartsService._cartProducts">
+      <app-single-cart-prod [item]="item"></app-single-cart-prod>
+    </div>
   </div>
 </div>
 <!-- admin cart -->
@@ -39,10 +40,3 @@
     <app-form-product></app-form-product>
   </div>
 </div>
-<!-- (click)="productsService._showAdminForm = true; productsService._addVsEdit = 0 " -->
-<!--  <i
-        class="fas fa-plus"
-        (click)="
-          productsService._showAdminForm = true; productsService._addVsEdit = 0;productsService._newProductObj = new Product()
-        "
-      ></i> -->

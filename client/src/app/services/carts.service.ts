@@ -48,6 +48,7 @@ export class CartsService {
   }
 
   // carts
+
   // CREATE (carts)
   async createCart(url: string, ob: any) {
     console.log('this._currentCart obobobobob: ', ob);
@@ -86,22 +87,22 @@ export class CartsService {
     console.log('recent Cart DATE : ', this._recentCart.createdAt);
   }
 
-  // CREATE (CartProducts) event handler
+  // CartProducts
+
+  // add product event handler
   async addProdToCart(url: string, ob: any) {
-    let getByPatterns = {
-      cartID: this._currentCart.ID,
-      productID: ob.productID,
-      priceForOne: ob.price,
-    };
     let qnt;
     let findIndex = this._cartProducts.findIndex(
       (item) => item.productID == ob.productID
     );
-    console.log('findIndex: ', findIndex);
 
     if (findIndex == -1) {
       // insert
-      this.insertProductToCart(url, getByPatterns);
+      this.insertProductToCart(url, {
+        cartID: this._currentCart.ID,
+        productID: ob.productID,
+        priceForOne: ob.price,
+      });
     } else {
       // change
       qnt = this._cartProducts[findIndex].Qnt;
@@ -115,10 +116,18 @@ export class CartsService {
     this.gatCartProducts('/carts/getCartProducts');
   }
 
-  //FIXME: .toFixed(2) not work with this._fixedTotalPriseForProd
+  // CREATE (CartProducts)
+  async insertProductToCart(url: string, ob?: any) {
+    this.serverResult = (await this.apiService.createPostService(
+      url,
+      ob
+    )) as any;
+    this.gatCartProducts('/carts/getCartProducts');
+  }
+
   // READ (CartProducts)
   async gatCartProducts(url: string) {
-    let totalPrise = 0;
+    this._fixedTotalPriseForProd = 0;
     let getByPatterns = {
       cartID: this._currentCart.ID,
     };
@@ -127,12 +136,11 @@ export class CartsService {
       getByPatterns
     )) as Array<CartProduct>;
     console.log('_cartProducts: ', this._cartProducts);
-    // _fixedTotalPriseForProd
     this._cartProducts.map((cartItem) => {
-      totalPrise += Number(cartItem.product.Price) * Number(cartItem.Qnt);
+      this._fixedTotalPriseForProd += Number(
+        (cartItem.product.Price * cartItem.Qnt).toFixed(2)
+      );
     });
-    // this._fixedTotalPriseForProd = Number(totalPrise).toFixed(2);
-    this._fixedTotalPriseForProd = totalPrise;
 
     this.calcTotalToPay();
   }
@@ -143,17 +151,8 @@ export class CartsService {
       this._fixedTotalToPay += prod.TotalPrice;
     });
   }
-  // CREATE (CartProducts)
-  async insertProductToCart(url: string, ob?: any) {
-    this.serverResult = (await this.apiService.createPostService(
-      url,
-      ob
-    )) as any;
-    console.log('serverResult: ', this.serverResult);
-    this.gatCartProducts('/carts/getCartProducts');
-  }
 
-  // READ (CartProducts)
+  // UPDATE (CartProducts)
   async changeQnt(url: string, ob?: any) {
     let getByPatterns = {
       cartID: this._currentCart.ID,
