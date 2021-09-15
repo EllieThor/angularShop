@@ -2,3 +2,6 @@
   color: rgba(0, 0, 0, 0.699);
   cursor: pointer;
 }
+.productImg {
+  width: 120%;
+}

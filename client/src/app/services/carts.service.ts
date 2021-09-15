@@ -14,7 +14,6 @@ export class CartsService {
   _currentCart: Cart = new Cart();
   _recentCart: Cart = new Cart();
   _welcomeByCartStatus: number = 0;
-  _deleteConfirmation: boolean = false;
   serverResult: any;
   _fixedTotalPriseForProd: number = 0;
   _fixedTotalToPay: number = 0;
@@ -172,10 +171,14 @@ export class CartsService {
 
   // DELETE (CartProducts)
   async deleteProductFromCart(url: string, ob?: any) {
-    let res = confirm(
-      'ברצונך להסיר את כל המוצרים מהעגלה? \nלחיצה על אישור תסיר את כל הפריטים מהעגלה'
-    );
-    if (res) {
+    let res;
+    if (!ob.productID) {
+      res = confirm(
+        'ברצונך להסיר את כל המוצרים מהעגלה? \nלחיצה על אישור תסיר את כל הפריטים מהעגלה'
+      );
+    }
+
+    if (res || ob.productID) {
       this.serverResult = (await this.apiService.createPostService(
         url,
         ob

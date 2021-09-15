@@ -1,7 +1,7 @@
 .cartPlusIcon {
   cursor: pointer;
 }
-
-/* .productCard {
+/* FIXME: במכשיר קטן הטקסט יוצא מגודל הקארד */
+.productCard {
   height: 380px;
-} */
+}
