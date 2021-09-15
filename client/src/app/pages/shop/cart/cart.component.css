@@ -27,7 +27,7 @@
 
 .cartProdArea {
   height: 95vh !important;
-  margin-left: 13px;
+  /* margin-left: 13px; */
   position: fixed;
   width: 16%;
   overflow-y: auto;

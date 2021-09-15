@@ -4,7 +4,7 @@ import Swal from 'sweetalert2';
 @Injectable({
   providedIn: 'root',
 })
-export class SweatService {
+export class SweetService {
   constructor() {}
 
   deleteConfirm(title: string, description: string) {

@@ -1,4 +1,14 @@
 <div class="p-3">
+  <i
+    title="הסרה מעגלה"
+    class="far fa-times-circle float-end fa-lg ms-4 iconsColor"
+    (click)="
+      cartsService.deleteProductFromCart('/carts/deleteProductFromCart', {
+        productID: item.productID,
+        cartID: item.cartID
+      })
+    "
+  ></i>
   <div class="row">
     <h6 class="text-center">{{ item.product.ProductName }}</h6>
   </div>
@@ -6,7 +16,8 @@
   <div class="row">
     <div class="col-8">
       <div class="text-end">{{ item.Qnt }} :כמות</div>
-      <div class="text-end">&#8362;{{ item.product.Price }} :מחיר ליחידה</div>
+      <h6 class="text-end">:מחיר ליחידה</h6>
+      <div class="text-end">&#8362;{{ item.product.Price }}</div>
 
       <div class="text-end">
         &#8362; {{ (item.product.Price * item.Qnt).toFixed(2) }} :סה"כ
@@ -21,55 +32,48 @@
     </div>
   </div>
 
-  <div class="row">
-    <div class="col-7">
-      <button
-        class="btn btn-success mt-2"
+  <div class="row pt-4">
+    <div class="col-4 align-self-center">
+      <i
+        class="fas fa-plus-circle iconsColor"
+        (click)="
+          cartsService.changeQnt('/carts/changeQnt', {
+            productID: item.productID,
+            type: 1,
+            quantity: item.Qnt,
+            price: item.product.Price
+          })
+        "
+      ></i>
+    </div>
+
+    <div class="col-4 align-self-end">
+      <h6>{{ item.Qnt }}</h6>
+    </div>
+
+    <div class="col-4 align-self-center">
+      <i
+        class="fas fa-minus-circle iconsColor"
+        (click)="
+          cartsService.changeQnt('/carts/changeQnt', {
+            productID: item.productID,
+            type: 2,
+            quantity: item.Qnt,
+            price: item.product.Price
+          })
+        "
+      ></i>
+    </div>
+  </div>
+</div>
+<hr />
+<!-- <i
+        title="הסרת מוצר"
+        class="far fa-times-circle fa-lg ms-4 iconsColor"
         (click)="
           cartsService.deleteProductFromCart('/carts/deleteProductFromCart', {
             productID: item.productID,
             cartID: item.cartID
           })
         "
-      >
-        הסר מעגלה
-      </button>
-    </div>
-
-    <div class="col-5">
-      <div class="row pt-4">
-        <div class="col-4 align-self-center">
-          <i
-            class="fas fa-plus-circle"
-            (click)="
-              cartsService.changeQnt('/carts/changeQnt', {
-                productID: item.productID,
-                type: 1,
-                quantity: item.Qnt,
-                price: item.product.Price
-              })
-            "
-          ></i>
-        </div>
-
-        <div class="col-4 align-self-end">
-          <h6>{{ item.Qnt }}</h6>
-        </div>
-
-        <div class="col-4 align-self-center">
-          <i
-            class="fas fa-minus-circle"
-            (click)="
-              cartsService.changeQnt('/carts/changeQnt', {
-                productID: item.productID,
-                type: 2,
-                quantity: item.Qnt,
-                price: item.product.Price
-              })
-            "
-          ></i>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+      ></i> -->
