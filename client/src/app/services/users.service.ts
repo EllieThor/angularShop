@@ -118,8 +118,10 @@ export class UsersServiceService {
       url,
       getByPatterns
     );
+
     this._currentUserObj = this.serverResult[0];
     console.log('this._currentUserObj: ', this._currentUserObj);
+
     if (this._currentUserObj.Role === 1) {
       this.nav.navigate(['/shop']);
     } else if (this._currentUserObj.ID) {
@@ -129,10 +131,11 @@ export class UsersServiceService {
         userID: this._currentUserObj.ID,
       };
       this.cartService.statusCartCheck('/carts/getCarts', getByPatterns);
-      // if (this.localStorageUser.user === null) {
-      //   localStorage.setItem('user', JSON.stringify(this._currentUserObj));
-      //   console.log('after set : ', localStorage.getItem('user'));
-      // }
+
+      if (!this.localStorageUser.user) {
+        localStorage.setItem('user', JSON.stringify(this._currentUserObj));
+        console.log('after set : ', localStorage.getItem('user'));
+      }
     }
   }
 }
