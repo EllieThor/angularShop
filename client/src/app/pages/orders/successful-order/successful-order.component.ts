@@ -17,6 +17,8 @@ export class SuccessfulOrderComponent implements OnInit {
   fileUrl!: SafeResourceUrl;
   _text: string = '';
   _introduction: string = '';
+  _summary: string = '';
+  _4credit: string = '';
   _newOrder: Order = new Order();
   constructor(
     private sanitizer: DomSanitizer,
@@ -28,14 +30,23 @@ export class SuccessfulOrderComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    // _successfulOrder
-
     this.cartsService._cartProducts.map((product) =>
       this.printSingleProd(product)
     );
 
+    this._4credit = this.ordersService._successfulOrder.CreditCard.substring(
+      this.ordersService._successfulOrder.CreditCard.length - 4
+    );
+
     this._introduction = `SWEET HEART \n reception \n ${this.ordersService._successfulOrder.createdAt}\n \n`;
-    const blob = new Blob([this._introduction + this._text], {
+
+    this._summary = `\n סה"ס לתשלום \n ${this.ordersService._successfulOrder.FinalPrice.toFixed(
+      2
+    )}₪  \n \n \n  ארבע ספרות אחרונות של אמצעי תשלום : ${
+      this._4credit
+    } \n \n תודה ולהתראות! :) יום טוב `;
+
+    const blob = new Blob([this._introduction + this._text + this._summary], {
       type: 'application/octet-stream',
     });
 
@@ -43,10 +54,9 @@ export class SuccessfulOrderComponent implements OnInit {
       window.URL.createObjectURL(blob)
     );
   }
-  // TODO: אם יש מאותו מוצר יותר מאחד- יהיה מחיר לאחד, סימן כפול וכמות
   printSingleProd(ob: CartProduct) {
-    let qntOverOne = ` \n${ob.product.Price} x  ${ob.Qnt}  `;
-    this._text += `${ob.product.ProductName}   סכום: ${ob.TotalPrice}  ${
+    let qntOverOne = '\n' + `${ob.Qnt}x` + `${ob.product.Price}₪`;
+    this._text += `\n${ob.product.ProductName}   סה"כ: ${ob.TotalPrice}₪  ${
       ob.Qnt > 1 ? qntOverOne : ''
     }\n`;
   }

@@ -13,10 +13,9 @@ exports.getOrdersQnt = async (req, res, next) => {
 
 // READ order dates
 exports.getOrdersDates = async (req, res, next) => {
-  // SELECT `ShippingDate`,`cartID` FROM `orders` ORDER BY orders.ShippingDate DESC
   await Orders.findAll({
-    attributes: ["ShippingDate", "ShippingDate"],
-    order: [["createdAt", "DESC"]],
+    attributes: ["cartID", "ShippingDate"],
+    order: [["ShippingDate", "DESC"]],
   })
     .then((prod) => {
       res.send({ ordersCount: prod });
