@@ -47,8 +47,7 @@
     id="filesToUpload"
     class="form-control m-2"
     name="filesToUpload"
-    [(ngModel)]="productsService._newProductObj.ImageName"
-    [ngModelOptions]="{ standalone: true }"
+    (change)="productsService.fileChange($event)"
   />
   <div>{{ productsService._newProductObj.ImageName }}</div>
   <!-- // `ProductName`, `Price`, `Description`, `ImageName`, `categoryID` -->

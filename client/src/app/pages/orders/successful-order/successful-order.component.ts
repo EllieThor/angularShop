@@ -45,7 +45,7 @@ export class SuccessfulOrderComponent implements OnInit {
   }
   // TODO: אם יש מאותו מוצר יותר מאחד- יהיה מחיר לאחד, סימן כפול וכמות
   printSingleProd(ob: CartProduct) {
-    let qntOverOne = ` \n${ob.product.Price}  x ${ob.Qnt}  `;
+    let qntOverOne = ` \n${ob.product.Price} x  ${ob.Qnt}  `;
     this._text += `${ob.product.ProductName}   סכום: ${ob.TotalPrice}  ${
       ob.Qnt > 1 ? qntOverOne : ''
     }\n`;

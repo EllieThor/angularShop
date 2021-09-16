@@ -1,39 +1,45 @@
-<button
-  class="btn btn-success m-2"
-  *ngIf="usersService._currentUserObj.ID"
-  routerLink="/shop"
-  (click)="cartsService.gatCartProducts('/carts/getCartProducts')"
->
-  {{
-    cartsService._welcomeByCartStatus === 2 ? "המשכ.י לקנייה" : "התחל.י בקנייה"
-  }}
-</button>
-<form method="post" class="p-2" *ngIf="!usersService._currentUserObj.ID">
-  <h5 class="mb-3 fw-normal text-center">התחבר.י</h5>
-  <input
-    [(ngModel)]="usersService._logInEmail"
-    [ngModelOptions]="{ standalone: true }"
-    type="email"
-    class="form-control m-2"
-    placeholder='כתובת דוא"ל'
-    required=""
-    autoFocus=""
-  />
-  <input
-    [(ngModel)]="usersService._logInPassword"
-    [ngModelOptions]="{ standalone: true }"
-    type="password"
-    class="form-control m-2"
-    placeholder="סיסמה"
-    required=""
-    autoComplete=""
-  />
+<div class="my-auto pt-5 mt-5">
   <button
     class="btn btn-success m-2"
-    type="submit"
-    (click)="usersService.gatUserFromDB('/users/getUser', $event)"
+    *ngIf="usersService._currentUserObj.ID"
+    routerLink="/shop"
+    (click)="cartsService.gatCartProducts('/carts/getCartProducts')"
   >
-    התחברות
+    {{
+      cartsService._welcomeByCartStatus === 2
+        ? "המשכ.י לקנייה"
+        : "התחל.י בקנייה"
+    }}
   </button>
-  <button class="btn btn-success m-2" routerLink="/registration">הרשמה</button>
-</form>
+  <form method="post" class="p-2" *ngIf="!usersService._currentUserObj.ID">
+    <h5 class="mb-3 fw-normal text-center">התחבר.י</h5>
+    <input
+      [(ngModel)]="usersService._logInEmail"
+      [ngModelOptions]="{ standalone: true }"
+      type="email"
+      class="form-control m-2"
+      placeholder='כתובת דוא"ל'
+      required=""
+      autoFocus=""
+    />
+    <input
+      [(ngModel)]="usersService._logInPassword"
+      [ngModelOptions]="{ standalone: true }"
+      type="password"
+      class="form-control m-2"
+      placeholder="סיסמה"
+      required=""
+      autoComplete=""
+    />
+    <button
+      class="btn btn-success m-2"
+      type="submit"
+      (click)="usersService.gatUserFromDB('/users/getUser', $event)"
+    >
+      התחברות
+    </button>
+    <button class="btn btn-success m-2" routerLink="/registration">
+      הרשמה
+    </button>
+  </form>
+</div>

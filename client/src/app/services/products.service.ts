@@ -22,6 +22,9 @@ export class ProductsService {
   // add-0, edit-1
   _addVsEdit: number = 0;
   _time: any;
+  _openCategory: number = 1;
+
+  uploadedFiles: Array<File> = [];
   constructor(
     public apiService: ApiService,
     public settingsService: SettingsService
@@ -64,6 +67,7 @@ export class ProductsService {
   }
 
   async getProducts(url: string, ob: any) {
+    this._openCategory = ob.categoryID;
     this._products = (await this.apiService.createPostService(
       url,
       ob
@@ -105,25 +109,56 @@ export class ProductsService {
   }
   //FIXME: server not have upload function yet
   // upload image
+  // async uploadIMG(url: string) {
+  //   if (this._newProductObj.ImageName !== undefined) {
+  //     const formData = new FormData();
+  //     const files: any = this._newProductObj.ImageName;
+  //     console.log('formData: ', formData);
+  //     console.log('files: ', files);
+  //     console.log('url: ', url);
+  //     if (files.length) {
+  //       for (let i: number = 0; i < files.length; i++) {
+  //         formData.append('uploads[]', files[i], files[i]['name']);
+
+  //         // formData.append('uploads[]', files);
+  //       }
+  //       this._newProductObj.ImageName = files[0].name;
+  //       console.log('test: ', this._newProductObj.ImageName);
+  //       this.serverResult = await this.apiService.createPostService(
+  //         url,
+  //         formData
+  //       );
+  //       console.log('uploadIMG serverResult: ', this.serverResult);
+  //     }
+  //   } else {
+  //     alert('Click to upload image please');
+  //   }
+  // }
+  fileChange(e: any) {
+    this.uploadedFiles = e.target.files;
+  }
+
   async uploadIMG(url: string) {
     if (this._newProductObj.ImageName !== undefined) {
-      const formData = new FormData();
-      const files: any = this._newProductObj.ImageName;
-      console.log('formData: ', formData);
-      console.log('files: ', files);
-      console.log('url: ', url);
-      if (files.length) {
-        for (let i: number = 0; i < files.length; i++) {
-          // formData.append('uploads[]', files[i], files[i], files[i]['imgName']);
-          formData.append('uploads[]', files);
-          console.log('formData: ', formData);
+      let formData = new FormData();
+
+      if (this.uploadedFiles.length) {
+        for (var i = 0; i < this.uploadedFiles.length; i++) {
+          formData.append(
+            'uploads[]',
+            this.uploadedFiles[i],
+            this.uploadedFiles[i].name
+          );
         }
-        this._newProductObj.ImageName = files;
+
+        this._newProductObj.ImageName = this.uploadedFiles[0].name;
+        console.log('test: ', this._newProductObj.ImageName);
+
         this.serverResult = await this.apiService.createPostService(
           url,
           formData
         );
-        console.log('new Product: ', this.serverResult);
+        console.log('uploadIMG serverResult: ', this.serverResult);
       }
     } else {
       alert('Click to upload image please');

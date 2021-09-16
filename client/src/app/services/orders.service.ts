@@ -28,10 +28,6 @@ export class OrdersService {
     this._ordersQnt = (await this.apiService.createPostService(url)) as any;
   }
 
-  // async getTotalPrice(url: string) {
-  //   this._totalPrice = (await this.apiService.createPostService(url)) as number;
-  // }
-
   creditRegex(e: any) {
     let regexp =
       /^(?:(4[0-9]{12}(?:[0-9]{3})?)|(5[1-5][0-9]{14})|(6(?:011|5[0-9]{2})[0-9]{12})|(3[47][0-9]{13})|(3(?:0[0-5]|[68][0-9])[0-9]{11})|((?:2131|1800|35[0-9]{3})[0-9]{11}))$/;
@@ -49,33 +45,44 @@ export class OrdersService {
   async addOrder(url: string, event?: any) {
     console.log('addOrder');
     event.preventDefault();
+    if (this._newOrder.ShippingCity === '') {
+      alert('בחר.י עיר למשלוח');
+    } else if (this._newOrder.ShippingStreet === '') {
+      alert('הכנס.י רחוב למשלוח');
+    } else if (this._newOrder.ShippingDate === '') {
+      alert('בחר.י תאריך למשלוח');
+    } else if (this._newOrder.CreditCard === '') {
+      alert('הכנס.י פרטי חיוב');
+    } else {
+      let newOrderObj = {
+        FinalPrice: this.cartsService._fixedTotalToPay,
+        ShippingCity: this._newOrder.ShippingCity,
+        ShippingStreet: this._newOrder.ShippingStreet,
+        ShippingDate: this._newOrder.ShippingDate,
+        CreditCard: this._newOrder.CreditCard,
+        cartID: this.cartsService._currentCart.ID,
+        userID: this.usersService._currentUserObj.ID,
+      };
+      // `ID`, `Price`, `ShippingCity`, `ShippingStreet`, `ShippingDate`, `CreditCard`, `createdAt`, `updatedAt`, `cartID`, `userID`
 
-    let newOrderObj = {
-      // FinalPrice: this._newOrder.FinalPrice, // TODO: not exist
-      FinalPrice: 50,
-      ShippingCity: this._newOrder.ShippingCity,
-      ShippingStreet: this._newOrder.ShippingStreet,
-      ShippingDate: this._newOrder.ShippingDate,
-      CreditCard: this._newOrder.CreditCard,
-      cartID: this.cartsService._currentCart.ID,
-      userID: this.usersService._currentUserObj.ID,
-    };
-    // `ID`, `Price`, `ShippingCity`, `ShippingStreet`, `ShippingDate`, `CreditCard`, `createdAt`, `updatedAt`, `cartID`, `userID`
+      this._successfulOrder = (await this.apiService.createPostService(
+        url,
+        newOrderObj
+      )) as Order;
 
-    this._successfulOrder = (await this.apiService.createPostService(
-      url,
-      newOrderObj
-    )) as Order;
+      console.log('_successfulOrder: ', this._successfulOrder);
 
-    console.log('_successfulOrder: ', this._successfulOrder);
+      this.cartsService.updateIsPaidCartStatus(
+        '/carts/updateIsPaidCartStatus',
+        {
+          ID: this.cartsService._currentCart.ID,
+        }
+      );
 
-    this.cartsService.updateIsPaidCartStatus('/carts/updateIsPaidCartStatus', {
-      ID: this.cartsService._currentCart.ID,
-    });
-
-    this.cartsService.statusCartCheck('/carts/getCarts', {
-      userID: this._successfulOrder.userID,
-    });
+      this.cartsService.statusCartCheck('/carts/getCarts', {
+        userID: this._successfulOrder.userID,
+      });
+    }
   }
 
   goHome() {

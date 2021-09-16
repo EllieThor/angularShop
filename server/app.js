@@ -1,12 +1,12 @@
 const express = require("express");
 const app = express();
 
-const cors = require("cors");
-const bodyParser = require("body-parser");
-
 // upload images plugins
 var multer = require("multer");
 var path = require("path");
+
+const cors = require("cors");
+const bodyParser = require("body-parser");
 
 const sequelize = require("./utils/database");
 
@@ -51,10 +51,6 @@ app.use("/products", ProductsRoute);
 const OrdersRoute = require("./routs/OrdersRoute");
 app.use("/orders", OrdersRoute);
 
-app.use((req, res) => {
-  res.send("Page NotFound");
-});
-
 // IMAGE UPLOADING
 // specify the folder
 app.use(express.static(path.join(__dirname, "uploads")));
@@ -80,6 +76,10 @@ var upload = multer({ storage: storage });
 app.post("/upload", upload.array("uploads[]", 12), function (req, res) {
   imgEnd = "";
   res.send(req.files);
+});
+
+app.use((req, res) => {
+  res.send("Page NotFound");
 });
 
 sequelize

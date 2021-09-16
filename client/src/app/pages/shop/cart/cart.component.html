@@ -7,7 +7,10 @@
     </div>
     <div class="col-6">
       <h3 class="amountCircle">{{ cartsService._cartProducts.length }}</h3>
-      <i class="fas fa-shopping-cart fa-2x iconsColor" routerLink="/orders"></i>
+      <i
+        class="fas fa-shopping-cart fa-2x iconsColor"
+        (click)="navToOrders()"
+      ></i>
       <i
         title="מחק הכל"
         *ngIf="cartsService._cartProducts.length !== 0"

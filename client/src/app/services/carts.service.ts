@@ -52,7 +52,7 @@ export class CartsService {
 
   // CREATE (carts)
   async createCart(url: string, ob: any) {
-    console.log('this._currentCart obobobobob: ', ob);
+    console.log('this._currentCart : ', ob);
     this._currentCart = (await this.apiService.createPostService(
       url,
       ob
