@@ -34,26 +34,37 @@ export class ProductsService {
   }
 
   async addNewProd(url: string, event?: any) {
-    // TODO: validation
     event.preventDefault();
-    let newProdObj = {
-      ProductName: this._newProductObj.ProductName,
-      Price: this._newProductObj.Price,
-      Description: this._newProductObj.Description,
-      ImageName: this._newProductObj.ImageName,
-      categoryID: this._newProductObj.categoryID,
-    };
-    // `ProductName`, `Price`, `Description`, `ImageName`, `categoryID`
+    if (this._newProductObj.ProductName === '') {
+      alert('יש למלא שם פריט');
+    } else if (this._newProductObj.Price === undefined) {
+      alert('יש למלא מחיר פריט');
+    } else if (this._newProductObj.Description === '') {
+      alert('יש למלא תיאור פריט');
+    } else if (this._newProductObj.ImageName === '') {
+      alert('יש להעלות תמונת פריט');
+    } else if (this._newProductObj.categoryID === 0) {
+      alert('יש בחור קטגוריית פריט');
+    } else {
+      let newProdObj = {
+        ProductName: this._newProductObj.ProductName,
+        Price: this._newProductObj.Price,
+        Description: this._newProductObj.Description,
+        ImageName: this._newProductObj.ImageName,
+        categoryID: this._newProductObj.categoryID,
+      };
+      // `ProductName`, `Price`, `Description`, `ImageName`, `categoryID`
 
-    this.serverResult = await this.apiService.createPostService(
-      url,
-      newProdObj
-    );
-    console.log('this.serverResult addNewProd: ', this.serverResult);
-    this._newProductObj = new Product();
-    this.getProducts('/products/getProducts', {
-      categoryID: this.serverResult.categoryID,
-    });
+      this.serverResult = await this.apiService.createPostService(
+        url,
+        newProdObj
+      );
+      console.log('this.serverResult addNewProd: ', this.serverResult);
+      this._newProductObj = new Product();
+      this.getProducts('/products/getProducts', {
+        categoryID: this.serverResult.categoryID,
+      });
+    }
   }
 
   async getProductsQnt(url: string) {
@@ -75,8 +86,40 @@ export class ProductsService {
   }
 
   async updateProd(url: string, event?: any) {
-    // TODO: validation
     event.preventDefault();
+
+    if (this._newProductObj.ProductName === '') {
+      alert('יש למלא שם פריט');
+    } else if (this._newProductObj.Price === undefined) {
+      alert('יש למלא מחיר פריט');
+    } else if (this._newProductObj.Description === '') {
+      alert('יש למלא תיאור פריט');
+    } else if (this._newProductObj.categoryID === 0) {
+      alert('יש בחור קטגוריית פריט');
+    } else if (this._newProductObj.ImageName === '') {
+      alert('יש להעלות תמונת פריט');
+    } else {
+      let ob = {
+        ID: this._newProductObj.ID,
+        ProductName: this._newProductObj.ProductName,
+        Price: this._newProductObj.Price,
+        Description: this._newProductObj.Description,
+        ImageName: this._newProductObj.ImageName,
+        categoryID: this._newProductObj.categoryID,
+      };
+      console.log('ob updateProd : ', ob);
+
+      this.serverResult = (await this.apiService.createPostService(
+        url,
+        ob
+      )) as any;
+      console.log('this.serverResult updateProd: ', this.serverResult);
+      this.getProducts('/products/getProducts', {
+        categoryID: this._newProductObj.categoryID,
+      });
+      this._newProductObj = new Product();
+    }
+
     let ob = {
       ID: this._newProductObj.ID,
       ProductName: this._newProductObj.ProductName,
@@ -107,61 +150,33 @@ export class ProductsService {
       searchFor
     )) as Array<Product>;
   }
-  //FIXME: server not have upload function yet
-  // upload image
-  // async uploadIMG(url: string) {
-  //   if (this._newProductObj.ImageName !== undefined) {
-  //     const formData = new FormData();
-  //     const files: any = this._newProductObj.ImageName;
-  //     console.log('formData: ', formData);
-  //     console.log('files: ', files);
-  //     console.log('url: ', url);
-  //     if (files.length) {
-  //       for (let i: number = 0; i < files.length; i++) {
-  //         formData.append('uploads[]', files[i], files[i]['name']);
 
-  //         // formData.append('uploads[]', files);
-  //       }
-  //       this._newProductObj.ImageName = files[0].name;
-  //       console.log('test: ', this._newProductObj.ImageName);
-  //       this.serverResult = await this.apiService.createPostService(
-  //         url,
-  //         formData
-  //       );
-  //       console.log('uploadIMG serverResult: ', this.serverResult);
-  //     }
-  //   } else {
-  //     alert('Click to upload image please');
-  //   }
-  // }
   fileChange(e: any) {
     this.uploadedFiles = e.target.files;
   }
 
   async uploadIMG(url: string) {
-    if (this._newProductObj.ImageName !== undefined) {
+    if (this.uploadedFiles.length !== 0) {
       let formData = new FormData();
 
-      if (this.uploadedFiles.length) {
-        for (var i = 0; i < this.uploadedFiles.length; i++) {
-          formData.append(
-            'uploads[]',
-            this.uploadedFiles[i],
-            this.uploadedFiles[i].name
-          );
-        }
-
-        this._newProductObj.ImageName = this.uploadedFiles[0].name;
-        console.log('test: ', this._newProductObj.ImageName);
-
-        this.serverResult = await this.apiService.createPostService(
-          url,
-          formData
+      for (var i = 0; i < this.uploadedFiles.length; i++) {
+        formData.append(
+          'uploads[]',
+          this.uploadedFiles[i],
+          this.uploadedFiles[i].name
         );
-        console.log('uploadIMG serverResult: ', this.serverResult);
       }
+
+      this._newProductObj.ImageName = this.uploadedFiles[0].name;
+      console.log('test: ', this._newProductObj.ImageName);
+
+      this.serverResult = await this.apiService.createPostService(
+        url,
+        formData
+      );
+      console.log('uploadIMG serverResult: ', this.serverResult);
     } else {
-      alert('Click to upload image please');
+      alert('בחר.י תמונה לפני לחיצה על כפתור זה');
     }
   }
 

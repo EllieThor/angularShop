@@ -24,6 +24,7 @@ export class ShippingDetailsComponent implements OnInit {
   ) {}
   //FIXME: biggestCities should work properly but got the 10 first cities
   ngOnInit(): void {
+    this.ordersService.getOrdersDates('/orders/getOrdersDates');
     this.httpClient.get('assets/israelCities.json').subscribe((data) => {
       this.cities = data;
       this.biggestCities = [...this.cities]

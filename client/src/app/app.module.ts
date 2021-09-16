@@ -27,6 +27,7 @@ import { FormProductComponent } from './components/form-product/form-product.com
 import { FilteredArrayPipe } from './pipes/filtered-array.pipe';
 import { SuccessfulOrderComponent } from './pages/orders/successful-order/successful-order.component';
 import { HeaderComponent } from './components/header/header.component';
+import { CalendarComponent } from './components/calendar/calendar.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +54,7 @@ import { HeaderComponent } from './components/header/header.component';
     FilteredArrayPipe,
     SuccessfulOrderComponent,
     HeaderComponent,
+    CalendarComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],

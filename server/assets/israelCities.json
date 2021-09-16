@@ -1,0 +1,6422 @@
+[
+  {
+    "Symbol": "472",
+    "name": "אבו גוש",
+    "population": "7,699"
+  },
+  {
+    "Symbol": "473",
+    "name": "אבו סנאן",
+    "population": "14,100"
+  },
+  {
+    "Symbol": "1342",
+    "name": "אבו קורינאת (יישוב)",
+    "population": "1,904"
+  },
+  {
+    "Symbol": "1375",
+    "name": "אבו תלול",
+    "population": "2,023"
+  },
+  {
+    "Symbol": "652",
+    "name": "אבטין",
+    "population": "2,835"
+  },
+  {
+    "Symbol": "1275",
+    "name": "אבטליון",
+    "population": "468"
+  },
+  {
+    "Symbol": "679",
+    "name": "אביאל",
+    "population": "822"
+  },
+  {
+    "Symbol": "1115",
+    "name": "אביבים",
+    "population": "471"
+  },
+  {
+    "Symbol": "819",
+    "name": "אביגדור",
+    "population": "826"
+  },
+  {
+    "Symbol": "175",
+    "name": "אביחיל",
+    "population": "1,422"
+  },
+  {
+    "Symbol": "2052",
+    "name": "אביטל",
+    "population": "494"
+  },
+  {
+    "Symbol": "1070",
+    "name": "אביעזר",
+    "population": "875"
+  },
+  {
+    "Symbol": "1220",
+    "name": "אבירים",
+    "population": "263"
+  },
+  {
+    "Symbol": "182",
+    "name": "אבן יהודה",
+    "population": "13,826"
+  },
+  {
+    "Symbol": "1081",
+    "name": "אבן מנחם",
+    "population": "299"
+  },
+  {
+    "Symbol": "783",
+    "name": "אבן ספיר",
+    "population": "702"
+  },
+  {
+    "Symbol": "400",
+    "name": "אבן שמואל",
+    "population": "1,807"
+  },
+  {
+    "Symbol": "4011",
+    "name": "אבני איתן",
+    "population": "725"
+  },
+  {
+    "Symbol": "3793",
+    "name": "אבני חפץ",
+    "population": "1,923"
+  },
+  {
+    "Symbol": "3786",
+    "name": "אבנת",
+    "population": "237"
+  },
+  {
+    "Symbol": "1311",
+    "name": "אבשלום",
+    "population": "298"
+  },
+  {
+    "Symbol": "3759",
+    "name": "אדורה",
+    "population": "462"
+  },
+  {
+    "Symbol": "113",
+    "name": "אדירים",
+    "population": "272"
+  },
+  {
+    "Symbol": "1068",
+    "name": "אדמית",
+    "population": "216"
+  },
+  {
+    "Symbol": "1123",
+    "name": "אדרת",
+    "population": "883"
+  },
+  {
+    "Symbol": "446",
+    "name": "אודים",
+    "population": "1,378"
+  },
+  {
+    "Symbol": "4010",
+    "name": "אודם",
+    "population": "155"
+  },
+  {
+    "Symbol": "1046",
+    "name": "אוהד",
+    "population": "407"
+  },
+  {
+    "Symbol": "2710",
+    "name": "אום אל-פחם",
+    "population": "56,108"
+  },
+  {
+    "Symbol": "2024",
+    "name": "אום אל-קוטוף",
+    "population": "1,117"
+  },
+  {
+    "Symbol": "1358",
+    "name": "אום בטין",
+    "population": "4,277"
+  },
+  {
+    "Symbol": "1108",
+    "name": "אומן",
+    "population": "387"
+  },
+  {
+    "Symbol": "680",
+    "name": "אומץ",
+    "population": "849"
+  },
+  {
+    "Symbol": "31",
+    "name": "אופקים",
+    "population": "30,663"
+  },
+  {
+    "Symbol": "1294",
+    "name": "אור הגנוז",
+    "population": "574"
+  },
+  {
+    "Symbol": "67",
+    "name": "אור הנר",
+    "population": "768"
+  },
+  {
+    "Symbol": "2400",
+    "name": "אור יהודה",
+    "population": "36,813"
+  },
+  {
+    "Symbol": "1020",
+    "name": "אור עקיבא",
+    "population": "18,972"
+  },
+  {
+    "Symbol": "780",
+    "name": "אורה",
+    "population": "1,314"
+  },
+  {
+    "Symbol": "1771",
+    "name": "אורון",
+    "population": "-"
+  },
+  {
+    "Symbol": "2012",
+    "name": "אורות",
+    "population": "496"
+  },
+  {
+    "Symbol": "4013",
+    "name": "אורטל",
+    "population": "343"
+  },
+  {
+    "Symbol": "403",
+    "name": "אורים",
+    "population": "501"
+  },
+  {
+    "Symbol": "882",
+    "name": "אורנים",
+    "population": "178"
+  },
+  {
+    "Symbol": "3760",
+    "name": "אורנית",
+    "population": "8,955"
+  },
+  {
+    "Symbol": "278",
+    "name": "אושה",
+    "population": "533"
+  },
+  {
+    "Symbol": "565",
+    "name": "אזור",
+    "population": "12,957"
+  },
+  {
+    "Symbol": "1724",
+    "name": "אזור תעסוקה משגב(תרדיון)",
+    "population": "-"
+  },
+  {
+    "Symbol": "1726",
+    "name": "אזור תעשייה אכזיב (מילואות)",
+    "population": "-"
+  },
+  {
+    "Symbol": "1727",
+    "name": "אזור תעשייה נעמן (מילואות)",
+    "population": "-"
+  },
+  {
+    "Symbol": "1157",
+    "name": "אחווה",
+    "population": "303"
+  },
+  {
+    "Symbol": "821",
+    "name": "אחוזם",
+    "population": "548"
+  },
+  {
+    "Symbol": "1330",
+    "name": "אחוזת ברק",
+    "population": "2,279"
+  },
+  {
+    "Symbol": "785",
+    "name": "אחיהוד",
+    "population": "892"
+  },
+  {
+    "Symbol": "850",
+    "name": "אחיטוב",
+    "population": "1,093"
+  },
+  {
+    "Symbol": "804",
+    "name": "אחיסמך",
+    "population": "1,377"
+  },
+  {
+    "Symbol": "797",
+    "name": "אחיעזר",
+    "population": "1,906"
+  },
+  {
+    "Symbol": "338",
+    "name": "איבים",
+    "population": "457"
+  },
+  {
+    "Symbol": "716",
+    "name": "אייל",
+    "population": "534"
+  },
+  {
+    "Symbol": "77",
+    "name": "איילת השחר",
+    "population": "1,134"
+  },
+  {
+    "Symbol": "294",
+    "name": "אילון",
+    "population": "1,031"
+  },
+  {
+    "Symbol": "1716",
+    "name": "אילון תבור*",
+    "population": "-"
+  },
+  {
+    "Symbol": "1126",
+    "name": "אילות",
+    "population": "314"
+  },
+  {
+    "Symbol": "49",
+    "name": "אילנייה",
+    "population": "490"
+  },
+  {
+    "Symbol": "2600",
+    "name": "אילת",
+    "population": "52,300"
+  },
+  {
+    "Symbol": "1336",
+    "name": "אירוס",
+    "population": "706"
+  },
+  {
+    "Symbol": "3762",
+    "name": "איתמר",
+    "population": "1,269"
+  },
+  {
+    "Symbol": "37",
+    "name": "איתן",
+    "population": "464"
+  },
+  {
+    "Symbol": "886",
+    "name": "איתנים",
+    "population": "81"
+  },
+  {
+    "Symbol": "478",
+    "name": "אכסאל",
+    "population": "14,784"
+  },
+  {
+    "Symbol": "1359",
+    "name": "אל סייד",
+    "population": "5,876"
+  },
+  {
+    "Symbol": "1339",
+    "name": "אל -עזי",
+    "population": "195"
+  },
+  {
+    "Symbol": "1316",
+    "name": "אל -עריאן",
+    "population": "191"
+  },
+  {
+    "Symbol": "4003",
+    "name": "אל -רום",
+    "population": "398"
+  },
+  {
+    "Symbol": "1145",
+    "name": "אלומה",
+    "population": "537"
+  },
+  {
+    "Symbol": "330",
+    "name": "אלומות",
+    "population": "405"
+  },
+  {
+    "Symbol": "1182",
+    "name": "אלון הגליל",
+    "population": "1,118"
+  },
+  {
+    "Symbol": "3579",
+    "name": "אלון מורה",
+    "population": "1,920"
+  },
+  {
+    "Symbol": "3604",
+    "name": "אלון שבות",
+    "population": "3,098"
+  },
+  {
+    "Symbol": "429",
+    "name": "אלוני אבא",
+    "population": "992"
+  },
+  {
+    "Symbol": "4017",
+    "name": "אלוני הבשן",
+    "population": "457"
+  },
+  {
+    "Symbol": "868",
+    "name": "אלוני יצחק",
+    "population": "308"
+  },
+  {
+    "Symbol": "285",
+    "name": "אלונים",
+    "population": "515"
+  },
+  {
+    "Symbol": "1365",
+    "name": "אליאב",
+    "population": "546"
+  },
+  {
+    "Symbol": "41",
+    "name": "אליכין",
+    "population": "3,415"
+  },
+  {
+    "Symbol": "4002",
+    "name": "אלי-עד",
+    "population": "433"
+  },
+  {
+    "Symbol": "1248",
+    "name": "אליפז",
+    "population": "151"
+  },
+  {
+    "Symbol": "730",
+    "name": "אליפלט",
+    "population": "651"
+  },
+  {
+    "Symbol": "682",
+    "name": "אליקים",
+    "population": "909"
+  },
+  {
+    "Symbol": "204",
+    "name": "אלישיב",
+    "population": "713"
+  },
+  {
+    "Symbol": "841",
+    "name": "אלישמע",
+    "population": "1,200"
+  },
+  {
+    "Symbol": "1125",
+    "name": "אלמגור",
+    "population": "418"
+  },
+  {
+    "Symbol": "3556",
+    "name": "אלמוג",
+    "population": "255"
+  },
+  {
+    "Symbol": "1309",
+    "name": "אלעד",
+    "population": "48,763"
+  },
+  {
+    "Symbol": "3618",
+    "name": "אלעזר",
+    "population": "2,459"
+  },
+  {
+    "Symbol": "3750",
+    "name": "אלפי מנשה",
+    "population": "7,952"
+  },
+  {
+    "Symbol": "603",
+    "name": "אלקוש",
+    "population": "275"
+  },
+  {
+    "Symbol": "3560",
+    "name": "אלקנה",
+    "population": "3,838"
+  },
+  {
+    "Symbol": "772",
+    "name": "אמונים",
+    "population": "993"
+  },
+  {
+    "Symbol": "1064",
+    "name": "אמירים",
+    "population": "865"
+  },
+  {
+    "Symbol": "1253",
+    "name": "אמנון",
+    "population": "391"
+  },
+  {
+    "Symbol": "23",
+    "name": "אמציה",
+    "population": "263"
+  },
+  {
+    "Symbol": "4012",
+    "name": "אניעם",
+    "population": "532"
+  },
+  {
+    "Symbol": "3754",
+    "name": "אספר",
+    "population": "932"
+  },
+  {
+    "Symbol": "529",
+    "name": "אעבלין",
+    "population": "13,305"
+  },
+  {
+    "Symbol": "4301",
+    "name": "אפיק",
+    "population": "344"
+  },
+  {
+    "Symbol": "176",
+    "name": "אפיקים",
+    "population": "1,510"
+  },
+  {
+    "Symbol": "313",
+    "name": "אפק",
+    "population": "712"
+  },
+  {
+    "Symbol": "3650",
+    "name": "אפרת",
+    "population": "10,806"
+  },
+  {
+    "Symbol": "701",
+    "name": "ארבל",
+    "population": "735"
+  },
+  {
+    "Symbol": "3598",
+    "name": "ארגמן",
+    "population": "133"
+  },
+  {
+    "Symbol": "714",
+    "name": "ארז",
+    "population": "558"
+  },
+  {
+    "Symbol": "3570",
+    "name": "אריאל",
+    "population": "20,540"
+  },
+  {
+    "Symbol": "1324",
+    "name": "ארסוף",
+    "population": "166"
+  },
+  {
+    "Symbol": "71",
+    "name": "אשבול",
+    "population": "652"
+  },
+  {
+    "Symbol": "1276",
+    "name": "אשבל",
+    "population": "126"
+  },
+  {
+    "Symbol": "70",
+    "name": "אשדוד",
+    "population": "225,939"
+  },
+  {
+    "Symbol": "199",
+    "name": "אשדות יעקב (איחוד)",
+    "population": "1,003"
+  },
+  {
+    "Symbol": "188",
+    "name": "אשדות יעקב (מאוחד)",
+    "population": "545"
+  },
+  {
+    "Symbol": "1188",
+    "name": "אשחר",
+    "population": "965"
+  },
+  {
+    "Symbol": "3722",
+    "name": "אשכולות",
+    "population": "577"
+  },
+  {
+    "Symbol": "2021",
+    "name": "אשל הנשיא",
+    "population": "355"
+  },
+  {
+    "Symbol": "1152",
+    "name": "אשלים",
+    "population": "568"
+  },
+  {
+    "Symbol": "7100",
+    "name": "אשקלון",
+    "population": "144,072"
+  },
+  {
+    "Symbol": "1256",
+    "name": "אשרת",
+    "population": "588"
+  },
+  {
+    "Symbol": "740",
+    "name": "אשתאול",
+    "population": "1,238"
+  },
+  {
+    "Symbol": "6000",
+    "name": "באקה אל-גרביה",
+    "population": "29,950"
+  },
+  {
+    "Symbol": "21",
+    "name": "באר אורה",
+    "population": "1,033"
+  },
+  {
+    "Symbol": "1376",
+    "name": "באר גנים",
+    "population": "1,525"
+  },
+  {
+    "Symbol": "155",
+    "name": "באר טוביה",
+    "population": "1,289"
+  },
+  {
+    "Symbol": "2530",
+    "name": "באר יעקב",
+    "population": "27,767"
+  },
+  {
+    "Symbol": "1278",
+    "name": "באר מילכה",
+    "population": "188"
+  },
+  {
+    "Symbol": "9000",
+    "name": "באר שבע",
+    "population": "209,687"
+  },
+  {
+    "Symbol": "450",
+    "name": "בארות יצחק",
+    "population": "414"
+  },
+  {
+    "Symbol": "697",
+    "name": "בארותיים",
+    "population": "1,144"
+  },
+  {
+    "Symbol": "399",
+    "name": "בארי",
+    "population": "1,050"
+  },
+  {
+    "Symbol": "559",
+    "name": "בוסתן הגליל",
+    "population": "1,302"
+  },
+  {
+    "Symbol": "482",
+    "name": "בועיינה-נוג'ידאת",
+    "population": "9,812"
+  },
+  {
+    "Symbol": "4001",
+    "name": "בוקעאתא",
+    "population": "6,610"
+  },
+  {
+    "Symbol": "698",
+    "name": "בורגתה",
+    "population": "1,135"
+  },
+  {
+    "Symbol": "2043",
+    "name": "בחן",
+    "population": "1,084"
+  },
+  {
+    "Symbol": "762",
+    "name": "בטחה",
+    "population": "777"
+  },
+  {
+    "Symbol": "1725",
+    "name": "בי\"ס אזורי מקיף (אשר)",
+    "population": "-"
+  },
+  {
+    "Symbol": "234",
+    "name": "ביצרון",
+    "population": "1,258"
+  },
+  {
+    "Symbol": "998",
+    "name": "ביר אל-מכסור",
+    "population": "9,522"
+  },
+  {
+    "Symbol": "1348",
+    "name": "ביר הדאג'",
+    "population": "5,874"
+  },
+  {
+    "Symbol": "368",
+    "name": "בירייה",
+    "population": "839"
+  },
+  {
+    "Symbol": "317",
+    "name": "בית אורן",
+    "population": "507"
+  },
+  {
+    "Symbol": "3574",
+    "name": "בית אל",
+    "population": "5,973"
+  },
+  {
+    "Symbol": "562",
+    "name": "בית אלעזרי",
+    "population": "1,567"
+  },
+  {
+    "Symbol": "95",
+    "name": "בית אלפא",
+    "population": "1,075"
+  },
+  {
+    "Symbol": "3652",
+    "name": "בית אריה-עופרים",
+    "population": "5,253"
+  },
+  {
+    "Symbol": "1076",
+    "name": "בית ברל",
+    "population": "198"
+  },
+  {
+    "Symbol": "619",
+    "name": "בית גוברין",
+    "population": "434"
+  },
+  {
+    "Symbol": "571",
+    "name": "בית גמליאל",
+    "population": "1,019"
+  },
+  {
+    "Symbol": "480",
+    "name": "בית ג'ן",
+    "population": "12,001"
+  },
+  {
+    "Symbol": "466",
+    "name": "בית דגן",
+    "population": "7,284"
+  },
+  {
+    "Symbol": "723",
+    "name": "בית הגדי",
+    "population": "847"
+  },
+  {
+    "Symbol": "373",
+    "name": "בית הלוי",
+    "population": "828"
+  },
+  {
+    "Symbol": "322",
+    "name": "בית הלל",
+    "population": "775"
+  },
+  {
+    "Symbol": "572",
+    "name": "בית העמק",
+    "population": "577"
+  },
+  {
+    "Symbol": "3645",
+    "name": "בית הערבה",
+    "population": "350"
+  },
+  {
+    "Symbol": "242",
+    "name": "בית השיטה",
+    "population": "1,263"
+  },
+  {
+    "Symbol": "353",
+    "name": "בית זיד",
+    "population": "84"
+  },
+  {
+    "Symbol": "710",
+    "name": "בית זית",
+    "population": "1,708"
+  },
+  {
+    "Symbol": "143",
+    "name": "בית זרע",
+    "population": "578"
+  },
+  {
+    "Symbol": "1712",
+    "name": "בית חולים פוריה",
+    "population": "-"
+  },
+  {
+    "Symbol": "3575",
+    "name": "בית חורון",
+    "population": "1,437"
+  },
+  {
+    "Symbol": "877",
+    "name": "בית חירות",
+    "population": "916"
+  },
+  {
+    "Symbol": "2033",
+    "name": "בית חלקיה",
+    "population": "1,248"
+  },
+  {
+    "Symbol": "159",
+    "name": "בית חנן",
+    "population": "542"
+  },
+  {
+    "Symbol": "800",
+    "name": "בית חנניה",
+    "population": "907"
+  },
+  {
+    "Symbol": "1050",
+    "name": "בית חשמונאי",
+    "population": "2,197"
+  },
+  {
+    "Symbol": "288",
+    "name": "בית יהושע",
+    "population": "1,046"
+  },
+  {
+    "Symbol": "265",
+    "name": "בית יוסף",
+    "population": "481"
+  },
+  {
+    "Symbol": "200",
+    "name": "בית ינאי",
+    "population": "372"
+  },
+  {
+    "Symbol": "326",
+    "name": "בית יצחק-שער חפר",
+    "population": "2,131"
+  },
+  {
+    "Symbol": "430",
+    "name": "בית לחם הגלילית",
+    "population": "843"
+  },
+  {
+    "Symbol": "751",
+    "name": "בית מאיר",
+    "population": "877"
+  },
+  {
+    "Symbol": "784",
+    "name": "בית נחמיה",
+    "population": "879"
+  },
+  {
+    "Symbol": "16",
+    "name": "בית ניר",
+    "population": "608"
+  },
+  {
+    "Symbol": "672",
+    "name": "בית נקופה",
+    "population": "744"
+  },
+  {
+    "Symbol": "202",
+    "name": "בית עובד",
+    "population": "263"
+  },
+  {
+    "Symbol": "301",
+    "name": "בית עוזיאל",
+    "population": "624"
+  },
+  {
+    "Symbol": "756",
+    "name": "בית עזרא",
+    "population": "1,116"
+  },
+  {
+    "Symbol": "604",
+    "name": "בית עריף",
+    "population": "1,174"
+  },
+  {
+    "Symbol": "212",
+    "name": "בית צבי",
+    "population": "347"
+  },
+  {
+    "Symbol": "598",
+    "name": "בית קמה",
+    "population": "1,405"
+  },
+  {
+    "Symbol": "365",
+    "name": "בית קשת",
+    "population": "713"
+  },
+  {
+    "Symbol": "848",
+    "name": "בית רבן",
+    "population": "1,019"
+  },
+  {
+    "Symbol": "1162",
+    "name": "בית רימון",
+    "population": "876"
+  },
+  {
+    "Symbol": "9200",
+    "name": "בית שאן",
+    "population": "18,463"
+  },
+  {
+    "Symbol": "2610",
+    "name": "בית שמש",
+    "population": "124,957"
+  },
+  {
+    "Symbol": "248",
+    "name": "בית שערים",
+    "population": "766"
+  },
+  {
+    "Symbol": "747",
+    "name": "בית שקמה",
+    "population": "862"
+  },
+  {
+    "Symbol": "252",
+    "name": "ביתן אהרן",
+    "population": "152"
+  },
+  {
+    "Symbol": "3780",
+    "name": "ביתר עילית",
+    "population": "59,269"
+  },
+  {
+    "Symbol": "94",
+    "name": "בלפוריה",
+    "population": "529"
+  },
+  {
+    "Symbol": "760",
+    "name": "בן זכאי",
+    "population": "1,132"
+  },
+  {
+    "Symbol": "712",
+    "name": "בן עמי",
+    "population": "765"
+  },
+  {
+    "Symbol": "1084",
+    "name": "בן שמן (כפר נוער)",
+    "population": "620"
+  },
+  {
+    "Symbol": "2013",
+    "name": "בן שמן (מושב)",
+    "population": "870"
+  },
+  {
+    "Symbol": "6100",
+    "name": "בני ברק",
+    "population": "204,640"
+  },
+  {
+    "Symbol": "1368",
+    "name": "בני דקלים",
+    "population": "1,211"
+  },
+  {
+    "Symbol": "592",
+    "name": "בני דרום",
+    "population": "903"
+  },
+  {
+    "Symbol": "386",
+    "name": "בני דרור",
+    "population": "1,171"
+  },
+  {
+    "Symbol": "4015",
+    "name": "בני יהודה",
+    "population": "1,085"
+  },
+  {
+    "Symbol": "1363",
+    "name": "בני נצרים",
+    "population": "770"
+  },
+  {
+    "Symbol": "448",
+    "name": "בני עטרות",
+    "population": "965"
+  },
+  {
+    "Symbol": "1066",
+    "name": "בני עי\"ש",
+    "population": "6,978"
+  },
+  {
+    "Symbol": "418",
+    "name": "בני ציון",
+    "population": "1,371"
+  },
+  {
+    "Symbol": "588",
+    "name": "בני ראם",
+    "population": "1,416"
+  },
+  {
+    "Symbol": "685",
+    "name": "בניה",
+    "population": "798"
+  },
+  {
+    "Symbol": "9800",
+    "name": "בנימינה-גבעת עדה*",
+    "population": "15,846"
+  },
+  {
+    "Symbol": "1326",
+    "name": "בסמ\"ה",
+    "population": "10,010"
+  },
+  {
+    "Symbol": "944",
+    "name": "בסמת טבעון",
+    "population": "7,915"
+  },
+  {
+    "Symbol": "483",
+    "name": "בענה",
+    "population": "8,381"
+  },
+  {
+    "Symbol": "389",
+    "name": "בצרה",
+    "population": "1,212"
+  },
+  {
+    "Symbol": "589",
+    "name": "בצת",
+    "population": "295"
+  },
+  {
+    "Symbol": "864",
+    "name": "בקוע",
+    "population": "786"
+  },
+  {
+    "Symbol": "3612",
+    "name": "בקעות",
+    "population": "181"
+  },
+  {
+    "Symbol": "823",
+    "name": "בר גיורא",
+    "population": "674"
+  },
+  {
+    "Symbol": "1191",
+    "name": "בר יוחאי",
+    "population": "1,072"
+  },
+  {
+    "Symbol": "3744",
+    "name": "ברוכין",
+    "population": "1,165"
+  },
+  {
+    "Symbol": "428",
+    "name": "ברור חיל",
+    "population": "953"
+  },
+  {
+    "Symbol": "2060",
+    "name": "ברוש",
+    "population": "564"
+  },
+  {
+    "Symbol": "3710",
+    "name": "ברכה",
+    "population": "2,757"
+  },
+  {
+    "Symbol": "746",
+    "name": "ברכיה",
+    "population": "1,274"
+  },
+  {
+    "Symbol": "1728",
+    "name": "בר-לב",
+    "population": "-"
+  },
+  {
+    "Symbol": "667",
+    "name": "ברעם",
+    "population": "594"
+  },
+  {
+    "Symbol": "141",
+    "name": "ברק",
+    "population": "411"
+  },
+  {
+    "Symbol": "617",
+    "name": "ברקאי",
+    "population": "553"
+  },
+  {
+    "Symbol": "3654",
+    "name": "ברקן",
+    "population": "1,895"
+  },
+  {
+    "Symbol": "2038",
+    "name": "ברקת",
+    "population": "2,081"
+  },
+  {
+    "Symbol": "1323",
+    "name": "בת הדר",
+    "population": "760"
+  },
+  {
+    "Symbol": "1361",
+    "name": "בת חן",
+    "population": "412"
+  },
+  {
+    "Symbol": "1319",
+    "name": "בת חפר",
+    "population": "5,300"
+  },
+  {
+    "Symbol": "6200",
+    "name": "בת ים",
+    "population": "129,012"
+  },
+  {
+    "Symbol": "3794",
+    "name": "בת עין",
+    "population": "1,568"
+  },
+  {
+    "Symbol": "33",
+    "name": "בת שלמה",
+    "population": "656"
+  },
+  {
+    "Symbol": "1736",
+    "name": "בתי זיקוק - קישון",
+    "population": "-"
+  },
+  {
+    "Symbol": "872",
+    "name": "גאולי תימן",
+    "population": "360"
+  },
+  {
+    "Symbol": "379",
+    "name": "גאולים",
+    "population": "968"
+  },
+  {
+    "Symbol": "853",
+    "name": "גאליה",
+    "population": "974"
+  },
+  {
+    "Symbol": "352",
+    "name": "גבולות",
+    "population": "358"
+  },
+  {
+    "Symbol": "424",
+    "name": "גבים",
+    "population": "621"
+  },
+  {
+    "Symbol": "86",
+    "name": "גבע",
+    "population": "618"
+  },
+  {
+    "Symbol": "3763",
+    "name": "גבע בנימין",
+    "population": "5,682"
+  },
+  {
+    "Symbol": "683",
+    "name": "גבע כרמל",
+    "population": "1,200"
+  },
+  {
+    "Symbol": "2014",
+    "name": "גבעולים",
+    "population": "386"
+  },
+  {
+    "Symbol": "3644",
+    "name": "גבעון החדשה",
+    "population": "1,066"
+  },
+  {
+    "Symbol": "1344",
+    "name": "גבעות בר",
+    "population": "1,231"
+  },
+  {
+    "Symbol": "1293",
+    "name": "גבעת אבני",
+    "population": "2,049"
+  },
+  {
+    "Symbol": "1288",
+    "name": "גבעת אלה",
+    "population": "1,965"
+  },
+  {
+    "Symbol": "147",
+    "name": "גבעת ברנר",
+    "population": "2,679"
+  },
+  {
+    "Symbol": "870",
+    "name": "גבעת השלושה",
+    "population": "869"
+  },
+  {
+    "Symbol": "3730",
+    "name": "גבעת זאב",
+    "population": "18,420"
+  },
+  {
+    "Symbol": "207",
+    "name": "גבעת ח\"ן",
+    "population": "374"
+  },
+  {
+    "Symbol": "1740",
+    "name": "גבעת חביבה",
+    "population": "-"
+  },
+  {
+    "Symbol": "2018",
+    "name": "גבעת חיים (איחוד)",
+    "population": "1,176"
+  },
+  {
+    "Symbol": "173",
+    "name": "גבעת חיים (מאוחד)",
+    "population": "1,019"
+  },
+  {
+    "Symbol": "4021",
+    "name": "גבעת יואב",
+    "population": "707"
+  },
+  {
+    "Symbol": "787",
+    "name": "גבעת יערים",
+    "population": "1,454"
+  },
+  {
+    "Symbol": "919",
+    "name": "גבעת ישעיהו",
+    "population": "824"
+  },
+  {
+    "Symbol": "802",
+    "name": "גבעת כ\"ח",
+    "population": "903"
+  },
+  {
+    "Symbol": "360",
+    "name": "גבעת ניל\"י",
+    "population": "731"
+  },
+  {
+    "Symbol": "703",
+    "name": "גבעת עוז",
+    "population": "464"
+  },
+  {
+    "Symbol": "681",
+    "name": "גבעת שמואל",
+    "population": "26,578"
+  },
+  {
+    "Symbol": "566",
+    "name": "גבעת שמש",
+    "population": "63"
+  },
+  {
+    "Symbol": "1077",
+    "name": "גבעת שפירא",
+    "population": "410"
+  },
+  {
+    "Symbol": "793",
+    "name": "גבעתי",
+    "population": "1,047"
+  },
+  {
+    "Symbol": "6300",
+    "name": "גבעתיים",
+    "population": "60,643"
+  },
+  {
+    "Symbol": "342",
+    "name": "גברעם",
+    "population": "467"
+  },
+  {
+    "Symbol": "133",
+    "name": "גבת",
+    "population": "932"
+  },
+  {
+    "Symbol": "35",
+    "name": "גדות",
+    "population": "434"
+  },
+  {
+    "Symbol": "1292",
+    "name": "ג'דיידה-מכר",
+    "population": "21,163"
+  },
+  {
+    "Symbol": "145",
+    "name": "גדיש",
+    "population": "397"
+  },
+  {
+    "Symbol": "442",
+    "name": "גדעונה",
+    "population": "470"
+  },
+  {
+    "Symbol": "2550",
+    "name": "גדרה",
+    "population": "28,314"
+  },
+  {
+    "Symbol": "485",
+    "name": "ג'ולס",
+    "population": "6,466"
+  },
+  {
+    "Symbol": "852",
+    "name": "גונן",
+    "population": "364"
+  },
+  {
+    "Symbol": "755",
+    "name": "גורן",
+    "population": "426"
+  },
+  {
+    "Symbol": "1219",
+    "name": "גורנות הגליל",
+    "population": "177"
+  },
+  {
+    "Symbol": "457",
+    "name": "גזית",
+    "population": "743"
+  },
+  {
+    "Symbol": "370",
+    "name": "גזר",
+    "population": "288"
+  },
+  {
+    "Symbol": "706",
+    "name": "גיאה",
+    "population": "969"
+  },
+  {
+    "Symbol": "196",
+    "name": "גיבתון",
+    "population": "369"
+  },
+  {
+    "Symbol": "1043",
+    "name": "גיזו",
+    "population": "207"
+  },
+  {
+    "Symbol": "1204",
+    "name": "גילון",
+    "population": "1,093"
+  },
+  {
+    "Symbol": "736",
+    "name": "גילת",
+    "population": "1,451"
+  },
+  {
+    "Symbol": "262",
+    "name": "גינוסר",
+    "population": "585"
+  },
+  {
+    "Symbol": "92",
+    "name": "גיניגר",
+    "population": "703"
+  },
+  {
+    "Symbol": "863",
+    "name": "גינתון",
+    "population": "919"
+  },
+  {
+    "Symbol": "1206",
+    "name": "גיתה",
+    "population": "291"
+  },
+  {
+    "Symbol": "3613",
+    "name": "גיתית",
+    "population": "505"
+  },
+  {
+    "Symbol": "393",
+    "name": "גלאון",
+    "population": "582"
+  },
+  {
+    "Symbol": "627",
+    "name": "ג'לג'וליה",
+    "population": "10,148"
+  },
+  {
+    "Symbol": "3606",
+    "name": "גלגל",
+    "population": "203"
+  },
+  {
+    "Symbol": "346",
+    "name": "גליל ים",
+    "population": "533"
+  },
+  {
+    "Symbol": "369",
+    "name": "גלעד (אבן יצחק)",
+    "population": "493"
+  },
+  {
+    "Symbol": "745",
+    "name": "גמזו",
+    "population": "1,206"
+  },
+  {
+    "Symbol": "1072",
+    "name": "גן הדרום",
+    "population": "636"
+  },
+  {
+    "Symbol": "225",
+    "name": "גן השומרון",
+    "population": "861"
+  },
+  {
+    "Symbol": "239",
+    "name": "גן חיים",
+    "population": "816"
+  },
+  {
+    "Symbol": "734",
+    "name": "גן יאשיה",
+    "population": "997"
+  },
+  {
+    "Symbol": "166",
+    "name": "גן יבנה",
+    "population": "23,869"
+  },
+  {
+    "Symbol": "1274",
+    "name": "גן נר",
+    "population": "2,671"
+  },
+  {
+    "Symbol": "311",
+    "name": "גן שורק",
+    "population": "694"
+  },
+  {
+    "Symbol": "144",
+    "name": "גן שלמה",
+    "population": "579"
+  },
+  {
+    "Symbol": "72",
+    "name": "גן שמואל",
+    "population": "933"
+  },
+  {
+    "Symbol": "836",
+    "name": "גנות",
+    "population": "588"
+  },
+  {
+    "Symbol": "549",
+    "name": "גנות הדר",
+    "population": "971"
+  },
+  {
+    "Symbol": "1103",
+    "name": "גני הדר",
+    "population": "338"
+  },
+  {
+    "Symbol": "1371",
+    "name": "גני טל",
+    "population": "867"
+  },
+  {
+    "Symbol": "862",
+    "name": "גני יוחנן",
+    "population": "622"
+  },
+  {
+    "Symbol": "3823",
+    "name": "גני מודיעין",
+    "population": "2,603"
+  },
+  {
+    "Symbol": "218",
+    "name": "גני עם",
+    "population": "242"
+  },
+  {
+    "Symbol": "229",
+    "name": "גני תקווה",
+    "population": "20,398"
+  },
+  {
+    "Symbol": "541",
+    "name": "ג'סר א-זרקא",
+    "population": "14,930"
+  },
+  {
+    "Symbol": "842",
+    "name": "געש",
+    "population": "820"
+  },
+  {
+    "Symbol": "463",
+    "name": "געתון",
+    "population": "691"
+  },
+  {
+    "Symbol": "39",
+    "name": "גפן",
+    "population": "411"
+  },
+  {
+    "Symbol": "1129",
+    "name": "גרופית",
+    "population": "249"
+  },
+  {
+    "Symbol": "487",
+    "name": "ג'ש (גוש חלב)",
+    "population": "3,105"
+  },
+  {
+    "Symbol": "4022",
+    "name": "גשור",
+    "population": "280"
+  },
+  {
+    "Symbol": "305",
+    "name": "גשר",
+    "population": "427"
+  },
+  {
+    "Symbol": "574",
+    "name": "גשר הזיו",
+    "population": "1,614"
+  },
+  {
+    "Symbol": "628",
+    "name": "ג'ת",
+    "population": "12,100"
+  },
+  {
+    "Symbol": "340",
+    "name": "גת (קיבוץ)",
+    "population": "869"
+  },
+  {
+    "Symbol": "128",
+    "name": "גת רימון",
+    "population": "326"
+  },
+  {
+    "Symbol": "494",
+    "name": "דאלית אל-כרמל",
+    "population": "17,652"
+  },
+  {
+    "Symbol": "146",
+    "name": "דבורה",
+    "population": "216"
+  },
+  {
+    "Symbol": "489",
+    "name": "דבורייה",
+    "population": "10,510"
+  },
+  {
+    "Symbol": "849",
+    "name": "דבירה",
+    "population": "1,007"
+  },
+  {
+    "Symbol": "407",
+    "name": "דברת",
+    "population": "494"
+  },
+  {
+    "Symbol": "62",
+    "name": "דגניה א'",
+    "population": "528"
+  },
+  {
+    "Symbol": "79",
+    "name": "דגניה ב'",
+    "population": "675"
+  },
+  {
+    "Symbol": "1067",
+    "name": "דוב\"ב",
+    "population": "482"
+  },
+  {
+    "Symbol": "3747",
+    "name": "דולב",
+    "population": "1,448"
+  },
+  {
+    "Symbol": "738",
+    "name": "דור",
+    "population": "443"
+  },
+  {
+    "Symbol": "336",
+    "name": "דורות",
+    "population": "843"
+  },
+  {
+    "Symbol": "475",
+    "name": "דחי",
+    "population": "703"
+  },
+  {
+    "Symbol": "490",
+    "name": "דייר אל-אסד",
+    "population": "12,514"
+  },
+  {
+    "Symbol": "492",
+    "name": "דייר חנא",
+    "population": "10,338"
+  },
+  {
+    "Symbol": "493",
+    "name": "דייר ראפאת",
+    "population": "96"
+  },
+  {
+    "Symbol": "2200",
+    "name": "דימונה",
+    "population": "34,499"
+  },
+  {
+    "Symbol": "2063",
+    "name": "דישון",
+    "population": "332"
+  },
+  {
+    "Symbol": "300",
+    "name": "דלייה",
+    "population": "816"
+  },
+  {
+    "Symbol": "1709",
+    "name": "דלתון",
+    "population": "-"
+  },
+  {
+    "Symbol": "431",
+    "name": "דלתון",
+    "population": "862"
+  },
+  {
+    "Symbol": "1317",
+    "name": "דמיידה",
+    "population": "515"
+  },
+  {
+    "Symbol": "303",
+    "name": "דן",
+    "population": "745"
+  },
+  {
+    "Symbol": "302",
+    "name": "דפנה",
+    "population": "962"
+  },
+  {
+    "Symbol": "1241",
+    "name": "דקל",
+    "population": "351"
+  },
+  {
+    "Symbol": "1349",
+    "name": "דריג'את",
+    "population": "1,243"
+  },
+  {
+    "Symbol": "702",
+    "name": "האון",
+    "population": "181"
+  },
+  {
+    "Symbol": "675",
+    "name": "הבונים",
+    "population": "368"
+  },
+  {
+    "Symbol": "356",
+    "name": "הגושרים",
+    "population": "820"
+  },
+  {
+    "Symbol": "191",
+    "name": "הדר עם",
+    "population": "675"
+  },
+  {
+    "Symbol": "9700",
+    "name": "הוד השרון",
+    "population": "63,175"
+  },
+  {
+    "Symbol": "1322",
+    "name": "הודיות",
+    "population": "324"
+  },
+  {
+    "Symbol": "726",
+    "name": "הודייה",
+    "population": "548"
+  },
+  {
+    "Symbol": "1186",
+    "name": "הושעיה",
+    "population": "2,051"
+  },
+  {
+    "Symbol": "250",
+    "name": "הזורע",
+    "population": "914"
+  },
+  {
+    "Symbol": "307",
+    "name": "הזורעים",
+    "population": "1,059"
+  },
+  {
+    "Symbol": "434",
+    "name": "החותרים",
+    "population": "859"
+  },
+  {
+    "Symbol": "684",
+    "name": "היוגב",
+    "population": "711"
+  },
+  {
+    "Symbol": "1208",
+    "name": "הילה",
+    "population": "588"
+  },
+  {
+    "Symbol": "377",
+    "name": "המעפיל",
+    "population": "868"
+  },
+  {
+    "Symbol": "1751",
+    "name": "המרכז למחקר-נחל שורק",
+    "population": "-"
+  },
+  {
+    "Symbol": "677",
+    "name": "הסוללים",
+    "population": "933"
+  },
+  {
+    "Symbol": "423",
+    "name": "העוגן",
+    "population": "922"
+  },
+  {
+    "Symbol": "3769",
+    "name": "הר אדר",
+    "population": "4,088"
+  },
+  {
+    "Symbol": "3603",
+    "name": "הר גילה",
+    "population": "1,635"
+  },
+  {
+    "Symbol": "1261",
+    "name": "הר עמשא",
+    "population": "198"
+  },
+  {
+    "Symbol": "464",
+    "name": "הראל",
+    "population": "264"
+  },
+  {
+    "Symbol": "1249",
+    "name": "הרדוף",
+    "population": "1,094"
+  },
+  {
+    "Symbol": "6400",
+    "name": "הרצלייה",
+    "population": "97,470"
+  },
+  {
+    "Symbol": "1203",
+    "name": "הררית",
+    "population": "543"
+  },
+  {
+    "Symbol": "3639",
+    "name": "ורד יריחו",
+    "population": "341"
+  },
+  {
+    "Symbol": "1133",
+    "name": "ורדון",
+    "population": "276"
+  },
+  {
+    "Symbol": "815",
+    "name": "זבדיאל",
+    "population": "559"
+  },
+  {
+    "Symbol": "44",
+    "name": "זוהר",
+    "population": "350"
+  },
+  {
+    "Symbol": "584",
+    "name": "זיקים",
+    "population": "852"
+  },
+  {
+    "Symbol": "788",
+    "name": "זיתן",
+    "population": "1,064"
+  },
+  {
+    "Symbol": "9300",
+    "name": "זכרון יעקב",
+    "population": "23,206"
+  },
+  {
+    "Symbol": "799",
+    "name": "זכריה",
+    "population": "1,124"
+  },
+  {
+    "Symbol": "1290",
+    "name": "זמר",
+    "population": "7,094"
+  },
+  {
+    "Symbol": "1065",
+    "name": "זמרת",
+    "population": "624"
+  },
+  {
+    "Symbol": "816",
+    "name": "זנוח",
+    "population": "525"
+  },
+  {
+    "Symbol": "2064",
+    "name": "זרועה",
+    "population": "468"
+  },
+  {
+    "Symbol": "975",
+    "name": "זרזיר",
+    "population": "8,119"
+  },
+  {
+    "Symbol": "818",
+    "name": "זרחיה",
+    "population": "729"
+  },
+  {
+    "Symbol": "235",
+    "name": "חבצלת השרון",
+    "population": "482"
+  },
+  {
+    "Symbol": "1110",
+    "name": "חבר",
+    "population": "617"
+  },
+  {
+    "Symbol": "717",
+    "name": "חגור",
+    "population": "1,162"
+  },
+  {
+    "Symbol": "3764",
+    "name": "חגי",
+    "population": "667"
+  },
+  {
+    "Symbol": "205",
+    "name": "חגלה",
+    "population": "865"
+  },
+  {
+    "Symbol": "618",
+    "name": "חדיד",
+    "population": "875"
+  },
+  {
+    "Symbol": "4026",
+    "name": "חד-נס",
+    "population": "810"
+  },
+  {
+    "Symbol": "6500",
+    "name": "חדרה",
+    "population": "97,334"
+  },
+  {
+    "Symbol": "1321",
+    "name": "ח'ואלד",
+    "population": "710"
+  },
+  {
+    "Symbol": "160",
+    "name": "חולדה",
+    "population": "1,162"
+  },
+  {
+    "Symbol": "6600",
+    "name": "חולון",
+    "population": "196,283"
+  },
+  {
+    "Symbol": "1239",
+    "name": "חולית",
+    "population": "169"
+  },
+  {
+    "Symbol": "253",
+    "name": "חולתה",
+    "population": "700"
+  },
+  {
+    "Symbol": "662",
+    "name": "חוסן",
+    "population": "1,135"
+  },
+  {
+    "Symbol": "1332",
+    "name": "חוסנייה",
+    "population": "773"
+  },
+  {
+    "Symbol": "115",
+    "name": "חופית",
+    "population": "774"
+  },
+  {
+    "Symbol": "374",
+    "name": "חוקוק",
+    "population": "612"
+  },
+  {
+    "Symbol": "1303",
+    "name": "חורה",
+    "population": "22,337"
+  },
+  {
+    "Symbol": "496",
+    "name": "חורפיש",
+    "population": "6,410"
+  },
+  {
+    "Symbol": "355",
+    "name": "חורשים",
+    "population": "335"
+  },
+  {
+    "Symbol": "1047",
+    "name": "חזון",
+    "population": "306"
+  },
+  {
+    "Symbol": "219",
+    "name": "חיבת ציון",
+    "population": "726"
+  },
+  {
+    "Symbol": "3643",
+    "name": "חיננית",
+    "population": "1,411"
+  },
+  {
+    "Symbol": "4000",
+    "name": "חיפה",
+    "population": "285,317"
+  },
+  {
+    "Symbol": "162",
+    "name": "חירות",
+    "population": "1,298"
+  },
+  {
+    "Symbol": "1272",
+    "name": "חלוץ",
+    "population": "536"
+  },
+  {
+    "Symbol": "820",
+    "name": "חלץ",
+    "population": "455"
+  },
+  {
+    "Symbol": "801",
+    "name": "חמ\"ד",
+    "population": "1,316"
+  },
+  {
+    "Symbol": "993",
+    "name": "חמאם",
+    "population": "1,504"
+  },
+  {
+    "Symbol": "343",
+    "name": "חמדיה",
+    "population": "381"
+  },
+  {
+    "Symbol": "3646",
+    "name": "חמדת",
+    "population": "296"
+  },
+  {
+    "Symbol": "3609",
+    "name": "חמרה",
+    "population": "173"
+  },
+  {
+    "Symbol": "807",
+    "name": "חניאל",
+    "population": "923"
+  },
+  {
+    "Symbol": "280",
+    "name": "חניתה",
+    "population": "755"
+  },
+  {
+    "Symbol": "1257",
+    "name": "חנתון",
+    "population": "984"
+  },
+  {
+    "Symbol": "4005",
+    "name": "חספין",
+    "population": "2,055"
+  },
+  {
+    "Symbol": "363",
+    "name": "חפץ חיים",
+    "population": "558"
+  },
+  {
+    "Symbol": "90",
+    "name": "חפצי-בה",
+    "population": "732"
+  },
+  {
+    "Symbol": "700",
+    "name": "חצב",
+    "population": "1,486"
+  },
+  {
+    "Symbol": "13",
+    "name": "חצבה",
+    "population": "620"
+  },
+  {
+    "Symbol": "2034",
+    "name": "חצור הגלילית",
+    "population": "9,271"
+  },
+  {
+    "Symbol": "406",
+    "name": "חצור-אשדוד",
+    "population": "653"
+  },
+  {
+    "Symbol": "397",
+    "name": "חצרים",
+    "population": "852"
+  },
+  {
+    "Symbol": "422",
+    "name": "חרב לאת",
+    "population": "972"
+  },
+  {
+    "Symbol": "1024",
+    "name": "חרוצים",
+    "population": "846"
+  },
+  {
+    "Symbol": "1247",
+    "name": "חריש",
+    "population": "13,232"
+  },
+  {
+    "Symbol": "3717",
+    "name": "חרמש",
+    "population": "224"
+  },
+  {
+    "Symbol": "1209",
+    "name": "חרשים",
+    "population": "333"
+  },
+  {
+    "Symbol": "3770",
+    "name": "חשמונאים",
+    "population": "2,771"
+  },
+  {
+    "Symbol": "6700",
+    "name": "טבריה",
+    "population": "44,779"
+  },
+  {
+    "Symbol": "962",
+    "name": "טובא-זנגרייה",
+    "population": "6,776"
+  },
+  {
+    "Symbol": "498",
+    "name": "טורעאן",
+    "population": "14,240"
+  },
+  {
+    "Symbol": "2730",
+    "name": "טייבה",
+    "population": "43,957"
+  },
+  {
+    "Symbol": "497",
+    "name": "טייבה (בעמק)",
+    "population": "1,865"
+  },
+  {
+    "Symbol": "2720",
+    "name": "טירה",
+    "population": "26,552"
+  },
+  {
+    "Symbol": "663",
+    "name": "טירת יהודה",
+    "population": "1,201"
+  },
+  {
+    "Symbol": "2100",
+    "name": "טירת כרמל",
+    "population": "23,112"
+  },
+  {
+    "Symbol": "268",
+    "name": "טירת צבי",
+    "population": "901"
+  },
+  {
+    "Symbol": "462",
+    "name": "טל שחר",
+    "population": "1,369"
+  },
+  {
+    "Symbol": "1181",
+    "name": "טל-אל",
+    "population": "1,186"
+  },
+  {
+    "Symbol": "1177",
+    "name": "טללים",
+    "population": "543"
+  },
+  {
+    "Symbol": "3788",
+    "name": "טלמון",
+    "population": "4,575"
+  },
+  {
+    "Symbol": "8900",
+    "name": "טמרה",
+    "population": "34,393"
+  },
+  {
+    "Symbol": "547",
+    "name": "טמרה (יזרעאל)",
+    "population": "1,601"
+  },
+  {
+    "Symbol": "3743",
+    "name": "טנא",
+    "population": "872"
+  },
+  {
+    "Symbol": "1214",
+    "name": "טפחות",
+    "population": "478"
+  },
+  {
+    "Symbol": "1295",
+    "name": "יאנוח-ג'ת",
+    "population": "6,679"
+  },
+  {
+    "Symbol": "1232",
+    "name": "יבול",
+    "population": "338"
+  },
+  {
+    "Symbol": "46",
+    "name": "יבנאל",
+    "population": "4,243"
+  },
+  {
+    "Symbol": "2660",
+    "name": "יבנה",
+    "population": "47,585"
+  },
+  {
+    "Symbol": "96",
+    "name": "יגור",
+    "population": "1,617"
+  },
+  {
+    "Symbol": "798",
+    "name": "יגל",
+    "population": "918"
+  },
+  {
+    "Symbol": "577",
+    "name": "יד בנימין",
+    "population": "4,268"
+  },
+  {
+    "Symbol": "1134",
+    "name": "יד השמונה",
+    "population": "299"
+  },
+  {
+    "Symbol": "758",
+    "name": "יד חנה",
+    "population": "968"
+  },
+  {
+    "Symbol": "358",
+    "name": "יד מרדכי",
+    "population": "737"
+  },
+  {
+    "Symbol": "775",
+    "name": "יד נתן",
+    "population": "666"
+  },
+  {
+    "Symbol": "64",
+    "name": "יד רמב\"ם",
+    "population": "1,125"
+  },
+  {
+    "Symbol": "1144",
+    "name": "ידידה",
+    "population": "208"
+  },
+  {
+    "Symbol": "9400",
+    "name": "יהוד",
+    "population": "29,929"
+  },
+  {
+    "Symbol": "1158",
+    "name": "יהל",
+    "population": "218"
+  },
+  {
+    "Symbol": "2009",
+    "name": "יובל",
+    "population": "637"
+  },
+  {
+    "Symbol": "1226",
+    "name": "יובלים",
+    "population": "1,093"
+  },
+  {
+    "Symbol": "1112",
+    "name": "יודפת",
+    "population": "907"
+  },
+  {
+    "Symbol": "4007",
+    "name": "יונתן",
+    "population": "745"
+  },
+  {
+    "Symbol": "803",
+    "name": "יושיביה",
+    "population": "683"
+  },
+  {
+    "Symbol": "452",
+    "name": "יזרעאל",
+    "population": "553"
+  },
+  {
+    "Symbol": "409",
+    "name": "יחיעם",
+    "population": "728"
+  },
+  {
+    "Symbol": "866",
+    "name": "יטבתה",
+    "population": "717"
+  },
+  {
+    "Symbol": "3607",
+    "name": "ייט\"ב",
+    "population": "359"
+  },
+  {
+    "Symbol": "811",
+    "name": "יכיני",
+    "population": "734"
+  },
+  {
+    "Symbol": "1772",
+    "name": "ים המלח - בתי מלון",
+    "population": "-"
+  },
+  {
+    "Symbol": "753",
+    "name": "ינוב",
+    "population": "936"
+  },
+  {
+    "Symbol": "2011",
+    "name": "ינון",
+    "population": "1,196"
+  },
+  {
+    "Symbol": "29",
+    "name": "יסוד המעלה",
+    "population": "1,730"
+  },
+  {
+    "Symbol": "440",
+    "name": "יסודות",
+    "population": "924"
+  },
+  {
+    "Symbol": "575",
+    "name": "יסעור",
+    "population": "867"
+  },
+  {
+    "Symbol": "1138",
+    "name": "יעד",
+    "population": "690"
+  },
+  {
+    "Symbol": "1117",
+    "name": "יעל",
+    "population": "-"
+  },
+  {
+    "Symbol": "1044",
+    "name": "יעף",
+    "population": "300"
+  },
+  {
+    "Symbol": "795",
+    "name": "יערה",
+    "population": "752"
+  },
+  {
+    "Symbol": "499",
+    "name": "יפיע",
+    "population": "19,151"
+  },
+  {
+    "Symbol": "3566",
+    "name": "יפית",
+    "population": "203"
+  },
+  {
+    "Symbol": "134",
+    "name": "יפעת",
+    "population": "1,208"
+  },
+  {
+    "Symbol": "453",
+    "name": "יפתח",
+    "population": "569"
+  },
+  {
+    "Symbol": "3749",
+    "name": "יצהר",
+    "population": "1,726"
+  },
+  {
+    "Symbol": "759",
+    "name": "יציץ",
+    "population": "822"
+  },
+  {
+    "Symbol": "417",
+    "name": "יקום",
+    "population": "771"
+  },
+  {
+    "Symbol": "3647",
+    "name": "יקיר",
+    "population": "2,288"
+  },
+  {
+    "Symbol": "241",
+    "name": "יקנעם (מושבה)",
+    "population": "1,401"
+  },
+  {
+    "Symbol": "240",
+    "name": "יקנעם עילית",
+    "population": "23,797"
+  },
+  {
+    "Symbol": "623",
+    "name": "יראון",
+    "population": "404"
+  },
+  {
+    "Symbol": "2026",
+    "name": "ירדנה",
+    "population": "371"
+  },
+  {
+    "Symbol": "831",
+    "name": "ירוחם",
+    "population": "10,294"
+  },
+  {
+    "Symbol": "3000",
+    "name": "ירושלים",
+    "population": "936,425"
+  },
+  {
+    "Symbol": "718",
+    "name": "ירחיב",
+    "population": "1,082"
+  },
+  {
+    "Symbol": "502",
+    "name": "ירכא",
+    "population": "17,170"
+  },
+  {
+    "Symbol": "183",
+    "name": "ירקונה",
+    "population": "360"
+  },
+  {
+    "Symbol": "916",
+    "name": "ישע",
+    "population": "414"
+  },
+  {
+    "Symbol": "805",
+    "name": "ישעי",
+    "population": "771"
+  },
+  {
+    "Symbol": "828",
+    "name": "ישרש",
+    "population": "1,000"
+  },
+  {
+    "Symbol": "1227",
+    "name": "יתד",
+    "population": "508"
+  },
+  {
+    "Symbol": "504",
+    "name": "כאבול",
+    "population": "14,096"
+  },
+  {
+    "Symbol": "505",
+    "name": "כאוכב אבו אל-היג'א",
+    "population": "3,589"
+  },
+  {
+    "Symbol": "576",
+    "name": "כברי",
+    "population": "1,054"
+  },
+  {
+    "Symbol": "371",
+    "name": "כדורי",
+    "population": "248"
+  },
+  {
+    "Symbol": "1338",
+    "name": "כדיתה",
+    "population": "180"
+  },
+  {
+    "Symbol": "3564",
+    "name": "כוכב השחר",
+    "population": "2,227"
+  },
+  {
+    "Symbol": "1224",
+    "name": "כוכב יאיר",
+    "population": "8,703"
+  },
+  {
+    "Symbol": "3779",
+    "name": "כוכב יעקב",
+    "population": "8,542"
+  },
+  {
+    "Symbol": "824",
+    "name": "כוכב מיכאל",
+    "population": "1,051"
+  },
+  {
+    "Symbol": "1252",
+    "name": "כורזים",
+    "population": "349"
+  },
+  {
+    "Symbol": "1210",
+    "name": "כחל",
+    "population": "442"
+  },
+  {
+    "Symbol": "1367",
+    "name": "כחלה",
+    "population": "429"
+  },
+  {
+    "Symbol": "840",
+    "name": "כיסופים",
+    "population": "280"
+  },
+  {
+    "Symbol": "1153",
+    "name": "כישור",
+    "population": "188"
+  },
+  {
+    "Symbol": "1183",
+    "name": "כליל",
+    "population": "748"
+  },
+  {
+    "Symbol": "1229",
+    "name": "כלנית",
+    "population": "239"
+  },
+  {
+    "Symbol": "1331",
+    "name": "כמאנה",
+    "population": "1,534"
+  },
+  {
+    "Symbol": "1291",
+    "name": "כמהין",
+    "population": "188"
+  },
+  {
+    "Symbol": "1201",
+    "name": "כמון",
+    "population": "1,402"
+  },
+  {
+    "Symbol": "2006",
+    "name": "כנות",
+    "population": "439"
+  },
+  {
+    "Symbol": "4028",
+    "name": "כנף",
+    "population": "461"
+  },
+  {
+    "Symbol": "63",
+    "name": "כנרת (מושבה)",
+    "population": "685"
+  },
+  {
+    "Symbol": "57",
+    "name": "כנרת (קבוצה)",
+    "population": "690"
+  },
+  {
+    "Symbol": "1059",
+    "name": "כסיפה",
+    "population": "21,866"
+  },
+  {
+    "Symbol": "859",
+    "name": "כסלון",
+    "population": "427"
+  },
+  {
+    "Symbol": "1296",
+    "name": "כסרא-סמיע",
+    "population": "8,818"
+  },
+  {
+    "Symbol": "978",
+    "name": "כעביה-טבאש-חג'אג'רה",
+    "population": "5,504"
+  },
+  {
+    "Symbol": "857",
+    "name": "כפר אביב",
+    "population": "821"
+  },
+  {
+    "Symbol": "3638",
+    "name": "כפר אדומים",
+    "population": "4,674"
+  },
+  {
+    "Symbol": "364",
+    "name": "כפר אוריה",
+    "population": "947"
+  },
+  {
+    "Symbol": "690",
+    "name": "כפר אחים",
+    "population": "877"
+  },
+  {
+    "Symbol": "220",
+    "name": "כפר ביאליק",
+    "population": "856"
+  },
+  {
+    "Symbol": "177",
+    "name": "כפר ביל\"ו",
+    "population": "1,259"
+  },
+  {
+    "Symbol": "357",
+    "name": "כפר בלום",
+    "population": "765"
+  },
+  {
+    "Symbol": "2010",
+    "name": "כפר בן נון",
+    "population": "749"
+  },
+  {
+    "Symbol": "633",
+    "name": "כפר ברא",
+    "population": "3,678"
+  },
+  {
+    "Symbol": "132",
+    "name": "כפר ברוך",
+    "population": "601"
+  },
+  {
+    "Symbol": "106",
+    "name": "כפר גדעון",
+    "population": "346"
+  },
+  {
+    "Symbol": "427",
+    "name": "כפר גלים",
+    "population": "390"
+  },
+  {
+    "Symbol": "310",
+    "name": "כפר גליקסון",
+    "population": "338"
+  },
+  {
+    "Symbol": "76",
+    "name": "כפר גלעדי",
+    "population": "673"
+  },
+  {
+    "Symbol": "707",
+    "name": "כפר דניאל",
+    "population": "708"
+  },
+  {
+    "Symbol": "3796",
+    "name": "כפר האורנים",
+    "population": "2,658"
+  },
+  {
+    "Symbol": "192",
+    "name": "כפר החורש",
+    "population": "699"
+  },
+  {
+    "Symbol": "254",
+    "name": "כפר המכבי",
+    "population": "386"
+  },
+  {
+    "Symbol": "582",
+    "name": "כפר הנגיד",
+    "population": "1,260"
+  },
+  {
+    "Symbol": "890",
+    "name": "כפר הנוער הדתי",
+    "population": "222"
+  },
+  {
+    "Symbol": "443",
+    "name": "כפר הנשיא",
+    "population": "876"
+  },
+  {
+    "Symbol": "187",
+    "name": "כפר הס",
+    "population": "1,593"
+  },
+  {
+    "Symbol": "217",
+    "name": "כפר הרא\"ה",
+    "population": "1,460"
+  },
+  {
+    "Symbol": "888",
+    "name": "כפר הרי\"ף",
+    "population": "836"
+  },
+  {
+    "Symbol": "190",
+    "name": "כפר ויתקין",
+    "population": "1,973"
+  },
+  {
+    "Symbol": "320",
+    "name": "כפר ורבורג",
+    "population": "1,143"
+  },
+  {
+    "Symbol": "1263",
+    "name": "כפר ורדים",
+    "population": "5,487"
+  },
+  {
+    "Symbol": "1325",
+    "name": "כפר זוהרים",
+    "population": "160"
+  },
+  {
+    "Symbol": "786",
+    "name": "כפר זיתים",
+    "population": "768"
+  },
+  {
+    "Symbol": "696",
+    "name": "כפר חב\"ד",
+    "population": "6,597"
+  },
+  {
+    "Symbol": "609",
+    "name": "כפר חושן",
+    "population": "775"
+  },
+  {
+    "Symbol": "255",
+    "name": "כפר חיטים",
+    "population": "618"
+  },
+  {
+    "Symbol": "193",
+    "name": "כפר חיים",
+    "population": "648"
+  },
+  {
+    "Symbol": "1297",
+    "name": "כפר חנניה",
+    "population": "751"
+  },
+  {
+    "Symbol": "112",
+    "name": "כפר חסידים א'",
+    "population": "842"
+  },
+  {
+    "Symbol": "889",
+    "name": "כפר חסידים ב'",
+    "population": "301"
+  },
+  {
+    "Symbol": "4004",
+    "name": "כפר חרוב",
+    "population": "434"
+  },
+  {
+    "Symbol": "673",
+    "name": "כפר טרומן",
+    "population": "893"
+  },
+  {
+    "Symbol": "507",
+    "name": "כפר יאסיף",
+    "population": "10,133"
+  },
+  {
+    "Symbol": "233",
+    "name": "כפר ידידיה",
+    "population": "730"
+  },
+  {
+    "Symbol": "140",
+    "name": "כפר יהושע",
+    "population": "1,224"
+  },
+  {
+    "Symbol": "168",
+    "name": "כפר יונה",
+    "population": "24,779"
+  },
+  {
+    "Symbol": "85",
+    "name": "כפר יחזקאל",
+    "population": "1,213"
+  },
+  {
+    "Symbol": "170",
+    "name": "כפר יעבץ",
+    "population": "659"
+  },
+  {
+    "Symbol": "508",
+    "name": "כפר כמא",
+    "population": "3,372"
+  },
+  {
+    "Symbol": "509",
+    "name": "כפר כנא",
+    "population": "22,751"
+  },
+  {
+    "Symbol": "387",
+    "name": "כפר מונש",
+    "population": "943"
+  },
+  {
+    "Symbol": "1095",
+    "name": "כפר מימון",
+    "population": "375"
+  },
+  {
+    "Symbol": "98",
+    "name": "כפר מל\"ל",
+    "population": "325"
+  },
+  {
+    "Symbol": "510",
+    "name": "כפר מנדא",
+    "population": "20,188"
+  },
+  {
+    "Symbol": "274",
+    "name": "כפר מנחם",
+    "population": "1,365"
+  },
+  {
+    "Symbol": "297",
+    "name": "כפר מסריק",
+    "population": "868"
+  },
+  {
+    "Symbol": "512",
+    "name": "כפר מצר",
+    "population": "2,750"
+  },
+  {
+    "Symbol": "764",
+    "name": "כפר מרדכי",
+    "population": "644"
+  },
+  {
+    "Symbol": "316",
+    "name": "כפר נטר",
+    "population": "1,192"
+  },
+  {
+    "Symbol": "345",
+    "name": "כפר סאלד",
+    "population": "675"
+  },
+  {
+    "Symbol": "6900",
+    "name": "כפר סבא",
+    "population": "101,431"
+  },
+  {
+    "Symbol": "107",
+    "name": "כפר סילבר",
+    "population": "290"
+  },
+  {
+    "Symbol": "249",
+    "name": "כפר סירקין",
+    "population": "1,502"
+  },
+  {
+    "Symbol": "875",
+    "name": "כפר עבודה",
+    "population": "229"
+  },
+  {
+    "Symbol": "845",
+    "name": "כפר עזה",
+    "population": "720"
+  },
+  {
+    "Symbol": "3488",
+    "name": "כפר עציון",
+    "population": "1,156"
+  },
+  {
+    "Symbol": "189",
+    "name": "כפר פינס",
+    "population": "1,034"
+  },
+  {
+    "Symbol": "634",
+    "name": "כפר קאסם",
+    "population": "23,823"
+  },
+  {
+    "Symbol": "388",
+    "name": "כפר קיש",
+    "population": "619"
+  },
+  {
+    "Symbol": "654",
+    "name": "כפר קרע",
+    "population": "19,018"
+  },
+  {
+    "Symbol": "579",
+    "name": "כפר ראש הנקרה",
+    "population": "1,362"
+  },
+  {
+    "Symbol": "1130",
+    "name": "כפר רוזנואלד (זרעית)",
+    "population": "243"
+  },
+  {
+    "Symbol": "295",
+    "name": "כפר רופין",
+    "population": "531"
+  },
+  {
+    "Symbol": "1166",
+    "name": "כפר רות",
+    "population": "264"
+  },
+  {
+    "Symbol": "605",
+    "name": "כפר שמאי",
+    "population": "559"
+  },
+  {
+    "Symbol": "743",
+    "name": "כפר שמואל",
+    "population": "956"
+  },
+  {
+    "Symbol": "267",
+    "name": "כפר שמריהו",
+    "population": "1,938"
+  },
+  {
+    "Symbol": "47",
+    "name": "כפר תבור",
+    "population": "4,310"
+  },
+  {
+    "Symbol": "3572",
+    "name": "כפר תפוח",
+    "population": "1,312"
+  },
+  {
+    "Symbol": "1285",
+    "name": "כרכום",
+    "population": "528"
+  },
+  {
+    "Symbol": "664",
+    "name": "כרם בן זמרה",
+    "population": "526"
+  },
+  {
+    "Symbol": "88",
+    "name": "כרם בן שמן",
+    "population": "85"
+  },
+  {
+    "Symbol": "1094",
+    "name": "כרם יבנה (ישיבה)",
+    "population": "534"
+  },
+  {
+    "Symbol": "580",
+    "name": "כרם מהר\"ל",
+    "population": "778"
+  },
+  {
+    "Symbol": "1085",
+    "name": "כרם שלום",
+    "population": "183"
+  },
+  {
+    "Symbol": "1264",
+    "name": "כרמי יוסף",
+    "population": "1,742"
+  },
+  {
+    "Symbol": "3766",
+    "name": "כרמי צור",
+    "population": "1,001"
+  },
+  {
+    "Symbol": "1374",
+    "name": "כרמי קטיף",
+    "population": "508"
+  },
+  {
+    "Symbol": "1139",
+    "name": "כרמיאל",
+    "population": "46,252"
+  },
+  {
+    "Symbol": "768",
+    "name": "כרמייה",
+    "population": "650"
+  },
+  {
+    "Symbol": "1198",
+    "name": "כרמים",
+    "population": "489"
+  },
+  {
+    "Symbol": "3656",
+    "name": "כרמל",
+    "population": "437"
+  },
+  {
+    "Symbol": "1207",
+    "name": "לבון",
+    "population": "717"
+  },
+  {
+    "Symbol": "585",
+    "name": "לביא",
+    "population": "627"
+  },
+  {
+    "Symbol": "1230",
+    "name": "לבנים",
+    "population": "427"
+  },
+  {
+    "Symbol": "2023",
+    "name": "להב",
+    "population": "567"
+  },
+  {
+    "Symbol": "380",
+    "name": "להבות הבשן",
+    "population": "916"
+  },
+  {
+    "Symbol": "715",
+    "name": "להבות חביבה",
+    "population": "1,021"
+  },
+  {
+    "Symbol": "1271",
+    "name": "להבים",
+    "population": "6,414"
+  },
+  {
+    "Symbol": "7000",
+    "name": "לוד",
+    "population": "77,222"
+  },
+  {
+    "Symbol": "52",
+    "name": "לוזית",
+    "population": "816"
+  },
+  {
+    "Symbol": "595",
+    "name": "לוחמי הגיטאות",
+    "population": "706"
+  },
+  {
+    "Symbol": "1171",
+    "name": "לוטם",
+    "population": "782"
+  },
+  {
+    "Symbol": "1255",
+    "name": "לוטן",
+    "population": "178"
+  },
+  {
+    "Symbol": "674",
+    "name": "לימן",
+    "population": "693"
+  },
+  {
+    "Symbol": "24",
+    "name": "לכיש",
+    "population": "770"
+  },
+  {
+    "Symbol": "1310",
+    "name": "לפיד",
+    "population": "2,394"
+  },
+  {
+    "Symbol": "1173",
+    "name": "לפידות",
+    "population": "128"
+  },
+  {
+    "Symbol": "1060",
+    "name": "לקיה",
+    "population": "14,074"
+  },
+  {
+    "Symbol": "2055",
+    "name": "מאור",
+    "population": "1,399"
+  },
+  {
+    "Symbol": "102",
+    "name": "מאיר שפיה",
+    "population": "297"
+  },
+  {
+    "Symbol": "771",
+    "name": "מבוא ביתר",
+    "population": "965"
+  },
+  {
+    "Symbol": "3569",
+    "name": "מבוא דותן",
+    "population": "448"
+  },
+  {
+    "Symbol": "3709",
+    "name": "מבוא חורון",
+    "population": "2,669"
+  },
+  {
+    "Symbol": "4204",
+    "name": "מבוא חמה",
+    "population": "459"
+  },
+  {
+    "Symbol": "1141",
+    "name": "מבוא מודיעים",
+    "population": "255"
+  },
+  {
+    "Symbol": "1318",
+    "name": "מבואות ים",
+    "population": "436"
+  },
+  {
+    "Symbol": "3825",
+    "name": "מבואות יריחו",
+    "population": "-"
+  },
+  {
+    "Symbol": "1080",
+    "name": "מבועים",
+    "population": "1,235"
+  },
+  {
+    "Symbol": "829",
+    "name": "מבטחים",
+    "population": "439"
+  },
+  {
+    "Symbol": "573",
+    "name": "מבקיעים",
+    "population": "484"
+  },
+  {
+    "Symbol": "1015",
+    "name": "מבשרת ציון",
+    "population": "24,052"
+  },
+  {
+    "Symbol": "481",
+    "name": "מגאר",
+    "population": "22,956"
+  },
+  {
+    "Symbol": "516",
+    "name": "מג'ד אל-כרום",
+    "population": "15,456"
+  },
+  {
+    "Symbol": "689",
+    "name": "מגדים",
+    "population": "1,329"
+  },
+  {
+    "Symbol": "65",
+    "name": "מגדל",
+    "population": "1,952"
+  },
+  {
+    "Symbol": "874",
+    "name": "מגדל העמק",
+    "population": "25,674"
+  },
+  {
+    "Symbol": "3561",
+    "name": "מגדל עוז",
+    "population": "574"
+  },
+  {
+    "Symbol": "4201",
+    "name": "מג'דל שמס",
+    "population": "11,180"
+  },
+  {
+    "Symbol": "1722",
+    "name": "מגדל תפן",
+    "population": "-"
+  },
+  {
+    "Symbol": "3751",
+    "name": "מגדלים",
+    "population": "448"
+  },
+  {
+    "Symbol": "586",
+    "name": "מגידו",
+    "population": "848"
+  },
+  {
+    "Symbol": "375",
+    "name": "מגל",
+    "population": "1,139"
+  },
+  {
+    "Symbol": "695",
+    "name": "מגן",
+    "population": "532"
+  },
+  {
+    "Symbol": "1155",
+    "name": "מגן שאול",
+    "population": "676"
+  },
+  {
+    "Symbol": "722",
+    "name": "מגשימים",
+    "population": "1,088"
+  },
+  {
+    "Symbol": "2029",
+    "name": "מדרך עוז",
+    "population": "794"
+  },
+  {
+    "Symbol": "1140",
+    "name": "מדרשת בן גוריון",
+    "population": "1,972"
+  },
+  {
+    "Symbol": "897",
+    "name": "מדרשת רופין",
+    "population": "307"
+  },
+  {
+    "Symbol": "3797",
+    "name": "מודיעין עילית",
+    "population": "76,374"
+  },
+  {
+    "Symbol": "1200",
+    "name": "מודיעין-מכבים-רעות*",
+    "population": "93,277"
+  },
+  {
+    "Symbol": "269",
+    "name": "מולדת",
+    "population": "1,069"
+  },
+  {
+    "Symbol": "208",
+    "name": "מוצא עילית",
+    "population": "1,212"
+  },
+  {
+    "Symbol": "635",
+    "name": "מוקייבלה",
+    "population": "4,081"
+  },
+  {
+    "Symbol": "1163",
+    "name": "מורן",
+    "population": "452"
+  },
+  {
+    "Symbol": "1178",
+    "name": "מורשת",
+    "population": "1,489"
+  },
+  {
+    "Symbol": "606",
+    "name": "מזור",
+    "population": "1,331"
+  },
+  {
+    "Symbol": "28",
+    "name": "מזכרת בתיה",
+    "population": "14,837"
+  },
+  {
+    "Symbol": "104",
+    "name": "מזרע",
+    "population": "756"
+  },
+  {
+    "Symbol": "517",
+    "name": "מזרעה",
+    "population": "3,928"
+  },
+  {
+    "Symbol": "3599",
+    "name": "מחולה",
+    "population": "609"
+  },
+  {
+    "Symbol": "1196",
+    "name": "מחנה יתיר",
+    "population": "267"
+  },
+  {
+    "Symbol": "308",
+    "name": "מחניים",
+    "population": "818"
+  },
+  {
+    "Symbol": "776",
+    "name": "מחסיה",
+    "population": "477"
+  },
+  {
+    "Symbol": "43",
+    "name": "מטולה",
+    "population": "1,615"
+  },
+  {
+    "Symbol": "822",
+    "name": "מטע",
+    "population": "896"
+  },
+  {
+    "Symbol": "1128",
+    "name": "מי עמי",
+    "population": "365"
+  },
+  {
+    "Symbol": "2054",
+    "name": "מיטב",
+    "population": "471"
+  },
+  {
+    "Symbol": "649",
+    "name": "מייסר",
+    "population": "2,017"
+  },
+  {
+    "Symbol": "4019",
+    "name": "מיצר",
+    "population": "299"
+  },
+  {
+    "Symbol": "1282",
+    "name": "מירב",
+    "population": "723"
+  },
+  {
+    "Symbol": "607",
+    "name": "מירון",
+    "population": "985"
+  },
+  {
+    "Symbol": "731",
+    "name": "מישר",
+    "population": "796"
+  },
+  {
+    "Symbol": "1268",
+    "name": "מיתר",
+    "population": "9,419"
+  },
+  {
+    "Symbol": "3614",
+    "name": "מכורה",
+    "population": "166"
+  },
+  {
+    "Symbol": "1343",
+    "name": "מכחול",
+    "population": "839"
+  },
+  {
+    "Symbol": "382",
+    "name": "מכמורת",
+    "population": "1,404"
+  },
+  {
+    "Symbol": "1202",
+    "name": "מכמנים",
+    "population": "557"
+  },
+  {
+    "Symbol": "164",
+    "name": "מלאה",
+    "population": "382"
+  },
+  {
+    "Symbol": "2044",
+    "name": "מלילות",
+    "population": "360"
+  },
+  {
+    "Symbol": "596",
+    "name": "מלכייה",
+    "population": "462"
+  },
+  {
+    "Symbol": "1154",
+    "name": "מלכישוע",
+    "population": "214"
+  },
+  {
+    "Symbol": "2030",
+    "name": "מנוחה",
+    "population": "618"
+  },
+  {
+    "Symbol": "1174",
+    "name": "מנוף",
+    "population": "862"
+  },
+  {
+    "Symbol": "1205",
+    "name": "מנות",
+    "population": "459"
+  },
+  {
+    "Symbol": "48",
+    "name": "מנחמיה",
+    "population": "1,033"
+  },
+  {
+    "Symbol": "347",
+    "name": "מנרה",
+    "population": "248"
+  },
+  {
+    "Symbol": "994",
+    "name": "מנשית זבדה",
+    "population": "1,389"
+  },
+  {
+    "Symbol": "1258",
+    "name": "מסד",
+    "population": "347"
+  },
+  {
+    "Symbol": "263",
+    "name": "מסדה",
+    "population": "360"
+  },
+  {
+    "Symbol": "298",
+    "name": "מסילות",
+    "population": "432"
+  },
+  {
+    "Symbol": "742",
+    "name": "מסילת ציון",
+    "population": "1,216"
+  },
+  {
+    "Symbol": "748",
+    "name": "מסלול",
+    "population": "858"
+  },
+  {
+    "Symbol": "4203",
+    "name": "מסעדה",
+    "population": "3,714"
+  },
+  {
+    "Symbol": "197",
+    "name": "מעברות",
+    "population": "986"
+  },
+  {
+    "Symbol": "1082",
+    "name": "מעגלים",
+    "population": "2,061"
+  },
+  {
+    "Symbol": "678",
+    "name": "מעגן",
+    "population": "381"
+  },
+  {
+    "Symbol": "694",
+    "name": "מעגן מיכאל",
+    "population": "2,039"
+  },
+  {
+    "Symbol": "272",
+    "name": "מעוז חיים",
+    "population": "470"
+  },
+  {
+    "Symbol": "3657",
+    "name": "מעון",
+    "population": "595"
+  },
+  {
+    "Symbol": "570",
+    "name": "מעונה",
+    "population": "963"
+  },
+  {
+    "Symbol": "416",
+    "name": "מעיין ברוך",
+    "population": "767"
+  },
+  {
+    "Symbol": "290",
+    "name": "מעיין צבי",
+    "population": "749"
+  },
+  {
+    "Symbol": "518",
+    "name": "מעיליא",
+    "population": "3,245"
+  },
+  {
+    "Symbol": "3616",
+    "name": "מעלה אדומים",
+    "population": "38,154"
+  },
+  {
+    "Symbol": "3608",
+    "name": "מעלה אפרים",
+    "population": "1,261"
+  },
+  {
+    "Symbol": "1127",
+    "name": "מעלה גלבוע",
+    "population": "840"
+  },
+  {
+    "Symbol": "4008",
+    "name": "מעלה גמלא",
+    "population": "557"
+  },
+  {
+    "Symbol": "286",
+    "name": "מעלה החמישה",
+    "population": "794"
+  },
+  {
+    "Symbol": "3752",
+    "name": "מעלה לבונה",
+    "population": "906"
+  },
+  {
+    "Symbol": "3651",
+    "name": "מעלה מכמש",
+    "population": "1,529"
+  },
+  {
+    "Symbol": "1327",
+    "name": "מעלה עירון",
+    "population": "15,065"
+  },
+  {
+    "Symbol": "3653",
+    "name": "מעלה עמוס",
+    "population": "663"
+  },
+  {
+    "Symbol": "3637",
+    "name": "מעלה שומרון",
+    "population": "995"
+  },
+  {
+    "Symbol": "1063",
+    "name": "מעלות-תרשיחא",
+    "population": "21,836"
+  },
+  {
+    "Symbol": "344",
+    "name": "מענית",
+    "population": "812"
+  },
+  {
+    "Symbol": "230",
+    "name": "מעש",
+    "population": "863"
+  },
+  {
+    "Symbol": "668",
+    "name": "מפלסים",
+    "population": "1,023"
+  },
+  {
+    "Symbol": "1767",
+    "name": "מפעלי אבשלו\"ם",
+    "population": "-"
+  },
+  {
+    "Symbol": "1791",
+    "name": "מפעלי ברקן",
+    "population": "-"
+  },
+  {
+    "Symbol": "1706",
+    "name": "מפעלי גליל עליון",
+    "population": "-"
+  },
+  {
+    "Symbol": "1739",
+    "name": "מפעלי גרנות",
+    "population": "-"
+  },
+  {
+    "Symbol": "1717",
+    "name": "מפעלי העמק (יזרעאל)",
+    "population": "-"
+  },
+  {
+    "Symbol": "1729",
+    "name": "מפעלי חבל מודיעים",
+    "population": "-"
+  },
+  {
+    "Symbol": "1745",
+    "name": "מפעלי חפר",
+    "population": "-"
+  },
+  {
+    "Symbol": "1775",
+    "name": "מפעלי ים המלח(סדום)",
+    "population": "-"
+  },
+  {
+    "Symbol": "1753",
+    "name": "מפעלי כנות",
+    "population": "-"
+  },
+  {
+    "Symbol": "1773",
+    "name": "מפעלי מישור רותם",
+    "population": "-"
+  },
+  {
+    "Symbol": "1769",
+    "name": "מפעלי מעון",
+    "population": "-"
+  },
+  {
+    "Symbol": "1701",
+    "name": "מפעלי נחם הרטוב",
+    "population": "-"
+  },
+  {
+    "Symbol": "1761",
+    "name": "מפעלי צומת מלאכי",
+    "population": "-"
+  },
+  {
+    "Symbol": "1776",
+    "name": "מפעלי צין - ערבה",
+    "population": "-"
+  },
+  {
+    "Symbol": "1711",
+    "name": "מפעלי צמח",
+    "population": "-"
+  },
+  {
+    "Symbol": "1719",
+    "name": "מפעלי שאן",
+    "population": "-"
+  },
+  {
+    "Symbol": "3745",
+    "name": "מצדות יהודה",
+    "population": "550"
+  },
+  {
+    "Symbol": "325",
+    "name": "מצובה",
+    "population": "1,165"
+  },
+  {
+    "Symbol": "757",
+    "name": "מצליח",
+    "population": "1,363"
+  },
+  {
+    "Symbol": "58",
+    "name": "מצפה",
+    "population": "141"
+  },
+  {
+    "Symbol": "1222",
+    "name": "מצפה אבי\"ב",
+    "population": "1,070"
+  },
+  {
+    "Symbol": "1370",
+    "name": "מצפה אילן",
+    "population": "626"
+  },
+  {
+    "Symbol": "3576",
+    "name": "מצפה יריחו",
+    "population": "2,560"
+  },
+  {
+    "Symbol": "1190",
+    "name": "מצפה נטופה",
+    "population": "1,029"
+  },
+  {
+    "Symbol": "99",
+    "name": "מצפה רמון",
+    "population": "5,212"
+  },
+  {
+    "Symbol": "3610",
+    "name": "מצפה שלם",
+    "population": "207"
+  },
+  {
+    "Symbol": "648",
+    "name": "מצר",
+    "population": "384"
+  },
+  {
+    "Symbol": "22",
+    "name": "מקווה ישראל",
+    "population": "388"
+  },
+  {
+    "Symbol": "843",
+    "name": "מרגליות",
+    "population": "411"
+  },
+  {
+    "Symbol": "4101",
+    "name": "מרום גולן",
+    "population": "743"
+  },
+  {
+    "Symbol": "1340",
+    "name": "מרחב עם",
+    "population": "501"
+  },
+  {
+    "Symbol": "97",
+    "name": "מרחביה (מושב)",
+    "population": "661"
+  },
+  {
+    "Symbol": "66",
+    "name": "מרחביה (קיבוץ)",
+    "population": "1,248"
+  },
+  {
+    "Symbol": "1713",
+    "name": "מרכז אזורי כדורי",
+    "population": "-"
+  },
+  {
+    "Symbol": "1708",
+    "name": "מרכז אזורי מרום הגליל",
+    "population": "-"
+  },
+  {
+    "Symbol": "1723",
+    "name": "מרכז אזורי משגב",
+    "population": "-"
+  },
+  {
+    "Symbol": "1747",
+    "name": "מרכז אזורי שוהם",
+    "population": "-"
+  },
+  {
+    "Symbol": "1705",
+    "name": "מרכז כ\"ח",
+    "population": "-"
+  },
+  {
+    "Symbol": "1715",
+    "name": "מרכז מיר\"ב*",
+    "population": "-"
+  },
+  {
+    "Symbol": "1098",
+    "name": "מרכז שפירא",
+    "population": "2,230"
+  },
+  {
+    "Symbol": "421",
+    "name": "משאבי שדה",
+    "population": "481"
+  },
+  {
+    "Symbol": "765",
+    "name": "משגב דב",
+    "population": "721"
+  },
+  {
+    "Symbol": "378",
+    "name": "משגב עם",
+    "population": "339"
+  },
+  {
+    "Symbol": "520",
+    "name": "משהד",
+    "population": "8,373"
+  },
+  {
+    "Symbol": "3605",
+    "name": "משואה",
+    "population": "184"
+  },
+  {
+    "Symbol": "620",
+    "name": "משואות יצחק",
+    "population": "697"
+  },
+  {
+    "Symbol": "3785",
+    "name": "משכיות",
+    "population": "310"
+  },
+  {
+    "Symbol": "670",
+    "name": "משמר איילון",
+    "population": "556"
+  },
+  {
+    "Symbol": "563",
+    "name": "משמר דוד",
+    "population": "949"
+  },
+  {
+    "Symbol": "732",
+    "name": "משמר הירדן",
+    "population": "810"
+  },
+  {
+    "Symbol": "395",
+    "name": "משמר הנגב",
+    "population": "1,005"
+  },
+  {
+    "Symbol": "130",
+    "name": "משמר העמק",
+    "population": "1,271"
+  },
+  {
+    "Symbol": "729",
+    "name": "משמר השבעה",
+    "population": "1,047"
+  },
+  {
+    "Symbol": "194",
+    "name": "משמר השרון",
+    "population": "618"
+  },
+  {
+    "Symbol": "213",
+    "name": "משמרות",
+    "population": "1,024"
+  },
+  {
+    "Symbol": "425",
+    "name": "משמרת",
+    "population": "1,059"
+  },
+  {
+    "Symbol": "791",
+    "name": "משען",
+    "population": "1,063"
+  },
+  {
+    "Symbol": "1315",
+    "name": "מתן",
+    "population": "3,617"
+  },
+  {
+    "Symbol": "1184",
+    "name": "מתת",
+    "population": "190"
+  },
+  {
+    "Symbol": "3648",
+    "name": "מתתיהו",
+    "population": "891"
+  },
+  {
+    "Symbol": "4551",
+    "name": "נאות גולן",
+    "population": "632"
+  },
+  {
+    "Symbol": "1124",
+    "name": "נאות הכיכר",
+    "population": "447"
+  },
+  {
+    "Symbol": "1770",
+    "name": "נאות חובב",
+    "population": "-"
+  },
+  {
+    "Symbol": "408",
+    "name": "נאות מרדכי",
+    "population": "620"
+  },
+  {
+    "Symbol": "1197",
+    "name": "נאות סמדר",
+    "population": "226"
+  },
+  {
+    "Symbol": "524",
+    "name": "נאעורה",
+    "population": "2,323"
+  },
+  {
+    "Symbol": "396",
+    "name": "נבטים",
+    "population": "996"
+  },
+  {
+    "Symbol": "315",
+    "name": "נגבה",
+    "population": "968"
+  },
+  {
+    "Symbol": "3724",
+    "name": "נגוהות",
+    "population": "352"
+  },
+  {
+    "Symbol": "309",
+    "name": "נהורה",
+    "population": "1,182"
+  },
+  {
+    "Symbol": "80",
+    "name": "נהלל",
+    "population": "930"
+  },
+  {
+    "Symbol": "9100",
+    "name": "נהרייה",
+    "population": "58,096"
+  },
+  {
+    "Symbol": "4304",
+    "name": "נוב",
+    "population": "965"
+  },
+  {
+    "Symbol": "55",
+    "name": "נוגה",
+    "population": "583"
+  },
+  {
+    "Symbol": "1366",
+    "name": "נווה",
+    "population": "1,267"
+  },
+  {
+    "Symbol": "926",
+    "name": "נווה אבות",
+    "population": "254"
+  },
+  {
+    "Symbol": "590",
+    "name": "נווה אור",
+    "population": "349"
+  },
+  {
+    "Symbol": "4303",
+    "name": "נווה אטי\"ב",
+    "population": "110"
+  },
+  {
+    "Symbol": "405",
+    "name": "נווה אילן",
+    "population": "996"
+  },
+  {
+    "Symbol": "1702",
+    "name": "נווה אילן*",
+    "population": "-"
+  },
+  {
+    "Symbol": "296",
+    "name": "נווה איתן",
+    "population": "311"
+  },
+  {
+    "Symbol": "3725",
+    "name": "נווה דניאל",
+    "population": "2,322"
+  },
+  {
+    "Symbol": "1057",
+    "name": "נווה זוהר",
+    "population": "55"
+  },
+  {
+    "Symbol": "1314",
+    "name": "נווה זיו",
+    "population": "951"
+  },
+  {
+    "Symbol": "1279",
+    "name": "נווה חריף",
+    "population": "114"
+  },
+  {
+    "Symbol": "312",
+    "name": "נווה ים",
+    "population": "232"
+  },
+  {
+    "Symbol": "686",
+    "name": "נווה ימין",
+    "population": "1,154"
+  },
+  {
+    "Symbol": "858",
+    "name": "נווה ירק",
+    "population": "1,348"
+  },
+  {
+    "Symbol": "827",
+    "name": "נווה מבטח",
+    "population": "677"
+  },
+  {
+    "Symbol": "1071",
+    "name": "נווה מיכאל",
+    "population": "848"
+  },
+  {
+    "Symbol": "3573",
+    "name": "נווה צוף",
+    "population": "1,485"
+  },
+  {
+    "Symbol": "1259",
+    "name": "נווה שלום",
+    "population": "324"
+  },
+  {
+    "Symbol": "15",
+    "name": "נועם",
+    "population": "356"
+  },
+  {
+    "Symbol": "1333",
+    "name": "נוף איילון",
+    "population": "2,128"
+  },
+  {
+    "Symbol": "1061",
+    "name": "נוף הגליל",
+    "population": "41,735"
+  },
+  {
+    "Symbol": "3790",
+    "name": "נופים",
+    "population": "865"
+  },
+  {
+    "Symbol": "1284",
+    "name": "נופית",
+    "population": "2,688"
+  },
+  {
+    "Symbol": "257",
+    "name": "נופך",
+    "population": "588"
+  },
+  {
+    "Symbol": "3726",
+    "name": "נוקדים",
+    "population": "2,383"
+  },
+  {
+    "Symbol": "447",
+    "name": "נורדייה",
+    "population": "1,950"
+  },
+  {
+    "Symbol": "833",
+    "name": "נורית",
+    "population": "193"
+  },
+  {
+    "Symbol": "59",
+    "name": "נחושה",
+    "population": "1,484"
+  },
+  {
+    "Symbol": "844",
+    "name": "נחל עוז",
+    "population": "422"
+  },
+  {
+    "Symbol": "2045",
+    "name": "נחלה",
+    "population": "717"
+  },
+  {
+    "Symbol": "3767",
+    "name": "נחליאל",
+    "population": "725"
+  },
+  {
+    "Symbol": "449",
+    "name": "נחלים",
+    "population": "1,788"
+  },
+  {
+    "Symbol": "809",
+    "name": "נחם",
+    "population": "570"
+  },
+  {
+    "Symbol": "522",
+    "name": "נחף",
+    "population": "13,113"
+  },
+  {
+    "Symbol": "433",
+    "name": "נחשולים",
+    "population": "687"
+  },
+  {
+    "Symbol": "777",
+    "name": "נחשון",
+    "population": "589"
+  },
+  {
+    "Symbol": "705",
+    "name": "נחשונים",
+    "population": "405"
+  },
+  {
+    "Symbol": "1147",
+    "name": "נטועה",
+    "population": "306"
+  },
+  {
+    "Symbol": "4014",
+    "name": "נטור",
+    "population": "713"
+  },
+  {
+    "Symbol": "1369",
+    "name": "נטע",
+    "population": "613"
+  },
+  {
+    "Symbol": "174",
+    "name": "נטעים",
+    "population": "636"
+  },
+  {
+    "Symbol": "1254",
+    "name": "נטף",
+    "population": "448"
+  },
+  {
+    "Symbol": "523",
+    "name": "ניין",
+    "population": "1,876"
+  },
+  {
+    "Symbol": "3655",
+    "name": "ניל\"י",
+    "population": "1,786"
+  },
+  {
+    "Symbol": "351",
+    "name": "ניצן",
+    "population": "2,461"
+  },
+  {
+    "Symbol": "1419",
+    "name": "ניצן ב'",
+    "population": "498"
+  },
+  {
+    "Symbol": "1195",
+    "name": "ניצנה (קהילת חינוך)",
+    "population": "318"
+  },
+  {
+    "Symbol": "1280",
+    "name": "ניצני סיני",
+    "population": "286"
+  },
+  {
+    "Symbol": "851",
+    "name": "ניצני עוז",
+    "population": "1,114"
+  },
+  {
+    "Symbol": "359",
+    "name": "ניצנים",
+    "population": "421"
+  },
+  {
+    "Symbol": "808",
+    "name": "ניר אליהו",
+    "population": "554"
+  },
+  {
+    "Symbol": "553",
+    "name": "ניר בנים",
+    "population": "726"
+  },
+  {
+    "Symbol": "720",
+    "name": "ניר גלים",
+    "population": "1,396"
+  },
+  {
+    "Symbol": "256",
+    "name": "ניר דוד (תל עמל)",
+    "population": "729"
+  },
+  {
+    "Symbol": "11",
+    "name": "ניר ח\"ן",
+    "population": "548"
+  },
+  {
+    "Symbol": "165",
+    "name": "ניר יפה",
+    "population": "724"
+  },
+  {
+    "Symbol": "402",
+    "name": "ניר יצחק",
+    "population": "630"
+  },
+  {
+    "Symbol": "699",
+    "name": "ניר ישראל",
+    "population": "877"
+  },
+  {
+    "Symbol": "2047",
+    "name": "ניר משה",
+    "population": "592"
+  },
+  {
+    "Symbol": "69",
+    "name": "ניר עוז",
+    "population": "387"
+  },
+  {
+    "Symbol": "348",
+    "name": "ניר עם",
+    "population": "611"
+  },
+  {
+    "Symbol": "769",
+    "name": "ניר עציון",
+    "population": "985"
+  },
+  {
+    "Symbol": "2048",
+    "name": "ניר עקיבא",
+    "population": "685"
+  },
+  {
+    "Symbol": "331",
+    "name": "ניר צבי",
+    "population": "1,285"
+  },
+  {
+    "Symbol": "602",
+    "name": "נירים",
+    "population": "360"
+  },
+  {
+    "Symbol": "1236",
+    "name": "נירית",
+    "population": "927"
+  },
+  {
+    "Symbol": "1748",
+    "name": "נמל תעופה בן-גוריון",
+    "population": "-"
+  },
+  {
+    "Symbol": "4035",
+    "name": "נמרוד",
+    "population": "-"
+  },
+  {
+    "Symbol": "825",
+    "name": "נס הרים",
+    "population": "1,414"
+  },
+  {
+    "Symbol": "1143",
+    "name": "נס עמים",
+    "population": "420"
+  },
+  {
+    "Symbol": "7200",
+    "name": "נס ציונה",
+    "population": "50,351"
+  },
+  {
+    "Symbol": "186",
+    "name": "נעורים",
+    "population": "422"
+  },
+  {
+    "Symbol": "3787",
+    "name": "נעלה",
+    "population": "2,148"
+  },
+  {
+    "Symbol": "3713",
+    "name": "נעמ\"ה",
+    "population": "166"
+  },
+  {
+    "Symbol": "158",
+    "name": "נען",
+    "population": "1,718"
+  },
+  {
+    "Symbol": "3620",
+    "name": "נערן",
+    "population": "101"
+  },
+  {
+    "Symbol": "1372",
+    "name": "נצר חזני",
+    "population": "498"
+  },
+  {
+    "Symbol": "435",
+    "name": "נצר סרני",
+    "population": "882"
+  },
+  {
+    "Symbol": "7300",
+    "name": "נצרת",
+    "population": "77,445"
+  },
+  {
+    "Symbol": "2500",
+    "name": "נשר",
+    "population": "24,147"
+  },
+  {
+    "Symbol": "3555",
+    "name": "נתיב הגדוד",
+    "population": "212"
+  },
+  {
+    "Symbol": "693",
+    "name": "נתיב הל\"ה",
+    "population": "654"
+  },
+  {
+    "Symbol": "1242",
+    "name": "נתיב העשרה",
+    "population": "892"
+  },
+  {
+    "Symbol": "792",
+    "name": "נתיב השיירה",
+    "population": "477"
+  },
+  {
+    "Symbol": "246",
+    "name": "נתיבות",
+    "population": "37,543"
+  },
+  {
+    "Symbol": "7400",
+    "name": "נתניה",
+    "population": "221,352"
+  },
+  {
+    "Symbol": "525",
+    "name": "סאג'ור",
+    "population": "4,270"
+  },
+  {
+    "Symbol": "578",
+    "name": "סאסא",
+    "population": "416"
+  },
+  {
+    "Symbol": "587",
+    "name": "סביון*",
+    "population": "4,037"
+  },
+  {
+    "Symbol": "2046",
+    "name": "סגולה",
+    "population": "717"
+  },
+  {
+    "Symbol": "942",
+    "name": "סואעד (חמרייה)*",
+    "population": "182"
+  },
+  {
+    "Symbol": "526",
+    "name": "סולם",
+    "population": "2,609"
+  },
+  {
+    "Symbol": "3756",
+    "name": "סוסיה",
+    "population": "1,339"
+  },
+  {
+    "Symbol": "1238",
+    "name": "סופה",
+    "population": "211"
+  },
+  {
+    "Symbol": "7500",
+    "name": "סח'נין",
+    "population": "31,703"
+  },
+  {
+    "Symbol": "1245",
+    "name": "סלמה",
+    "population": "3,340"
+  },
+  {
+    "Symbol": "3567",
+    "name": "סלעית",
+    "population": "1,331"
+  },
+  {
+    "Symbol": "1156",
+    "name": "סמר",
+    "population": "278"
+  },
+  {
+    "Symbol": "3777",
+    "name": "סנסנה",
+    "population": "519"
+  },
+  {
+    "Symbol": "419",
+    "name": "סעד",
+    "population": "854"
+  },
+  {
+    "Symbol": "1360",
+    "name": "סעוה",
+    "population": "1,867"
+  },
+  {
+    "Symbol": "454",
+    "name": "סער",
+    "population": "858"
+  },
+  {
+    "Symbol": "1176",
+    "name": "ספיר",
+    "population": "447"
+  },
+  {
+    "Symbol": "610",
+    "name": "סתרייה",
+    "population": "1,103"
+  },
+  {
+    "Symbol": "892",
+    "name": "עבדון",
+    "population": "668"
+  },
+  {
+    "Symbol": "376",
+    "name": "עברון",
+    "population": "847"
+  },
+  {
+    "Symbol": "794",
+    "name": "עגור",
+    "population": "528"
+  },
+  {
+    "Symbol": "4501",
+    "name": "ע'ג'ר",
+    "population": "2,659"
+  },
+  {
+    "Symbol": "1762",
+    "name": "עד הלום",
+    "population": "-"
+  },
+  {
+    "Symbol": "1199",
+    "name": "עדי",
+    "population": "1,910"
+  },
+  {
+    "Symbol": "2035",
+    "name": "עדנים",
+    "population": "516"
+  },
+  {
+    "Symbol": "826",
+    "name": "עוזה",
+    "population": "429"
+  },
+  {
+    "Symbol": "528",
+    "name": "עוזייר",
+    "population": "3,277"
+  },
+  {
+    "Symbol": "737",
+    "name": "עולש",
+    "population": "1,131"
+  },
+  {
+    "Symbol": "666",
+    "name": "עומר",
+    "population": "7,530"
+  },
+  {
+    "Symbol": "810",
+    "name": "עופר",
+    "population": "652"
+  },
+  {
+    "Symbol": "32",
+    "name": "עוצם",
+    "population": "653"
+  },
+  {
+    "Symbol": "328",
+    "name": "עזוז",
+    "population": "75"
+  },
+  {
+    "Symbol": "1149",
+    "name": "עזר",
+    "population": "817"
+  },
+  {
+    "Symbol": "837",
+    "name": "עזריאל",
+    "population": "904"
+  },
+  {
+    "Symbol": "711",
+    "name": "עזריה",
+    "population": "1,227"
+  },
+  {
+    "Symbol": "817",
+    "name": "עזריקם",
+    "population": "1,495"
+  },
+  {
+    "Symbol": "3658",
+    "name": "עטרת",
+    "population": "900"
+  },
+  {
+    "Symbol": "1175",
+    "name": "עידן",
+    "population": "392"
+  },
+  {
+    "Symbol": "1765",
+    "name": "עידן הנגב",
+    "population": "-"
+  },
+  {
+    "Symbol": "530",
+    "name": "עיילבון",
+    "population": "5,752"
+  },
+  {
+    "Symbol": "156",
+    "name": "עיינות",
+    "population": "394"
+  },
+  {
+    "Symbol": "511",
+    "name": "עילוט",
+    "population": "8,356"
+  },
+  {
+    "Symbol": "687",
+    "name": "עין איילה",
+    "population": "1,149"
+  },
+  {
+    "Symbol": "546",
+    "name": "עין אל-אסד",
+    "population": "886"
+  },
+  {
+    "Symbol": "273",
+    "name": "עין גב",
+    "population": "675"
+  },
+  {
+    "Symbol": "2042",
+    "name": "עין גדי",
+    "population": "610"
+  },
+  {
+    "Symbol": "436",
+    "name": "עין דור",
+    "population": "1,031"
+  },
+  {
+    "Symbol": "1240",
+    "name": "עין הבשור",
+    "population": "1,146"
+  },
+  {
+    "Symbol": "74",
+    "name": "עין הוד",
+    "population": "643"
+  },
+  {
+    "Symbol": "167",
+    "name": "עין החורש",
+    "population": "835"
+  },
+  {
+    "Symbol": "289",
+    "name": "עין המפרץ",
+    "population": "1,250"
+  },
+  {
+    "Symbol": "383",
+    "name": "עין הנצי\"ב",
+    "population": "604"
+  },
+  {
+    "Symbol": "367",
+    "name": "עין העמק",
+    "population": "804"
+  },
+  {
+    "Symbol": "270",
+    "name": "עין השופט",
+    "population": "862"
+  },
+  {
+    "Symbol": "676",
+    "name": "עין השלושה",
+    "population": "361"
+  },
+  {
+    "Symbol": "157",
+    "name": "עין ורד",
+    "population": "1,503"
+  },
+  {
+    "Symbol": "4503",
+    "name": "עין זיוון",
+    "population": "371"
+  },
+  {
+    "Symbol": "1320",
+    "name": "עין חוד",
+    "population": "305"
+  },
+  {
+    "Symbol": "1053",
+    "name": "עין חצבה",
+    "population": "-"
+  },
+  {
+    "Symbol": "89",
+    "name": "עין חרוד (איחוד)",
+    "population": "547"
+  },
+  {
+    "Symbol": "82",
+    "name": "עין חרוד (מאוחד)",
+    "population": "760"
+  },
+  {
+    "Symbol": "806",
+    "name": "עין יהב",
+    "population": "742"
+  },
+  {
+    "Symbol": "813",
+    "name": "עין יעקב",
+    "population": "1,137"
+  },
+  {
+    "Symbol": "1056",
+    "name": "עין כרם-בי\"ס חקלאי",
+    "population": "173"
+  },
+  {
+    "Symbol": "426",
+    "name": "עין כרמל",
+    "population": "922"
+  },
+  {
+    "Symbol": "532",
+    "name": "עין מאהל",
+    "population": "13,336"
+  },
+  {
+    "Symbol": "521",
+    "name": "עין נקובא",
+    "population": "3,505"
+  },
+  {
+    "Symbol": "223",
+    "name": "עין עירון",
+    "population": "545"
+  },
+  {
+    "Symbol": "622",
+    "name": "עין צורים",
+    "population": "863"
+  },
+  {
+    "Symbol": "4502",
+    "name": "עין קנייא",
+    "population": "2,098"
+  },
+  {
+    "Symbol": "514",
+    "name": "עין ראפה",
+    "population": "1,251"
+  },
+  {
+    "Symbol": "139",
+    "name": "עין שמר",
+    "population": "571"
+  },
+  {
+    "Symbol": "880",
+    "name": "עין שריד",
+    "population": "1,629"
+  },
+  {
+    "Symbol": "1251",
+    "name": "עין תמר",
+    "population": "195"
+  },
+  {
+    "Symbol": "871",
+    "name": "עינת",
+    "population": "829"
+  },
+  {
+    "Symbol": "1187",
+    "name": "עיר אובות",
+    "population": "-"
+  },
+  {
+    "Symbol": "7600",
+    "name": "עכו",
+    "population": "49,380"
+  },
+  {
+    "Symbol": "1146",
+    "name": "עלומים",
+    "population": "510"
+  },
+  {
+    "Symbol": "3765",
+    "name": "עלי",
+    "population": "4,415"
+  },
+  {
+    "Symbol": "3727",
+    "name": "עלי זהב",
+    "population": "3,398"
+  },
+  {
+    "Symbol": "688",
+    "name": "עלמה",
+    "population": "712"
+  },
+  {
+    "Symbol": "3715",
+    "name": "עלמון",
+    "population": "1,421"
+  },
+  {
+    "Symbol": "1212",
+    "name": "עמוקה",
+    "population": "132"
+  },
+  {
+    "Symbol": "3824",
+    "name": "עמיחי",
+    "population": "209"
+  },
+  {
+    "Symbol": "779",
+    "name": "עמינדב",
+    "population": "1,086"
+  },
+  {
+    "Symbol": "385",
+    "name": "עמיעד",
+    "population": "439"
+  },
+  {
+    "Symbol": "318",
+    "name": "עמיעוז",
+    "population": "209"
+  },
+  {
+    "Symbol": "773",
+    "name": "עמיקם",
+    "population": "739"
+  },
+  {
+    "Symbol": "319",
+    "name": "עמיר",
+    "population": "584"
+  },
+  {
+    "Symbol": "3660",
+    "name": "עמנואל",
+    "population": "3,906"
+  },
+  {
+    "Symbol": "708",
+    "name": "עמקה",
+    "population": "772"
+  },
+  {
+    "Symbol": "3712",
+    "name": "ענב",
+    "population": "891"
+  },
+  {
+    "Symbol": "534",
+    "name": "עספיא",
+    "population": "12,502"
+  },
+  {
+    "Symbol": "7700",
+    "name": "עפולה",
+    "population": "54,251"
+  },
+  {
+    "Symbol": "3617",
+    "name": "עפרה",
+    "population": "3,043"
+  },
+  {
+    "Symbol": "3778",
+    "name": "עץ אפרים",
+    "population": "2,427"
+  },
+  {
+    "Symbol": "917",
+    "name": "עצמון שגב",
+    "population": "1,121"
+  },
+  {
+    "Symbol": "531",
+    "name": "עראבה",
+    "population": "25,833"
+  },
+  {
+    "Symbol": "1246",
+    "name": "עראמשה*",
+    "population": "1,682"
+  },
+  {
+    "Symbol": "1335",
+    "name": "ערב אל נעים",
+    "population": "815"
+  },
+  {
+    "Symbol": "2560",
+    "name": "ערד",
+    "population": "26,756"
+  },
+  {
+    "Symbol": "593",
+    "name": "ערוגות",
+    "population": "1,147"
+  },
+  {
+    "Symbol": "637",
+    "name": "ערערה",
+    "population": "25,245"
+  },
+  {
+    "Symbol": "1192",
+    "name": "ערערה-בנגב",
+    "population": "18,331"
+  },
+  {
+    "Symbol": "591",
+    "name": "עשרת",
+    "population": "1,012"
+  },
+  {
+    "Symbol": "53",
+    "name": "עתלית",
+    "population": "8,876"
+  },
+  {
+    "Symbol": "3748",
+    "name": "עתניאל",
+    "population": "1,044"
+  },
+  {
+    "Symbol": "1151",
+    "name": "פארן",
+    "population": "502"
+  },
+  {
+    "Symbol": "1763",
+    "name": "פארק תעשיות ספירים",
+    "population": "-"
+  },
+  {
+    "Symbol": "3768",
+    "name": "פדואל",
+    "population": "2,009"
+  },
+  {
+    "Symbol": "750",
+    "name": "פדויים",
+    "population": "520"
+  },
+  {
+    "Symbol": "838",
+    "name": "פדיה",
+    "population": "841"
+  },
+  {
+    "Symbol": "537",
+    "name": "פוריידיס",
+    "population": "13,246"
+  },
+  {
+    "Symbol": "1104",
+    "name": "פורייה - כפר עבודה",
+    "population": "354"
+  },
+  {
+    "Symbol": "1105",
+    "name": "פורייה - נווה עובד",
+    "population": "1,234"
+  },
+  {
+    "Symbol": "1313",
+    "name": "פורייה עילית",
+    "population": "1,162"
+  },
+  {
+    "Symbol": "767",
+    "name": "פורת",
+    "population": "1,276"
+  },
+  {
+    "Symbol": "749",
+    "name": "פטיש",
+    "population": "948"
+  },
+  {
+    "Symbol": "1185",
+    "name": "פלך",
+    "population": "142"
+  },
+  {
+    "Symbol": "597",
+    "name": "פלמחים",
+    "population": "689"
+  },
+  {
+    "Symbol": "3723",
+    "name": "פני חבר",
+    "population": "635"
+  },
+  {
+    "Symbol": "3659",
+    "name": "פסגות",
+    "population": "1,881"
+  },
+  {
+    "Symbol": "535",
+    "name": "פסוטה",
+    "population": "3,173"
+  },
+  {
+    "Symbol": "2059",
+    "name": "פעמי תש\"ז",
+    "population": "562"
+  },
+  {
+    "Symbol": "3615",
+    "name": "פצאל",
+    "population": "304"
+  },
+  {
+    "Symbol": "536",
+    "name": "פקיעין (בוקייעה)",
+    "population": "5,893"
+  },
+  {
+    "Symbol": "281",
+    "name": "פקיעין חדשה",
+    "population": "535"
+  },
+  {
+    "Symbol": "7800",
+    "name": "פרדס חנה-כרכור",
+    "population": "43,012"
+  },
+  {
+    "Symbol": "171",
+    "name": "פרדסייה",
+    "population": "5,930"
+  },
+  {
+    "Symbol": "599",
+    "name": "פרוד",
+    "population": "596"
+  },
+  {
+    "Symbol": "2053",
+    "name": "פרזון",
+    "population": "323"
+  },
+  {
+    "Symbol": "1231",
+    "name": "פרי גן",
+    "population": "246"
+  },
+  {
+    "Symbol": "7900",
+    "name": "פתח תקווה",
+    "population": "247,957"
+  },
+  {
+    "Symbol": "839",
+    "name": "פתחיה",
+    "population": "841"
+  },
+  {
+    "Symbol": "413",
+    "name": "צאלים",
+    "population": "471"
+  },
+  {
+    "Symbol": "1180",
+    "name": "צביה",
+    "population": "331"
+  },
+  {
+    "Symbol": "1213",
+    "name": "צבעון",
+    "population": "274"
+  },
+  {
+    "Symbol": "465",
+    "name": "צובה",
+    "population": "625"
+  },
+  {
+    "Symbol": "1136",
+    "name": "צוחר",
+    "population": "444"
+  },
+  {
+    "Symbol": "1111",
+    "name": "צופייה",
+    "population": "-"
+  },
+  {
+    "Symbol": "3791",
+    "name": "צופים",
+    "population": "2,406"
+  },
+  {
+    "Symbol": "198",
+    "name": "צופית",
+    "population": "1,288"
+  },
+  {
+    "Symbol": "1150",
+    "name": "צופר",
+    "population": "451"
+  },
+  {
+    "Symbol": "1102",
+    "name": "צוקי ים",
+    "population": "268"
+  },
+  {
+    "Symbol": "1262",
+    "name": "צוקים",
+    "population": "344"
+  },
+  {
+    "Symbol": "1113",
+    "name": "צור הדסה",
+    "population": "11,119"
+  },
+  {
+    "Symbol": "1345",
+    "name": "צור יצחק",
+    "population": "6,361"
+  },
+  {
+    "Symbol": "276",
+    "name": "צור משה",
+    "population": "3,291"
+  },
+  {
+    "Symbol": "1148",
+    "name": "צור נתן",
+    "population": "313"
+  },
+  {
+    "Symbol": "774",
+    "name": "צוריאל",
+    "population": "360"
+  },
+  {
+    "Symbol": "1221",
+    "name": "צורית",
+    "population": "901"
+  },
+  {
+    "Symbol": "613",
+    "name": "ציפורי",
+    "population": "973"
+  },
+  {
+    "Symbol": "796",
+    "name": "צלפון",
+    "population": "1,044"
+  },
+  {
+    "Symbol": "636",
+    "name": "צנדלה",
+    "population": "1,644"
+  },
+  {
+    "Symbol": "594",
+    "name": "צפרייה",
+    "population": "971"
+  },
+  {
+    "Symbol": "1079",
+    "name": "צפרירים",
+    "population": "402"
+  },
+  {
+    "Symbol": "8000",
+    "name": "צפת",
+    "population": "36,094"
+  },
+  {
+    "Symbol": "612",
+    "name": "צרופה",
+    "population": "1,096"
+  },
+  {
+    "Symbol": "567",
+    "name": "צרעה",
+    "population": "929"
+  },
+  {
+    "Symbol": "334",
+    "name": "קבוצת יבנה",
+    "population": "964"
+  },
+  {
+    "Symbol": "3557",
+    "name": "קדומים",
+    "population": "4,545"
+  },
+  {
+    "Symbol": "195",
+    "name": "קדימה-צורן",
+    "population": "22,683"
+  },
+  {
+    "Symbol": "392",
+    "name": "קדמה",
+    "population": "-"
+  },
+  {
+    "Symbol": "4025",
+    "name": "קדמת צבי",
+    "population": "500"
+  },
+  {
+    "Symbol": "3781",
+    "name": "קדר",
+    "population": "1,599"
+  },
+  {
+    "Symbol": "615",
+    "name": "קדרון",
+    "population": "1,607"
+  },
+  {
+    "Symbol": "1211",
+    "name": "קדרים",
+    "population": "270"
+  },
+  {
+    "Symbol": "766",
+    "name": "קוממיות",
+    "population": "559"
+  },
+  {
+    "Symbol": "1179",
+    "name": "קורנית",
+    "population": "926"
+  },
+  {
+    "Symbol": "1052",
+    "name": "קטורה",
+    "population": "471"
+  },
+  {
+    "Symbol": "1167",
+    "name": "קיסריה",
+    "population": "5,343"
+  },
+  {
+    "Symbol": "414",
+    "name": "קלחים",
+    "population": "643"
+  },
+  {
+    "Symbol": "3601",
+    "name": "קליה",
+    "population": "437"
+  },
+  {
+    "Symbol": "638",
+    "name": "קלנסווה",
+    "population": "23,144"
+  },
+  {
+    "Symbol": "4024",
+    "name": "קלע",
+    "population": "319"
+  },
+  {
+    "Symbol": "1243",
+    "name": "קציר",
+    "population": "2,884"
+  },
+  {
+    "Symbol": "1347",
+    "name": "קצר א-סר",
+    "population": "2,459"
+  },
+  {
+    "Symbol": "4100",
+    "name": "קצרין",
+    "population": "7,297"
+  },
+  {
+    "Symbol": "2620",
+    "name": "קריית אונו",
+    "population": "40,409"
+  },
+  {
+    "Symbol": "3611",
+    "name": "קריית ארבע",
+    "population": "7,326"
+  },
+  {
+    "Symbol": "6800",
+    "name": "קריית אתא",
+    "population": "59,031"
+  },
+  {
+    "Symbol": "9500",
+    "name": "קריית ביאליק",
+    "population": "40,231"
+  },
+  {
+    "Symbol": "2630",
+    "name": "קריית גת",
+    "population": "57,105"
+  },
+  {
+    "Symbol": "1768",
+    "name": "קריית חינוך מרחבים*",
+    "population": "-"
+  },
+  {
+    "Symbol": "2300",
+    "name": "קריית טבעון",
+    "population": "18,128"
+  },
+  {
+    "Symbol": "9600",
+    "name": "קריית ים",
+    "population": "39,896"
+  },
+  {
+    "Symbol": "1137",
+    "name": "קריית יערים",
+    "population": "6,128"
+  },
+  {
+    "Symbol": "2039",
+    "name": "קריית יערים (מוסד)",
+    "population": "181"
+  },
+  {
+    "Symbol": "8200",
+    "name": "קריית מוצקין",
+    "population": "43,304"
+  },
+  {
+    "Symbol": "1034",
+    "name": "קריית מלאכי",
+    "population": "23,820"
+  },
+  {
+    "Symbol": "3746",
+    "name": "קריית נטפים",
+    "population": "958"
+  },
+  {
+    "Symbol": "78",
+    "name": "קריית ענבים",
+    "population": "466"
+  },
+  {
+    "Symbol": "469",
+    "name": "קריית עקרון",
+    "population": "11,001"
+  },
+  {
+    "Symbol": "412",
+    "name": "קריית שלמה",
+    "population": "132"
+  },
+  {
+    "Symbol": "2800",
+    "name": "קריית שמונה",
+    "population": "22,512"
+  },
+  {
+    "Symbol": "1766",
+    "name": "קרית חינוך עזתה",
+    "population": "-"
+  },
+  {
+    "Symbol": "1746",
+    "name": "קרית תעופה",
+    "population": "-"
+  },
+  {
+    "Symbol": "3640",
+    "name": "קרני שומרון",
+    "population": "8,135"
+  },
+  {
+    "Symbol": "4006",
+    "name": "קשת",
+    "population": "799"
+  },
+  {
+    "Symbol": "543",
+    "name": "ראמה",
+    "population": "7,728"
+  },
+  {
+    "Symbol": "1334",
+    "name": "ראס אל-עין",
+    "population": "393"
+  },
+  {
+    "Symbol": "990",
+    "name": "ראס עלי",
+    "population": "643"
+  },
+  {
+    "Symbol": "2640",
+    "name": "ראש העין",
+    "population": "61,800"
+  },
+  {
+    "Symbol": "26",
+    "name": "ראש פינה",
+    "population": "3,148"
+  },
+  {
+    "Symbol": "3602",
+    "name": "ראש צורים",
+    "population": "933"
+  },
+  {
+    "Symbol": "8300",
+    "name": "ראשון לציון",
+    "population": "254,384"
+  },
+  {
+    "Symbol": "3795",
+    "name": "רבבה",
+    "population": "2,632"
+  },
+  {
+    "Symbol": "564",
+    "name": "רבדים",
+    "population": "813"
+  },
+  {
+    "Symbol": "354",
+    "name": "רביבים",
+    "population": "1,076"
+  },
+  {
+    "Symbol": "1225",
+    "name": "רביד",
+    "population": "114"
+  },
+  {
+    "Symbol": "390",
+    "name": "רגבה",
+    "population": "1,096"
+  },
+  {
+    "Symbol": "444",
+    "name": "רגבים",
+    "population": "480"
+  },
+  {
+    "Symbol": "1161",
+    "name": "רהט",
+    "population": "71,437"
+  },
+  {
+    "Symbol": "2051",
+    "name": "רווחה",
+    "population": "551"
+  },
+  {
+    "Symbol": "2016",
+    "name": "רוויה",
+    "population": "444"
+  },
+  {
+    "Symbol": "1341",
+    "name": "רוח מדבר",
+    "population": "53"
+  },
+  {
+    "Symbol": "362",
+    "name": "רוחמה",
+    "population": "689"
+  },
+  {
+    "Symbol": "539",
+    "name": "רומאנה",
+    "population": "1,212"
+  },
+  {
+    "Symbol": "997",
+    "name": "רומת הייב",
+    "population": "2,047"
+  },
+  {
+    "Symbol": "3619",
+    "name": "רועי",
+    "population": "175"
+  },
+  {
+    "Symbol": "3782",
+    "name": "רותם",
+    "population": "228"
+  },
+  {
+    "Symbol": "854",
+    "name": "רחוב",
+    "population": "401"
+  },
+  {
+    "Symbol": "8400",
+    "name": "רחובות",
+    "population": "143,904"
+  },
+  {
+    "Symbol": "3822",
+    "name": "רחלים",
+    "population": "802"
+  },
+  {
+    "Symbol": "540",
+    "name": "ריחאנייה",
+    "population": "1,195"
+  },
+  {
+    "Symbol": "3568",
+    "name": "ריחן",
+    "population": "329"
+  },
+  {
+    "Symbol": "542",
+    "name": "ריינה",
+    "population": "19,001"
+  },
+  {
+    "Symbol": "3565",
+    "name": "רימונים",
+    "population": "700"
+  },
+  {
+    "Symbol": "616",
+    "name": "רינתיה",
+    "population": "1,205"
+  },
+  {
+    "Symbol": "922",
+    "name": "רכסים",
+    "population": "12,668"
+  },
+  {
+    "Symbol": "1069",
+    "name": "רם-און",
+    "population": "978"
+  },
+  {
+    "Symbol": "4702",
+    "name": "רמות",
+    "population": "552"
+  },
+  {
+    "Symbol": "206",
+    "name": "רמות השבים",
+    "population": "1,730"
+  },
+  {
+    "Symbol": "735",
+    "name": "רמות מאיר",
+    "population": "749"
+  },
+  {
+    "Symbol": "445",
+    "name": "רמות מנשה",
+    "population": "1,159"
+  },
+  {
+    "Symbol": "372",
+    "name": "רמות נפתלי",
+    "population": "546"
+  },
+  {
+    "Symbol": "8500",
+    "name": "רמלה",
+    "population": "76,247"
+  },
+  {
+    "Symbol": "8600",
+    "name": "רמת גן",
+    "population": "163,481"
+  },
+  {
+    "Symbol": "135",
+    "name": "רמת דוד",
+    "population": "522"
+  },
+  {
+    "Symbol": "184",
+    "name": "רמת הכובש",
+    "population": "1,129"
+  },
+  {
+    "Symbol": "335",
+    "name": "רמת השופט",
+    "population": "1,101"
+  },
+  {
+    "Symbol": "2650",
+    "name": "רמת השרון",
+    "population": "47,246"
+  },
+  {
+    "Symbol": "178",
+    "name": "רמת יוחנן",
+    "population": "1,012"
+  },
+  {
+    "Symbol": "122",
+    "name": "רמת ישי",
+    "population": "7,784"
+  },
+  {
+    "Symbol": "4701",
+    "name": "רמת מגשימים",
+    "population": "705"
+  },
+  {
+    "Symbol": "339",
+    "name": "רמת צבי",
+    "population": "710"
+  },
+  {
+    "Symbol": "460",
+    "name": "רמת רזיאל",
+    "population": "660"
+  },
+  {
+    "Symbol": "127",
+    "name": "רמת רחל",
+    "population": "545"
+  },
+  {
+    "Symbol": "789",
+    "name": "רנן",
+    "population": "703"
+  },
+  {
+    "Symbol": "713",
+    "name": "רעים",
+    "population": "409"
+  },
+  {
+    "Symbol": "8700",
+    "name": "רעננה",
+    "population": "75,422"
+  },
+  {
+    "Symbol": "1228",
+    "name": "רקפת",
+    "population": "1,057"
+  },
+  {
+    "Symbol": "247",
+    "name": "רשפון",
+    "population": "1,458"
+  },
+  {
+    "Symbol": "437",
+    "name": "רשפים",
+    "population": "1,089"
+  },
+  {
+    "Symbol": "1260",
+    "name": "רתמים",
+    "population": "537"
+  },
+  {
+    "Symbol": "324",
+    "name": "שאר ישוב",
+    "population": "668"
+  },
+  {
+    "Symbol": "1377",
+    "name": "שבי דרום",
+    "population": "171"
+  },
+  {
+    "Symbol": "282",
+    "name": "שבי ציון",
+    "population": "1,205"
+  },
+  {
+    "Symbol": "3571",
+    "name": "שבי שומרון",
+    "population": "977"
+  },
+  {
+    "Symbol": "913",
+    "name": "שבלי - אום אל-גנם",
+    "population": "6,053"
+  },
+  {
+    "Symbol": "1286",
+    "name": "שגב-שלום",
+    "population": "10,936"
+  },
+  {
+    "Symbol": "721",
+    "name": "שדה אילן",
+    "population": "590"
+  },
+  {
+    "Symbol": "304",
+    "name": "שדה אליהו",
+    "population": "692"
+  },
+  {
+    "Symbol": "861",
+    "name": "שדה אליעזר",
+    "population": "809"
+  },
+  {
+    "Symbol": "885",
+    "name": "שדה בוקר",
+    "population": "479"
+  },
+  {
+    "Symbol": "36",
+    "name": "שדה דוד",
+    "population": "594"
+  },
+  {
+    "Symbol": "284",
+    "name": "שדה ורבורג",
+    "population": "1,479"
+  },
+  {
+    "Symbol": "293",
+    "name": "שדה יואב",
+    "population": "582"
+  },
+  {
+    "Symbol": "142",
+    "name": "שדה יעקב",
+    "population": "1,103"
+  },
+  {
+    "Symbol": "2008",
+    "name": "שדה יצחק",
+    "population": "686"
+  },
+  {
+    "Symbol": "18",
+    "name": "שדה משה",
+    "population": "760"
+  },
+  {
+    "Symbol": "259",
+    "name": "שדה נחום",
+    "population": "806"
+  },
+  {
+    "Symbol": "329",
+    "name": "שדה נחמיה",
+    "population": "1,234"
+  },
+  {
+    "Symbol": "1058",
+    "name": "שדה ניצן",
+    "population": "335"
+  },
+  {
+    "Symbol": "739",
+    "name": "שדה עוזיהו",
+    "population": "1,571"
+  },
+  {
+    "Symbol": "2049",
+    "name": "שדה צבי",
+    "population": "665"
+  },
+  {
+    "Symbol": "327",
+    "name": "שדות ים",
+    "population": "1,096"
+  },
+  {
+    "Symbol": "27",
+    "name": "שדות מיכה",
+    "population": "378"
+  },
+  {
+    "Symbol": "1223",
+    "name": "שדי אברהם",
+    "population": "357"
+  },
+  {
+    "Symbol": "2015",
+    "name": "שדי חמד",
+    "population": "1,019"
+  },
+  {
+    "Symbol": "2057",
+    "name": "שדי תרומות",
+    "population": "463"
+  },
+  {
+    "Symbol": "555",
+    "name": "שדמה",
+    "population": "594"
+  },
+  {
+    "Symbol": "306",
+    "name": "שדמות דבורה",
+    "population": "683"
+  },
+  {
+    "Symbol": "3578",
+    "name": "שדמות מחולה",
+    "population": "666"
+  },
+  {
+    "Symbol": "1031",
+    "name": "שדרות",
+    "population": "27,635"
+  },
+  {
+    "Symbol": "741",
+    "name": "שואבה",
+    "population": "655"
+  },
+  {
+    "Symbol": "761",
+    "name": "שובה",
+    "population": "691"
+  },
+  {
+    "Symbol": "394",
+    "name": "שובל",
+    "population": "820"
+  },
+  {
+    "Symbol": "1304",
+    "name": "שוהם",
+    "population": "21,046"
+  },
+  {
+    "Symbol": "614",
+    "name": "שומרה",
+    "population": "353"
+  },
+  {
+    "Symbol": "1265",
+    "name": "שומרייה",
+    "population": "825"
+  },
+  {
+    "Symbol": "415",
+    "name": "שוקדה",
+    "population": "564"
+  },
+  {
+    "Symbol": "456",
+    "name": "שורש",
+    "population": "1,247"
+  },
+  {
+    "Symbol": "1235",
+    "name": "שורשים",
+    "population": "518"
+  },
+  {
+    "Symbol": "224",
+    "name": "שושנת העמקים",
+    "population": "505"
+  },
+  {
+    "Symbol": "527",
+    "name": "שזור",
+    "population": "323"
+  },
+  {
+    "Symbol": "7",
+    "name": "שחר",
+    "population": "879"
+  },
+  {
+    "Symbol": "1266",
+    "name": "שחרות",
+    "population": "164"
+  },
+  {
+    "Symbol": "865",
+    "name": "שיבולים",
+    "population": "300"
+  },
+  {
+    "Symbol": "1267",
+    "name": "שיטים",
+    "population": "-"
+  },
+  {
+    "Symbol": "658",
+    "name": "שייח' דנון",
+    "population": "2,887"
+  },
+  {
+    "Symbol": "3641",
+    "name": "שילה",
+    "population": "4,356"
+  },
+  {
+    "Symbol": "1165",
+    "name": "שילת",
+    "population": "771"
+  },
+  {
+    "Symbol": "1160",
+    "name": "שכניה",
+    "population": "814"
+  },
+  {
+    "Symbol": "873",
+    "name": "שלווה",
+    "population": "503"
+  },
+  {
+    "Symbol": "1373",
+    "name": "שלווה במדבר",
+    "population": "-"
+  },
+  {
+    "Symbol": "439",
+    "name": "שלוחות",
+    "population": "451"
+  },
+  {
+    "Symbol": "812",
+    "name": "שלומי",
+    "population": "6,512"
+  },
+  {
+    "Symbol": "1364",
+    "name": "שלומית",
+    "population": "365"
+  },
+  {
+    "Symbol": "1793",
+    "name": "שלומציון",
+    "population": "-"
+  },
+  {
+    "Symbol": "366",
+    "name": "שמיר",
+    "population": "923"
+  },
+  {
+    "Symbol": "3784",
+    "name": "שמעה",
+    "population": "741"
+  },
+  {
+    "Symbol": "432",
+    "name": "שמרת",
+    "population": "580"
+  },
+  {
+    "Symbol": "1337",
+    "name": "שמשית",
+    "population": "2,514"
+  },
+  {
+    "Symbol": "1287",
+    "name": "שני",
+    "population": "544"
+  },
+  {
+    "Symbol": "1132",
+    "name": "שניר",
+    "population": "586"
+  },
+  {
+    "Symbol": "538",
+    "name": "שעב",
+    "population": "7,061"
+  },
+  {
+    "Symbol": "4009",
+    "name": "שעל",
+    "population": "276"
+  },
+  {
+    "Symbol": "856",
+    "name": "שעלבים",
+    "population": "1,928"
+  },
+  {
+    "Symbol": "661",
+    "name": "שער אפרים",
+    "population": "1,908"
+  },
+  {
+    "Symbol": "264",
+    "name": "שער הגולן",
+    "population": "544"
+  },
+  {
+    "Symbol": "237",
+    "name": "שער העמקים",
+    "population": "738"
+  },
+  {
+    "Symbol": "921",
+    "name": "שער מנשה",
+    "population": "574"
+  },
+  {
+    "Symbol": "3720",
+    "name": "שערי תקווה",
+    "population": "6,040"
+  },
+  {
+    "Symbol": "232",
+    "name": "שפיים",
+    "population": "1,303"
+  },
+  {
+    "Symbol": "692",
+    "name": "שפיר",
+    "population": "920"
+  },
+  {
+    "Symbol": "846",
+    "name": "שפר",
+    "population": "427"
+  },
+  {
+    "Symbol": "8800",
+    "name": "שפרעם",
+    "population": "42,136"
+  },
+  {
+    "Symbol": "3649",
+    "name": "שקד",
+    "population": "961"
+  },
+  {
+    "Symbol": "1233",
+    "name": "שקף",
+    "population": "500"
+  },
+  {
+    "Symbol": "292",
+    "name": "שרונה",
+    "population": "572"
+  },
+  {
+    "Symbol": "1114",
+    "name": "שריגים (לי-און)",
+    "population": "1,082"
+  },
+  {
+    "Symbol": "126",
+    "name": "שריד",
+    "population": "882"
+  },
+  {
+    "Symbol": "398",
+    "name": "שרשרת",
+    "population": "321"
+  },
+  {
+    "Symbol": "1045",
+    "name": "שתולה",
+    "population": "293"
+  },
+  {
+    "Symbol": "763",
+    "name": "שתולים",
+    "population": "2,116"
+  },
+  {
+    "Symbol": "2062",
+    "name": "תאשור",
+    "population": "446"
+  },
+  {
+    "Symbol": "2061",
+    "name": "תדהר",
+    "population": "652"
+  },
+  {
+    "Symbol": "1172",
+    "name": "תובל",
+    "population": "319"
+  },
+  {
+    "Symbol": "3558",
+    "name": "תומר",
+    "population": "276"
+  },
+  {
+    "Symbol": "1083",
+    "name": "תושייה",
+    "population": "955"
+  },
+  {
+    "Symbol": "163",
+    "name": "תימורים",
+    "population": "777"
+  },
+  {
+    "Symbol": "10",
+    "name": "תירוש",
+    "population": "493"
+  },
+  {
+    "Symbol": "5000",
+    "name": "תל אביב -יפו",
+    "population": "460,613"
+  },
+  {
+    "Symbol": "1707",
+    "name": "תל חי (מכללה)",
+    "population": "-"
+  },
+  {
+    "Symbol": "84",
+    "name": "תל יוסף",
+    "population": "559"
+  },
+  {
+    "Symbol": "287",
+    "name": "תל יצחק",
+    "population": "1,022"
+  },
+  {
+    "Symbol": "154",
+    "name": "תל מונד",
+    "population": "13,144"
+  },
+  {
+    "Symbol": "103",
+    "name": "תל עדשים",
+    "population": "1,503"
+  },
+  {
+    "Symbol": "719",
+    "name": "תל קציר",
+    "population": "417"
+  },
+  {
+    "Symbol": "1054",
+    "name": "תל שבע",
+    "population": "20,808"
+  },
+  {
+    "Symbol": "1283",
+    "name": "תל תאומים",
+    "population": "575"
+  },
+  {
+    "Symbol": "3719",
+    "name": "תלם",
+    "population": "445"
+  },
+  {
+    "Symbol": "1051",
+    "name": "תלמי אליהו",
+    "population": "302"
+  },
+  {
+    "Symbol": "2003",
+    "name": "תלמי אלעזר",
+    "population": "945"
+  },
+  {
+    "Symbol": "2050",
+    "name": "תלמי ביל\"ו",
+    "population": "529"
+  },
+  {
+    "Symbol": "1237",
+    "name": "תלמי יוסף",
+    "population": "329"
+  },
+  {
+    "Symbol": "727",
+    "name": "תלמי יחיאל",
+    "population": "997"
+  },
+  {
+    "Symbol": "744",
+    "name": "תלמי יפה",
+    "population": "818"
+  },
+  {
+    "Symbol": "814",
+    "name": "תלמים",
+    "population": "929"
+  },
+  {
+    "Symbol": "1244",
+    "name": "תמרת",
+    "population": "1,293"
+  },
+  {
+    "Symbol": "2002",
+    "name": "תנובות",
+    "population": "831"
+  },
+  {
+    "Symbol": "752",
+    "name": "תעוז",
+    "population": "629"
+  },
+  {
+    "Symbol": "1744",
+    "name": "תעשיון בינימין*",
+    "population": "-"
+  },
+  {
+    "Symbol": "1741",
+    "name": "תעשיון השרון",
+    "population": "-"
+  },
+  {
+    "Symbol": "1750",
+    "name": "תעשיון חבל יבנה",
+    "population": "-"
+  },
+  {
+    "Symbol": "1742",
+    "name": "תעשיון חצב*",
+    "population": "-"
+  },
+  {
+    "Symbol": "1754",
+    "name": "תעשיון מבצע*",
+    "population": "-"
+  },
+  {
+    "Symbol": "1794",
+    "name": "תעשיון מיתרים",
+    "population": "-"
+  },
+  {
+    "Symbol": "1749",
+    "name": "תעשיון צריפין",
+    "population": "-"
+  },
+  {
+    "Symbol": "1755",
+    "name": "תעשיון ראם*",
+    "population": "-"
+  },
+  {
+    "Symbol": "1792",
+    "name": "תעשיון שח\"ק",
+    "population": "-"
+  },
+  {
+    "Symbol": "1714",
+    "name": "תעשיות גליל תחתון",
+    "population": "-"
+  },
+  {
+    "Symbol": "709",
+    "name": "תפרח",
+    "population": "2,178"
+  },
+  {
+    "Symbol": "665",
+    "name": "תקומה",
+    "population": "722"
+  },
+  {
+    "Symbol": "3563",
+    "name": "תקוע",
+    "population": "4,076"
+  },
+  {
+    "Symbol": "1346",
+    "name": "תרבין א-צאנע (יישוב)*",
+    "population": "1,139"
+  },
+  {
+    "Symbol": "778",
+    "name": "תרום",
+    "population": "944"
+  }
+]

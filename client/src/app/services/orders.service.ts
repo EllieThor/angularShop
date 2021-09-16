@@ -16,6 +16,7 @@ export class OrdersService {
   _successfulOrder: Order = new Order();
   serverResult: any;
   _isRegexp: boolean = false;
+  _datesArr: any;
   constructor(
     public apiService: ApiService,
     public settingsService: SettingsService,
@@ -26,6 +27,11 @@ export class OrdersService {
 
   async getOrdersQnt(url: string) {
     this._ordersQnt = (await this.apiService.createPostService(url)) as any;
+  }
+
+  async getOrdersDates(url: string) {
+    this._datesArr = (await this.apiService.createPostService(url)) as any;
+    console.log('this._datesArr: ', this._datesArr);
   }
 
   creditRegex(e: any) {
@@ -43,7 +49,6 @@ export class OrdersService {
   }
 
   async addOrder(url: string, event?: any) {
-    console.log('addOrder');
     event.preventDefault();
     if (this._newOrder.ShippingCity === '') {
       alert('בחר.י עיר למשלוח');
