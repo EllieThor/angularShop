@@ -1,13 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { CartsService } from 'src/app/services/carts.service';
+import { OrdersService } from 'src/app/services/orders.service';
+import { ProductsService } from 'src/app/services/products.service';
+import { UsersServiceService } from 'src/app/services/users.service';
 
 @Component({
   selector: 'app-calendar',
   templateUrl: './calendar.component.html',
   styleUrls: ['./calendar.component.css'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class CalendarComponent implements OnInit {
   _date: any = new Date();
-  _months = [
+  _months1 = [
     'January',
     'February',
     'March',
@@ -21,6 +26,21 @@ export class CalendarComponent implements OnInit {
     'November',
     'December',
   ];
+
+  _months = [
+    'ינואר',
+    'פברואר',
+    'מרץ',
+    'אפריל',
+    'מאי',
+    'יוני',
+    'יולי',
+    'אוגוסט',
+    'ספטמבר',
+    'אוקטובר',
+    'נובמבר',
+    'דצמבר',
+  ];
   _currentMonth: any;
   _currentDateStr: any;
   _monthDays: any;
@@ -30,14 +50,29 @@ export class CalendarComponent implements OnInit {
   firstDayIndex: any;
   lastDayIndex: any;
   nextDays: any;
-  constructor() {
+
+  constructor(
+    public usersService: UsersServiceService,
+    public cartsService: CartsService,
+    public ordersService: OrdersService,
+    public productsService: ProductsService
+  ) {
     this.renderCalendar();
   }
 
   ngOnInit(): void {}
 
-  renderCalendar() {
+  async renderCalendar() {
     this._date.setDate(1);
+
+    await this.ordersService.getOrdersDates('/orders/getOrdersDates');
+
+    this.ordersService._datesArr.ordersCount.map((date: any) => {
+      new Date().toISOString().split('T').shift() ===
+      date.ShippingDate.split('T').shift()
+        ? console.log('yes: ', date.ShippingDate.split('T').shift())
+        : console.log('no: ', date.ShippingDate.split('T').shift());
+    });
 
     this.lastDay = new Date(
       this._date.getFullYear(),
@@ -63,7 +98,6 @@ export class CalendarComponent implements OnInit {
 
     this._currentMonth = this._months[this._date.getMonth()];
     this._currentDateStr = new Date().toDateString();
-
     let days = '';
 
     for (let x = this.firstDayIndex; x > 0; x--) {
@@ -85,18 +119,13 @@ export class CalendarComponent implements OnInit {
       days += `<div class="next-date">${j}</div>`;
       this._monthDays = days;
     }
-
-    console.log('lastDay:', this.lastDay);
-    console.log('prevLastDay:', this.prevLastDay);
-    console.log('firstDayIndex: ', this.firstDayIndex);
-    console.log('lastDayIndex: ', this.lastDayIndex);
-    console.log('nextDays: ', this.nextDays);
   }
 
   prevIconClicked() {
     this._date.setMonth(this._date.getMonth() - 1);
     this.renderCalendar();
   }
+
   nextIconClicked() {
     this._date.setMonth(this._date.getMonth() + 1);
     this.renderCalendar();

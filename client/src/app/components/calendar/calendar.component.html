@@ -1,21 +1,25 @@
+<button class="btn btn-primary" (click)="renderCalendar()">
+  try me please
+</button>
+<hr />
 <div class="calendarContainer">
   <div class="calendar">
     <div class="month">
-      <i class="fas fa-angle-left prev" (click)="(prevIconClicked)"></i>
+      <i class="fas fa-angle-left prev" (click)="prevIconClicked()"></i>
       <div class="date">
         <h1>{{ this._currentMonth }}</h1>
-        <p>{{ this._currentDateStr }}</p>
+        <h2>{{ this._currentDateStr }}</h2>
       </div>
-      <i class="fas fa-angle-right next" (click)="(nextIconClicked)"></i>
+      <i class="fas fa-angle-right next" (click)="nextIconClicked()"></i>
     </div>
     <div class="weekdays">
-      <div>שבת</div>
-      <div>שישי</div>
-      <div>חמישי</div>
-      <div>רביעי</div>
-      <div>שלישי</div>
-      <div>שני</div>
       <div>ראשון</div>
+      <div>שני</div>
+      <div>שלישי</div>
+      <div>רביעי</div>
+      <div>חמישי</div>
+      <div>שישי</div>
+      <div>שבת</div>
     </div>
     <div [innerHTML]="this._monthDays" class="days"></div>
   </div>

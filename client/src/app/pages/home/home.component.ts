@@ -19,14 +19,9 @@ export class HomeComponent implements OnInit {
     console.log('this._user: ', this._user);
     if (this._user !== null) {
       this.usersService._currentUserObj = this._user;
-      console.log(
-        'current user from local : ',
-        this.usersService._currentUserObj
-      );
       this.cartService.statusCartCheck('/carts/getCarts', {
         userID: this.usersService._currentUserObj.ID,
       });
-      console.log('yes');
     }
   }
 }

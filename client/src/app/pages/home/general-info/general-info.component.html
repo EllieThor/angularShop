@@ -1,7 +1,6 @@
 <h5>כמות הזמנות בחנות: {{ ordersService._ordersQnt.ordersCount }}</h5>
 <h5>כמות מוצרים בחנות: {{ productsService._productsQnt.prodCount }}</h5>
-<p>: התראות</p>
-<!-- FIXME: למה שלום מופיע כל הזמן -->
+<p *ngIf="usersService._currentUserObj.ID">: התראות</p>
 <h4 *ngIf="usersService._currentUserObj.ID">
   ,שלום
   {{ usersService._currentUserObj.FirstName }}
