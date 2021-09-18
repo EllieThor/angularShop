@@ -1,4 +1,4 @@
-<button class="btn btn-primary" (click)="renderCalendar()">
+<button class="btn btn-primary" (click)="backToTodayClicked()">
   try me please
 </button>
 <hr />
@@ -7,7 +7,7 @@
     <div class="month">
       <i class="fas fa-angle-left prev" (click)="prevIconClicked()"></i>
       <div class="date">
-        <h1>{{ this._currentMonthStr }}</h1>
+        <h1>{{ this._monthsHEB[this._currentMonthIndex] }}</h1>
         <h2>{{ this._currentDateStr }}</h2>
       </div>
       <i class="fas fa-angle-right next" (click)="nextIconClicked()"></i>
@@ -21,14 +21,13 @@
       <div>שישי</div>
       <div>שבת</div>
     </div>
-    <!-- <div [innerHTML]="this._monthDays" class="days"></div> -->
     <div class="days">
       <div
         *ngFor="let day of this._monthDays"
         [ngClass]="
           day.type === 0
             ? 'prev-date'
-            : day.type === 1
+            : day.type === 1 && day.monthIndex === this._currentMonthIndex
             ? 'today'
             : day.type === 2
             ? 'next-date'
