@@ -67,9 +67,15 @@ export class CalendarComponent implements OnInit {
 
     await this.ordersService.getOrdersDates('/orders/getOrdersDates');
 
+    // this.ordersService._datesArr.ordersCount.map((date: any) => {
+    //   new Date().toISOString().split('T').shift() ===
+    //   date.ShippingDate.split('T').shift()
+    //     ? console.log('yes: ', date.ShippingDate.split('T').shift())
+    //     : console.log('no: ', date.ShippingDate.split('T').shift());
+    // });
+
     this.ordersService._datesArr.ordersCount.map((date: any) => {
-      new Date().toISOString().split('T').shift() ===
-      date.ShippingDate.split('T').shift()
+      this.isShippingAvailable(date.ShippingDate)
         ? console.log('yes: ', date.ShippingDate.split('T').shift())
         : console.log('no: ', date.ShippingDate.split('T').shift());
     });
@@ -118,6 +124,17 @@ export class CalendarComponent implements OnInit {
     for (let j = 1; j <= this.nextDays; j++) {
       days += `<div class="next-date">${j}</div>`;
       this._monthDays = days;
+    }
+  }
+
+  // isShippingAvailable(date.ShippingDate)
+  isShippingAvailable(date: string) {
+    if (
+      new Date().toISOString().split('T').shift() === date.split('T').shift()
+    ) {
+      return true;
+    } else {
+      return false;
     }
   }
 
