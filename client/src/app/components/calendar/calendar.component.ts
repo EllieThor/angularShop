@@ -12,7 +12,7 @@ import { UsersServiceService } from 'src/app/services/users.service';
 })
 export class CalendarComponent implements OnInit {
   _date: any = new Date();
-  _months1 = [
+  _monthsEN = [
     'January',
     'February',
     'March',
@@ -27,7 +27,7 @@ export class CalendarComponent implements OnInit {
     'December',
   ];
 
-  _months = [
+  _monthsHEB = [
     'ינואר',
     'פברואר',
     'מרץ',
@@ -41,9 +41,10 @@ export class CalendarComponent implements OnInit {
     'נובמבר',
     'דצמבר',
   ];
-  _currentMonth: any;
+
+  _monthDays: Array<any> = []; // DELETE: s
+  _currentMonthStr: any;
   _currentDateStr: any;
-  _monthDays: any;
 
   lastDay: any;
   prevLastDay: any;
@@ -102,12 +103,11 @@ export class CalendarComponent implements OnInit {
 
     this.nextDays = 7 - this.lastDayIndex - 1;
 
-    this._currentMonth = this._months[this._date.getMonth()];
+    this._currentMonthStr = this._monthsHEB[this._date.getMonth()];
     this._currentDateStr = new Date().toDateString();
-    let days = '';
 
     for (let x = this.firstDayIndex; x > 0; x--) {
-      days += `<div class="prev-date">${this.prevLastDay - x + 1}</div>`;
+      this._monthDays.push({ type: 0, num: this.prevLastDay - x + 1 });
     }
 
     for (let i = 1; i <= this.lastDay; i++) {
@@ -115,16 +115,16 @@ export class CalendarComponent implements OnInit {
         i === new Date().getDate() &&
         this._date.getMonth() === new Date().getMonth()
       ) {
-        days += `<div class="today">${i}</div>`;
+        this._monthDays.push({ type: 1, num: i });
       } else {
-        days += `<div>${i}</div>`;
+        this._monthDays.push({ type: 3, num: i });
       }
     }
 
     for (let j = 1; j <= this.nextDays; j++) {
-      days += `<div class="next-date">${j}</div>`;
-      this._monthDays = days;
+      this._monthDays.push({ type: 2, num: j });
     }
+    console.log('this._monthDays ARR: ', this._monthDays);
   }
 
   // isShippingAvailable(date.ShippingDate)
@@ -146,5 +146,9 @@ export class CalendarComponent implements OnInit {
   nextIconClicked() {
     this._date.setMonth(this._date.getMonth() + 1);
     this.renderCalendar();
+  }
+
+  someDayClicked(dayOb: any) {
+    console.log('some day clicked: ', dayOb);
   }
 }
