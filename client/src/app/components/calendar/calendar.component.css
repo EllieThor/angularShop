@@ -107,3 +107,7 @@ html {
 .today {
   background-color: #167e56;
 }
+
+.notAvailable {
+  background-color: red !important;
+}
