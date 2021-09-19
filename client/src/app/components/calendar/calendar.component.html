@@ -3,7 +3,7 @@
     <div class="month">
       <i class="fas fa-angle-left prev" (click)="prevIconClicked()"></i>
       <div class="date">
-        <h1>{{ this._monthsHEB[this._currentMonthIndex] }}</h1>
+        <h1>{{ this._monthsHEB[this._currentMonthIndex] }}, {{ this.year }}</h1>
         <h2>{{ this._currentDateStr }}</h2>
         <h3 (click)="backToTodayClicked()">חזור להיום</h3>
       </div>
