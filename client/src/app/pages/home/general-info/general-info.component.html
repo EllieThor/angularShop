@@ -5,22 +5,14 @@
   ,שלום
   {{ usersService._currentUserObj.FirstName }}
 </h4>
-<!-- FIXME: מתכונת הזמן לא תקינה -->
-
 <h6 *ngIf="cartService._welcomeByCartStatus === 1">
   ברוכ.ה הבא.ה לקנייתך הראשונה
 </h6>
 <h6 *ngIf="cartService._welcomeByCartStatus === 2">:יש לך עגלה פתוחה מ</h6>
 <p *ngIf="cartService._welcomeByCartStatus === 2">
-  {{ cartService._currentCart.createdAt }}
+  {{ cartService._currentCart.createdAt.split("T").shift() }}
 </p>
 <h6 *ngIf="cartService._welcomeByCartStatus === 3">רכישתך האחרונה בוצעה ב</h6>
 <p *ngIf="cartService._welcomeByCartStatus === 3">
-  {{ cartService._recentCart.createdAt }}
+  {{ cartService._recentCart.createdAt.split("T").shift() }}
 </p>
-<!-- .moment().format("LLLL") -->
-<!-- .slice(0, 10)
-      .replace("-", "/")
-      .split("/")
-      .reverse()
-      .join("/") -->

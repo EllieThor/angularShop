@@ -40,7 +40,7 @@
     />
   </label>
   <br />
-  <label for="ShippingDate" class="text-end">
+  <!-- <label for="ShippingDate" class="text-end">
     :בחר תאריך למשלוח
     <input
       [(ngModel)]="ordersService._newOrder.ShippingDate"
@@ -51,8 +51,12 @@
       required
     />
   </label>
+  <br /> -->
+  <h5>:בחר תאריך למשלוח</h5>
+  <!-- <div class="row"> -->
+  <app-calendar></app-calendar>
+  <!-- </div> -->
   <br />
-
   <h4>תשלום</h4>
   <h5>{{ cartsService._fixedTotalToPay }} סה"כ לתשלום</h5>
   <label for="CreditCard" class="text-end mx-3">

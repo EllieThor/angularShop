@@ -162,13 +162,13 @@ export class CalendarComponent implements OnInit {
   someDayClicked(dayOb: any) {
     // availability is false if there is more then 2 deliveries for this day
     if (dayOb.availability) {
+      const d = new Date(dayOb.year, dayOb.monthIndex, dayOb.num, 13, 30);
       console.log('some day clicked: availability true ', dayOb);
-    } else {
-      console.log('some day clicked: availability false ', dayOb);
+      this.ordersService._newOrder.ShippingDate = d.toISOString();
     }
   }
 
-  isShippingAvailable(a: any, b: any) {
+  isShippingAvailable(monthIndex: any, dayNum: any) {
     // d.ShippingDate.split('T').shift().split('-') ['2021', '09', '19']
     // this._currentDateStr.split(' ')  ['Sun', 'Sep', '19', '2021']
 
@@ -176,8 +176,8 @@ export class CalendarComponent implements OnInit {
       (d: any) =>
         d.ShippingDate.split('T').shift().split('-')[0] ==
           this._currentDateStr.split(' ')[3] &&
-        d.ShippingDate.split('T').shift().split('-')[1] == a &&
-        d.ShippingDate.split('T').shift().split('-')[2] == b
+        d.ShippingDate.split('T').shift().split('-')[1] == monthIndex &&
+        d.ShippingDate.split('T').shift().split('-')[2] == dayNum
     );
     return shippingNum.length > 2 ? false : true;
   }
