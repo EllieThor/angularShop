@@ -3,9 +3,6 @@
     class="col-sm-12 col-md-6 col-xl-2 p-3"
     *ngFor="let product of productsService._products"
   >
-    <app-single-prod-card
-      [product]="product"
-      (callBackFN)="callBackFN($event)"
-    ></app-single-prod-card>
+    <app-single-prod-card [product]="product"></app-single-prod-card>
   </div>
 </div>

@@ -1,0 +1,28 @@
+.cartArea {
+  height: 100vh;
+  resize: horizontal;
+  overflow-x: auto;
+}
+
+/* section {
+  width: 100%;
+} */
+/* 
+div {
+  height: 86vh;
+  padding: 15%;
+} */
+
+/* div:first-child {
+  float: left;
+  width: auto;
+  background-color: #777;
+  resize: horizontal;
+  overflow-x: auto;
+  height: 86vh;
+}
+div:last-child {
+  background-color: #77f;
+  width: auto;
+  height: 86vh;
+} */

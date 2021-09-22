@@ -1,4 +1,4 @@
-<div class="calendarContainer">
+<!-- <div class="calendarContainer">
   <div class="calendar">
     <div class="month">
       <i class="fas fa-angle-left prev" (click)="prevIconClicked()"></i>
@@ -37,4 +37,44 @@
       </div>
     </div>
   </div>
+</div> -->
+
+<div class="calendarContainer">
+  <div class="month">
+    <i class="fas fa-angle-left prev" (click)="prevIconClicked()"></i>
+    <div class="date">
+      <h4>{{ this._monthsHEB[this._currentMonthIndex] }}, {{ this.year }}</h4>
+      <h5>{{ this._currentDateStr }}</h5>
+      <h6 (click)="backToTodayClicked()">חזור להיום</h6>
+    </div>
+    <i class="fas fa-angle-right next" (click)="nextIconClicked()"></i>
+  </div>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th *ngFor="let day of this._weekDays" scope="col">{{ day }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of _monthDaysInWeeks">
+        <td
+          *ngFor="let day of item"
+          [ngClass]="
+            day.type === 0
+              ? 'prev-date'
+              : day.type === 1 && day.monthIndex === this._currentMonthIndex
+              ? 'today'
+              : day.type === 2
+              ? 'next-date'
+              : ''
+          "
+          [ngClass]="!day.availability ? 'bg-danger' : ''"
+          (click)="someDayClicked(day, $event)"
+        >
+          {{ day.num }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>

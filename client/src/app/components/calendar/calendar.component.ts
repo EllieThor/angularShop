@@ -41,9 +41,10 @@ export class CalendarComponent implements OnInit {
     'נובמבר',
     'דצמבר',
   ];
+  _weekDays = ['ראשון', 'שני', 'שלישי', 'רביעי', 'חמישי', 'שישי', 'שבת'];
 
   _monthDays: Array<any> = [];
-
+  _monthDaysInWeeks: Array<any> = [];
   _currentMonthIndex: any;
   _currentDateStr: any;
 
@@ -142,6 +143,7 @@ export class CalendarComponent implements OnInit {
       });
     }
     console.log('this._monthDays ARR: ', this._monthDays);
+    this._monthDaysInWeeks = this.sliceIntoWeeks(this._monthDays, 7);
   }
 
   prevIconClicked() {
@@ -158,19 +160,38 @@ export class CalendarComponent implements OnInit {
     this._date = new Date();
     this.renderCalendar();
   }
+  _el: any;
+  someDayClicked(dayOb: any, e: any) {
+    console.log('today finally: ', e.target);
+    if (this._el) {
+      this._el.classList.remove('bg-success');
+      console.log('today finally: ', this._el);
+      this.ordersService._newOrder.ShippingDate = '';
+    }
+    //FIXME:   אי אפשר יהיה להזמין משלוח לתאריך שעבר
+    // let todayNum: any = new Date().getDate();
+    // let todayMonthIndex: any = new Date().getMonth() + 1;
+    // let todayYear: any = new Date().getFullYear();
 
-  someDayClicked(dayOb: any) {
+    // console.log('today finally: ', todayNum, todayMonthIndex, todayYear);
+
+    // console.log('today finally real: ', new Date());
+    //  dayOb.year >= todayYear &&
+    //    dayOb.monthIndex >= todayMonthIndex &&
+    //    dayOb.num >= todayNum;
     // availability is false if there is more then 2 deliveries for this day
     if (dayOb.availability) {
       const d = new Date(dayOb.year, dayOb.monthIndex, dayOb.num, 13, 30);
       console.log('some day clicked: availability true ', dayOb);
       this.ordersService._newOrder.ShippingDate = d.toISOString();
+      this._el = e.target;
+      this._el.className = 'bg-success';
     }
   }
 
   isShippingAvailable(monthIndex: any, dayNum: any) {
-    // d.ShippingDate.split('T').shift().split('-') ['2021', '09', '19']
-    // this._currentDateStr.split(' ')  ['Sun', 'Sep', '19', '2021']
+    // d.ShippingDate.split('T').shift().split('-')  =>  ['2021', '09', '19']
+    // this._currentDateStr.split(' ')  =>  ['Sun', 'Sep', '19', '2021']
 
     let shippingNum = this.ordersService._datesArr.ordersCount.filter(
       (d: any) =>
@@ -180,5 +201,14 @@ export class CalendarComponent implements OnInit {
         d.ShippingDate.split('T').shift().split('-')[2] == dayNum
     );
     return shippingNum.length > 2 ? false : true;
+  }
+
+  sliceIntoWeeks(arr: any, chunkSize: number) {
+    const res = [];
+    for (let i = 0; i < arr.length; i += chunkSize) {
+      const chunk = arr.slice(i, i + chunkSize);
+      res.push(chunk);
+    }
+    return res;
   }
 }

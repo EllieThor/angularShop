@@ -40,22 +40,12 @@
     />
   </label>
   <br />
-  <!-- <label for="ShippingDate" class="text-end">
-    :בחר תאריך למשלוח
-    <input
-      [(ngModel)]="ordersService._newOrder.ShippingDate"
-      [ngModelOptions]="{ standalone: true }"
-      id="ShippingDate"
-      type="date"
-      class="form-control m-2"
-      required
-    />
-  </label>
-  <br /> -->
-  <h5>:בחר תאריך למשלוח</h5>
-  <!-- <div class="row"> -->
+
+  <h5 class="text-center">:בחר תאריך למשלוח</h5>
+  <h6>
+    {{ ordersService._newOrder.ShippingDate.split("T").shift() }}:התאריך הנבחר
+  </h6>
   <app-calendar></app-calendar>
-  <!-- </div> -->
   <br />
   <h4>תשלום</h4>
   <h5>{{ cartsService._fixedTotalToPay }} סה"כ לתשלום</h5>
