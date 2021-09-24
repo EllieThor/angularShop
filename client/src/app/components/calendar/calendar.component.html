@@ -1,50 +1,10 @@
-<!-- <div class="calendarContainer">
-  <div class="calendar">
-    <div class="month">
-      <i class="fas fa-angle-left prev" (click)="prevIconClicked()"></i>
-      <div class="date">
-        <h1>{{ this._monthsHEB[this._currentMonthIndex] }}, {{ this.year }}</h1>
-        <h2>{{ this._currentDateStr }}</h2>
-        <h3 (click)="backToTodayClicked()">חזור להיום</h3>
-      </div>
-      <i class="fas fa-angle-right next" (click)="nextIconClicked()"></i>
-    </div>
-    <div class="weekdays">
-      <div>ראשון</div>
-      <div>שני</div>
-      <div>שלישי</div>
-      <div>רביעי</div>
-      <div>חמישי</div>
-      <div>שישי</div>
-      <div>שבת</div>
-    </div>
-    <div class="days">
-      <div
-        *ngFor="let day of this._monthDays"
-        [ngClass]="
-          day.type === 0
-            ? 'prev-date'
-            : day.type === 1 && day.monthIndex === this._currentMonthIndex
-            ? 'today'
-            : day.type === 2
-            ? 'next-date'
-            : ''
-        "
-        [ngClass]="!day.availability ? 'notAvailable' : ''"
-        (click)="someDayClicked(day)"
-      >
-        {{ day.num }}
-      </div>
-    </div>
-  </div>
-</div> -->
-
 <div class="calendarContainer">
   <div class="month">
     <i class="fas fa-angle-left prev" (click)="prevIconClicked()"></i>
     <div class="date">
       <h4>{{ this._monthsHEB[this._currentMonthIndex] }}, {{ this.year }}</h4>
       <h5>{{ this._currentDateStr }}</h5>
+
       <h6 (click)="backToTodayClicked()">חזור להיום</h6>
     </div>
     <i class="fas fa-angle-right next" (click)="nextIconClicked()"></i>
@@ -67,9 +27,10 @@
               ? 'today'
               : day.type === 2
               ? 'next-date'
+              : !day.availability
+              ? 'bg-danger'
               : ''
           "
-          [ngClass]="!day.availability ? 'bg-danger' : ''"
           (click)="someDayClicked(day, $event)"
         >
           {{ day.num }}

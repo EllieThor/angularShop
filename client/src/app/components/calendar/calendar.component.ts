@@ -12,20 +12,6 @@ import { UsersServiceService } from 'src/app/services/users.service';
 })
 export class CalendarComponent implements OnInit {
   _date: any = new Date();
-  _monthsEN = [
-    'January',
-    'February',
-    'March',
-    'April',
-    'May',
-    'June',
-    'July',
-    'August',
-    'September',
-    'October',
-    'November',
-    'December',
-  ];
 
   _monthsHEB = [
     'ינואר',
@@ -41,7 +27,8 @@ export class CalendarComponent implements OnInit {
     'נובמבר',
     'דצמבר',
   ];
-  _weekDays = ['ראשון', 'שני', 'שלישי', 'רביעי', 'חמישי', 'שישי', 'שבת'];
+
+  _weekDays = ['א', 'ב', 'ג', 'ד', 'ה', 'ו', 'ש'];
 
   _monthDays: Array<any> = [];
   _monthDaysInWeeks: Array<any> = [];
@@ -54,6 +41,8 @@ export class CalendarComponent implements OnInit {
   firstDayIndex: any;
   lastDayIndex: any;
   nextDays: any;
+
+  _el: any;
 
   constructor(
     public usersService: UsersServiceService,
@@ -160,7 +149,7 @@ export class CalendarComponent implements OnInit {
     this._date = new Date();
     this.renderCalendar();
   }
-  _el: any;
+
   someDayClicked(dayOb: any, e: any) {
     console.log('today finally: ', e.target);
     if (this._el) {

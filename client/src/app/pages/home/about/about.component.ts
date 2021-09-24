@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { CartsService } from 'src/app/services/carts.service';
-import { UsersServiceService } from 'src/app/services/users.service';
+import { OrdersService } from 'src/app/services/orders.service';
+import { ProductsService } from 'src/app/services/products.service';
 
 @Component({
   selector: 'app-about',
@@ -9,9 +9,12 @@ import { UsersServiceService } from 'src/app/services/users.service';
 })
 export class AboutComponent implements OnInit {
   constructor(
-    public usersService: UsersServiceService,
-    public cartService: CartsService
+    public ordersService: OrdersService,
+    public productsService: ProductsService
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.productsService.getProductsQnt('/products/getProductsQnt');
+    this.ordersService.getOrdersQnt('/orders/getOrdersQnt');
+  }
 }

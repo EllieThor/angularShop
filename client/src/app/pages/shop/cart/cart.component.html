@@ -7,21 +7,26 @@
     </div>
     <div class="col-6">
       <h3 class="amountCircle">{{ cartsService._cartProducts.length }}</h3>
-      <i
-        class="fas fa-shopping-cart fa-2x iconsColor"
-        (click)="navToOrders()"
-      ></i>
 
-      <i
+      <img
+        src="assets/webImages/cart_icon.png"
+        (click)="navToOrders()"
+        alt=""
+        class="col-6"
+      />
+
+      <img
+        src="assets/webImages/trash_icon.png"
+        alt="trashIcon"
         title="מחק הכל"
         *ngIf="cartsService._cartProducts.length !== 0"
-        class="fas fa-trash fa-lg ms-4 iconsColor"
+        class="col-6"
         (click)="
           cartsService.deleteProductFromCart('/carts/deleteProductFromCart', {
             cartID: cartsService._currentCart.ID
           })
         "
-      ></i>
+      />
     </div>
   </div>
   <hr />

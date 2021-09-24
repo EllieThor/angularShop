@@ -3,5 +3,6 @@
 }
 /* FIXME: במכשיר קטן הטקסט יוצא מגודל הקארד */
 .productCard {
-  height: 380px;
+  /* height: 380px; */
+  height: 100%;
 }

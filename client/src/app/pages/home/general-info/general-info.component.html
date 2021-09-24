@@ -1,18 +1,24 @@
-<h5>כמות הזמנות בחנות: {{ ordersService._ordersQnt.ordersCount }}</h5>
-<h5>כמות מוצרים בחנות: {{ productsService._productsQnt.prodCount }}</h5>
-<p *ngIf="usersService._currentUserObj.ID">: התראות</p>
-<h4 *ngIf="usersService._currentUserObj.ID">
-  ,שלום
-  {{ usersService._currentUserObj.FirstName }}
-</h4>
-<h6 *ngIf="cartService._welcomeByCartStatus === 1">
-  ברוכ.ה הבא.ה לקנייתך הראשונה
-</h6>
-<h6 *ngIf="cartService._welcomeByCartStatus === 2">:יש לך עגלה פתוחה מ</h6>
-<p *ngIf="cartService._welcomeByCartStatus === 2">
-  {{ cartService._currentCart.createdAt.split("T").shift() }}
-</p>
-<h6 *ngIf="cartService._welcomeByCartStatus === 3">רכישתך האחרונה בוצעה ב</h6>
-<p *ngIf="cartService._welcomeByCartStatus === 3">
-  {{ cartService._recentCart.createdAt.split("T").shift() }}
-</p>
+<div class="container mx-auto px-0">
+  <p class="text-end mx-auto" *ngIf="usersService._currentUserObj.ID">
+    : התראות
+  </p>
+  <h4 class="text-end mx-auto" *ngIf="usersService._currentUserObj.ID">
+    ,שלום
+    {{ usersService._currentUserObj.FirstName }}
+  </h4>
+  <h6 class="text-end mx-auto" *ngIf="cartService._welcomeByCartStatus === 1">
+    ברוכ.ה הבא.ה לקנייתך הראשונה
+  </h6>
+  <h6 class="text-end mx-auto" *ngIf="cartService._welcomeByCartStatus === 2">
+    :יש לך עגלה פתוחה מ
+  </h6>
+  <p class="text-end mx-auto" *ngIf="cartService._welcomeByCartStatus === 2">
+    {{ cartService._currentCart.createdAt.split("T").shift() }}
+  </p>
+  <h6 class="text-end mx-auto" *ngIf="cartService._welcomeByCartStatus === 3">
+    רכישתך האחרונה בוצעה ב
+  </h6>
+  <p class="text-end mx-auto" *ngIf="cartService._welcomeByCartStatus === 3">
+    {{ cartService._recentCart.createdAt.split("T").shift() }}
+  </p>
+</div>

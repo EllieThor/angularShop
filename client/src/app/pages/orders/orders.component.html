@@ -1,11 +1,10 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="col-6"><app-reception></app-reception></div>
-    <!-- <div class="col-6"><app-calendar></app-calendar></div> -->
-    <div class="col-6" *ngIf="!ordersService._successfulOrder.ID">
+    <div class="col-12 col-md-6"><app-reception></app-reception></div>
+    <div class="col-12 col-md-6" *ngIf="!ordersService._successfulOrder.ID">
       <app-shipping-details></app-shipping-details>
     </div>
-    <div class="col-6" *ngIf="ordersService._successfulOrder.ID">
+    <div class="col-12 col-md-6" *ngIf="ordersService._successfulOrder.ID">
       <app-successful-order></app-successful-order>
     </div>
   </div>
