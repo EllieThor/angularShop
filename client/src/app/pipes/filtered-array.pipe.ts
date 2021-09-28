@@ -5,22 +5,29 @@ import { CartProduct } from '../models/cartProductsModel';
   name: 'filteredArray',
 })
 export class FilteredArrayPipe implements PipeTransform {
+  // transform(value: Array<CartProduct>, str: string): any {
+  //   if (str === '') return value;
+  //   return value.filter((prod) => prod.product.ProductName.includes(str));
+  // }
   transform(value: Array<CartProduct>, str: string): any {
     if (str === '') return value;
-    return value.filter((prod) => prod.product.ProductName.includes(str));
+    // let arr = value.filter((prod) => prod.product.ProductName.includes(str));
+    value.map((prod) =>
+      prod.product.ProductName.includes(str)
+        ? (prod.isMark = true)
+        : (prod.isMark = false)
+    );
+    return value;
   }
+
+  // transform(value: Array<CartProduct>, args: string): any {
+  //   if (args === '') return value;
+  //   var re = new RegExp(args, value); //'gi' for case insensitive and can use 'g' if you want the search to be case sensitive.
+  //   return value.
+  // }
+  // transform(value: any, args: any): any {
+  //   if (args === '') return value;
+  //   var re = new RegExp(args, value); //'gi' for case insensitive and can use 'g' if you want the search to be case sensitive.
+  //   return value.replace(re, '<mark>$&</mark>');
+  // }
 }
-// function highlight(text) {
-//   var inputText = document.getElementById('inputText');
-//   var innerHTML = inputText.innerHTML;
-//   var index = innerHTML.indexOf(text);
-//   if (index >= 0) {
-//     innerHTML =
-//       innerHTML.substring(0, index) +
-//       "<span class='highlight'>" +
-//       innerHTML.substring(index, index + text.length) +
-//       '</span>' +
-//       innerHTML.substring(index + text.length);
-//     inputText.innerHTML = innerHTML;
-//   }
-// }

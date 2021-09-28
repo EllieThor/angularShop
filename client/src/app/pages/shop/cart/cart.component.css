@@ -20,6 +20,12 @@
   justify-content: center;
   top: 9px;
 }
+.trashIcon {
+  cursor: pointer;
+}
+.cartIcon {
+  cursor: pointer;
+}
 /* .cartContainer {
   height: 100% !important;
   overflow-y: auto;

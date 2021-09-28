@@ -1,79 +1,91 @@
 <form action="" class="p-2">
-  <h4>הזמנה</h4>
-  <h6>פרטי משלוח</h6>
-  <label for="ShippingCity">
-    : בחר עיר
-    <select
-      class="form-select m-2"
-      id="ShippingCity"
-      aria-label="Default select example"
-      [(ngModel)]="ordersService._newOrder.ShippingCity"
-      [ngModelOptions]="{ standalone: true }"
-      (dblclick)="
-        ordersService._newOrder.ShippingCity = usersService._currentUserObj.City
-      "
-    >
-      <option
-        *ngFor="let city of cities; let i = index"
-        value="{{ city.name }}"
-      >
-        {{ city.name }}
-      </option>
-    </select>
-  </label>
-  <br />
-  <label for="ShippingStreet" class="text-end">
-    :שם רחוב
-    <input
-      [(ngModel)]="ordersService._newOrder.ShippingStreet"
-      [ngModelOptions]="{ standalone: true }"
-      id="ShippingStreet"
-      type="text"
-      class="form-control m-2"
-      placeholder="שם רחוב"
-      autoFocus=""
-      required
-      (dblclick)="
-        ordersService._newOrder.ShippingStreet =
-          usersService._currentUserObj.Street
-      "
-    />
-  </label>
-  <br />
+  <div class="row">
+    <h4>הזמנה</h4>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <h6>פרטי משלוח</h6>
+      <label for="ShippingCity">
+        : בחר עיר
+        <select
+          class="form-select m-2"
+          id="ShippingCity"
+          aria-label="Default select example"
+          [(ngModel)]="ordersService._newOrder.ShippingCity"
+          [ngModelOptions]="{ standalone: true }"
+          (dblclick)="
+            ordersService._newOrder.ShippingCity =
+              usersService._currentUserObj.City
+          "
+        >
+          <option
+            *ngFor="let city of cities; let i = index"
+            value="{{ city.name }}"
+          >
+            {{ city.name }}
+          </option>
+        </select>
+      </label>
+      <br />
+      <label for="ShippingStreet" class="text-end">
+        :שם רחוב
+        <input
+          [(ngModel)]="ordersService._newOrder.ShippingStreet"
+          [ngModelOptions]="{ standalone: true }"
+          id="ShippingStreet"
+          type="text"
+          class="form-control m-2"
+          placeholder="שם רחוב"
+          autoFocus=""
+          required
+          (dblclick)="
+            ordersService._newOrder.ShippingStreet =
+              usersService._currentUserObj.Street
+          "
+        />
+      </label>
+      <br />
 
-  <h5 class="text-center">:בחר תאריך למשלוח</h5>
-  <h6>
-    {{ ordersService._newOrder.ShippingDate.split("T").shift() }}:התאריך הנבחר
-  </h6>
-  <app-calendar></app-calendar>
-  <br />
-  <h4>תשלום</h4>
-  <h5>{{ cartsService._fixedTotalToPay }} סה"כ לתשלום</h5>
-  <label for="CreditCard" class="text-end mx-3">
-    הכנס כרטיס אשראי
-    <input
-      [(ngModel)]="ordersService._newOrder.CreditCard"
-      [ngModelOptions]="{ standalone: true }"
-      id="CreditCard"
-      type="text"
-      class="form-control m-2"
-      required
-      (keyup)="ordersService.creditRegex($event)"
-      [ngClass]="ordersService._isRegexp ? 'border-success' : 'border-danger'"
-    />
-  </label>
-  <i
-    *ngIf="ordersService._isRegexp"
-    class="far fa-check-circle text-success"
-  ></i>
-  <i
-    *ngIf="!ordersService._isRegexp"
-    class="far fa-times-circle text-danger"
-  ></i>
-  <button
-    class="btn btn-success m-2"
-    (click)="ordersService.addOrder('/orders/insertNewOrder', $event)"
-  >
-    סגירת הזמנה
-  </button>
+      <h5 class="text-center">:בחר תאריך למשלוח</h5>
+      <h6>
+        {{ ordersService._newOrder.ShippingDate.split("T").shift() }}:התאריך
+        הנבחר
+      </h6>
+      <app-calendar></app-calendar>
+      <br />
+    </div>
+    <div class="col-12 col-md-6">
+      <h4>תשלום</h4>
+      <h5>{{ cartsService._fixedTotalToPay }} סה"כ לתשלום</h5>
+      <label for="CreditCard" class="text-end mx-3">
+        הכנס כרטיס אשראי
+        <input
+          [(ngModel)]="ordersService._newOrder.CreditCard"
+          [ngModelOptions]="{ standalone: true }"
+          id="CreditCard"
+          type="text"
+          class="form-control m-2"
+          required
+          (keyup)="ordersService.creditRegex($event)"
+          [ngClass]="
+            ordersService._isRegexp ? 'border-success' : 'border-danger'
+          "
+        />
+      </label>
+      <i
+        *ngIf="ordersService._isRegexp"
+        class="far fa-check-circle text-success"
+      ></i>
+      <i
+        *ngIf="!ordersService._isRegexp"
+        class="far fa-times-circle text-danger"
+      ></i>
+      <button
+        class="btn btn-success m-2"
+        (click)="ordersService.addOrder('/orders/insertNewOrder', $event)"
+      >
+        סגירת הזמנה
+      </button>
+    </div>
+  </div>
 </form>

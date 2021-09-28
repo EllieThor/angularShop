@@ -4,7 +4,16 @@
   overflow-x: auto;
   /* z-index: 10; */
 }
+.productArea {
+  height: 100vh;
+  resize: horizontal;
+  overflow-x: auto;
+}
 
+.shopCont {
+  height: 100vh;
+  padding: 0px;
+}
 /* section {
   width: 100%;
 } */
