@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CartProduct } from 'src/app/models/cartProductsModel';
+import { Product } from 'src/app/models/productsModel';
 import { CartsService } from 'src/app/services/carts.service';
 import { OrdersService } from 'src/app/services/orders.service';
 import { ProductsService } from 'src/app/services/products.service';
@@ -41,5 +43,14 @@ export class ProductsAreaComponent implements OnInit {
         prod.productID === ob.ID;
       })
     );
+  }
+
+  trackProduct(product: Product) {
+    // let a = this.cartsService._cartProducts.find((prod) => {
+    // prod.productID === product.ID;
+    // });
+    // console.log('testNow: ', a?.Qnt);
+    console.log('testNow: ', product);
+    // return a?.Qnt;
   }
 }

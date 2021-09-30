@@ -9,5 +9,7 @@ import { ProductsService } from 'src/app/services/products.service';
 export class CategoriesNavComponent implements OnInit {
   constructor(public productsService: ProductsService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.productsService.getCategories('/products/getCategories');
+  }
 }

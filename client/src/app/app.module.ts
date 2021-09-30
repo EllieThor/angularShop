@@ -28,6 +28,7 @@ import { FilteredArrayPipe } from './pipes/filtered-array.pipe';
 import { SuccessfulOrderComponent } from './pages/orders/successful-order/successful-order.component';
 import { HeaderComponent } from './components/header/header.component';
 import { CalendarComponent } from './components/calendar/calendar.component';
+import { PlusMinusIconsComponent } from './components/plus-minus-icons/plus-minus-icons.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,7 @@ import { CalendarComponent } from './components/calendar/calendar.component';
     SuccessfulOrderComponent,
     HeaderComponent,
     CalendarComponent,
+    PlusMinusIconsComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],

@@ -137,6 +137,7 @@ export class CartsService {
       getByPatterns
     )) as Array<CartProduct>;
     console.log('_cartProducts: ', this._cartProducts);
+
     this._cartProducts.map((cartItem) => {
       this._fixedTotalPriseForProd += Number(
         (cartItem.product.Price * cartItem.Qnt).toFixed(2)
@@ -144,6 +145,10 @@ export class CartsService {
     });
 
     this.calcTotalToPay();
+
+    // this.productsService.getProducts('/products/getProducts', {
+    //   categoryID: 1,
+    // });
   }
 
   calcTotalToPay() {

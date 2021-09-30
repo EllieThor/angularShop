@@ -5,6 +5,7 @@ import { SettingsService } from './settings.service';
 
 import * as moment from 'moment';
 import 'moment/locale/pt-br';
+import { CartsService } from './carts.service';
 // moment().format('LLLL');
 
 @Injectable({
@@ -27,7 +28,8 @@ export class ProductsService {
   uploadedFiles: Array<File> = [];
   constructor(
     public apiService: ApiService,
-    public settingsService: SettingsService
+    public settingsService: SettingsService,
+    public cartsService: CartsService
   ) {
     // this._time = moment().format('LLLL');
     // console.log('time: ', this._time);
@@ -83,6 +85,17 @@ export class ProductsService {
       url,
       ob
     )) as Array<Product>;
+
+    this._products.map((product) => {
+      product.qnt = this.cartsService._cartProducts.find(
+        (item) => item.productID === product.ID
+      )?.Qnt;
+    });
+
+    console.log('yael: ', this._products);
+    // this.cartsService._cartProducts.find(
+    //   (itemA) => itemA.productID === product.ID
+    // )?.Qnt;
   }
 
   async updateProd(url: string, event?: any) {

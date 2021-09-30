@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { CartsService } from './carts.service';
 import { UsersServiceService } from './users.service';
 import { Order } from '../models/ordersModel';
+import { ProductsService } from './products.service';
 
 @Injectable({
   providedIn: 'root',

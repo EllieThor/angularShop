@@ -12,11 +12,21 @@ import { UsersServiceService } from 'src/app/services/users.service';
 })
 export class SingleProdCardComponent implements OnInit {
   @Input() product: Product = new Product();
+  @Input() item: CartProduct = new CartProduct();
   constructor(
     public cartsService: CartsService,
     public productsService: ProductsService,
     public usersService: UsersServiceService
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    // this.try({ ID: 1 });
+  }
+  // try(product: Product) {
+  //   let a = this.cartsService._cartProducts.find(
+  //     (itemA) => itemA.productID === product.ID
+  //   )?.Qnt;
+
+  //   console.log('aaa!!: ', a);
+  // }
 }

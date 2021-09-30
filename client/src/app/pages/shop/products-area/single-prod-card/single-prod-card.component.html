@@ -28,6 +28,48 @@
         productsService._newProductObj = product
       "
     ></i>
+    <!-- TODO:  + - icons-->
+    <h1>{{ product.qnt }}</h1>
+    <div class="row pt-4">
+      <div class="col-4 align-self-center">
+        <i
+          class="fas fa-plus-circle iconsColor"
+          (click)="
+            cartsService.changeQnt('/carts/changeQnt', {
+              productID: product.ID,
+              type: 1,
+              quantity: product.qnt,
+              price: product.Price
+            })
+          "
+        ></i>
+      </div>
+
+      <div class="col-4 align-self-end">
+        <h6>{{ product.qnt }}</h6>
+      </div>
+
+      <div class="col-4 align-self-center">
+        <i
+          class="fas fa-minus-circle iconsColor"
+          (click)="
+            cartsService.changeQnt('/carts/changeQnt', {
+              productID: product.ID,
+              type: 2,
+              quantity: product.qnt,
+              price: product.Price
+            })
+          "
+        ></i>
+      </div>
+    </div>
+    <!-- <app-plus-minus-icons [item]="product"></app-plus-minus-icons> -->
+    <div>
+      <!-- FIXME: לא עובד ולא מצליח trackBy -->
+      <!-- {{ cartsService._cartProducts.find((item) => 
+        (item.productID === product.ID)
+      ) }} -->
+    </div>
   </div>
   <!-- <div #singleBTN (click)="btnClicked()">try me</div> -->
   <!-- <div (click)="btnClicked()">try me</div> -->
