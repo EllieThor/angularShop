@@ -17,7 +17,7 @@ export class CartsService {
   serverResult: any;
   _fixedTotalPriseForProd: number = 0;
   _fixedTotalToPay: number = 0;
-
+  _qnt: number = 0;
   constructor(
     public apiService: ApiService,
     public settingsService: SettingsService,
@@ -160,6 +160,7 @@ export class CartsService {
 
   // UPDATE (CartProducts)
   async changeQnt(url: string, ob?: any) {
+    this._qnt = ob.quantity;
     let getByPatterns = {
       cartID: this._currentCart.ID,
       productID: ob.productID,
@@ -172,6 +173,9 @@ export class CartsService {
       getByPatterns
     )) as any;
     this.gatCartProducts('/carts/getCartProducts');
+    // this.productsService.getProducts('/products/getProducts', {
+    //   categoryID: 1,
+    // });
   }
 
   // DELETE (CartProducts)

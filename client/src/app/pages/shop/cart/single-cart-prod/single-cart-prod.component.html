@@ -31,13 +31,13 @@
       />
     </div>
   </div>
-  <app-plus-minus-icons [item]="item"></app-plus-minus-icons>
-  <!-- <div class="row pt-4">
+  <!-- <app-plus-minus-icons [item]="item"></app-plus-minus-icons> -->
+  <div class="row pt-4">
     <div class="col-4 align-self-center">
       <i
         class="fas fa-plus-circle iconsColor"
         (click)="
-          cartsService.changeQnt('/carts/changeQnt', {
+          changeQnt('/carts/changeQnt', {
             productID: item.productID,
             type: 1,
             quantity: item.Qnt,
@@ -55,7 +55,7 @@
       <i
         class="fas fa-minus-circle iconsColor"
         (click)="
-          cartsService.changeQnt('/carts/changeQnt', {
+          changeQnt('/carts/changeQnt', {
             productID: item.productID,
             type: 2,
             quantity: item.Qnt,
@@ -64,7 +64,7 @@
         "
       ></i>
     </div>
-  </div> -->
+  </div>
 </div>
 <hr />
 <!-- <i

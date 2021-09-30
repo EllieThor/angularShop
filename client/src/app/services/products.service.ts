@@ -93,9 +93,6 @@ export class ProductsService {
     });
 
     console.log('yael: ', this._products);
-    // this.cartsService._cartProducts.find(
-    //   (itemA) => itemA.productID === product.ID
-    // )?.Qnt;
   }
 
   async updateProd(url: string, event?: any) {
