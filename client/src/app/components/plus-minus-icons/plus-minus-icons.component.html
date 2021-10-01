@@ -3,30 +3,29 @@
     <i
       class="fas fa-plus-circle iconsColor"
       (click)="
-        cartsService.changeQnt('/carts/changeQnt', {
-          productID: item.productID,
+        changeQnt('/carts/changeQnt', {
+          productID: isProdInCart ? item.productID : product.ID,
           type: 1,
-          quantity: item.Qnt,
-          price: item.product.Price
+          quantity: isProdInCart ? item.Qnt : product.qnt,
+          price: isProdInCart ? item.product.Price : product.Price
         })
       "
     ></i>
   </div>
 
   <div class="col-4 align-self-end">
-    <!-- <h6>{{ isInCart ? item.Qnt : item.qnt }}</h6> -->
-    <h6>{{ item.Qnt }}</h6>
+    <h6>{{ isProdInCart ? item.Qnt : product.qnt }}</h6>
   </div>
 
   <div class="col-4 align-self-center">
     <i
       class="fas fa-minus-circle iconsColor"
       (click)="
-        cartsService.changeQnt('/carts/changeQnt', {
-          productID: item.productID,
+        changeQnt('/carts/changeQnt', {
+          productID: isProdInCart ? item.productID : product.ID,
           type: 2,
-          quantity: item.Qnt,
-          price: item.product.Price
+          quantity: isProdInCart ? item.Qnt : product.qnt,
+          price: isProdInCart ? item.product.Price : product.Price
         })
       "
     ></i>

@@ -8,68 +8,38 @@
     <h6 class="card-title">{{ product.ProductName }}</h6>
     <p class="card-text cardDescription">{{ product.Description }}</p>
     <h4 class="card-text">{{ product.Price }} &#8362;</h4>
-    <i
-      *ngIf="usersService._currentUserObj.Role === 0"
-      class="cartPlusIcon fas fa-lg fa-cart-plus"
-      title="הוסף לעגלה"
-      (click)="
-        cartsService.addProdToCart('/carts/insertProdToCart', {
-          productID: product.ID,
-          price: product.Price
-        })
-      "
-    ></i>
-    <i
-      *ngIf="usersService._currentUserObj.Role === 1"
-      class="far fa-edit"
-      (click)="
-        productsService._showAdminForm = true;
-        productsService._addVsEdit = 1;
-        productsService._newProductObj = product
-      "
-    ></i>
-    <!-- TODO:  + - icons-->
-    <h1>{{ product.qnt }}</h1>
-    <div class="row pt-4">
-      <div class="col-4 align-self-center">
+
+    <div class="row">
+      <div class="col-4 pt-4">
         <i
-          class="fas fa-plus-circle iconsColor"
+          *ngIf="usersService._currentUserObj.Role === 0 && !product.qnt"
+          class="cartPlusIcon fas fa-lg fa-cart-plus"
+          title="הוסף לעגלה"
           (click)="
-            changeQnt('/carts/changeQnt', {
-              productID: product.ID,
-              type: 1,
-              quantity: product.qnt,
+            addProdToCart('/carts/insertProdToCart', {
+              product: product,
               price: product.Price
             })
           "
         ></i>
-      </div>
 
-      <div class="col-4 align-self-end">
-        <h6>{{ product.qnt }}</h6>
-      </div>
-
-      <div class="col-4 align-self-center">
         <i
-          class="fas fa-minus-circle iconsColor"
+          *ngIf="usersService._currentUserObj.Role === 1"
+          class="far fa-edit"
           (click)="
-            changeQnt('/carts/changeQnt', {
-              productID: product.ID,
-              type: 2,
-              quantity: product.qnt,
-              price: product.Price
-            })
+            productsService._showAdminForm = true;
+            productsService._addVsEdit = 1;
+            productsService._newProductObj = product
           "
         ></i>
+      </div>
+      <div class="col-8">
+        <app-plus-minus-icons
+          *ngIf="product.qnt"
+          [product]="product"
+          [isProdInCart]="false"
+        ></app-plus-minus-icons>
       </div>
     </div>
   </div>
 </div>
-<!-- <app-plus-minus-icons [item]="product"></app-plus-minus-icons> -->
-
-<!-- FIXME: לא עובד ולא מצליח trackBy -->
-<!-- {{ cartsService._cartProducts.find((item) => 
-        (item.productID === product.ID)
-      ) }} -->
-<!-- <div #singleBTN (click)="btnClicked()">try me</div> -->
-<!-- <div (click)="btnClicked()">try me</div> -->

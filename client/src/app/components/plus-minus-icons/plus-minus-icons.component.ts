@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { CartProduct } from 'src/app/models/cartProductsModel';
+import { Product } from 'src/app/models/productsModel';
 import { ApiService } from 'src/app/services/api.service';
 import { CartsService } from 'src/app/services/carts.service';
 import { OrdersService } from 'src/app/services/orders.service';
@@ -13,6 +14,9 @@ import { UsersServiceService } from 'src/app/services/users.service';
 })
 export class PlusMinusIconsComponent implements OnInit {
   @Input() item: CartProduct = new CartProduct();
+  @Input() product: Product = new Product();
+  @Input() isProdInCart: boolean = false;
+
   serverResult: any;
 
   constructor(
@@ -38,9 +42,9 @@ export class PlusMinusIconsComponent implements OnInit {
       url,
       getByPatterns
     )) as any;
-    this.cartsService.gatCartProducts('/carts/getCartProducts');
-    this.productsService.getProducts('/products/getProducts', {
-      categoryID: 1,
+    await this.cartsService.gatCartProducts('/carts/getCartProducts');
+    await this.productsService.getProducts('/products/getProducts', {
+      categoryID: this.productsService._openCategory,
     });
   }
 }

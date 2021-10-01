@@ -3,7 +3,6 @@
     class="col-sm-12 col-md-6 col-lg-3 p-3"
     *ngFor="let product of productsService._products"
   >
-    <app-product-card [product]="product" [cardType]="false"></app-product-card>
-    <!-- <app-single-prod-card [product]="product"></app-single-prod-card> -->
+    <app-single-prod-card [product]="product"></app-single-prod-card>
   </div>
 </div>

@@ -14,7 +14,7 @@ import { UsersServiceService } from 'src/app/services/users.service';
 export class SingleProdCardComponent implements OnInit {
   @Input() product: Product = new Product();
   @Input() item: CartProduct = new CartProduct();
-  // @Input() cardType: boolean = false;
+  // @Input() isProdInCart: boolean = false;
   constructor(
     public cartsService: CartsService,
     public productsService: ProductsService,
@@ -38,10 +38,70 @@ export class SingleProdCardComponent implements OnInit {
       url,
       getByPatterns
     )) as any;
-    this.cartsService.gatCartProducts('/carts/getCartProducts');
-    // this.productsService._products.find((item) => item.ID === ob.productID);
-    this.productsService.getProducts('/products/getProducts', {
-      categoryID: 1,
+    await this.cartsService.gatCartProducts('/carts/getCartProducts');
+    await this.productsService.getProducts('/products/getProducts', {
+      categoryID: this.productsService._openCategory,
     });
+  }
+
+  // add product event handler
+  async addProdToCart(url: string, ob: any) {
+    console.log('add: ', ob);
+    let qnt;
+    let findIndex = this.cartsService._cartProducts.findIndex(
+      (item) => item.productID == ob.productID
+    );
+
+    console.log('findIndex: ', findIndex);
+
+    if (findIndex == -1) {
+      // insert
+      this.insertProductToCart(url, {
+        cartID: this.cartsService._currentCart.ID,
+        productID: ob.product.ID,
+        priceForOne: ob.price,
+      });
+    } else {
+      // change
+      qnt = this.cartsService._cartProducts[findIndex].Qnt;
+      this.changeQnt('/carts/changeQnt', {
+        productID: ob.product.ID,
+        type: 1,
+        quantity: qnt,
+        price: ob.price,
+      });
+    }
+  }
+
+  // CREATE (CartProducts)
+  async insertProductToCart(url: string, ob?: any) {
+    this.serverResult = (await this.apiService.createPostService(
+      url,
+      ob
+    )) as any;
+    await this.cartsService.gatCartProducts('/carts/getCartProducts');
+    await this.productsService.getProducts('/products/getProducts', {
+      categoryID: this.productsService._openCategory,
+    });
+  }
+
+  async deleteProductFromCart(url: string, ob?: any) {
+    let res;
+    if (!ob.productID) {
+      res = confirm(
+        'ברצונך להסיר את כל המוצרים מהעגלה? \nלחיצה על אישור תסיר את כל הפריטים מהעגלה'
+      );
+    }
+
+    if (res || ob.productID) {
+      this.serverResult = (await this.apiService.createPostService(
+        url,
+        ob
+      )) as any;
+      this.cartsService.gatCartProducts('/carts/getCartProducts');
+      await this.productsService.getProducts('/products/getProducts', {
+        categoryID: this.productsService._openCategory,
+      });
+    }
   }
 }

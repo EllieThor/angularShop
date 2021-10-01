@@ -31,38 +31,9 @@
       />
     </div>
   </div>
-  <div class="row pt-4">
-    <div class="col-4 align-self-center">
-      <i
-        class="fas fa-plus-circle iconsColor"
-        (click)="
-          changeQnt('/carts/changeQnt', {
-            productID: item.productID,
-            type: 1,
-            quantity: item.Qnt,
-            price: item.product.Price
-          })
-        "
-      ></i>
-    </div>
-
-    <div class="col-4 align-self-end">
-      <h6>{{ item.Qnt }}</h6>
-    </div>
-
-    <div class="col-4 align-self-center">
-      <i
-        class="fas fa-minus-circle iconsColor"
-        (click)="
-          changeQnt('/carts/changeQnt', {
-            productID: item.productID,
-            type: 2,
-            quantity: item.Qnt,
-            price: item.product.Price
-          })
-        "
-      ></i>
-    </div>
-  </div>
+  <app-plus-minus-icons
+    [item]="item"
+    [isProdInCart]="true"
+  ></app-plus-minus-icons>
 </div>
 <hr />
