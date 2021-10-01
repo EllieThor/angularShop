@@ -1,0 +1,16 @@
+.iconsColor {
+  color: rgba(0, 0, 0, 0.699);
+  cursor: pointer;
+}
+.productImg {
+  width: 120%;
+}
+
+.cartPlusIcon {
+  cursor: pointer;
+}
+/* FIXME: במכשיר קטן הטקסט יוצא מגודל הקארד */
+.productCard {
+  /* height: 380px; */
+  height: 100%;
+}

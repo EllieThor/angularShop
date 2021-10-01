@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CartProduct } from 'src/app/models/cartProductsModel';
 import { Product } from 'src/app/models/productsModel';
 import { ApiService } from 'src/app/services/api.service';
@@ -7,14 +7,17 @@ import { ProductsService } from 'src/app/services/products.service';
 import { UsersServiceService } from 'src/app/services/users.service';
 
 @Component({
-  selector: 'app-single-prod-card',
-  templateUrl: './single-prod-card.component.html',
-  styleUrls: ['./single-prod-card.component.css'],
+  selector: 'app-product-card',
+  templateUrl: './product-card.component.html',
+  styleUrls: ['./product-card.component.css'],
 })
-export class SingleProdCardComponent implements OnInit {
-  @Input() product: Product = new Product();
+export class ProductCardComponent implements OnInit {
+  @Input() cardType: boolean = false;
   @Input() item: CartProduct = new CartProduct();
-  // @Input() cardType: boolean = false;
+  @Input() product: Product = new Product();
+
+  serverResult: any;
+
   constructor(
     public cartsService: CartsService,
     public productsService: ProductsService,
@@ -22,9 +25,7 @@ export class SingleProdCardComponent implements OnInit {
     public apiService: ApiService
   ) {}
 
-  serverResult: any;
   ngOnInit(): void {}
-
   // UPDATE (CartProducts)
   async changeQnt(url: string, ob?: any) {
     let getByPatterns = {
@@ -39,7 +40,6 @@ export class SingleProdCardComponent implements OnInit {
       getByPatterns
     )) as any;
     this.cartsService.gatCartProducts('/carts/getCartProducts');
-    // this.productsService._products.find((item) => item.ID === ob.productID);
     this.productsService.getProducts('/products/getProducts', {
       categoryID: 1,
     });

@@ -178,6 +178,7 @@ export class CartsService {
     // });
   }
 
+  // TODO: update PRODUCT AREA
   // DELETE (CartProducts)
   async deleteProductFromCart(url: string, ob?: any) {
     let res;

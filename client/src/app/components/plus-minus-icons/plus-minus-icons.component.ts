@@ -39,7 +39,6 @@ export class PlusMinusIconsComponent implements OnInit {
       getByPatterns
     )) as any;
     this.cartsService.gatCartProducts('/carts/getCartProducts');
-    // this.productsService._products.find((item) => item.ID === ob.productID);
     this.productsService.getProducts('/products/getProducts', {
       categoryID: 1,
     });

@@ -32,7 +32,8 @@
   <hr />
   <div class="cartProdArea">
     <div *ngFor="let item of cartsService._cartProducts">
-      <app-single-cart-prod [item]="item"></app-single-cart-prod>
+      <app-product-card [item]="item" [cardType]="true"></app-product-card>
+      <!-- <app-single-cart-prod [item]="item"></app-single-cart-prod> -->
     </div>
   </div>
 </div>

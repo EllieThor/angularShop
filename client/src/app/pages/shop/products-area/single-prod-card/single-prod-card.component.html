@@ -1,6 +1,6 @@
 <div class="card productCard">
   <img
-    class="card-img-top mt-3 productImg"
+    class="card-img-top mt-3"
     src="http://www.localhost:5001/{{ product.ImageName }}"
     alt="{{ product.ProductName }}"
   />
@@ -63,14 +63,13 @@
         ></i>
       </div>
     </div>
-    <!-- <app-plus-minus-icons [item]="product"></app-plus-minus-icons> -->
-    <div>
-      <!-- FIXME: לא עובד ולא מצליח trackBy -->
-      <!-- {{ cartsService._cartProducts.find((item) => 
+  </div>
+</div>
+<!-- <app-plus-minus-icons [item]="product"></app-plus-minus-icons> -->
+
+<!-- FIXME: לא עובד ולא מצליח trackBy -->
+<!-- {{ cartsService._cartProducts.find((item) => 
         (item.productID === product.ID)
       ) }} -->
-    </div>
-  </div>
-  <!-- <div #singleBTN (click)="btnClicked()">try me</div> -->
-  <!-- <div (click)="btnClicked()">try me</div> -->
-</div>
+<!-- <div #singleBTN (click)="btnClicked()">try me</div> -->
+<!-- <div (click)="btnClicked()">try me</div> -->
