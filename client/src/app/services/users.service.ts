@@ -138,4 +138,10 @@ export class UsersServiceService {
       }
     }
   }
+
+  logout() {
+    localStorage.removeItem('user');
+    this._currentUserObj = new User();
+    this.nav.navigate(['/home']);
+  }
 }

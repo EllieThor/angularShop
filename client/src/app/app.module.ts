@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
+import { ResizableModule } from 'angular-resizable-element';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -29,6 +30,7 @@ import { SuccessfulOrderComponent } from './pages/orders/successful-order/succes
 import { HeaderComponent } from './components/header/header.component';
 import { CalendarComponent } from './components/calendar/calendar.component';
 import { PlusMinusIconsComponent } from './components/plus-minus-icons/plus-minus-icons.component';
+import { ResizeComponent } from './components/resize/resize.component';
 
 @NgModule({
   declarations: [
@@ -57,8 +59,15 @@ import { PlusMinusIconsComponent } from './components/plus-minus-icons/plus-minu
     HeaderComponent,
     CalendarComponent,
     PlusMinusIconsComponent,
+    ResizeComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    ResizableModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

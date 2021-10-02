@@ -6,7 +6,7 @@
       [ngModelOptions]="{ standalone: true }"
       id="ID"
       type="text"
-      class="form-control m-2"
+      class="form-control m-2 rounded-pill shadow-md px-4"
       placeholder="תעודת זהות"
       autoFocus=""
       required
@@ -24,7 +24,7 @@
       [ngModelOptions]="{ standalone: true }"
       id="userEmail"
       type="email"
-      class="form-control m-2"
+      class="form-control m-2 rounded-pill shadow-md px-4"
       placeholder='כתובת דוא"ל'
       required
     />
@@ -37,7 +37,7 @@
       [ngModelOptions]="{ standalone: true }"
       id="userPassword"
       type="password"
-      class="form-control m-2"
+      class="form-control rounded-pill shadow-md px-4 m-2"
       placeholder="סיסמה"
       required
       [ngClass]="
@@ -71,7 +71,7 @@
       [ngModelOptions]="{ standalone: true }"
       id="userRepeatPass"
       type="password"
-      class="form-control m-2"
+      class="form-control m-2 rounded-pill shadow-md px-4"
       placeholder="אימות סיסמה"
       required
       [ngClass]="
@@ -119,7 +119,7 @@
   <br />
   <!--עם הקליק מתבטלים הפרטנים -->
   <button
-    class="btn btn-success m-2"
+    class="btn purpleBackgroundColor m-2"
     type="submit"
     (click)="usersService.isIDExist('/users/isIDExist', $event)"
   >

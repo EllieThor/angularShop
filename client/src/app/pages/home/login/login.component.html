@@ -1,6 +1,6 @@
 <div class="my-auto pt-5 mt-5">
   <button
-    class="btn btn-success m-2"
+    class="btn purpleBackgroundColor m-2"
     *ngIf="usersService._currentUserObj.ID"
     routerLink="/shop"
     (click)="cartsService.gatCartProducts('/carts/getCartProducts')"
@@ -17,7 +17,7 @@
       [(ngModel)]="usersService._logInEmail"
       [ngModelOptions]="{ standalone: true }"
       type="email"
-      class="form-control m-2"
+      class="form-control m-2 rounded-pill shadow-md px-4"
       placeholder='כתובת דוא"ל'
       required=""
       autoFocus=""
@@ -26,19 +26,19 @@
       [(ngModel)]="usersService._logInPassword"
       [ngModelOptions]="{ standalone: true }"
       type="password"
-      class="form-control m-2"
+      class="form-control rounded-pill shadow-md px-4 m-2"
       placeholder="סיסמה"
       required=""
       autoComplete=""
     />
     <button
-      class="btn btn-success m-2"
+      class="btn purpleBackgroundColor m-2"
       type="submit"
       (click)="usersService.gatUserFromDB('/users/getUser', $event)"
     >
       התחברות
     </button>
-    <button class="btn btn-success m-2" routerLink="/registration">
+    <button class="btn purpleBackgroundColor m-2" routerLink="/registration">
       הרשמה
     </button>
   </form>

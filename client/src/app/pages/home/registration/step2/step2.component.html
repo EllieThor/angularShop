@@ -8,7 +8,7 @@
           [ngModelOptions]="{ standalone: true }"
           id="FirstName"
           type="text"
-          class="form-control m-2"
+          class="form-control rounded-pill shadow-md px-4 m-2"
           placeholder="שם פרטי"
           autoFocus=""
           required
@@ -22,7 +22,7 @@
           [ngModelOptions]="{ standalone: true }"
           id="LastName"
           type="text"
-          class="form-control m-2"
+          class="form-control m-2 rounded-pill shadow-md px-4"
           placeholder="שם משפחה"
           autoFocus=""
           required
@@ -36,7 +36,7 @@
           [ngModelOptions]="{ standalone: true }"
           id="Phone"
           type="text"
-          class="form-control m-2"
+          class="form-control m-2 rounded-pill shadow-md px-4"
           placeholder="מספר טלפון"
           autoFocus=""
           required
@@ -50,7 +50,7 @@
       <label for="city">
         : בחר עיר
         <select
-          class="form-select m-2"
+          class="form-select m-2 rounded-pill shadow-md px-4"
           id="city"
           aria-label="Default select example"
           [(ngModel)]="usersService._newUserObject.City"
@@ -72,7 +72,7 @@
           [ngModelOptions]="{ standalone: true }"
           id="Street"
           type="text"
-          class="form-control m-2"
+          class="form-control m-2 rounded-pill shadow-md px-4"
           placeholder="שם רחוב"
           autoFocus=""
           required
@@ -87,7 +87,7 @@
           id="StreetNumber"
           type="number"
           min="1"
-          class="form-control m-2"
+          class="form-control m-2 rounded-pill shadow-md px-4"
           required
         />
       </label>
@@ -100,7 +100,7 @@
           id="FlatNumber"
           type="number"
           min="1"
-          class="form-control m-2"
+          class="form-control m-2 rounded-pill shadow-md px-4"
           required
         />
       </label>
@@ -108,7 +108,7 @@
 
       <!--עם הקליק מתבטלים הפרטנים -->
       <button
-        class="btn btn-success m-2"
+        class="btn purpleBackgroundColor m-2"
         type="submit"
         (click)="usersService.addNewUserToDB('/users/insertUser', $event)"
       >

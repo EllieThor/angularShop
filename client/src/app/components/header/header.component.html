@@ -9,6 +9,11 @@
         />
       </a>
       <app-categories-nav *ngIf="nav.url === '/shop'"></app-categories-nav>
+      <i
+        class="fas fa-sign-out-alt fa-lg"
+        *ngIf="usersService._currentUserObj.ID"
+        (click)="usersService.logout()"
+      ></i>
     </div>
   </nav>
 </div>
