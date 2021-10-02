@@ -118,14 +118,14 @@ export class CartsService {
   //   this.gatCartProducts('/carts/getCartProducts');
   // }
 
-  // CREATE (CartProducts)
-  async insertProductToCart(url: string, ob?: any) {
-    this.serverResult = (await this.apiService.createPostService(
-      url,
-      ob
-    )) as any;
-    this.gatCartProducts('/carts/getCartProducts');
-  }
+  // // CREATE (CartProducts)
+  // async insertProductToCart(url: string, ob?: any) {
+  //   this.serverResult = (await this.apiService.createPostService(
+  //     url,
+  //     ob
+  //   )) as any;
+  //   this.gatCartProducts('/carts/getCartProducts');
+  // }
 
   // READ (CartProducts)
   async gatCartProducts(url: string) {
@@ -146,10 +146,6 @@ export class CartsService {
     });
 
     this.calcTotalToPay();
-
-    // this.productsService.getProducts('/products/getProducts', {
-    //   categoryID: 1,
-    // });
   }
 
   calcTotalToPay() {
@@ -179,22 +175,22 @@ export class CartsService {
   //   // });
   // }
 
-  // TODO: update PRODUCT AREA
-  // DELETE (CartProducts)
-  async deleteProductFromCart(url: string, ob?: any) {
-    let res;
-    if (!ob.productID) {
-      res = confirm(
-        'ברצונך להסיר את כל המוצרים מהעגלה? \nלחיצה על אישור תסיר את כל הפריטים מהעגלה'
-      );
-    }
+  // TODO: update PRODUCT AREA עובד בקומפוננטות עצמן: קארט, פרודוקטקראד וקארטפרודוקט
+  // // DELETE (CartProducts)
+  // async deleteProductFromCart(url: string, ob?: any) {
+  //   let res;
+  //   if (!ob.productID) {
+  //     res = confirm(
+  //       'ברצונך להסיר את כל המוצרים מהעגלה? \nלחיצה על אישור תסיר את כל הפריטים מהעגלה'
+  //     );
+  //   }
 
-    if (res || ob.productID) {
-      this.serverResult = (await this.apiService.createPostService(
-        url,
-        ob
-      )) as any;
-      this.gatCartProducts('/carts/getCartProducts');
-    }
-  }
+  //   if (res || ob.productID) {
+  //     this.serverResult = (await this.apiService.createPostService(
+  //       url,
+  //       ob
+  //     )) as any;
+  //     this.gatCartProducts('/carts/getCartProducts');
+  //   }
+  // }
 }

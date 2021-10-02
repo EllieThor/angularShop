@@ -4,3 +4,11 @@ font-family: 'Heebo', sans-serif;
 font-family: 'M PLUS Rounded 1c', sans-serif;
 font-family: 'Merriweather', serif;
 font-family: 'Quicksand', sans-serif; */
+
+.purpleColor {
+  color: #935aee;
+}
+
+.purpleBackgroundColor {
+  background-color: #935aee;
+}

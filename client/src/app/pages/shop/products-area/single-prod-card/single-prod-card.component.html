@@ -13,7 +13,7 @@
       <div class="col-4 pt-4">
         <i
           *ngIf="usersService._currentUserObj.Role === 0 && !product.qnt"
-          class="cartPlusIcon fas fa-lg fa-cart-plus"
+          class="fas fa-lg fa-cart-plus cursorPointer iconsColor"
           title="הוסף לעגלה"
           (click)="
             addProdToCart('/carts/insertProdToCart', {
@@ -22,10 +22,20 @@
             })
           "
         ></i>
-
+        <i
+          *ngIf="product.qnt"
+          title="הסרה מעגלה"
+          class="fas fa-trash cursorPointer iconsColor"
+          (click)="
+            deleteProductFromCart('/carts/deleteProductFromCart', {
+              productID: product.ID,
+              cartID: cartsService._currentCart.ID
+            })
+          "
+        ></i>
         <i
           *ngIf="usersService._currentUserObj.Role === 1"
-          class="far fa-edit"
+          class="far fa-edit cursorPointer iconsColor"
           (click)="
             productsService._showAdminForm = true;
             productsService._addVsEdit = 1;

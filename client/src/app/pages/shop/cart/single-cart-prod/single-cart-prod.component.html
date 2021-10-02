@@ -3,7 +3,7 @@
     title="הסרה מעגלה"
     class="far fa-times-circle float-end fa-lg ms-4 iconsColor"
     (click)="
-      cartsService.deleteProductFromCart('/carts/deleteProductFromCart', {
+      deleteProductFromCart('/carts/deleteProductFromCart', {
         productID: item.productID,
         cartID: item.cartID
       })

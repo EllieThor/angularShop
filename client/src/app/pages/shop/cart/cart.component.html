@@ -22,7 +22,7 @@
         *ngIf="cartsService._cartProducts.length !== 0"
         class="col-6 trashIcon"
         (click)="
-          cartsService.deleteProductFromCart('/carts/deleteProductFromCart', {
+          deleteProductFromCart('/carts/deleteProductFromCart', {
             cartID: cartsService._currentCart.ID
           })
         "

@@ -1,7 +1,8 @@
 <div class="row pt-4">
   <div class="col-4 align-self-center">
     <i
-      class="fas fa-plus-circle iconsColor"
+      title="הוספה"
+      class="fas fa-plus-circle cursorPointer iconsColor"
       (click)="
         changeQnt('/carts/changeQnt', {
           productID: isProdInCart ? item.productID : product.ID,
@@ -19,7 +20,8 @@
 
   <div class="col-4 align-self-center">
     <i
-      class="fas fa-minus-circle iconsColor"
+      title="הורדה"
+      class="fas fa-minus-circle cursorPointer iconsColor"
       (click)="
         changeQnt('/carts/changeQnt', {
           productID: isProdInCart ? item.productID : product.ID,

@@ -47,4 +47,24 @@ export class SingleCartProdComponent implements OnInit {
       categoryID: 1,
     });
   }
+  // DELETE (CartProducts)
+  async deleteProductFromCart(url: string, ob?: any) {
+    let res;
+    if (!ob.productID) {
+      res = confirm(
+        'ברצונך להסיר את כל המוצרים מהעגלה? \nלחיצה על אישור תסיר את כל הפריטים מהעגלה'
+      );
+    }
+
+    if (res || ob.productID) {
+      this.serverResult = (await this.apiService.createPostService(
+        url,
+        ob
+      )) as any;
+      await this.cartsService.gatCartProducts('/carts/getCartProducts');
+      await this.productsService.getProducts('/products/getProducts', {
+        categoryID: this.productsService._openCategory,
+      });
+    }
+  }
 }

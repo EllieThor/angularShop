@@ -98,7 +98,7 @@ export class SingleProdCardComponent implements OnInit {
         url,
         ob
       )) as any;
-      this.cartsService.gatCartProducts('/carts/getCartProducts');
+      await this.cartsService.gatCartProducts('/carts/getCartProducts');
       await this.productsService.getProducts('/products/getProducts', {
         categoryID: this.productsService._openCategory,
       });

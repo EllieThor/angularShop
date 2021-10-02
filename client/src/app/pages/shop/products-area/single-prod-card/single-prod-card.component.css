@@ -1,8 +1,13 @@
-.cartPlusIcon {
-  cursor: pointer;
-}
 /* FIXME: במכשיר קטן הטקסט יוצא מגודל הקארד */
 .productCard {
   /* height: 380px; */
   height: 100%;
+}
+
+.iconsColor {
+  color: rgba(0, 0, 0, 0.699);
+}
+
+.cursorPointer {
+  cursor: pointer;
 }
