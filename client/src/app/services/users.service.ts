@@ -18,7 +18,7 @@ export class UsersServiceService {
   // registration
   _newUserObject: User = new User();
   _currentStep: number = 0;
-
+  _newUserIDStr: string = '';
   // registration password
   _newPasswordRepeat: string = '';
 
@@ -36,16 +36,29 @@ export class UsersServiceService {
   async isIDExist(url: string, event?: any) {
     event.preventDefault();
     let getByPatterns = {
-      ID: this._newUserObject.ID,
+      ID: this._newUserIDStr,
       Email: this._newUserObject.Email,
     };
-    if (
-      this._newUserObject.ID === 0 ||
+    let hasLetters = /[a-zA-Z]/;
+    let hasLSymbol = /[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
+    console.log('hasLetters: ', hasLetters.test(this._newUserIDStr));
+    console.log('hasLSymbol: ', hasLSymbol.test(this._newUserIDStr));
+
+    if (this._newUserIDStr.length !== 9) {
+      alert('יש להכניס מספר תעודת זהות תקין- 9 ספרות');
+    } else if (hasLetters.test(this._newUserIDStr)) {
+      alert('יש להכניס מספר תעודת זהות תקין- ספרות בלבד ללא אותיות');
+    } else if (hasLSymbol.test(this._newUserIDStr)) {
+      alert('יש להכניס מספר תעודת זהות תקין- ספרות בלבד ללא סימנים מיוחדים');
+    } else if (
       this._newUserObject.Email === '' ||
-      this._newUserObject.Password === '' ||
-      this._newUserObject.Password !== this._newPasswordRepeat
+      !this._newUserObject.Email.includes('@' && '.')
     ) {
-      alert('all felids must be felid');
+      alert('יש להכניס כתובת מייל חוקית');
+    } else if (this._newUserObject.Password.length < 6) {
+      alert('יש להכניס סיסמה, לפחות 6 אותיות/ספרות');
+    } else if (this._newUserObject.Password !== this._newPasswordRepeat) {
+      alert('סיסמה לא תואמת');
     } else {
       this.serverResult = await this.apiService.createPostService(
         url,

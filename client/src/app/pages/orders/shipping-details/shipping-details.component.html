@@ -63,7 +63,7 @@
           [ngModelOptions]="{ standalone: true }"
           id="CreditCard"
           type="text"
-          class="form-control m-2"
+          class="form-control m-2 rounded-pill shadow-md px-4"
           required
           (keyup)="ordersService.creditRegex($event)"
           [ngClass]="

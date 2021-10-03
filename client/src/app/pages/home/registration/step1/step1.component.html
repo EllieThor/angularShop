@@ -2,7 +2,7 @@
   <label for="ID" class="text-end">
     :תעודת זהות כולל ספרת ביקורת
     <input
-      [(ngModel)]="usersService._newUserObject.ID"
+      [(ngModel)]="usersService._newUserIDStr"
       [ngModelOptions]="{ standalone: true }"
       id="ID"
       type="text"
@@ -63,7 +63,7 @@
     "
     class="far fa-times-circle text-danger"
   ></i>
-  <br />
+
   <label for="userRepeatPass" class="text-end me-3">
     :אימות סיסמה
     <input
@@ -71,7 +71,7 @@
       [ngModelOptions]="{ standalone: true }"
       id="userRepeatPass"
       type="password"
-      class="form-control m-2 rounded-pill shadow-md px-4"
+      class="form-control rounded-pill shadow-md px-4 m-2"
       placeholder="אימות סיסמה"
       required
       [ngClass]="
