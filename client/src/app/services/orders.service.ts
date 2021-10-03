@@ -6,6 +6,7 @@ import { CartsService } from './carts.service';
 import { UsersServiceService } from './users.service';
 import { Order } from '../models/ordersModel';
 import { ProductsService } from './products.service';
+import { Cart } from '../models/cartsModel';
 
 @Injectable({
   providedIn: 'root',
@@ -89,6 +90,15 @@ export class OrdersService {
         this.cartsService.statusCartCheck('/carts/getCarts', {
           userID: this._successfulOrder.userID,
         });
+
+        this.cartsService._userCarts = [];
+        this.cartsService._cartProducts = [];
+        this.cartsService._currentCart = new Cart();
+        this.cartsService._recentCart = new Cart();
+        this.cartsService._welcomeByCartStatus = 0;
+        this.cartsService._fixedTotalPriseForProd = 0;
+        this.cartsService._fixedTotalToPay = 0;
+        this.cartsService._qnt = 0;
       } else {
         alert('שגיאה, יש לטעון מחדש את העמוד');
       }
