@@ -20,17 +20,19 @@ export class ReceptionComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  highlight(text: string) {
+  highlight() {
+    // FIXME: אין כזה אלמנט עם כזה איידי ולכן לא עובד
     var inputText: any = document.getElementById('inputText');
+    console.log('inputText :', inputText);
     var innerHTML = inputText.innerHTML;
-    var index = innerHTML.indexOf(text);
+    var index = innerHTML.indexOf(this._searchInCart);
     if (index >= 0) {
       innerHTML =
         innerHTML.substring(0, index) +
         '<mark>' +
-        innerHTML.substring(index, index + text.length) +
+        innerHTML.substring(index, index + this._searchInCart.length) +
         '</mark>' +
-        innerHTML.substring(index + text.length);
+        innerHTML.substring(index + this._searchInCart.length);
       console.log('s1:  ', innerHTML);
       inputText.innerHTML = innerHTML;
       console.log('s2:  ', inputText);

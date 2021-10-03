@@ -3,7 +3,6 @@
     class="btn purpleBackgroundColor m-2"
     *ngIf="usersService._currentUserObj.ID"
     routerLink="/shop"
-    (click)="cartsService.gatCartProducts('/carts/getCartProducts')"
   >
     {{
       cartsService._welcomeByCartStatus === 2

@@ -22,6 +22,7 @@
   >
     :יש לך עגלה פתוחה מ
   </h6>
+
   <p
     class="text-end mx-auto"
     *ngIf="
@@ -30,6 +31,15 @@
   >
     {{ cartService._currentCart.createdAt.split("T").shift() }}
   </p>
+  <!-- FIXME: סכום לא מעודכן בלוקל סטורג -->
+  <h6
+    class="text-end mx-auto"
+    *ngIf="
+      usersService._currentUserObj.ID && cartService._welcomeByCartStatus === 2
+    "
+  >
+    {{ cartService._fixedTotalToPay }} סכום לתשלום
+  </h6>
   <h6
     class="text-end mx-auto"
     *ngIf="

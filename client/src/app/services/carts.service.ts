@@ -41,9 +41,10 @@ export class CartsService {
         this.getRecentCart();
         await this.getCarts(url, ob);
       } else {
-        // if recentCart var is defined - there is unpaid cart
+        // if recentCart variable is defined - there is unpaid cart
         this._welcomeByCartStatus = 2;
         this._currentCart = recentCart;
+        await this.gatCartProducts('/carts/getCartProducts');
       }
     }
   }
