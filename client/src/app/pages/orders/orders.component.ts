@@ -20,7 +20,6 @@ export class OrdersComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    // TODO: אם המשתמש התנתק באופן לא מבוקר או סגר דפדפן בפעם הבאה שפותח- הפרטים כבר קיימים וכפתור התחל/חזרה לקנייה קיים
     if (!this.usersService._currentUserObj.ID) {
       this.nav.navigate(['/home']);
     }

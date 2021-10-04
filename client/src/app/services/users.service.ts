@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 import { User } from '../models/usersModel';
 import { ApiService } from './api.service';
 import { CartsService } from './carts.service';
-import { OrdersService } from './orders.service';
 import { SettingsService } from './settings.service';
 
 @Injectable({
@@ -39,20 +38,17 @@ export class UsersServiceService {
       ID: this._newUserIDStr,
       Email: this._newUserObject.Email,
     };
-    let hasLetters = /[a-zA-Z]/;
-    let hasLSymbol = /[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
-    console.log('hasLetters: ', hasLetters.test(this._newUserIDStr));
-    console.log('hasLSymbol: ', hasLSymbol.test(this._newUserIDStr));
 
     if (this._newUserIDStr.length !== 9) {
       alert('יש להכניס מספר תעודת זהות תקין- 9 ספרות');
-    } else if (hasLetters.test(this._newUserIDStr)) {
+    } else if (this.settingsService.hasLetters.test(this._newUserIDStr)) {
       alert('יש להכניס מספר תעודת זהות תקין- ספרות בלבד ללא אותיות');
-    } else if (hasLSymbol.test(this._newUserIDStr)) {
+    } else if (this.settingsService.hasLSymbol.test(this._newUserIDStr)) {
       alert('יש להכניס מספר תעודת זהות תקין- ספרות בלבד ללא סימנים מיוחדים');
     } else if (
-      this._newUserObject.Email === '' ||
-      !this._newUserObject.Email.includes('@' && '.')
+      !this._newUserObject.Email.includes('@') ||
+      !this._newUserObject.Email.includes('.') ||
+      this._newUserObject.Email === ''
     ) {
       alert('יש להכניס כתובת מייל חוקית');
     } else if (this._newUserObject.Password.length < 6) {
@@ -83,7 +79,7 @@ export class UsersServiceService {
     event.preventDefault();
 
     let newUserOBJ = {
-      ID: Number(this._newUserObject.ID),
+      ID: Number(this._newUserIDStr),
       FirstName: this._newUserObject.FirstName,
       LastName: this._newUserObject.LastName,
       Email: this._newUserObject.Email,
@@ -94,7 +90,7 @@ export class UsersServiceService {
       FlatNumber: this._newUserObject.FlatNumber,
       City: this._newUserObject.City,
     };
-
+    console.log('asdasdasd: ', newUserOBJ);
     this.serverResult = await this.apiService.createPostService(
       url,
       newUserOBJ
@@ -105,17 +101,22 @@ export class UsersServiceService {
       userEmail: this.serverResult.Email,
       userPassword: this.serverResult.Password,
     };
-
+    console.log('getByPatterns: ', getByPatterns);
     this.serverResult = await this.apiService.createPostService(
       '/users/getUser',
       getByPatterns
     );
+    console.log('this.serverResult2 : ', this.serverResult);
+    this._currentUserObj = this.serverResult;
 
-    console.log('this.serverResult : ', this.serverResult);
-    if (this._currentUserObj.ID) {
+    console.log('this._currentUserObj : ', this._currentUserObj);
+    if (this._currentUserObj) {
       this._logInEmail = '';
       this._logInPassword = '';
       this.nav.navigate(['/home']);
+      this._currentStep = 0;
+      this._newUserObject = new User();
+      this._newUserIDStr = '';
     }
   }
 

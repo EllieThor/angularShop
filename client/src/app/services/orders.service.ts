@@ -38,9 +38,7 @@ export class OrdersService {
   }
 
   creditRegex(e: any) {
-    let regexp =
-      /^(?:(4[0-9]{12}(?:[0-9]{3})?)|(5[1-5][0-9]{14})|(6(?:011|5[0-9]{2})[0-9]{12})|(3[47][0-9]{13})|(3(?:0[0-5]|[68][0-9])[0-9]{11})|((?:2131|1800|35[0-9]{3})[0-9]{11}))$/;
-    if (regexp.test(e.target.value)) {
+    if (this.settingsService.creditRegexp.test(e.target.value)) {
       // return true;
       this._isRegexp = true;
       console.log(true);
@@ -90,15 +88,6 @@ export class OrdersService {
         this.cartsService.statusCartCheck('/carts/getCarts', {
           userID: this._successfulOrder.userID,
         });
-
-        this.cartsService._userCarts = [];
-        this.cartsService._cartProducts = [];
-        this.cartsService._currentCart = new Cart();
-        this.cartsService._recentCart = new Cart();
-        this.cartsService._welcomeByCartStatus = 0;
-        this.cartsService._fixedTotalPriseForProd = 0;
-        this.cartsService._fixedTotalToPay = 0;
-        this.cartsService._qnt = 0;
       } else {
         alert('שגיאה, יש לטעון מחדש את העמוד');
       }
@@ -109,5 +98,14 @@ export class OrdersService {
     this._successfulOrder = new Order();
     this._newOrder = new Order();
     this.nav.navigate(['/home']);
+
+    this.cartsService._userCarts = [];
+    this.cartsService._cartProducts = [];
+    this.cartsService._currentCart = new Cart();
+    this.cartsService._recentCart = new Cart();
+    this.cartsService._welcomeByCartStatus = 0;
+    this.cartsService._fixedTotalPriseForProd = 0;
+    this.cartsService._fixedTotalToPay = 0;
+    this.cartsService._qnt = 0;
   }
 }
