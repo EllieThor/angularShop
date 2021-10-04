@@ -90,39 +90,53 @@ export class UsersServiceService {
       FlatNumber: this._newUserObject.FlatNumber,
       City: this._newUserObject.City,
     };
-    console.log('asdasdasd: ', newUserOBJ);
+
     this.serverResult = await this.apiService.createPostService(
       url,
       newUserOBJ
     );
     console.log('new User: ', this.serverResult);
 
-    let getByPatterns = {
-      userEmail: this.serverResult.Email,
-      userPassword: this.serverResult.Password,
-    };
-    console.log('getByPatterns: ', getByPatterns);
-    this.serverResult = await this.apiService.createPostService(
-      '/users/getUser',
-      getByPatterns
-    );
-    console.log('this.serverResult2 : ', this.serverResult);
-    this._currentUserObj = this.serverResult;
+    this._logInEmail = this.serverResult.Email;
+    this._logInPassword = this.serverResult.Password;
+    this.gatUserFromDB('/users/getUser');
+    // TODO: למחוק את הכל כי זה עובד אבל ליתר ביטחון לא מחקתי
+    // let getByPatterns = {
+    //   userEmail: this.serverResult.Email,
+    //   userPassword: this.serverResult.Password,
+    // };
+    // console.log('getByPatterns: ', getByPatterns);
 
-    console.log('this._currentUserObj : ', this._currentUserObj);
-    if (this._currentUserObj) {
-      this._logInEmail = '';
-      this._logInPassword = '';
-      this.nav.navigate(['/home']);
-      this._currentStep = 0;
-      this._newUserObject = new User();
-      this._newUserIDStr = '';
-    }
+    // this.serverResult = await this.apiService.createPostService(
+    //   '/users/getUser',
+    //   getByPatterns
+    // );
+    // console.log('this.serverResult2 : ', this.serverResult);
+
+    // this._currentUserObj = this.serverResult;
+    // console.log('this._currentUserObj : ', this._currentUserObj);
+
+    // if (this._currentUserObj) {
+    //   console.log('this._currentUserObj&');
+    //   this._logInEmail = '';
+    //   this._logInPassword = '';
+    //   this.nav.navigate(['/home']);
+    //   this._currentStep = 0;
+    //   this._newUserObject = new User();
+    //   this._newUserIDStr = '';
+    //   // FIXME: כשדולק דופק את הכראט סרוויס ובנוסף אא לעשות גט יוזר רגיל בגלל הפרוונט דיפולט
+    //   // localStorage.setItem('user', JSON.stringify(this._currentUserObj));
+    //   // console.log('after set עכשיו: ', localStorage.getItem('user'));
+    //   // let getByPatterns = {
+    //   //   userID: this._currentUserObj.ID,
+    //   // };
+    //   // this.cartService.statusCartCheck('/carts/getCarts', getByPatterns);
+    // }
   }
 
   // READ
   async gatUserFromDB(url: string, event?: any) {
-    event.preventDefault();
+    // event.preventDefault();
     let getByPatterns = {
       userEmail: this._logInEmail,
       userPassword: this._logInPassword,
@@ -145,11 +159,11 @@ export class UsersServiceService {
         userID: this._currentUserObj.ID,
       };
       this.cartService.statusCartCheck('/carts/getCarts', getByPatterns);
-
       if (!this.localStorageUser.user) {
         localStorage.setItem('user', JSON.stringify(this._currentUserObj));
         console.log('after set : ', localStorage.getItem('user'));
       }
+      this.nav.navigate(['/home']);
     }
   }
 
