@@ -1,9 +1,18 @@
 <form action="" class="p-2">
-  <div class="row">
-    <h4>הזמנה</h4>
+  <div class="row text-center pe-5">
+    <h4>פרטי משלוח</h4>
   </div>
-  <div class="row">
-    <div class="col-12">
+  <div class="row text-end pe-5">
+    <div class="col-12 col-md-7">
+      <span class="text-center">:בחר תאריך למשלוח</span>
+      <h6>
+        {{ ordersService._newOrder.ShippingDate.split("T").shift() }}:התאריך
+        הנבחר
+      </h6>
+      <app-calendar></app-calendar>
+      <br />
+    </div>
+    <div class="col-12 col-md-5">
       <h6>פרטי משלוח</h6>
       <label for="ShippingCity">
         : בחר עיר
@@ -44,18 +53,8 @@
         />
       </label>
       <br />
-
-      <h5 class="text-center">:בחר תאריך למשלוח</h5>
-      <h6>
-        {{ ordersService._newOrder.ShippingDate.split("T").shift() }}:התאריך
-        הנבחר
-      </h6>
-      <app-calendar></app-calendar>
-      <br />
-    </div>
-    <div class="col-12 col-md-6">
       <h4>תשלום</h4>
-      <h5>{{ cartsService._fixedTotalToPay }} סה"כ לתשלום</h5>
+      <h5>{{ cartsService._fixedTotalToPay.toFixed(2) }} סה"כ לתשלום</h5>
       <label for="CreditCard" class="text-end mx-3">
         הכנס כרטיס אשראי
         <input

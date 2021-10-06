@@ -17,3 +17,7 @@ font-family: 'Quicksand', sans-serif; */
 .markMe {
   background-color: yellow;
 }
+
+.cursorPointer {
+  cursor: pointer;
+}

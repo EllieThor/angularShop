@@ -11,6 +11,7 @@ import { UsersServiceService } from 'src/app/services/users.service';
   styleUrls: ['./shop.component.css'],
 })
 export class ShopComponent implements OnInit {
+  _isCartVisible = true;
   constructor(
     public usersService: UsersServiceService,
     public cartsService: CartsService,

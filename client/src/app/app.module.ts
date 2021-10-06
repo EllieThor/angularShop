@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
-import { ResizableModule } from 'angular-resizable-element';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -61,13 +60,7 @@ import { ResizeComponent } from './components/resize/resize.component';
     PlusMinusIconsComponent,
     ResizeComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    HttpClientModule,
-    ResizableModule,
-  ],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })

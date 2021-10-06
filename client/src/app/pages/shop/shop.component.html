@@ -7,17 +7,40 @@
   </div>
 </div> -->
 <!-- TODO: -->
-<div class="container-fluid">
+<!-- <div class="container-fluid">
   <div class="row">
     <div class="col-3 cartArea"><app-cart></app-cart></div>
     <div class="col-9">
       <div class="row productArea"><app-products-area></app-products-area></div>
     </div>
   </div>
-</div>
+</div> -->
 <!-- TODO: -->
 
 <!-- <section>
   <div><app-cart></app-cart></div>
   <div><app-products-area></app-products-area></div>
 </section> -->
+
+<div class="container-fluid">
+  <div class="row">
+    <div *ngIf="_isCartVisible" class="col-3 cartArea">
+      <app-cart></app-cart>
+    </div>
+    <div [ngClass]="_isCartVisible ? 'col-9' : 'col-12'">
+      <i
+        *ngIf="!_isCartVisible"
+        class="fas fa-angle-right fa-2x isCartVisibleIcon"
+        (click)="_isCartVisible = true"
+      ></i>
+      <i
+        *ngIf="_isCartVisible"
+        class="fas fa-angle-left fa-2x isCartVisibleIcon"
+        (click)="_isCartVisible = false"
+      ></i>
+      <div class="row productArea">
+        <app-products-area></app-products-area>
+      </div>
+    </div>
+  </div>
+</div>

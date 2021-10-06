@@ -86,6 +86,7 @@ export class CalendarComponent implements OnInit {
     this._currentDateStr = new Date().toDateString();
     this.year = this._date.getFullYear();
 
+    // 0-last, 1-today, 2-next, 3-current
     // print last month days
     for (let x = this.firstDayIndex; x > 0; x--) {
       // if this._currentMonthIndex=0 => january- last month needed to be 11=> december and not -1

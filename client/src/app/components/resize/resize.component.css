@@ -47,20 +47,30 @@ mwlResizable {
   right: 0;
 }
  */
-.rectangle {
+/* .rectangle { */
+/* position: relative; */
+/* top: 200px; */
+/* display: flex; */
+/* align-items: center; */
+/* justify-content: center; */
+/* width: 300px; */
+/* height: 150px; */
+/* background-color: #fd4140; */
+/* border: solid 1px #121621; */
+/* color: #121621; */
+/* margin: auto; */
+/* } */
+
+/* .rectangle {
   position: relative;
-  /* top: 200px; */
-  /* display: flex; */
-  /* align-items: center; */
-  /* justify-content: center; */
+ 
   width: 300px;
   height: 150px;
   background-color: #fd4140;
   border: solid 1px #121621;
   color: #121621;
-  /* margin: auto; */
-}
-
+} */
+/* 
 mwlResizable {
   box-sizing: border-box;
 }
@@ -74,4 +84,100 @@ mwlResizable {
 
 .resize-handle-right {
   right: 0;
+} */
+/* aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa */
+/* .split {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 100%;
+  width: 100%;
+}
+
+.edit {
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  max-height: calc(100vh - 67px);
+}
+
+.split.split-horizontal,
+.gutter.gutter-horizontal {
+  height: 100%;
+  float: left;
+}
+
+.gutter {
+  background-color: #eee;
+  background-repeat: no-repeat;
+  background-position: 50%;
+}
+
+.ace_scroller {
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  bottom: 0;
+  background-color: inherit;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: text;
+}
+.splitpanes__splitter {
+  -ms-touch-action: none;
+  touch-action: none;
+}
+.splitpanes--vertical > .splitpanes__splitter {
+  min-width: 1px;
+  cursor: col-resize;
+} */
+
+/* body {
+  margin: 0px;
+} */
+
+body {
+  margin: 0px;
+}
+
+div {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+#shop {
+  width: 100%;
+  height: 100%;
+}
+
+#cart {
+  width: 50%;
+  height: 100%;
+  overflow: auto;
+  background-color: #333;
+  display: inline;
+  float: left;
+}
+
+#bar {
+  width: 4px;
+  height: 100%;
+  display: inline;
+  float: left;
+  background-color: red;
+  cursor: col-resize;
+}
+
+#products {
+  width: 50%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(190, 139, 139);
+  display: inline;
+  float: left;
 }
