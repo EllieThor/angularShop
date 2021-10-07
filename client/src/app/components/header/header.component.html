@@ -10,7 +10,7 @@
       </a>
       <app-categories-nav *ngIf="nav.url === '/shop'"></app-categories-nav>
       <i
-        class="fas fa-sign-out-alt fa-lg"
+        class="fas fa-sign-out-alt fa-lg cursorPointer iconsColor"
         *ngIf="usersService._currentUserObj.ID"
         (click)="usersService.logout()"
       ></i>

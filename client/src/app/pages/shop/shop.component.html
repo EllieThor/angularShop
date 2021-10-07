@@ -30,12 +30,14 @@
     <div [ngClass]="_isCartVisible ? 'col-9' : 'col-12'">
       <i
         *ngIf="!_isCartVisible"
-        class="fas fa-angle-right fa-2x isCartVisibleIcon"
+        class="fas fa-angle-right fa-2x cursorPointer iconsColor"
+        title="פתח עגלה"
         (click)="_isCartVisible = true"
       ></i>
       <i
         *ngIf="_isCartVisible"
-        class="fas fa-angle-left fa-2x isCartVisibleIcon"
+        class="fas fa-angle-left fa-2x cursorPointer iconsColor"
+        title="סגור עגלה"
         (click)="_isCartVisible = false"
       ></i>
       <div class="row productArea">

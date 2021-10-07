@@ -30,6 +30,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { CalendarComponent } from './components/calendar/calendar.component';
 import { PlusMinusIconsComponent } from './components/plus-minus-icons/plus-minus-icons.component';
 import { ResizeComponent } from './components/resize/resize.component';
+import { CartHeaderComponent } from './components/cart-header/cart-header.component';
 
 @NgModule({
   declarations: [
@@ -59,6 +60,7 @@ import { ResizeComponent } from './components/resize/resize.component';
     CalendarComponent,
     PlusMinusIconsComponent,
     ResizeComponent,
+    CartHeaderComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],

@@ -21,3 +21,7 @@ font-family: 'Quicksand', sans-serif; */
 .cursorPointer {
   cursor: pointer;
 }
+
+.iconsColor {
+  color: rgba(0, 0, 0, 0.699);
+}

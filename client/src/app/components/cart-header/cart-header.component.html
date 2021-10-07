@@ -1,0 +1,49 @@
+<div class="row">
+  <div class="col-6">
+    <h6>:סה"כ</h6>
+    <h5>{{ cartsService._fixedTotalToPay.toFixed(2) }} &#8362;</h5>
+  </div>
+  <div class="col-6">
+    <h3 class="amountCircle">{{ cartsService._cartProducts.length }}</h3>
+
+    <!-- <img
+        src="assets/webImages/cart_icon.png"
+        (click)="navToOrders()"
+        alt=""
+        class="col-6 cartIcon"
+      /> -->
+
+    <i
+      class="fas fa-shopping-cart fa-lg col-6 cursorPointer iconsColor"
+      alt="cartIcon"
+      title="עבור לעגלה"
+      (click)="navToOrders()"
+    >
+    </i>
+    <i
+      class="fas fa-trash fa-lg col-6 cursorPointer iconsColor"
+      alt="trashIcon"
+      title="מחק הכל"
+      *ngIf="cartsService._cartProducts.length !== 0"
+      (click)="
+        deleteProductFromCart('/carts/deleteProductFromCart', {
+          cartID: cartsService._currentCart.ID
+        })
+      "
+    >
+    </i>
+
+    <!-- <img
+        src="assets/webImages/trash_icon.png"
+        alt="trashIcon"
+        title="מחק הכל"
+        *ngIf="cartsService._cartProducts.length !== 0"
+        class="col-6 trashIcon"
+        (click)="
+          deleteProductFromCart('/carts/deleteProductFromCart', {
+            cartID: cartsService._currentCart.ID
+          })
+        "
+      /> -->
+  </div>
+</div>
