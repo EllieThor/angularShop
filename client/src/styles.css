@@ -25,3 +25,8 @@ font-family: 'Quicksand', sans-serif; */
 .iconsColor {
   color: rgba(0, 0, 0, 0.699);
 }
+
+.cart-bg-purple {
+  /* background-color: #c2b0df; */
+  background-color: rgba(194, 176, 223, 0.3);
+}

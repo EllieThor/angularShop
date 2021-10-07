@@ -1,45 +1,36 @@
-<!-- <div class="container-fluid">
-  <div class="row">
-    <div class="col-2 p-2"><app-cart></app-cart></div>
-    <div class="col-10 pl-5">
-      <div class="row"><app-products-area></app-products-area></div>
-    </div>
-  </div>
-</div> -->
-<!-- TODO: -->
-<!-- <div class="container-fluid">
-  <div class="row">
-    <div class="col-3 cartArea"><app-cart></app-cart></div>
-    <div class="col-9">
-      <div class="row productArea"><app-products-area></app-products-area></div>
-    </div>
-  </div>
-</div> -->
-<!-- TODO: -->
-
-<!-- <section>
-  <div><app-cart></app-cart></div>
-  <div><app-products-area></app-products-area></div>
-</section> -->
-
 <div class="container-fluid">
   <div class="row">
     <div *ngIf="_isCartVisible" class="col-3 cartArea">
       <app-cart></app-cart>
     </div>
     <div [ngClass]="_isCartVisible ? 'col-9' : 'col-12'">
-      <i
-        *ngIf="!_isCartVisible"
-        class="fas fa-angle-right fa-2x cursorPointer iconsColor"
-        title="פתח עגלה"
-        (click)="_isCartVisible = true"
-      ></i>
-      <i
-        *ngIf="_isCartVisible"
-        class="fas fa-angle-left fa-2x cursorPointer iconsColor"
-        title="סגור עגלה"
-        (click)="_isCartVisible = false"
-      ></i>
+      <div class="row">
+        <div
+          class="col-1 ms-3 rounded-start"
+          [ngClass]="_isCartVisible ? '' : 'cart-bg-purple py-3'"
+        >
+          <i
+            *ngIf="_isCartVisible"
+            class="fas fa-angle-left fa-2x cursorPointer iconsColor"
+            title="לסגירת עגלה"
+            (click)="_isCartVisible = false"
+          ></i>
+          <i
+            *ngIf="!_isCartVisible"
+            class="fas fa-angle-right fa-2x cursorPointer iconsColor ms-4"
+            title="לפתיחת עגלה"
+            (click)="_isCartVisible = true"
+          ></i>
+          <div *ngIf="!_isCartVisible">פתח.י עגלה</div>
+        </div>
+
+        <div
+          class="col-2 cart-bg-purple py-3 rounded-end"
+          *ngIf="!_isCartVisible"
+        >
+          <app-cart-header></app-cart-header>
+        </div>
+      </div>
       <div class="row productArea">
         <app-products-area></app-products-area>
       </div>

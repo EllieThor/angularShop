@@ -10,29 +10,7 @@
   overflow-x: auto;
 }
 
-/* section {
-  width: 100%;
-} */
-/* 
-div {
-  height: 86vh;
-  padding: 15%;
-} */
-
-/* div:first-child {
-  float: left;
-  width: auto;
-  background-color: #777;
-  resize: horizontal;
-  overflow-x: auto;
-  height: 86vh;
-}
-div:last-child {
-  background-color: #77f;
-  width: auto;
-  height: 86vh;
-} */
-
-.isCartVisibleIcon {
-  cursor: pointer;
+.bg-purple {
+  /* background-color: #c2b0df; */
+  background-color: rgba(194, 176, 223, 0.3);
 }

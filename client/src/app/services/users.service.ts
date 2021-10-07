@@ -40,19 +40,30 @@ export class UsersServiceService {
     };
 
     if (this._newUserIDStr.length !== 9) {
-      alert('יש להכניס מספר תעודת זהות תקין- 9 ספרות');
+      alert('יש למלא מספר תעודת זהות תקין- 9 ספרות');
     } else if (this.settingsService.hasLetters.test(this._newUserIDStr)) {
-      alert('יש להכניס מספר תעודת זהות תקין- ספרות בלבד ללא אותיות');
+      alert('יש למלא מספר תעודת זהות תקין- ספרות בלבד ללא אותיות');
     } else if (this.settingsService.hasLSymbol.test(this._newUserIDStr)) {
-      alert('יש להכניס מספר תעודת זהות תקין- ספרות בלבד ללא סימנים מיוחדים');
+      alert('יש למלא מספר תעודת זהות תקין- ספרות בלבד ללא סימנים מיוחדים');
+    } else if (this._newUserObject.Email === '') {
+      alert('יש למלא כתובת מייל ');
     } else if (
-      !this._newUserObject.Email.includes('@') ||
-      !this._newUserObject.Email.includes('.') ||
-      this._newUserObject.Email === ''
+      this.settingsService.hasLSymbolForEmail.test(this._newUserObject.Email)
     ) {
-      alert('יש להכניס כתובת מייל חוקית');
+      alert('יש למלא כתובת מייל-ללא סימנים מיוחדים');
+    } else if (this._newUserObject.Email === '') {
+      alert('יש למלא כתובת מייל חוקית');
+    } else if (!this._newUserObject.Email.includes('@')) {
+      alert(' @ - יש למלא כתובת מייל חוקית חסר');
+    } else if (!this._newUserObject.Email.includes('.')) {
+      alert('. - יש למלא כתובת מייל חוקית : חסרה נקודה');
+    } else if (
+      this._newUserObject.Email === '.@' ||
+      this._newUserObject.Email === '@.'
+    ) {
+      alert('יש למלא כתובת מייל מלאה חוץ מנקודה ושטרודל');
     } else if (this._newUserObject.Password.length < 6) {
-      alert('יש להכניס סיסמה, לפחות 6 אותיות/ספרות');
+      alert('יש למלא סיסמה, לפחות 6 אותיות/ספרות');
     } else if (this._newUserObject.Password !== this._newPasswordRepeat) {
       alert('סיסמה לא תואמת');
     } else {
@@ -61,10 +72,10 @@ export class UsersServiceService {
         getByPatterns
       );
       if (this.serverResult.emailCount !== 0) {
-        alert('email is already exist');
+        alert('כתובת מייל קיימת, יש להתחבר');
         this.nav.navigate(['/home']);
       } else if (this.serverResult.IDCount !== 0) {
-        alert('ID is already exist');
+        alert('תעודת זהות קיימת במערכת, יש להתחבר');
         this.nav.navigate(['/home']);
       } else {
         this._currentStep = 1;
@@ -90,48 +101,31 @@ export class UsersServiceService {
       FlatNumber: this._newUserObject.FlatNumber,
       City: this._newUserObject.City,
     };
+    if (this._newUserObject.FirstName === '') {
+      alert('יש למלא שם פרטי');
+    } else if (this._newUserObject.LastName === '') {
+      alert('יש למלא שם משפחה');
+    } else if (this._newUserObject.Phone === 0) {
+      alert('יש למלא מספר טלפון ');
+    } else if (this._newUserObject.Street === '') {
+      alert('יש למלא שם רחוב-ללא מספר');
+    } else if (this._newUserObject.StreetNumber === 0) {
+      alert('יש למלא מספר בניין');
+    } else if (this._newUserObject.FlatNumber === 0) {
+      alert('יש למלא שם דירה');
+    } else if (this._newUserObject.City === '') {
+      alert('יש למלא עיר');
+    } else {
+      this.serverResult = await this.apiService.createPostService(
+        url,
+        newUserOBJ
+      );
+      console.log('new User: ', this.serverResult);
 
-    this.serverResult = await this.apiService.createPostService(
-      url,
-      newUserOBJ
-    );
-    console.log('new User: ', this.serverResult);
-
-    this._logInEmail = this.serverResult.Email;
-    this._logInPassword = this.serverResult.Password;
-    this.gatUserFromDB('/users/getUser');
-    // TODO: למחוק את הכל כי זה עובד אבל ליתר ביטחון לא מחקתי
-    // let getByPatterns = {
-    //   userEmail: this.serverResult.Email,
-    //   userPassword: this.serverResult.Password,
-    // };
-    // console.log('getByPatterns: ', getByPatterns);
-
-    // this.serverResult = await this.apiService.createPostService(
-    //   '/users/getUser',
-    //   getByPatterns
-    // );
-    // console.log('this.serverResult2 : ', this.serverResult);
-
-    // this._currentUserObj = this.serverResult;
-    // console.log('this._currentUserObj : ', this._currentUserObj);
-
-    // if (this._currentUserObj) {
-    //   console.log('this._currentUserObj&');
-    //   this._logInEmail = '';
-    //   this._logInPassword = '';
-    //   this.nav.navigate(['/home']);
-    //   this._currentStep = 0;
-    //   this._newUserObject = new User();
-    //   this._newUserIDStr = '';
-    //   // FIXME: כשדולק דופק את הכראט סרוויס ובנוסף אא לעשות גט יוזר רגיל בגלל הפרוונט דיפולט
-    //   // localStorage.setItem('user', JSON.stringify(this._currentUserObj));
-    //   // console.log('after set עכשיו: ', localStorage.getItem('user'));
-    //   // let getByPatterns = {
-    //   //   userID: this._currentUserObj.ID,
-    //   // };
-    //   // this.cartService.statusCartCheck('/carts/getCarts', getByPatterns);
-    // }
+      this._logInEmail = this.serverResult.Email;
+      this._logInPassword = this.serverResult.Password;
+      this.gatUserFromDB('/users/getUser');
+    }
   }
 
   // READ

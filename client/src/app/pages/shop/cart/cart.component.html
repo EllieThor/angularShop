@@ -1,6 +1,9 @@
 <!-- user cart -->
 <div class="cartContainer" *ngIf="usersService._currentUserObj.Role !== 1">
-  <app-cart-header></app-cart-header>
+  <div class="cart-bg-purple rounded p-3">
+    <app-cart-header></app-cart-header>
+  </div>
+
   <hr />
   <div class="cartProdArea">
     <div *ngFor="let item of cartsService._cartProducts">
