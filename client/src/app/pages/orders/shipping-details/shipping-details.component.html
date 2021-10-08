@@ -17,7 +17,7 @@
       <label for="ShippingCity">
         : בחר עיר
         <select
-          class="form-select m-2"
+          class="form-select m-2 rounded-pill shadow-md px-4"
           id="ShippingCity"
           aria-label="Default select example"
           [(ngModel)]="ordersService._newOrder.ShippingCity"
@@ -28,10 +28,11 @@
           "
         >
           <option
+            class="text-end"
             *ngFor="let city of cities; let i = index"
             value="{{ city.name }}"
           >
-            {{ city.name }}
+            {{ city.name }} &nbsp; &nbsp;
           </option>
         </select>
       </label>
@@ -43,7 +44,7 @@
           [ngModelOptions]="{ standalone: true }"
           id="ShippingStreet"
           type="text"
-          class="form-control m-2"
+          class="form-control m-2 rounded-pill shadow-md px-4"
           placeholder="שם רחוב"
           required
           (dblclick)="
@@ -55,7 +56,15 @@
       <br />
       <h4>תשלום</h4>
       <h5>{{ cartsService._fixedTotalToPay.toFixed(2) }} סה"כ לתשלום</h5>
-      <label for="CreditCard" class="text-end mx-3">
+      <i
+        *ngIf="ordersService._isRegexp"
+        class="far fa-check-circle text-success"
+      ></i>
+      <i
+        *ngIf="!ordersService._isRegexp"
+        class="far fa-times-circle text-danger"
+      ></i>
+      <label for="CreditCard" class="text-end">
         הכנס כרטיס אשראי
         <input
           [(ngModel)]="ordersService._newOrder.CreditCard"
@@ -70,14 +79,7 @@
           "
         />
       </label>
-      <i
-        *ngIf="ordersService._isRegexp"
-        class="far fa-check-circle text-success"
-      ></i>
-      <i
-        *ngIf="!ordersService._isRegexp"
-        class="far fa-times-circle text-danger"
-      ></i>
+
       <button
         class="btn purpleBackgroundColor m-2"
         (click)="ordersService.addOrder('/orders/insertNewOrder', $event)"

@@ -4,8 +4,9 @@
     <div class="col-12 col-md-8" *ngIf="!ordersService._successfulOrder.ID">
       <app-shipping-details></app-shipping-details>
     </div>
-    <div class="col-12 col-md-8" *ngIf="ordersService._successfulOrder.ID">
-      <app-successful-order></app-successful-order>
-    </div>
+
+    <app-successful-order
+      *ngIf="ordersService._successfulOrder.ID"
+    ></app-successful-order>
   </div>
 </div>

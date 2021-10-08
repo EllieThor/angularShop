@@ -87,7 +87,3 @@
 .notAvailable {
   background-color: red !important;
 }
-
-.hideMe {
-  visibility: hidden;
-}
