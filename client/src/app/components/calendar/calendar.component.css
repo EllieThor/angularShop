@@ -88,7 +88,6 @@
   background-color: red !important;
 }
 
-.pickedDay {
-  background-color: rgb(182, 36, 158) !important;
-  /* background-color: aquamarine; */
+.hideMe {
+  visibility: hidden;
 }

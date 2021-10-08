@@ -1,6 +1,10 @@
 <div class="calendarContainer">
   <div class="month">
-    <i class="fas fa-angle-left prev" (click)="prevIconClicked()"></i>
+    <i
+      class="fas fa-angle-left prev"
+      [ngClass]="_isItCurrentMonth ? 'hideMe' : ''"
+      (click)="prevIconClicked()"
+    ></i>
     <div class="date py-2">
       <div>{{ this._currentDateStr }}</div>
       <h6>{{ this._monthsHEB[this._currentMonthIndex] }}, {{ this.year }}</h6>
@@ -25,7 +29,7 @@
           [ngClass]="
             day.type === 0 || day.isPast
               ? 'prev-date'
-              : day.type === 1 && day.monthIndex === this._currentMonthIndex
+              : day.type === 1
               ? 'today'
               : day.type === 2
               ? 'next-date'

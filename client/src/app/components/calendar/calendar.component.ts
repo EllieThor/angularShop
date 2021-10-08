@@ -43,6 +43,7 @@ export class CalendarComponent implements OnInit {
   nextDays: any;
 
   _el: any;
+  _isItCurrentMonth: boolean = true;
 
   constructor(
     public usersService: UsersServiceService,
@@ -116,7 +117,8 @@ export class CalendarComponent implements OnInit {
       this._monthDays.push({
         type:
           i === new Date().getDate() &&
-          this._date.getMonth() === new Date().getMonth()
+          this._date.getMonth() === new Date().getMonth() &&
+          this.year === new Date().getFullYear()
             ? 1
             : 3,
         num: i,
@@ -156,30 +158,55 @@ export class CalendarComponent implements OnInit {
   isDateBeforeToday(date: any) {
     return new Date(date.toDateString()) < new Date(new Date().toDateString());
   }
-
+  // FIXME:
   prevIconClicked() {
-    this._date.setMonth(this._date.getMonth() - 1);
-    this.renderCalendar();
+    // FIXME: שלא יהיה אייקון לחזור לחודש הקודם אם חוזרים מהעתיד לחודש הנוכחי
+    console.log('this._date.getMonth()     : ', this._date.getMonth() - 1);
+    console.log(' new Date().getMonth()    : ', new Date().getMonth());
+    console.log('this._date.getYear()      : ', this._date.getFullYear());
+    console.log('new Date().getFullYear()  : ', new Date().getFullYear());
+    if (
+      this._date.getMonth() <= new Date().getMonth() &&
+      this._date.getFullYear() <= new Date().getFullYear()
+    ) {
+      this._isItCurrentMonth = true;
+    } else {
+      this._date.setMonth(this._date.getMonth() - 1);
+      this.renderCalendar();
+      this._isItCurrentMonth = false;
+    }
+
+    // this._date.getMonth() <= new Date().getMonth() &&
+    // this._date.getFullYear() <= new Date().getFullYear()
+    //   ? (this._isItCurrentMonth = true)
+    //   : (this._date.setMonth(this._date.getMonth() - 1),
+    //     this.renderCalendar(),
+    //     (this._isItCurrentMonth = false));
   }
 
   nextIconClicked() {
     this._date.setMonth(this._date.getMonth() + 1);
     this.renderCalendar();
+    this._isItCurrentMonth = false;
   }
 
   backToTodayClicked() {
     this._date = new Date();
     this.renderCalendar();
+    this._isItCurrentMonth = true;
   }
-
+  // FIXME:
   someDayClicked(dayOb: any, e: any) {
     console.log('someDayClicked: ', e.target);
     if (this._el) {
       this._el.classList.remove('bg-secondary');
       // console.log('this._el: ', this._el);
       this.ordersService._newOrder.ShippingDate = '';
+      //FIXME:  שאם בוחרים בתאריך של היום ומזיזים אז שהקלאס של היום יישאר
+      // if (dayOb.type === 1 && dayOb.monthIndex === this._currentMonthIndex) {
+      //   this._el.className = 'today';
+      // }
     }
-    //FIXME:  שאם בוחרים בתאריך של היום ומזיזים אז שהקלאס של היום יישאר
     //FIXME: bg-light-purple not work
 
     // availability is false if there is more then 2 deliveries for this day
