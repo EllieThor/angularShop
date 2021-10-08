@@ -101,6 +101,13 @@ export class CalendarComponent implements OnInit {
           this._currentMonthIndex,
           this.prevLastDay - x + 1
         ),
+        isPast: this.isDateBeforeToday(
+          new Date(
+            this._currentMonthIndex != 0 ? this.year : this.year - 1,
+            this._currentMonthIndex != 0 ? this._currentMonthIndex - 1 : 11,
+            this.prevLastDay - x + 1
+          )
+        ),
       });
     }
 
@@ -116,6 +123,9 @@ export class CalendarComponent implements OnInit {
         monthIndex: this._currentMonthIndex,
         year: this.year,
         availability: this.isShippingAvailable(this._currentMonthIndex + 1, i),
+        isPast: this.isDateBeforeToday(
+          new Date(this.year, this._currentMonthIndex, i)
+        ),
       });
     }
 
@@ -130,10 +140,21 @@ export class CalendarComponent implements OnInit {
           this._currentMonthIndex != 11 ? this._currentMonthIndex + 1 : 0,
         year: this._currentMonthIndex != 11 ? this.year : this.year + 1,
         availability: this.isShippingAvailable(this._currentMonthIndex + 1, j),
+        isPast: this.isDateBeforeToday(
+          new Date(
+            this._currentMonthIndex != 11 ? this.year : this.year + 1,
+            this._currentMonthIndex != 11 ? this._currentMonthIndex + 1 : 0,
+            j
+          )
+        ),
       });
     }
     console.log('this._monthDays ARR: ', this._monthDays);
     this._monthDaysInWeeks = this.sliceIntoWeeks(this._monthDays, 7);
+  }
+
+  isDateBeforeToday(date: any) {
+    return new Date(date.toDateString()) < new Date(new Date().toDateString());
   }
 
   prevIconClicked() {
@@ -152,30 +173,23 @@ export class CalendarComponent implements OnInit {
   }
 
   someDayClicked(dayOb: any, e: any) {
-    console.log('today finally: ', e.target);
+    console.log('someDayClicked: ', e.target);
     if (this._el) {
-      this._el.classList.remove('bg-success');
-      console.log('today finally: ', this._el);
+      this._el.classList.remove('bg-secondary');
+      // console.log('this._el: ', this._el);
       this.ordersService._newOrder.ShippingDate = '';
     }
-    //FIXME:   אי אפשר יהיה להזמין משלוח לתאריך שעבר
-    // let todayNum: any = new Date().getDate();
-    // let todayMonthIndex: any = new Date().getMonth() + 1;
-    // let todayYear: any = new Date().getFullYear();
+    //FIXME:  שאם בוחרים בתאריך של היום ומזיזים אז שהקלאס של היום יישאר
+    //FIXME: bg-light-purple not work
 
-    // console.log('today finally: ', todayNum, todayMonthIndex, todayYear);
-
-    // console.log('today finally real: ', new Date());
-    //  dayOb.year >= todayYear &&
-    //    dayOb.monthIndex >= todayMonthIndex &&
-    //    dayOb.num >= todayNum;
     // availability is false if there is more then 2 deliveries for this day
-    if (dayOb.availability) {
+    // dayOb.isPast is false if this date before today
+    if (dayOb.availability && !dayOb.isPast) {
       const d = new Date(dayOb.year, dayOb.monthIndex, dayOb.num, 13, 30);
       console.log('some day clicked: availability true ', dayOb);
       this.ordersService._newOrder.ShippingDate = d.toISOString();
       this._el = e.target;
-      this._el.className = 'bg-success';
+      this._el.className = 'bg-secondary';
     }
   }
 

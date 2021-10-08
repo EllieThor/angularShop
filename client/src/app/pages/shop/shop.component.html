@@ -7,7 +7,7 @@
       <div class="row">
         <div
           class="col-1 ms-3 rounded-start"
-          [ngClass]="_isCartVisible ? '' : 'cart-bg-purple py-3'"
+          [ngClass]="_isCartVisible ? '' : 'bg-light-purple py-3'"
         >
           <i
             *ngIf="_isCartVisible"
@@ -25,7 +25,7 @@
         </div>
 
         <div
-          class="col-2 cart-bg-purple py-3 rounded-end"
+          class="col-2 bg-light-purple py-3 rounded-end"
           *ngIf="!_isCartVisible"
         >
           <app-cart-header></app-cart-header>
