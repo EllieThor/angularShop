@@ -158,30 +158,15 @@ export class CalendarComponent implements OnInit {
   isDateBeforeToday(date: any) {
     return new Date(date.toDateString()) < new Date(new Date().toDateString());
   }
-  // FIXME:
-  prevIconClicked() {
-    // FIXME: שלא יהיה אייקון לחזור לחודש הקודם אם חוזרים מהעתיד לחודש הנוכחי
-    console.log('this._date.getMonth()     : ', this._date.getMonth() - 1);
-    console.log(' new Date().getMonth()    : ', new Date().getMonth());
-    console.log('this._date.getYear()      : ', this._date.getFullYear());
-    console.log('new Date().getFullYear()  : ', new Date().getFullYear());
-    if (
-      this._date.getMonth() <= new Date().getMonth() &&
-      this._date.getFullYear() <= new Date().getFullYear()
-    ) {
-      this._isItCurrentMonth = true;
-    } else {
-      this._date.setMonth(this._date.getMonth() - 1);
-      this.renderCalendar();
-      this._isItCurrentMonth = false;
-    }
 
-    // this._date.getMonth() <= new Date().getMonth() &&
-    // this._date.getFullYear() <= new Date().getFullYear()
-    //   ? (this._isItCurrentMonth = true)
-    //   : (this._date.setMonth(this._date.getMonth() - 1),
-    //     this.renderCalendar(),
-    //     (this._isItCurrentMonth = false));
+  prevIconClicked() {
+    this._isItCurrentMonth =
+      this._date.getMonth() <= new Date().getMonth() + 1 &&
+      this._date.getFullYear() <= new Date().getFullYear()
+        ? true
+        : false;
+    this._date.setMonth(this._date.getMonth() - 1);
+    this.renderCalendar();
   }
 
   nextIconClicked() {
