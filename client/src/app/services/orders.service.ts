@@ -59,6 +59,8 @@ export class OrdersService {
       alert('בחר.י תאריך למשלוח');
     } else if (this._newOrder.CreditCard === '') {
       alert('הכנס.י פרטי חיוב');
+    } else if (this._isRegexp === false) {
+      alert('הכנס.י פרטי חיוב-כרטיס אשראי תקין-16 ספרות');
     } else {
       let newOrderObj = {
         FinalPrice: this.cartsService._fixedTotalToPay,

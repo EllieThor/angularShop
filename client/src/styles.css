@@ -35,6 +35,10 @@ font-family: 'Quicksand', sans-serif; */
   visibility: hidden;
 }
 
-.HeeboFont {
-  font-family: "Heebo", sans-serif;
+.heeboFont {
+  /* font-family: "Heebo", sans-serif; */
+  /* font-family: "Merriweather", serif; */
+  /* font-family: "Quicksand", sans-serif;*/
+  /* font-family: "M /PLUS Rounded 1c", sans-serif; */
+  font-family: "Amatic SC", cursive;
 }
