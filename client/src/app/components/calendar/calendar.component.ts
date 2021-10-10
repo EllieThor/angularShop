@@ -185,7 +185,7 @@ export class CalendarComponent implements OnInit {
     this.renderCalendar();
     this._isItCurrentMonth = true;
   }
-  // FIXME:
+  // FIXME: need
   someDayClicked(dayOb: any, e: any) {
     console.log('this._existing_date_element: ', this._existing_date_element);
     console.log('this._existing_date_obj: ', this._existing_date_obj);
