@@ -42,8 +42,13 @@ export class CalendarComponent implements OnInit {
   lastDayIndex: any;
   nextDays: any;
 
-  _el: any;
   _isItCurrentMonth: boolean = true;
+
+  _existing_date_element: any;
+  _existing_date_obj: any;
+
+  _selected_date_element: any;
+  _selected_date_obj: any;
 
   constructor(
     public usersService: UsersServiceService,
@@ -180,28 +185,62 @@ export class CalendarComponent implements OnInit {
     this.renderCalendar();
     this._isItCurrentMonth = true;
   }
-  // FIXME:
-  someDayClicked(dayOb: any, e: any) {
-    console.log('someDayClicked: ', e.target);
-    if (this._el) {
-      this._el.classList.remove('bg-secondary');
-      // console.log('this._el: ', this._el);
-      this.ordersService._newOrder.ShippingDate = '';
-      //FIXME:  שאם בוחרים בתאריך של היום ומזיזים אז שהקלאס של היום יישאר
-      // if (dayOb.type === 1 && dayOb.monthIndex === this._currentMonthIndex) {
-      //   this._el.className = 'today';
-      // }
-    }
-    //FIXME: bg-light-purple not work
 
-    // availability is false if there is more then 2 deliveries for this day
-    // dayOb.isPast is false if this date before today
+  someDayClicked(dayOb: any, e: any) {
+    console.log('this._existing_date_element: ', this._existing_date_element);
+    console.log('this._existing_date_obj: ', this._existing_date_obj);
+    console.log('new clicked element: ', e.target);
+    console.log('dayOb: ', dayOb);
+
     if (dayOb.availability && !dayOb.isPast) {
-      const d = new Date(dayOb.year, dayOb.monthIndex, dayOb.num, 13, 30);
-      console.log('some day clicked: availability true ', dayOb);
-      this.ordersService._newOrder.ShippingDate = d.toISOString();
-      this._el = e.target;
-      this._el.className = 'bg-secondary';
+      if (!this._existing_date_element) {
+        // date
+        const d = new Date(dayOb.year, dayOb.monthIndex, dayOb.num, 13, 30);
+        this.ordersService._newOrder.ShippingDate = d.toISOString();
+        // element
+        this._existing_date_element = e.target;
+        // obj
+        this._existing_date_obj = dayOb;
+        // class
+        this._existing_date_element.className = 'table-secondary';
+      } else {
+        if (this._existing_date_obj.type === 1) {
+          this._existing_date_element.classList.remove('table-secondary');
+          this.ordersService._newOrder.ShippingDate = '';
+          // date
+          const d = new Date(dayOb.year, dayOb.monthIndex, dayOb.num, 13, 30);
+          this.ordersService._newOrder.ShippingDate = d.toISOString();
+
+          let today = this._existing_date_element;
+          today.className = 'today';
+          // element
+          this._existing_date_element = e.target;
+          // obj
+          this._existing_date_obj = dayOb;
+          // class
+          this._existing_date_element.className = 'table-secondary';
+        } else {
+          this._existing_date_element.classList.remove('table-secondary');
+          this.ordersService._newOrder.ShippingDate = '';
+          // date
+          const d = new Date(dayOb.year, dayOb.monthIndex, dayOb.num, 13, 30);
+          this.ordersService._newOrder.ShippingDate = d.toISOString();
+          // element
+
+          this._existing_date_element = e.target;
+          // obj
+          this._existing_date_obj = dayOb;
+          // class
+          this._existing_date_element.className = 'table-secondary';
+        }
+      }
+    } else {
+      alert('בחר.י יום פנוי ואפשרי');
+      if (this._existing_date_element) {
+        this._existing_date_element.classList.remove('table-secondary');
+        // date
+        this.ordersService._newOrder.ShippingDate = '';
+      }
     }
   }
 

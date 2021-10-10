@@ -1,5 +1,5 @@
 <div class="calendarContainer">
-  <div class="month">
+  <div class="month bg-light-purple">
     <i
       class="fas fa-angle-left prev"
       [ngClass]="_isItCurrentMonth ? 'hideMe' : ''"
@@ -34,7 +34,7 @@
               : day.type === 2
               ? 'next-date'
               : !day.availability
-              ? 'bg-danger'
+              ? 'table-danger'
               : ''
           "
           (click)="someDayClicked(day, $event)"
