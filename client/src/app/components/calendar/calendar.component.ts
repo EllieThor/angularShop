@@ -163,7 +163,7 @@ export class CalendarComponent implements OnInit {
   isDateBeforeToday(date: any) {
     return new Date(date.toDateString()) < new Date(new Date().toDateString());
   }
-
+  //  FIXME: TD TODAY CSS
   prevIconClicked() {
     this._isItCurrentMonth =
       this._date.getMonth() <= new Date().getMonth() + 1 &&
