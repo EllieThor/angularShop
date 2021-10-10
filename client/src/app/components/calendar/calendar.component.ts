@@ -172,12 +172,14 @@ export class CalendarComponent implements OnInit {
         : false;
     this._date.setMonth(this._date.getMonth() - 1);
     this.renderCalendar();
+    this.ordersService._newOrder.ShippingDate = '';
   }
 
   nextIconClicked() {
     this._date.setMonth(this._date.getMonth() + 1);
     this.renderCalendar();
     this._isItCurrentMonth = false;
+    this.ordersService._newOrder.ShippingDate = '';
   }
 
   backToTodayClicked() {
@@ -185,80 +187,6 @@ export class CalendarComponent implements OnInit {
     this.renderCalendar();
     this._isItCurrentMonth = true;
   }
-  // FIXME: need
-  // someDayClicked(dayOb: any, e: any) {
-  //   console.log('this._existing_date_element: ', this._existing_date_element);
-  //   console.log('this._existing_date_obj: ', this._existing_date_obj);
-  //   console.log('new clicked element: ', e.target);
-  //   console.log('dayOb: ', dayOb);
-
-  //   if (dayOb.availability && !dayOb.isPast) {
-  //     if (!this._existing_date_element) {
-  //       // date
-  //       this.ordersService._newOrder.ShippingDate = new Date(
-  //         dayOb.year,
-  //         dayOb.monthIndex,
-  //         dayOb.num,
-  //         13,
-  //         30
-  //       ).toISOString();
-  //       // element
-  //       this._existing_date_element = e.target;
-  //       // obj
-  //       this._existing_date_obj = dayOb;
-  //       // class
-  //       this._existing_date_element.className = 'table-secondary';
-  //     } else {
-  //       if (this._existing_date_obj.type === 1) {
-  //         this._existing_date_element.className = '';
-  //         // date
-  //         this.ordersService._newOrder.ShippingDate = new Date(
-  //           dayOb.year,
-  //           dayOb.monthIndex,
-  //           dayOb.num,
-  //           13,
-  //           30
-  //         ).toISOString();
-
-  //         this._existing_date_element.className = 'today';
-  //         // obj
-  //         this._existing_date_obj = dayOb;
-  //          // element
-  //         this._existing_date_element = e.target;
-  //         // class
-  //         this._existing_date_element.className = 'table-secondary';
-  //       } else {
-  //         this._existing_date_element.className = '';
-  //         // date
-  //         this.ordersService._newOrder.ShippingDate = new Date(
-  //           dayOb.year,
-  //           dayOb.monthIndex,
-  //           dayOb.num,
-  //           13,
-  //           30
-  //         ).toISOString();
-  //         // element
-
-  //         this._existing_date_element = e.target;
-  //         // obj
-  //         this._existing_date_obj = dayOb;
-  //         // class
-  //         this._existing_date_element.className = 'table-secondary';
-  //       }
-  //     }
-  //   } else {
-  //     alert('בחר.י יום פנוי ואפשרי');
-  //     // date
-  //     this.ordersService._newOrder.ShippingDate = '';
-
-  //     if (this._existing_date_element)
-  //       this._existing_date_element.className =
-  //         this._existing_date_element && this._existing_date_obj.type === 1
-  //           ? 'today'
-  //           : '';
-  //     this._existing_date_element = this._existing_date_obj = null;
-  //   }
-  // }
 
   someDayClicked(dayOb: any, e: any) {
     console.log('this._existing_date_element: ', this._existing_date_element);
@@ -296,7 +224,6 @@ export class CalendarComponent implements OnInit {
           this._existing_date_element && this._existing_date_obj.type === 1
             ? 'today'
             : '';
-
       alert('בחר.י יום פנוי ואפשרי');
 
       // DATE
