@@ -47,8 +47,8 @@ export class CalendarComponent implements OnInit {
   _existing_date_element: any;
   _existing_date_obj: any;
 
-  _selected_date_element: any;
-  _selected_date_obj: any;
+  // _selected_date_element: any;
+  // _selected_date_obj: any;
 
   constructor(
     public usersService: UsersServiceService,
@@ -186,6 +186,80 @@ export class CalendarComponent implements OnInit {
     this._isItCurrentMonth = true;
   }
   // FIXME: need
+  // someDayClicked(dayOb: any, e: any) {
+  //   console.log('this._existing_date_element: ', this._existing_date_element);
+  //   console.log('this._existing_date_obj: ', this._existing_date_obj);
+  //   console.log('new clicked element: ', e.target);
+  //   console.log('dayOb: ', dayOb);
+
+  //   if (dayOb.availability && !dayOb.isPast) {
+  //     if (!this._existing_date_element) {
+  //       // date
+  //       this.ordersService._newOrder.ShippingDate = new Date(
+  //         dayOb.year,
+  //         dayOb.monthIndex,
+  //         dayOb.num,
+  //         13,
+  //         30
+  //       ).toISOString();
+  //       // element
+  //       this._existing_date_element = e.target;
+  //       // obj
+  //       this._existing_date_obj = dayOb;
+  //       // class
+  //       this._existing_date_element.className = 'table-secondary';
+  //     } else {
+  //       if (this._existing_date_obj.type === 1) {
+  //         this._existing_date_element.className = '';
+  //         // date
+  //         this.ordersService._newOrder.ShippingDate = new Date(
+  //           dayOb.year,
+  //           dayOb.monthIndex,
+  //           dayOb.num,
+  //           13,
+  //           30
+  //         ).toISOString();
+
+  //         this._existing_date_element.className = 'today';
+  //         // obj
+  //         this._existing_date_obj = dayOb;
+  //          // element
+  //         this._existing_date_element = e.target;
+  //         // class
+  //         this._existing_date_element.className = 'table-secondary';
+  //       } else {
+  //         this._existing_date_element.className = '';
+  //         // date
+  //         this.ordersService._newOrder.ShippingDate = new Date(
+  //           dayOb.year,
+  //           dayOb.monthIndex,
+  //           dayOb.num,
+  //           13,
+  //           30
+  //         ).toISOString();
+  //         // element
+
+  //         this._existing_date_element = e.target;
+  //         // obj
+  //         this._existing_date_obj = dayOb;
+  //         // class
+  //         this._existing_date_element.className = 'table-secondary';
+  //       }
+  //     }
+  //   } else {
+  //     alert('בחר.י יום פנוי ואפשרי');
+  //     // date
+  //     this.ordersService._newOrder.ShippingDate = '';
+
+  //     if (this._existing_date_element)
+  //       this._existing_date_element.className =
+  //         this._existing_date_element && this._existing_date_obj.type === 1
+  //           ? 'today'
+  //           : '';
+  //     this._existing_date_element = this._existing_date_obj = null;
+  //   }
+  // }
+
   someDayClicked(dayOb: any, e: any) {
     console.log('this._existing_date_element: ', this._existing_date_element);
     console.log('this._existing_date_obj: ', this._existing_date_obj);
@@ -193,54 +267,43 @@ export class CalendarComponent implements OnInit {
     console.log('dayOb: ', dayOb);
 
     if (dayOb.availability && !dayOb.isPast) {
-      if (!this._existing_date_element) {
-        // date
-        const d = new Date(dayOb.year, dayOb.monthIndex, dayOb.num, 13, 30);
-        this.ordersService._newOrder.ShippingDate = d.toISOString();
-        // element
-        this._existing_date_element = e.target;
-        // obj
-        this._existing_date_obj = dayOb;
-        // class
-        this._existing_date_element.className = 'table-secondary';
-      } else {
-        if (this._existing_date_obj.type === 1) {
-          this._existing_date_element.classList.remove('table-secondary');
-          this.ordersService._newOrder.ShippingDate = '';
-          // date
-          const d = new Date(dayOb.year, dayOb.monthIndex, dayOb.num, 13, 30);
-          this.ordersService._newOrder.ShippingDate = d.toISOString();
+      // CLASS for existing date- the old date
+      if (this._existing_date_element)
+        this._existing_date_element.className =
+          this._existing_date_obj.type === 1 ? 'today' : '';
 
-          let today = this._existing_date_element;
-          today.className = 'today';
-          // element
-          this._existing_date_element = e.target;
-          // obj
-          this._existing_date_obj = dayOb;
-          // class
-          this._existing_date_element.className = 'table-secondary';
-        } else {
-          this._existing_date_element.classList.remove('table-secondary');
-          this.ordersService._newOrder.ShippingDate = '';
-          // date
-          const d = new Date(dayOb.year, dayOb.monthIndex, dayOb.num, 13, 30);
-          this.ordersService._newOrder.ShippingDate = d.toISOString();
-          // element
+      // ELEMENT add new element instead the last this._existing_date_element
+      this._existing_date_element = e.target;
 
-          this._existing_date_element = e.target;
-          // obj
-          this._existing_date_obj = dayOb;
-          // class
-          this._existing_date_element.className = 'table-secondary';
-        }
-      }
+      // CLASS for new date element
+      this._existing_date_element.className = 'table-secondary';
+
+      // DATE
+      this.ordersService._newOrder.ShippingDate = new Date(
+        dayOb.year,
+        dayOb.monthIndex,
+        dayOb.num,
+        13,
+        30
+      ).toISOString();
+
+      // OBJ
+      this._existing_date_obj = dayOb;
     } else {
+      // CLASS
+      if (this._existing_date_element)
+        this._existing_date_element.className =
+          this._existing_date_element && this._existing_date_obj.type === 1
+            ? 'today'
+            : '';
+
       alert('בחר.י יום פנוי ואפשרי');
-      if (this._existing_date_element) {
-        this._existing_date_element.classList.remove('table-secondary');
-        // date
-        this.ordersService._newOrder.ShippingDate = '';
-      }
+
+      // DATE
+      this.ordersService._newOrder.ShippingDate = '';
+
+      // ELEMENT  // OBJ
+      this._existing_date_element = this._existing_date_obj = null;
     }
   }
 
