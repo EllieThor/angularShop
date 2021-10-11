@@ -3,7 +3,29 @@
     <div *ngIf="_isCartVisible" class="col-3 cartArea">
       <app-cart></app-cart>
     </div>
+    <!-- <div
+      *ngIf="_isCartVisible"
+      [ngClass]="
+        _screenSize === 'lg' || _screenSize === 'md' ? 'col-3' : 'col-12'
+      "
+      class="cartArea"
+    >
+      <app-cart></app-cart>
+    </div> -->
     <div [ngClass]="_isCartVisible ? 'col-9' : 'col-12'">
+      <!-- <div
+      [ngClass]="
+        (_isCartVisible && _screenSize === 'lg') ||
+        (_isCartVisible && _screenSize === 'md')
+          ? 'col-9'
+          : (_isCartVisible && _screenSize === 'sm') ||
+            (_isCartVisible && _screenSize === 'sx')
+          ? ''
+          : !_isCartVisible
+          ? ''
+          : ''
+      "
+    > -->
       <div class="row">
         <div
           class="col-1 ms-3 rounded-start"
