@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CartsService } from 'src/app/services/carts.service';
 import { OrdersService } from 'src/app/services/orders.service';
@@ -27,6 +27,26 @@ export class ShopComponent implements OnInit {
     if (!this.usersService._currentUserObj.ID) {
       this.nav.navigate(['/home']);
     }
+  }
+
+  visibleDays = 7;
+  // TODO: add open close cart by screen
+  @HostListener('window:resize', []) updateDays() {
+    // lg (for laptops and desktops - screens equal to or greater than 1200px wide)
+    // md (for small laptops - screens equal to or greater than 992px wide)
+    // sm (for tablets - screens equal to or greater than 768px wide)
+    // xs (for phones - screens less than 768px wide)
+
+    if (window.innerWidth >= 1200) {
+      this.visibleDays = 7; // lg
+    } else if (window.innerWidth >= 992) {
+      this.visibleDays = 6; //md
+    } else if (window.innerWidth >= 768) {
+      this.visibleDays = 5; //sm
+    } else if (window.innerWidth < 768) {
+      this.visibleDays = 3; //xs
+    }
+    console.log('visibleDays: ' + this.visibleDays);
   }
 }
 //

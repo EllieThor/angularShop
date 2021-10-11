@@ -29,8 +29,8 @@ import { SuccessfulOrderComponent } from './pages/orders/successful-order/succes
 import { HeaderComponent } from './components/header/header.component';
 import { CalendarComponent } from './components/calendar/calendar.component';
 import { PlusMinusIconsComponent } from './components/plus-minus-icons/plus-minus-icons.component';
-import { ResizeComponent } from './components/resize/resize.component';
 import { CartHeaderComponent } from './components/cart-header/cart-header.component';
+import { HighlightPipe } from './pipes/highlight.pipe';
 
 @NgModule({
   declarations: [
@@ -59,8 +59,8 @@ import { CartHeaderComponent } from './components/cart-header/cart-header.compon
     HeaderComponent,
     CalendarComponent,
     PlusMinusIconsComponent,
-    ResizeComponent,
     CartHeaderComponent,
+    HighlightPipe,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
