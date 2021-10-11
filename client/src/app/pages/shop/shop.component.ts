@@ -30,6 +30,7 @@ export class ShopComponent implements OnInit {
   }
 
   visibleDays = 7;
+  _screenSize: string = 'lg';
   // TODO: add open close cart by screen
   @HostListener('window:resize', []) updateDays() {
     // lg (for laptops and desktops - screens equal to or greater than 1200px wide)
@@ -39,12 +40,20 @@ export class ShopComponent implements OnInit {
 
     if (window.innerWidth >= 1200) {
       this.visibleDays = 7; // lg
+      this._isCartVisible = true;
+      this._screenSize = 'lg';
     } else if (window.innerWidth >= 992) {
       this.visibleDays = 6; //md
+      this._isCartVisible = true;
+      this._screenSize = 'md';
     } else if (window.innerWidth >= 768) {
       this.visibleDays = 5; //sm
+      this._isCartVisible = false;
+      this._screenSize = 'sm';
     } else if (window.innerWidth < 768) {
       this.visibleDays = 3; //xs
+      this._isCartVisible = false;
+      this._screenSize = 'xs';
     }
     console.log('visibleDays: ' + this.visibleDays);
   }
