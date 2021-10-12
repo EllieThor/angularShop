@@ -1,6 +1,6 @@
 <div class="container-fluid">
   <div class="row">
-    <div *ngIf="_isCartVisible" class="col-3 cartArea">
+    <div *ngIf="_isCartVisible" id="scrollbar" class="col-3 cartArea">
       <app-cart></app-cart>
     </div>
     <!-- <div
@@ -53,7 +53,7 @@
           <app-cart-header></app-cart-header>
         </div>
       </div>
-      <div class="row productArea">
+      <div id="scrollbar" class="row productArea">
         <app-products-area></app-products-area>
       </div>
     </div>

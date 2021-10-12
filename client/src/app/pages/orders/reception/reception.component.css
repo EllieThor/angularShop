@@ -1,3 +1,4 @@
-.backToShop {
-  cursor: pointer;
+.receptionArea {
+  max-height: 100vh;
+  overflow-x: auto;
 }

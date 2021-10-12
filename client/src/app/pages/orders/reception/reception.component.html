@@ -1,6 +1,6 @@
 <div *ngIf="!ordersService._successfulOrder.ID">
   <h4 class="text-center">העגלה שלי</h4>
-  <div class="backToShop" routerLink="/shop">חזרה לחנות</div>
+  <div class="cursorPointer" routerLink="/shop">חזרה לחנות</div>
   <input
     [(ngModel)]="_searchInCart"
     [ngModelOptions]="{ standalone: true }"
@@ -10,12 +10,14 @@
     autoFocus=""
     (onType)="highlight()"
   />
-  <div
-    *ngFor="
-      let prod of cartsService._cartProducts | filteredArray: _searchInCart
-    "
-  >
-    <app-single-reception-prod [prod]="prod"></app-single-reception-prod>
+  <div id="scrollbar" class="receptionArea">
+    <div
+      *ngFor="
+        let prod of cartsService._cartProducts | filteredArray: _searchInCart
+      "
+    >
+      <app-single-reception-prod [prod]="prod"></app-single-reception-prod>
+    </div>
   </div>
 </div>
 <!-- (keyup)="highlight(_searchInCart)" -->
