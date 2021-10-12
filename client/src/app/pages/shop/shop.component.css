@@ -1,7 +1,7 @@
 .cartArea {
   height: 100vh;
   /* resize: horizontal; */
-  overflow-x: auto;
+  overflow-y: auto;
   /* z-index: 10; */
 }
 .productArea {

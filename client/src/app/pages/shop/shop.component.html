@@ -1,12 +1,5 @@
 <div class="container-fluid">
   <div class="row">
-    <!-- <div
-      *ngIf="settingsService._isCartVisible"
-      id="scrollbar"
-      class="col-3 cartArea"
-    >
-      <app-cart></app-cart>
-    </div> -->
     <div
       *ngIf="settingsService._isCartVisible"
       id="scrollbar"
@@ -20,7 +13,6 @@
     >
       <app-cart></app-cart>
     </div>
-    <!-- <div [ngClass]="settingsService._isCartVisible ? 'col-9' : 'col-12'"> -->
     <div
       [ngClass]="
         (settingsService._isCartVisible &&
@@ -31,9 +23,7 @@
               settingsService._screenSize === 'sm') ||
             (settingsService._isCartVisible &&
               settingsService._screenSize === 'sx')
-          ? ''
-          : !settingsService._isCartVisible
-          ? ''
+          ? 'd-none'
           : ''
       "
     >
@@ -46,11 +36,12 @@
               ? 'col-3 ms-3'
               : 'col-11 mx-auto'
           "
-          class="bg-light-purple py-3 rounded"
+          class="bg-light-purple py-3 rounded mb-2"
         >
           <app-cart-header></app-cart-header>
         </div>
       </div>
+      <!-- TODO: יש בעייה שהמוצרים נמצאים מתחת לעגלה= אבל לא אמורים לראות את המוצרים -->
       <div id="scrollbar" class="row productArea">
         <app-products-area></app-products-area>
       </div>

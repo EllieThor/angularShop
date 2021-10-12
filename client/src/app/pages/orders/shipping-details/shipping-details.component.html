@@ -3,8 +3,8 @@
     <h4>פרטי משלוח</h4>
   </div>
   <div class="row text-end pe-5">
-    <div class="col-12 col-md-7">
-      <span class="text-center">:בחר תאריך למשלוח</span>
+    <div class="col-12 col-lg-7">
+      <span class="text-center">בחר תאריך למשלוח</span>
       <h6>
         {{ ordersService._newOrder.ShippingDate.split("T").shift() }}:התאריך
         הנבחר
@@ -12,7 +12,7 @@
       <app-calendar></app-calendar>
       <br />
     </div>
-    <div class="col-12 col-md-5">
+    <div class="col-12 col-lg-5">
       <h6>פרטי משלוח</h6>
       <label for="ShippingCity">
         : בחר עיר
@@ -79,7 +79,7 @@
           "
         />
       </label>
-
+      <br />
       <button
         class="btn purpleBackgroundColor m-2"
         (click)="ordersService.addOrder('/orders/insertNewOrder', $event)"
