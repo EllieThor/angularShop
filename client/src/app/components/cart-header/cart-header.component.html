@@ -1,11 +1,23 @@
 <div class="row">
-  <div *ngIf="!settingsService._isCartVisible" class="col-1 p-0 m-0">
+  <div *ngIf="!settingsService._isCartVisible" class="col-2 p-0 m-0">
     <i
-      class="fas fa-angle-right fa-2x float-end cursorPointer iconsColor"
-      title="לפתיחת עגלה"
+      [ngClass]="
+        settingsService._screenSize === 'lg' ||
+        settingsService._screenSize === 'md'
+          ? 'fas fa-angle-right'
+          : 'fab fa-opencart'
+      "
+      class="fa-2x float-end cursorPointer iconsColor"
+      title="{{
+        settingsService._screenSize === 'lg' ||
+        settingsService._screenSize === 'md'
+          ? 'לפתיחת עגלה'
+          : 'מעבר לעגלה'
+      }}"
+      title=""
       (click)="settingsService._isCartVisible = true"
     ></i>
-    <!-- <div *ngIf="!settingsService._isCartVisible" class="m-2">פתח.י עגלה</div> -->
+    <div *ngIf="!settingsService._isCartVisible" class="m-2">לפתיחת עגלה</div>
   </div>
 
   <div class="col-5">
@@ -20,7 +32,7 @@
     <i
       class="fas fa-shopping-cart fa-lg col-6 cursorPointer iconsColor"
       alt="cartIcon"
-      title="עבור לעגלה"
+      title="לסגירת הזמנה"
       (click)="navToOrders()"
     >
     </i>
@@ -39,10 +51,21 @@
   </div>
   <div *ngIf="settingsService._isCartVisible" class="col-1 p-0 m-0">
     <i
-      class="fas fa-angle-left fa-2x cursorPointer iconsColor"
-      title="לסגירת עגלה"
+      [ngClass]="
+        settingsService._screenSize === 'lg' ||
+        settingsService._screenSize === 'md'
+          ? 'fas fa-angle-left'
+          : 'fas fa-store'
+      "
+      class="fa-2x cursorPointer iconsColor"
+      title="{{
+        settingsService._screenSize === 'lg' ||
+        settingsService._screenSize === 'md'
+          ? 'לסגירת עגלה'
+          : 'חזרה לפריטים'
+      }}"
       (click)="settingsService._isCartVisible = false"
     ></i>
-    <!-- <div *ngIf="settingsService._isCartVisible" class="m-2">סגור.י עגלה</div> -->
+    <div *ngIf="settingsService._isCartVisible" class="m-2">סגור.י עגלה</div>
   </div>
 </div>
