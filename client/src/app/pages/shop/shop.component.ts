@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { CartsService } from 'src/app/services/carts.service';
 import { OrdersService } from 'src/app/services/orders.service';
 import { ProductsService } from 'src/app/services/products.service';
+import { SettingsService } from 'src/app/services/settings.service';
 import { UsersServiceService } from 'src/app/services/users.service';
 
 @Component({
@@ -11,13 +12,15 @@ import { UsersServiceService } from 'src/app/services/users.service';
   styleUrls: ['./shop.component.css'],
 })
 export class ShopComponent implements OnInit {
-  _isCartVisible = true;
+  // _isCartVisible = true;
+  // _screenSize: string = 'lg';
   constructor(
     public usersService: UsersServiceService,
     public cartsService: CartsService,
     public ordersService: OrdersService,
     public productsService: ProductsService,
-    public nav: Router
+    public nav: Router,
+    public settingsService: SettingsService
   ) {}
 
   ngOnInit(): void {
@@ -29,8 +32,6 @@ export class ShopComponent implements OnInit {
     }
   }
 
-  visibleDays = 7;
-  _screenSize: string = 'lg';
   // TODO: add open close cart by screen
   @HostListener('window:resize', []) updateDays() {
     // lg (for laptops and desktops - screens equal to or greater than 1200px wide)
@@ -39,23 +40,18 @@ export class ShopComponent implements OnInit {
     // xs (for phones - screens less than 768px wide)
 
     if (window.innerWidth >= 1200) {
-      this.visibleDays = 7; // lg
-      this._isCartVisible = true;
-      this._screenSize = 'lg';
+      this.settingsService._isCartVisible = true;
+      this.settingsService._screenSize = 'lg';
     } else if (window.innerWidth >= 992) {
-      this.visibleDays = 6; //md
-      this._isCartVisible = true;
-      this._screenSize = 'md';
+      this.settingsService._isCartVisible = true;
+      this.settingsService._screenSize = 'md';
     } else if (window.innerWidth >= 768) {
-      this.visibleDays = 5; //sm
-      this._isCartVisible = false;
-      this._screenSize = 'sm';
+      this.settingsService._isCartVisible = false;
+      this.settingsService._screenSize = 'sm';
     } else if (window.innerWidth < 768) {
-      this.visibleDays = 3; //xs
-      this._isCartVisible = false;
-      this._screenSize = 'xs';
+      this.settingsService._isCartVisible = false;
+      this.settingsService._screenSize = 'xs';
     }
-    console.log('visibleDays: ' + this.visibleDays);
   }
 }
 //

@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
 import { CartsService } from 'src/app/services/carts.service';
 import { ProductsService } from 'src/app/services/products.service';
+import { SettingsService } from 'src/app/services/settings.service';
 
 @Component({
   selector: 'app-cart-header',
@@ -15,7 +16,8 @@ export class CartHeaderComponent implements OnInit {
     public cartsService: CartsService,
     public nav: Router,
     public apiService: ApiService,
-    public productsService: ProductsService
+    public productsService: ProductsService,
+    public settingsService: SettingsService
   ) {}
 
   ngOnInit(): void {}
