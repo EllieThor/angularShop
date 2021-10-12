@@ -1,39 +1,52 @@
 <div class="container-fluid">
   <div class="row">
-    <div
+    <!-- <div
       *ngIf="settingsService._isCartVisible"
       id="scrollbar"
       class="col-3 cartArea"
     >
       <app-cart></app-cart>
-    </div>
-    <!-- <div
+    </div> -->
+    <div
       *ngIf="settingsService._isCartVisible"
+      id="scrollbar"
       [ngClass]="
-        settingsService._screenSize === 'lg' || settingsService._screenSize === 'md' ? 'col-3' : 'col-12'
+        settingsService._screenSize === 'lg' ||
+        settingsService._screenSize === 'md'
+          ? 'col-3'
+          : 'col-12'
       "
       class="cartArea"
     >
       <app-cart></app-cart>
-    </div> -->
-    <div [ngClass]="settingsService._isCartVisible ? 'col-9' : 'col-12'">
-      <!-- <div
+    </div>
+    <!-- <div [ngClass]="settingsService._isCartVisible ? 'col-9' : 'col-12'"> -->
+    <div
       [ngClass]="
-        (settingsService._isCartVisible && settingsService._screenSize === 'lg') ||
+        (settingsService._isCartVisible &&
+          settingsService._screenSize === 'lg') ||
         (settingsService._isCartVisible && settingsService._screenSize === 'md')
           ? 'col-9'
-          : (settingsService._isCartVisible && settingsService._screenSize === 'sm') ||
-            (settingsService._isCartVisible && settingsService._screenSize === 'sx')
+          : (settingsService._isCartVisible &&
+              settingsService._screenSize === 'sm') ||
+            (settingsService._isCartVisible &&
+              settingsService._screenSize === 'sx')
           ? ''
           : !settingsService._isCartVisible
           ? ''
           : ''
       "
-    > -->
+    >
       <div class="row">
         <div
-          class="col-3 bg-light-purple py-3 ms-3 rounded"
           *ngIf="!settingsService._isCartVisible"
+          [ngClass]="
+            settingsService._screenSize === 'lg' ||
+            settingsService._screenSize === 'md'
+              ? 'col-3 ms-3'
+              : 'col-11 mx-auto'
+          "
+          class="bg-light-purple py-3 rounded"
         >
           <app-cart-header></app-cart-header>
         </div>

@@ -32,7 +32,7 @@ export class ShopComponent implements OnInit {
     }
   }
 
-  // TODO: add open close cart by screen
+  // open close cart by screen
   @HostListener('window:resize', []) updateDays() {
     // lg (for laptops and desktops - screens equal to or greater than 1200px wide)
     // md (for small laptops - screens equal to or greater than 992px wide)
