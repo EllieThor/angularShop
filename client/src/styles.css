@@ -1,40 +1,36 @@
-/* You can add global styles to this file, and also import other style files */
-/* font-family: 'Amatic SC', cursive;
-font-family: 'Heebo', sans-serif;
-font-family: 'M PLUS Rounded 1c', sans-serif;
-font-family: 'Merriweather', serif;
-font-family: 'Quicksand', sans-serif; */
-
-.purpleColor {
+.purple-color {
   color: #935aee;
 }
 
-.purpleBackgroundColor {
+.bg-purple-color {
   background-color: #935aee;
   color: white;
 }
-
+.bg-light-purple {
+  background-color: #c2b0df;
+}
 .markMe {
+  background-color: yellow;
+}
+.highlight {
   background-color: yellow;
 }
 
 .cursorPointer {
   cursor: pointer;
 }
+.cursorNotAllowed {
+  cursor: not-allowed;
+}
 
 .iconsColor {
   color: rgba(0, 0, 0, 0.699);
 }
 
-.bg-light-purple {
-  /* background-color: #c2b0df; */
-  background-color: #c2b0df;
-}
-
 .hideMe {
   visibility: hidden;
 }
-
+/* GOOGLE FONTS */
 .HeeboFont {
   font-family: "Heebo", sans-serif;
 }
@@ -50,26 +46,43 @@ font-family: 'Quicksand', sans-serif; */
 .AmaticSCFont {
   font-family: "Amatic SC", cursive;
 }
-
-#scrollbar::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+/* SCROLLBAR */
+#scrollbar-purple::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.699);
   background-color: #f5f5f5;
   border-radius: 10px;
 }
 
-#scrollbar::-webkit-scrollbar {
+#scrollbar-purple::-webkit-scrollbar {
   width: 10px;
   background-color: #f5f5f5;
 }
 
-#scrollbar::-webkit-scrollbar-thumb {
+#scrollbar-purple::-webkit-scrollbar-thumb {
   border-radius: 10px;
   background-image: -webkit-gradient(
     linear,
     left bottom,
     left top,
-    color-stop(0.44, rgb(122, 153, 217)),
-    color-stop(0.72, rgb(73, 125, 189)),
-    color-stop(0.86, rgb(28, 58, 148))
+    color-stop(0.44, rgb(174, 122, 217)),
+    color-stop(0.72, rgb(194, 176, 223)),
+    color-stop(0.86, rgb(147, 90, 238))
   );
+}
+
+#scrollbar-black::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: #f5f5f5;
+}
+
+#scrollbar-black::-webkit-scrollbar {
+  width: 12px;
+  background-color: #f5f5f5;
+}
+
+#scrollbar-black::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #555;
 }

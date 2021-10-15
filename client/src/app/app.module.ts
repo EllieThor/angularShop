@@ -3,7 +3,11 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { FilteredArrayPipe } from './pipes/filtered-array.pipe';
+import { HighlightPipe } from './pipes/highlight.pipe';
+
 import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ShopComponent } from './pages/shop/shop.component';
@@ -24,13 +28,17 @@ import { ReceptionComponent } from './pages/orders/reception/reception.component
 import { ShippingDetailsComponent } from './pages/orders/shipping-details/shipping-details.component';
 import { SingleReceptionProdComponent } from './pages/orders/reception/single-reception-prod/single-reception-prod.component';
 import { FormProductComponent } from './components/form-product/form-product.component';
-import { FilteredArrayPipe } from './pipes/filtered-array.pipe';
 import { SuccessfulOrderComponent } from './pages/orders/successful-order/successful-order.component';
 import { HeaderComponent } from './components/header/header.component';
 import { CalendarComponent } from './components/calendar/calendar.component';
 import { PlusMinusIconsComponent } from './components/plus-minus-icons/plus-minus-icons.component';
 import { CartHeaderComponent } from './components/cart-header/cart-header.component';
-import { HighlightPipe } from './pipes/highlight.pipe';
+
+// import { HighlightModule } from './pages/highlight/highlight.module';
+import { HighlightComponent } from './pages/highlight/highlight.component';
+// import { UiHighlightModule } from './lib/ui-highlight/ui-highlight.module';
+import { UiHighlightDirective } from './lib/ui-highlight/ui-highlight.directive';
+import { ChildCompComponent } from './pages/highlight/child-comp/child-comp.component';
 
 @NgModule({
   declarations: [
@@ -61,9 +69,13 @@ import { HighlightPipe } from './pipes/highlight.pipe';
     PlusMinusIconsComponent,
     CartHeaderComponent,
     HighlightPipe,
+    HighlightComponent,
+    UiHighlightDirective,
+    ChildCompComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
+  exports: [UiHighlightDirective],
 })
 export class AppModule {}

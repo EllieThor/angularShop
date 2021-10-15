@@ -11,6 +11,9 @@ import { UsersServiceService } from 'src/app/services/users.service';
 })
 export class ReceptionComponent implements OnInit {
   _searchInCart: string = '';
+
+  searchTerm = 'lorem ipsum';
+  caseSensitive = false;
   constructor(
     public usersService: UsersServiceService,
     public cartsService: CartsService,
@@ -20,22 +23,22 @@ export class ReceptionComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  highlight() {
-    // FIXME: אין כזה אלמנט עם כזה איידי ולכן לא עובד
-    var inputText: any = document.getElementById('inputText');
-    console.log('inputText :', inputText);
-    var innerHTML = inputText.innerHTML;
-    var index = innerHTML.indexOf(this._searchInCart);
-    if (index >= 0) {
-      innerHTML =
-        innerHTML.substring(0, index) +
-        '<mark>' +
-        innerHTML.substring(index, index + this._searchInCart.length) +
-        '</mark>' +
-        innerHTML.substring(index + this._searchInCart.length);
-      console.log('s1:  ', innerHTML);
-      inputText.innerHTML = innerHTML;
-      console.log('s2:  ', inputText);
-    }
-  }
+  // highlight() {
+  //   // FIXME: אין כזה אלמנט עם כזה איידי ולכן לא עובד
+  //   var inputText: any = document.getElementById('inputText');
+  //   console.log('inputText :', inputText);
+  //   var innerHTML = inputText.innerHTML;
+  //   var index = innerHTML.indexOf(this._searchInCart);
+  //   if (index >= 0) {
+  //     innerHTML =
+  //       innerHTML.substring(0, index) +
+  //       '<mark>' +
+  //       innerHTML.substring(index, index + this._searchInCart.length) +
+  //       '</mark>' +
+  //       innerHTML.substring(index + this._searchInCart.length);
+  //     console.log('s1:  ', innerHTML);
+  //     inputText.innerHTML = innerHTML;
+  //     console.log('s2:  ', inputText);
+  //   }
+  // }
 }

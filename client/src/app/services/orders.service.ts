@@ -20,6 +20,9 @@ export class OrdersService {
   _isRegexp: boolean = false;
   _datesArr: any;
   // {cartID: 16, ShippingDate: '2021-10-02T00:00:00.000Z'}
+
+  searchTerm = '';
+  caseSensitive = false;
   constructor(
     public apiService: ApiService,
     public settingsService: SettingsService,

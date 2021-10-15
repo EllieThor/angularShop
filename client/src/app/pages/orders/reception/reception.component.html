@@ -2,24 +2,28 @@
   <h4 class="text-center">העגלה שלי</h4>
   <div class="cursorPointer" routerLink="/shop">חזרה לחנות</div>
   <input
-    [(ngModel)]="_searchInCart"
+    [(ngModel)]="searchTerm"
     [ngModelOptions]="{ standalone: true }"
     type="text"
     class="form-control m-2 rounded-pill shadow-md px-4"
     placeholder=" חפש מוצר בעגלה"
     autoFocus=""
-    (onType)="highlight()"
   />
-  <div id="scrollbar" class="receptionArea">
+  <div id="scrollbar-purple" class="receptionArea">
     <div
       *ngFor="
         let prod of cartsService._cartProducts | filteredArray: _searchInCart
       "
     >
-      <app-single-reception-prod [prod]="prod"></app-single-reception-prod>
+      <app-single-reception-prod
+        [prod]="prod"
+        [appUiHighlight]="searchTerm"
+      ></app-single-reception-prod>
     </div>
   </div>
 </div>
 <!-- (keyup)="highlight(_searchInCart)" -->
 <!-- (keyup)="boldString()" -->
 <!-- TODO: onType or  keyup -->
+<!-- [(ngModel)]="_searchInCart" input text-->
+<!-- (onType)="highlight()" -->

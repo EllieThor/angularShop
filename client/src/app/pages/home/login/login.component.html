@@ -1,6 +1,6 @@
 <div class="my-auto pt-5 mt-5">
   <button
-    class="btn purpleBackgroundColor m-2"
+    class="btn bg-purple-color m-2"
     *ngIf="usersService._currentUserObj.ID"
     routerLink="/shop"
   >
@@ -33,14 +33,14 @@
     />
     <div class="text-center">
       <button
-        class="btn purpleBackgroundColor m-2"
+        class="btn bg-purple-color m-2"
         type="submit"
         (click)="usersService.gatUserFromDB('/users/getUser', $event)"
       >
         התחברות
       </button>
 
-      <button class="btn purpleBackgroundColor m-2" routerLink="/registration">
+      <button class="btn bg-purple-color m-2" routerLink="/registration">
         הרשמה
       </button>
     </div>

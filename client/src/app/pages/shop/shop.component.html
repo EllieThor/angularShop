@@ -2,7 +2,7 @@
   <div class="row">
     <div
       *ngIf="settingsService._isCartVisible"
-      id="scrollbar"
+      id="scrollbar-purple"
       [ngClass]="
         settingsService._screenSize === 'lg' ||
         settingsService._screenSize === 'md'
@@ -41,8 +41,7 @@
           <app-cart-header></app-cart-header>
         </div>
       </div>
-      <!-- TODO: יש בעייה שהמוצרים נמצאים מתחת לעגלה= אבל לא אמורים לראות את המוצרים -->
-      <div id="scrollbar" class="row productArea">
+      <div id="scrollbar-purple" class="row productArea">
         <app-products-area></app-products-area>
       </div>
     </div>

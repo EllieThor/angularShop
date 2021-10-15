@@ -75,9 +75,9 @@
   cursor: pointer;
 }
 
-.prev-date,
+.prev-month,
 .next-date {
-  opacity: 0.5;
+  opacity: 0.7;
 }
 
 .today {
@@ -86,4 +86,8 @@
 
 .notAvailable {
   background-color: red !important;
+}
+
+.opacityDay {
+  opacity: 0.2;
 }

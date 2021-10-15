@@ -27,14 +27,14 @@
           class="cursorPointer"
           *ngFor="let day of item"
           [ngClass]="
-            day.type === 0 || day.isPast
-              ? 'prev-date'
+            !day.availability || day.isPast
+              ? 'opacityDay cursorNotAllowed'
               : day.type === 1
               ? 'today'
               : day.type === 2
               ? 'next-date'
-              : !day.availability
-              ? 'table-danger'
+              : day.type === 0
+              ? 'prev-month'
               : ''
           "
           (click)="someDayClicked(day, $event)"

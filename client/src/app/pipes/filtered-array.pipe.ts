@@ -12,7 +12,7 @@ export class FilteredArrayPipe implements PipeTransform {
 
   // *****************************************************
 
-  //<!-- TODO:  עובד ! לא לגעת -->
+  // <!-- TODO:  עובד ! לא לגעת -->
   transform(value: Array<CartProduct>, str: string): any {
     if (str === '') return value;
     value.map((prod) => {
