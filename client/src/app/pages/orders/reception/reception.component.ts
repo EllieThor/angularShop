@@ -12,7 +12,7 @@ import { UsersServiceService } from 'src/app/services/users.service';
 export class ReceptionComponent implements OnInit {
   _searchInCart: string = '';
 
-  searchTerm = 'lorem ipsum';
+  searchTerm = 'Lorem';
   caseSensitive = false;
   constructor(
     public usersService: UsersServiceService,

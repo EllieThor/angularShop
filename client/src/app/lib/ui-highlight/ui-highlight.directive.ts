@@ -1,4 +1,12 @@
-import { Directive, ElementRef, HostBinding, Input, OnChanges, SecurityContext, SimpleChanges } from '@angular/core';
+import {
+  Directive,
+  ElementRef,
+  HostBinding,
+  Input,
+  OnChanges,
+  SecurityContext,
+  SimpleChanges,
+} from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 
 @Directive({
@@ -20,11 +28,17 @@ export class UiHighlightDirective implements OnChanges {
         if (this.searchTerm === '') {
           this.content = text;
         } else {
-          let regex = new RegExp(this.searchTerm, this.caseSensitive ? 'g' : 'gi');
+          let regex = new RegExp(
+            this.searchTerm,
+            this.caseSensitive ? 'g' : 'gi'
+          );
           let newText = text.replace(regex, (match: string) => {
-            return `<mark class="highlight ${this.customClasses}">${match}</mark>`;
+            return `<span class="highlight ${this.customClasses}">${match}</span>`;
           });
-          const sanitized = this.sanitizer.sanitize(SecurityContext.HTML, newText);
+          const sanitized = this.sanitizer.sanitize(
+            SecurityContext.HTML,
+            newText
+          );
           if (sanitized) this.content = sanitized;
         }
       }
