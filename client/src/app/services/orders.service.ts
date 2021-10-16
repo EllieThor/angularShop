@@ -4,8 +4,7 @@ import { SettingsService } from './settings.service';
 import { Router } from '@angular/router';
 import { CartsService } from './carts.service';
 import { UsersServiceService } from './users.service';
-import { Order } from '../models/ordersModel';
-import { ProductsService } from './products.service';
+import { Order, ShippingDateCart } from '../models/ordersModel';
 import { Cart } from '../models/cartsModel';
 
 @Injectable({
@@ -36,10 +35,27 @@ export class OrdersService {
   }
 
   async getOrdersDates(url: string) {
-    this._datesArr = (await this.apiService.createPostService(url)) as any;
+    this._datesArr = (await this.apiService.createPostService(
+      url
+    )) as Array<ShippingDateCart>;
+
+    this._datesArr.map((date: any) => {
+      date.ShippingObj = {
+        year: new Date(date.ShippingDate).getUTCFullYear(),
+        month: new Date(date.ShippingDate).getUTCMonth(),
+        day: new Date(date.ShippingDate).getUTCDay(),
+      };
+      console.log('ShippingObj, ', date.ShippingObj);
+    });
+    // .UTC(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate()
+    //  value.map((prod) => {
+    //    prod.product.ProductName.includes(str)
+    //      ? (prod.isMark = true)
+    //      : (prod.isMark = false);
+    //  });
     console.log('this._datesArr: ', this._datesArr);
   }
-
+  // {cartID: 17, ShippingDate: '2021-08-31T17:47:57.000Z'}
   creditRegex(e: any) {
     if (this.settingsService.creditRegexp.test(e.target.value)) {
       // return true;

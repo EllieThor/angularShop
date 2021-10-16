@@ -39,6 +39,7 @@ import { HighlightComponent } from './pages/highlight/highlight.component';
 // import { UiHighlightModule } from './lib/ui-highlight/ui-highlight.module';
 import { UiHighlightDirective } from './lib/ui-highlight/ui-highlight.directive';
 import { ChildCompComponent } from './pages/highlight/child-comp/child-comp.component';
+import { InputCalendarComponent } from './components/input-calendar/input-calendar.component';
 
 @NgModule({
   declarations: [
@@ -72,6 +73,7 @@ import { ChildCompComponent } from './pages/highlight/child-comp/child-comp.comp
     HighlightComponent,
     UiHighlightDirective,
     ChildCompComponent,
+    InputCalendarComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],

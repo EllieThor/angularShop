@@ -18,7 +18,7 @@ exports.getOrdersDates = async (req, res, next) => {
     order: [["ShippingDate", "DESC"]],
   })
     .then((prod) => {
-      res.send({ ordersCount: prod });
+      res.send(prod);
     })
     .catch((err) => {
       res.send(err);

@@ -238,7 +238,8 @@ export class CalendarComponent implements OnInit {
     // d.ShippingDate.split('T').shift().split('-')  =>  ['2021', '09', '19']
     // this._currentDateStr.split(' ')  =>  ['Sun', 'Sep', '19', '2021']
 
-    let shippingNum = this.ordersService._datesArr.ordersCount.filter(
+    // let shippingNum = this.ordersService._datesArr.ordersCount.filter(
+    let shippingNum = this.ordersService._datesArr.filter(
       (d: any) =>
         d.ShippingDate.split('T').shift().split('-')[0] ==
           this._currentDateStr.split(' ')[3] &&

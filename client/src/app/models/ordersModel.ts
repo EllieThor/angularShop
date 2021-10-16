@@ -46,3 +46,30 @@ export class Order {
 //     "updatedAt": "2021-09-08T09:51:26.376Z",
 //     "createdAt": "2021-09-08T09:51:26.376Z"
 // }
+
+// export class ShippingDateCart {
+//   cartID: number;
+//   ShippingDate: string = '';
+//   ShippingObj: boolean = false;
+
+//   constructor(cartID: number, ShippingDate: string, ShippingObj: boolean) {
+//     this.cartID = cartID || 0;
+//     this.ShippingDate = ShippingDate || '';
+//     this.ShippingObj = ShippingObj || false;
+//   }
+// }
+export class ShippingDateCart {
+  cartID: number;
+  ShippingDate: string = '';
+  ShippingObj: any = {
+    year: 0,
+    month: 0,
+    day: 0,
+  };
+
+  constructor(cartID: number, ShippingDate: string, ShippingObj: any) {
+    this.cartID = cartID || 0;
+    this.ShippingDate = ShippingDate || '';
+    this.ShippingObj = ShippingObj || { year: 0, month: 0, day: 0 };
+  }
+}
