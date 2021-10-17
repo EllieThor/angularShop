@@ -15,7 +15,6 @@ exports.getOrdersQnt = async (req, res, next) => {
 exports.getOrdersDates = async (req, res, next) => {
   await Orders.findAll({
     attributes: ["cartID", "ShippingDate"],
-    order: [["ShippingDate", "DESC"]],
   })
     .then((prod) => {
       res.send(prod);

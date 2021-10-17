@@ -28,7 +28,9 @@ export class OrdersService {
     public nav: Router,
     public cartsService: CartsService,
     public usersService: UsersServiceService
-  ) {}
+  ) {
+    this.getOrdersDates('/orders/getOrdersDates');
+  }
 
   async getOrdersQnt(url: string) {
     this._ordersQnt = (await this.apiService.createPostService(url)) as any;
@@ -39,23 +41,34 @@ export class OrdersService {
       url
     )) as Array<ShippingDateCart>;
 
-    this._datesArr.map((date: any) => {
+    await this._datesArr.map((date: any) => {
       date.ShippingObj = {
         year: new Date(date.ShippingDate).getUTCFullYear(),
-        month: new Date(date.ShippingDate).getUTCMonth(),
-        day: new Date(date.ShippingDate).getUTCDay(),
+        month: new Date(date.ShippingDate).getUTCMonth() + 1,
+        day: new Date(date.ShippingDate).getUTCDate(),
       };
-      console.log('ShippingObj, ', date.ShippingObj);
     });
-    // .UTC(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate()
-    //  value.map((prod) => {
-    //    prod.product.ProductName.includes(str)
-    //      ? (prod.isMark = true)
-    //      : (prod.isMark = false);
-    //  });
+
+    this._datesArr.map((date: any) => {
+      date.isAvailable = this.isShippingAvailable(date.ShippingObj);
+    });
     console.log('this._datesArr: ', this._datesArr);
   }
-  // {cartID: 17, ShippingDate: '2021-08-31T17:47:57.000Z'}
+
+  isShippingAvailable(what: any) {
+    var count = 0;
+    for (var i = 0; i < this._datesArr.length; i++) {
+      if (
+        this._datesArr[i].ShippingObj.day === what.day &&
+        this._datesArr[i].ShippingObj.month === what.month &&
+        this._datesArr[i].ShippingObj.year === what.year
+      ) {
+        count++;
+      }
+    }
+    return count > 2 ? false : true;
+  }
+
   creditRegex(e: any) {
     if (this.settingsService.creditRegexp.test(e.target.value)) {
       // return true;

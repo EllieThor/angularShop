@@ -91,8 +91,6 @@ export class ProductsService {
         (item) => item.productID === product.ID
       )?.Qnt;
     });
-
-    console.log('yael: ', this._products);
   }
 
   async updateProd(url: string, event?: any) {

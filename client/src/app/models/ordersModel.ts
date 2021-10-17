@@ -66,10 +66,12 @@ export class ShippingDateCart {
     month: 0,
     day: 0,
   };
+  isAvailable?: boolean;
 
   constructor(cartID: number, ShippingDate: string, ShippingObj: any) {
     this.cartID = cartID || 0;
     this.ShippingDate = ShippingDate || '';
     this.ShippingObj = ShippingObj || { year: 0, month: 0, day: 0 };
+    this.isAvailable = this.isAvailable;
   }
 }

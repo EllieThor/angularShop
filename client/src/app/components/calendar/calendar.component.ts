@@ -233,7 +233,7 @@ export class CalendarComponent implements OnInit {
       this._existing_date_element = this._existing_date_obj = null;
     }
   }
-
+  //  FIXME: add year
   isShippingAvailable(monthIndex: any, dayNum: any) {
     // d.ShippingDate.split('T').shift().split('-')  =>  ['2021', '09', '19']
     // this._currentDateStr.split(' ')  =>  ['Sun', 'Sep', '19', '2021']

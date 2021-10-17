@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
+import { AngularMyDatePickerModule } from 'angular-mydatepicker';
 
 import { FilteredArrayPipe } from './pipes/filtered-array.pipe';
 import { HighlightPipe } from './pipes/highlight.pipe';
@@ -75,7 +76,14 @@ import { InputCalendarComponent } from './components/input-calendar/input-calend
     ChildCompComponent,
     InputCalendarComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    AngularMyDatePickerModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
   exports: [UiHighlightDirective],
