@@ -14,6 +14,7 @@ export class OrdersService {
   _ordersQnt: any = {};
   _totalPrice: number = 0;
   _newOrder: Order = new Order();
+  _formattedShippingDate: string = '';
   _successfulOrder: Order = new Order();
   serverResult: any;
   _isRegexp: boolean = false;

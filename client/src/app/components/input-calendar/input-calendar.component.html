@@ -1,59 +1,46 @@
-<table class="pickertable">
-  <tr>
-    <td>
-      <form>
-        <div class="input-group inputGroup">
-          <input
-            class="form-control"
-            placeholder="{{
-              !myDatePickerOptions.dateRange
-                ? 'Select a date'
-                : 'Select a date range'
-            }}"
-            angular-mydatepicker
-            name="mydate"
-            [(ngModel)]="model"
-            [options]="myDatePickerOptions"
-            [defaultMonth]="defMonth"
-            [locale]="locale"
-            #dp="angular-mydatepicker"
-            (dateChanged)="onDateChanged($event)"
-            [attr.disabled]="disabled ? '' : null"
-            autocomplete="off"
-          />
-          <div class="input-group-append">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              (click)="dp.clearDate()"
-            >
-              <i class="fas fa-times"></i>
-            </button>
-          </div>
-          <div class="input-group-append">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              (click)="dp.toggleCalendar()"
-            >
-              <i class="fa fa-calendar"></i>
-            </button>
-          </div>
-        </div>
-      </form>
-    </td>
-    <td>
-      <div
-        *ngIf="inputText !== ''"
-        class="border"
-        [ngClass]="{
-          okDate: validDate && selectedTextNormal.length,
-          invalidDate: !validDate
-        }"
-      >
-        <span *ngIf="validDate">{{ selectedTextNormal }}</span>
-        <span *ngIf="!validDate">Invalid date</span>
-      </div>
-    </td>
-  </tr>
-</table>
+<div class="input-group">
+  <input
+    class="form-control rounded-pill shadow-md"
+    placeholder="תאריך למשלוח"
+    angular-mydatepicker
+    name="mydate"
+    [(ngModel)]="model"
+    [options]="myDatePickerOptions"
+    [defaultMonth]="defMonth"
+    [locale]="locale"
+    #dp="angular-mydatepicker"
+    (dateChanged)="onDateChanged($event)"
+    [attr.disabled]="disabled ? '' : null"
+    autocomplete="off"
+  />
+  <div class="input-group-append">
+    <button
+      type="button"
+      class="btn bg-purple-color ms-2"
+      (click)="clearDate()"
+    >
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+  <div class="input-group-append">
+    <button
+      type="button"
+      class="btn bg-purple-color ms-2"
+      (click)="dp.toggleCalendar()"
+    >
+      <i class="fa fa-calendar"></i>
+    </button>
+  </div>
+</div>
+
+<div
+  *ngIf="inputText !== ''"
+  class="m-3 p-2"
+  [ngClass]="{
+    okDate: validDate && selectedTextNormal.length,
+    invalidDate: !validDate
+  }"
+>
+  <div *ngIf="validDate">{{ selectedTextNormal }}</div>
+  <span *ngIf="!validDate">Invalid date</span>
+</div>

@@ -52,7 +52,7 @@ export class InputCalendarComponent implements OnInit {
 
   public model: IMyDateModel = {
     isRange: false,
-    singleDate: { jsDate: new Date() },
+    singleDate: {},
   }; // not initial date set
 
   public defMonth: IMyDefaultMonth = {
@@ -79,17 +79,19 @@ export class InputCalendarComponent implements OnInit {
   }
 
   clearDate(): void {
+    this.ordersService._newOrder.ShippingDate = '';
+    this.ordersService._formattedShippingDate = '';
     this.ngxdp.clearDate();
   }
 
   setDate(): void {
-    // Initialize single date (today)
-    if (this.myDatePickerOptions.dateRange) {
-      alert(
-        'Date range mode is enabled! Change mode to single date before set single date.'
-      );
-      return;
-    }
+    // // Initialize single date (today)
+    // if (this.myDatePickerOptions.dateRange) {
+    //   alert(
+    //     'Date range mode is enabled! Change mode to single date before set single date.'
+    //   );
+    //   return;
+    // }
 
     this.model = { isRange: false, singleDate: { jsDate: new Date() } };
   }
@@ -129,19 +131,23 @@ export class InputCalendarComponent implements OnInit {
     console.log('onDateChanged(): ', event);
 
     if (!event.isRange) {
-      let { date, jsDate, formatted, epoc }: any = event.singleDate;
+      let { jsDate, formatted }: any = event.singleDate;
       if (formatted !== '') {
-        this.selectedTextNormal =
-          'Formatted: ' + formatted + ' - epoc timestamp: ' + epoc;
+        this.selectedTextNormal = formatted;
         this.validDate = true;
         this.inputText = formatted;
+
+        this.ordersService._newOrder.ShippingDate = jsDate;
+        this.ordersService._formattedShippingDate = formatted;
       } else {
         this.selectedTextNormal = '';
       }
     } else {
-      let { formatted }: any = event.dateRange;
+      let { formatted, jsDate }: any = event.dateRange;
       if (formatted !== '') {
-        this.selectedTextNormal = 'Formatted: ' + formatted;
+        this.selectedTextNormal = formatted;
+        this.ordersService._newOrder.ShippingDate = jsDate;
+        this.ordersService._formattedShippingDate = formatted;
         this.validDate = true;
         this.inputText = formatted;
       } else {

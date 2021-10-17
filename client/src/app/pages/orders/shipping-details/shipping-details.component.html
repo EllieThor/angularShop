@@ -5,11 +5,9 @@
   <div class="row text-end pe-5">
     <div class="col-12 col-lg-7">
       <span class="text-center">בחר תאריך למשלוח</span>
-      <h6>
-        {{ ordersService._newOrder.ShippingDate.split("T").shift() }}:התאריך
-        הנבחר
-      </h6>
-      <app-calendar></app-calendar>
+      <!-- <h6>{{ ordersService._newOrder.ShippingDate }}: JS התאריך הנבחר</h6> -->
+      <h6>{{ ordersService._formattedShippingDate }}:התאריך הנבחר</h6>
+      <app-input-calendar>loading...</app-input-calendar>
       <br />
     </div>
     <div class="col-12 col-lg-5">
@@ -54,6 +52,7 @@
         />
       </label>
       <br />
+
       <h4>תשלום</h4>
       <h5>{{ cartsService._fixedTotalToPay.toFixed(2) }} סה"כ לתשלום</h5>
       <i
@@ -89,4 +88,3 @@
     </div>
   </div>
 </form>
-<app-input-calendar>loading...</app-input-calendar>

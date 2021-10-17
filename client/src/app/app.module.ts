@@ -31,7 +31,7 @@ import { SingleReceptionProdComponent } from './pages/orders/reception/single-re
 import { FormProductComponent } from './components/form-product/form-product.component';
 import { SuccessfulOrderComponent } from './pages/orders/successful-order/successful-order.component';
 import { HeaderComponent } from './components/header/header.component';
-import { CalendarComponent } from './components/calendar/calendar.component';
+import { CalendarComponent } from './components/calendar למחוק/calendar.component';
 import { PlusMinusIconsComponent } from './components/plus-minus-icons/plus-minus-icons.component';
 import { CartHeaderComponent } from './components/cart-header/cart-header.component';
 
