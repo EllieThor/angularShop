@@ -16,9 +16,9 @@ export class UiHighlightDirective implements OnChanges {
   @Input('appUiHighlight') searchTerm!: string;
   @Input() caseSensitive = false;
   @Input() customClasses = '';
-
   @HostBinding('innerHtml')
-  content!: string;
+  content: string = '';
+
   constructor(private el: ElementRef, private sanitizer: DomSanitizer) {}
 
   ngOnChanges(changes: SimpleChanges) {
@@ -35,6 +35,7 @@ export class UiHighlightDirective implements OnChanges {
           let newText = text.replace(regex, (match: string) => {
             return `<span class="highlight ${this.customClasses}">${match}</span>`;
           });
+
           const sanitized = this.sanitizer.sanitize(
             SecurityContext.HTML,
             newText

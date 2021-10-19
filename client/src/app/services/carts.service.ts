@@ -91,43 +91,6 @@ export class CartsService {
 
   // CartProducts
 
-  // add product event handler
-  // async addProdToCart(url: string, ob: any) {
-  //   console.log('add: ', ob);
-  //   let qnt;
-  //   let findIndex = this._cartProducts.findIndex(
-  //     (item) => item.productID == ob.productID
-  //   );
-  //   console.log('findIndex: ', findIndex);
-  //   if (findIndex == -1) {
-  //     // insert
-  //     this.insertProductToCart(url, {
-  //       cartID: this._currentCart.ID,
-  //       productID: ob.product.ID,
-  //       priceForOne: ob.price,
-  //     });
-  //   } else {
-  //     // change
-  //     qnt = this._cartProducts[findIndex].Qnt;
-  //     this.changeQnt('/carts/changeQnt', {
-  //       productID: ob.product.ID,
-  //       type: 1,
-  //       quantity: qnt,
-  //       price: ob.price,
-  //     });
-  //   }
-  //   this.gatCartProducts('/carts/getCartProducts');
-  // }
-
-  // // CREATE (CartProducts)
-  // async insertProductToCart(url: string, ob?: any) {
-  //   this.serverResult = (await this.apiService.createPostService(
-  //     url,
-  //     ob
-  //   )) as any;
-  //   this.gatCartProducts('/carts/getCartProducts');
-  // }
-
   // READ (CartProducts)
   async gatCartProducts(url: string) {
     this._fixedTotalPriseForProd = 0;
@@ -155,43 +118,4 @@ export class CartsService {
       this._fixedTotalToPay += prod.TotalPrice;
     });
   }
-
-  // UPDATE (CartProducts)
-  // async changeQnt(url: string, ob?: any) {
-  //   this._qnt = ob.quantity;
-  //   let getByPatterns = {
-  //     cartID: this._currentCart.ID,
-  //     productID: ob.productID,
-  //     type: ob.type,
-  //     quantity: ob.quantity,
-  //     price: ob.price,
-  //   };
-  //   this.serverResult = (await this.apiService.createPostService(
-  //     url,
-  //     getByPatterns
-  //   )) as any;
-  //   this.gatCartProducts('/carts/getCartProducts');
-  //   // this.productsService.getProducts('/products/getProducts', {
-  //   //   categoryID: 1,
-  //   // });
-  // }
-
-  // TODO: update PRODUCT AREA עובד בקומפוננטות עצמן: קארט, פרודוקטקראד וקארטפרודוקט
-  // // DELETE (CartProducts)
-  // async deleteProductFromCart(url: string, ob?: any) {
-  //   let res;
-  //   if (!ob.productID) {
-  //     res = confirm(
-  //       'ברצונך להסיר את כל המוצרים מהעגלה? \nלחיצה על אישור תסיר את כל הפריטים מהעגלה'
-  //     );
-  //   }
-
-  //   if (res || ob.productID) {
-  //     this.serverResult = (await this.apiService.createPostService(
-  //       url,
-  //       ob
-  //     )) as any;
-  //     this.gatCartProducts('/carts/getCartProducts');
-  //   }
-  // }
 }

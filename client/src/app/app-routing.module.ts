@@ -5,8 +5,6 @@ import { RegistrationComponent } from './pages/home/registration/registration.co
 import { OrdersComponent } from './pages/orders/orders.component';
 import { ShopComponent } from './pages/shop/shop.component';
 
-import { HighlightComponent } from './pages/highlight/highlight.component';
-
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'prefix' },
   {
@@ -25,17 +23,6 @@ const routes: Routes = [
     path: 'orders',
     component: OrdersComponent,
   },
-  {
-    path: 'highlight',
-    component: HighlightComponent,
-  },
-  // {
-  //   path: 'highlight',
-  //   loadChildren: () =>
-  //     import('./pages/highlight/highlight.module').then(
-  //       (m) => m.HighlightModule
-  //     ),
-  // },
 ];
 
 @NgModule({

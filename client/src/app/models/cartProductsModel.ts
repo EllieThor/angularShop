@@ -11,7 +11,6 @@ export class CartProduct {
     Price: 0,
     ImageName: '',
   };
-  isMark: boolean = false;
 
   constructor(
     ID?: number,
@@ -21,7 +20,6 @@ export class CartProduct {
     updatedAt?: string,
     productID?: number,
     cartID?: number,
-    isMark?: boolean,
     product?: any
   ) {
     this.ID = ID || 0;
@@ -32,7 +30,6 @@ export class CartProduct {
     this.productID = productID || 0;
     this.cartID = cartID || 0;
     this.product = product || {};
-    this.isMark = isMark || false;
   }
 }
 //  {

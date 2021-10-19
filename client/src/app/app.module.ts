@@ -4,10 +4,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { AngularMyDatePickerModule } from 'angular-mydatepicker';
 
-import { FilteredArrayPipe } from './pipes/filtered-array.pipe';
-import { HighlightPipe } from './pipes/highlight.pipe';
-
 import { AppRoutingModule } from './app-routing.module';
+
+import { FilteredArrayPipe } from './pipes/filtered-array.pipe';
+import { UiHighlightDirective } from './lib/ui-highlight/ui-highlight.directive';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -31,15 +31,8 @@ import { SingleReceptionProdComponent } from './pages/orders/reception/single-re
 import { FormProductComponent } from './components/form-product/form-product.component';
 import { SuccessfulOrderComponent } from './pages/orders/successful-order/successful-order.component';
 import { HeaderComponent } from './components/header/header.component';
-import { CalendarComponent } from './components/calendar למחוק/calendar.component';
 import { PlusMinusIconsComponent } from './components/plus-minus-icons/plus-minus-icons.component';
 import { CartHeaderComponent } from './components/cart-header/cart-header.component';
-
-// import { HighlightModule } from './pages/highlight/highlight.module';
-import { HighlightComponent } from './pages/highlight/highlight.component';
-// import { UiHighlightModule } from './lib/ui-highlight/ui-highlight.module';
-import { UiHighlightDirective } from './lib/ui-highlight/ui-highlight.directive';
-import { ChildCompComponent } from './pages/highlight/child-comp/child-comp.component';
 import { InputCalendarComponent } from './components/input-calendar/input-calendar.component';
 
 @NgModule({
@@ -67,13 +60,9 @@ import { InputCalendarComponent } from './components/input-calendar/input-calend
     FilteredArrayPipe,
     SuccessfulOrderComponent,
     HeaderComponent,
-    CalendarComponent,
     PlusMinusIconsComponent,
     CartHeaderComponent,
-    HighlightPipe,
-    HighlightComponent,
     UiHighlightDirective,
-    ChildCompComponent,
     InputCalendarComponent,
   ],
   imports: [

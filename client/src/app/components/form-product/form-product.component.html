@@ -41,7 +41,7 @@
       {{ category.CategoryName }}
     </option>
   </select>
-  <!-- TODO: add image -->
+
   <input
     type="file"
     id="filesToUpload"
@@ -50,7 +50,7 @@
     (change)="productsService.fileChange($event)"
   />
   <div>{{ productsService._newProductObj.ImageName }}</div>
-  <!-- // `ProductName`, `Price`, `Description`, `ImageName`, `categoryID` -->
+  <!--  `ProductName`, `Price`, `Description`, `ImageName`, `categoryID` -->
 
   <button
     class="btn btn-outline-success m-2"

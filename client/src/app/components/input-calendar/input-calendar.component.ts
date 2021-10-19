@@ -85,14 +85,6 @@ export class InputCalendarComponent implements OnInit {
   }
 
   setDate(): void {
-    // // Initialize single date (today)
-    // if (this.myDatePickerOptions.dateRange) {
-    //   alert(
-    //     'Date range mode is enabled! Change mode to single date before set single date.'
-    //   );
-    //   return;
-    // }
-
     this.model = { isRange: false, singleDate: { jsDate: new Date() } };
   }
 

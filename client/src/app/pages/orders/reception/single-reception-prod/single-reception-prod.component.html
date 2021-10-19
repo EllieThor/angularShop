@@ -1,17 +1,11 @@
 <div class="p-3">
-  <!-- <h6 class="text-center" [appUiHighlight]="searchTerm">
+  <h6
+    class="text-center"
+    [appUiHighlight]="ordersService.searchTerm"
+    [innerHtml]="prod.product.ProductName"
+  >
     {{ prod.product.ProductName }}
   </h6>
-  <h6 class="text-center" [appUiHighlight]="searchTerm">
-    Lorem Ipsum has been the industry's standard dummy text ever since the
-    1500s, when an unknown printer took a galley of type and scrambled it to
-    make a type specimen book.
-  </h6> -->
-  <h6 class="text-center">
-    {{ prod.product.ProductName }}
-  </h6>
-
-  <!-- <h6 class="text-center" [innerHTML]="prod.product.ProductName"></h6> -->
 
   <div class="row">
     <div class="col-8">
@@ -20,7 +14,6 @@
       <div class="text-end">
         &#8362; {{ (prod.product.Price * prod.Qnt).toFixed(2) }} :סה"כ
       </div>
-      <h6>{{ prod.isMark }}</h6>
     </div>
     <div class="col-4">
       <img
@@ -30,10 +23,5 @@
       />
     </div>
   </div>
-  <!-- <div class="row">
-    <button (click)="this.highlight('fox')">Highlight</button>
-
-    <div id="inputText">The fox went over the fence</div>
-  </div> -->
 </div>
 <!-- http://www.localhost:5001/assets/images/products/ -->
