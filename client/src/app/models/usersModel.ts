@@ -1,15 +1,3 @@
-export class City {
-  Symbol: string = '';
-  name: string = '';
-  population: string = '';
-
-  constructor(Symbol: string, name: string, population: string) {
-    this.Symbol = Symbol || '';
-    this.name = name || '';
-    this.population = population || '';
-  }
-}
-
 export class User {
   ID?: number;
   FirstName: string = '';

@@ -1,8 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CartsService } from 'src/app/services/carts.service';
-import { OrdersService } from 'src/app/services/orders.service';
 import { ProductsService } from 'src/app/services/products.service';
-import { UsersServiceService } from 'src/app/services/users.service';
 
 @Component({
   selector: 'app-form-product',
@@ -10,12 +7,7 @@ import { UsersServiceService } from 'src/app/services/users.service';
   styleUrls: ['./form-product.component.css'],
 })
 export class FormProductComponent implements OnInit {
-  constructor(
-    public usersService: UsersServiceService,
-    public cartsService: CartsService,
-    public ordersService: OrdersService,
-    public productsService: ProductsService
-  ) {}
+  constructor(public productsService: ProductsService) {}
 
   ngOnInit(): void {}
 }

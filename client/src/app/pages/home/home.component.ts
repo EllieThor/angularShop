@@ -17,7 +17,6 @@ export class HomeComponent implements OnInit {
     this._user = localStorage.getItem('user');
 
     this._user = JSON.parse(this._user);
-    console.log('this._user: ', this._user);
     if (this._user !== null) {
       this.usersService._currentUserObj = this._user;
       this.cartService.statusCartCheck('/carts/getCarts', {

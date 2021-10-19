@@ -25,10 +25,8 @@ exports.createCart = async (req, res, next) => {
   await Carts.create(newUserOBJ)
     .then((cart) => {
       res.send(cart);
-      console.log("cart ID:", cart.ID);
     })
     .catch((err) => {
-      console.log("Error:", err);
       res.send(err);
     });
 };
@@ -41,10 +39,8 @@ exports.updateIsPaidCartStatus = async (req, res, next) => {
   await Carts.update(changesOBJ, { where: { ID: req.body.ID } })
     .then((result) => {
       res.send(result);
-      console.log("result:", result);
     })
     .catch((err) => {
-      console.log("Error:", err);
       res.send(err);
     });
 };
@@ -63,11 +59,9 @@ exports.insertProdToCart = async (req, res, next) => {
   await CartsProductsModal.create(addOBJ)
     .then((result) => {
       res.send(result);
-      console.log("result: ", result);
     })
     .catch((err) => {
       res.send(err);
-      console.log(err);
     });
 };
 
@@ -99,7 +93,6 @@ exports.changeQnt = async (req, res) => {
       res.send(result);
     })
     .catch((err) => {
-      console.log(err);
       res.send(err);
     });
 };
@@ -111,7 +104,6 @@ exports.deleteProductFromCart = async (req, res) => {
       res.send({ result });
     })
     .catch((err) => {
-      console.log(err);
       res.send(err);
     });
 };

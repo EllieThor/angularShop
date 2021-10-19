@@ -52,7 +52,6 @@ export class OrdersService {
     this._datesArr.map((date: any) => {
       date.isAvailable = this.isShippingAvailable(date.ShippingObj);
     });
-    console.log('this._datesArr: ', this._datesArr);
   }
 
   isShippingAvailable(what: any) {
@@ -73,11 +72,9 @@ export class OrdersService {
     if (this.settingsService.creditRegexp.test(e.target.value)) {
       // return true;
       this._isRegexp = true;
-      console.log(true);
     } else {
       // return false;
       this._isRegexp = false;
-      console.log(false);
     }
   }
 
@@ -110,8 +107,6 @@ export class OrdersService {
         newOrderObj
       )) as Order;
       if (this._successfulOrder) {
-        console.log('_successfulOrder: ', this._successfulOrder);
-
         this.cartsService.updateIsPaidCartStatus(
           '/carts/updateIsPaidCartStatus',
           {

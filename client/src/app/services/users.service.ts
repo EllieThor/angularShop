@@ -120,17 +120,22 @@ export class UsersServiceService {
         url,
         newUserOBJ
       );
-      console.log('new User: ', this.serverResult);
 
       this._logInEmail = this.serverResult.Email;
       this._logInPassword = this.serverResult.Password;
-      this.gatUserFromDB('/users/getUser');
+      await this.gatUserFromDB('/users/getUser');
+
+      this._logInEmail = '';
+      this._logInPassword = '';
+      this._newPasswordRepeat = '';
+      this._currentStep = 0;
+      this._newUserIDStr = '';
+      this._newUserObject = new User();
     }
   }
 
   // READ
   async gatUserFromDB(url: string, event?: any) {
-    // event.preventDefault();
     let getByPatterns = {
       userEmail: this._logInEmail,
       userPassword: this._logInPassword,
@@ -142,7 +147,6 @@ export class UsersServiceService {
     );
 
     this._currentUserObj = this.serverResult[0];
-    console.log('this._currentUserObj: ', this._currentUserObj);
 
     if (this._currentUserObj.Role === 1) {
       this.nav.navigate(['/shop']);
@@ -155,7 +159,6 @@ export class UsersServiceService {
       this.cartService.statusCartCheck('/carts/getCarts', getByPatterns);
       if (!this.localStorageUser.user) {
         localStorage.setItem('user', JSON.stringify(this._currentUserObj));
-        console.log('after set : ', localStorage.getItem('user'));
       }
       this.nav.navigate(['/home']);
     }

@@ -53,13 +53,10 @@ export class CartsService {
 
   // CREATE (carts)
   async createCart(url: string, ob: any) {
-    console.log('this._currentCart : ', ob);
     this._currentCart = (await this.apiService.createPostService(
       url,
       ob
     )) as Cart;
-
-    console.log('this._currentCart after create cart: ', this._currentCart);
   }
 
   // READ (carts)
@@ -68,7 +65,6 @@ export class CartsService {
       url,
       ob
     )) as Array<Cart>;
-    console.log('getCartFN: ', this._userCarts);
   }
 
   // UPDATE (carts)
@@ -77,16 +73,11 @@ export class CartsService {
       url,
       ob
     )) as any;
-
-    console.log('updateIsPaidCartStatus serverResult: ', this.serverResult);
   }
 
   getRecentCart() {
-    console.log('getRecentCart');
     // item 0 is the last one (date) because sequelize order the carts : order: [["createdAt", "DESC"]]
     this._recentCart = this._userCarts[0];
-    console.log('your recent cart : ', this._recentCart);
-    console.log('recent Cart DATE : ', this._recentCart.createdAt);
   }
 
   // CartProducts
@@ -101,7 +92,6 @@ export class CartsService {
       url,
       getByPatterns
     )) as Array<CartProduct>;
-    console.log('_cartProducts: ', this._cartProducts);
 
     this._cartProducts.map((cartItem) => {
       this._fixedTotalPriseForProd += Number(

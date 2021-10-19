@@ -30,10 +30,7 @@ export class ProductsService {
     public apiService: ApiService,
     public settingsService: SettingsService,
     public cartsService: CartsService
-  ) {
-    // this._time = moment().format('LLLL');
-    // console.log('time: ', this._time);
-  }
+  ) {}
 
   async addNewProd(url: string, event?: any) {
     event.preventDefault();
@@ -61,7 +58,6 @@ export class ProductsService {
         url,
         newProdObj
       );
-      console.log('this.serverResult addNewProd: ', this.serverResult);
       this._newProductObj = new Product();
       this.getProducts('/products/getProducts', {
         categoryID: this.serverResult.categoryID,
@@ -115,13 +111,11 @@ export class ProductsService {
         ImageName: this._newProductObj.ImageName,
         categoryID: this._newProductObj.categoryID,
       };
-      console.log('ob updateProd : ', ob);
 
       this.serverResult = (await this.apiService.createPostService(
         url,
         ob
       )) as any;
-      console.log('this.serverResult updateProd: ', this.serverResult);
       this.getProducts('/products/getProducts', {
         categoryID: this._newProductObj.categoryID,
       });
@@ -136,13 +130,11 @@ export class ProductsService {
       ImageName: this._newProductObj.ImageName,
       categoryID: this._newProductObj.categoryID,
     };
-    console.log('ob updateProd : ', ob);
 
     this.serverResult = (await this.apiService.createPostService(
       url,
       ob
     )) as any;
-    console.log('this.serverResult updateProd: ', this.serverResult);
     this.getProducts('/products/getProducts', {
       categoryID: this._newProductObj.categoryID,
     });
@@ -176,13 +168,11 @@ export class ProductsService {
       }
 
       this._newProductObj.ImageName = this.uploadedFiles[0].name;
-      console.log('test: ', this._newProductObj.ImageName);
 
       this.serverResult = await this.apiService.createPostService(
         url,
         formData
       );
-      console.log('uploadIMG serverResult: ', this.serverResult);
     } else {
       alert('בחר.י תמונה לפני לחיצה על כפתור זה');
     }

@@ -1,5 +1,4 @@
-import { Component, EventEmitter, Input, OnInit } from '@angular/core';
-import { CartProduct } from 'src/app/models/cartProductsModel';
+import { Component, Input, OnInit } from '@angular/core';
 import { Product } from 'src/app/models/productsModel';
 import { ApiService } from 'src/app/services/api.service';
 import { CartsService } from 'src/app/services/carts.service';
@@ -13,8 +12,6 @@ import { UsersServiceService } from 'src/app/services/users.service';
 })
 export class SingleProdCardComponent implements OnInit {
   @Input() product: Product = new Product();
-  @Input() item: CartProduct = new CartProduct();
-  // @Input() isProdInCart: boolean = false;
   constructor(
     public cartsService: CartsService,
     public productsService: ProductsService,
@@ -46,13 +43,10 @@ export class SingleProdCardComponent implements OnInit {
 
   // add product event handler
   async addProdToCart(url: string, ob: any) {
-    console.log('add: ', ob);
     let qnt;
     let findIndex = this.cartsService._cartProducts.findIndex(
       (item) => item.productID == ob.productID
     );
-
-    console.log('findIndex: ', findIndex);
 
     if (findIndex == -1) {
       // insert

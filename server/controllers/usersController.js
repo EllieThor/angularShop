@@ -6,22 +6,11 @@ exports.isIDExist = async (req, res, next) => {
   const idCount = await Users.count({ where: { ID: req.body.ID } });
   await Users.count({ where: { Email: req.body.Email } })
     .then((count) => {
-      console.log("countEmail: ", count);
       res.send({ emailCount: count, IDCount: idCount });
     })
     .catch((err) => {
       res.send(err);
     });
-
-  // await Users.findAll({
-  //   where: { ID: req.body.ID },
-  // })
-  //   .then((users) => {
-  //     res.send(users);
-  //   })
-  //   .catch((err) => {
-  //     res.send(err);
-  //   });
 };
 
 // CREATE
@@ -43,10 +32,8 @@ exports.insertUser = async (req, res, next) => {
   await Users.create(newUserOBJ)
     .then((user) => {
       res.send(user);
-      console.log("Jane's auto-generated ID:", user.ID);
     })
     .catch((err) => {
-      console.log("Error:", err);
       res.send(err);
     });
 };

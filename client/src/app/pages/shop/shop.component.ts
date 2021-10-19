@@ -22,6 +22,7 @@ export class ShopComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.updateDays();
     this.productsService.getProducts('/products/getProducts', {
       categoryID: 1,
     });

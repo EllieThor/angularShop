@@ -3,9 +3,7 @@ import { CartProduct } from 'src/app/models/cartProductsModel';
 import { Product } from 'src/app/models/productsModel';
 import { ApiService } from 'src/app/services/api.service';
 import { CartsService } from 'src/app/services/carts.service';
-import { OrdersService } from 'src/app/services/orders.service';
 import { ProductsService } from 'src/app/services/products.service';
-import { UsersServiceService } from 'src/app/services/users.service';
 
 @Component({
   selector: 'app-plus-minus-icons',
@@ -20,9 +18,7 @@ export class PlusMinusIconsComponent implements OnInit {
   serverResult: any;
 
   constructor(
-    public usersService: UsersServiceService,
     public cartsService: CartsService,
-    public ordersService: OrdersService,
     public productsService: ProductsService,
     public apiService: ApiService
   ) {}

@@ -27,11 +27,9 @@ exports.addProduct = async (req, res, next) => {
   await Products.create(addOBJ)
     .then((result) => {
       res.send(result);
-      console.log("result: ", result);
     })
     .catch((err) => {
       res.send(err);
-      console.log(err);
     });
 };
 
@@ -79,10 +77,9 @@ exports.updateProduct = async (req, res, next) => {
   await Products.update(req.body, { where: { ID: req.body.ID } })
     .then((result) => {
       res.send(result);
-      console.log("result:", result);
     })
     .catch((err) => {
-      console.log("Error:", err);
+      "Error:", err;
       res.send(err);
     });
 };

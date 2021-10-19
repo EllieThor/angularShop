@@ -120,8 +120,6 @@ export class InputCalendarComponent implements OnInit {
 
   // callbacks
   onDateChanged(event: IMyDateModel): void {
-    console.log('onDateChanged(): ', event);
-
     if (!event.isRange) {
       let { jsDate, formatted }: any = event.singleDate;
       if (formatted !== '') {
