@@ -59,7 +59,7 @@ export class ProductsService {
       );
       console.log('aaaaaaaaa: ', this.serverResult);
       this.getProducts('/products/getProducts', {
-        categoryID: 2,
+        categoryID: this._newProductObj.categoryID,
       });
       this._newProductObj = new Product();
     }
@@ -116,6 +116,8 @@ export class ProductsService {
         url,
         ob
       )) as any;
+
+      console.log('categoryID: ', this._newProductObj.categoryID);
       this.getProducts('/products/getProducts', {
         categoryID: this._newProductObj.categoryID,
       });
@@ -180,7 +182,7 @@ export class ProductsService {
 
   fileChange(e: any) {
     this.uploadedFiles = e.target.files;
-
+    this._isImgUploaded = false;
     console.log('fileChange: ', e.target.files);
   }
 
@@ -195,16 +197,11 @@ export class ProductsService {
       formData.append('upload_preset', 'online-shop');
 
       this.serverResult = await this.apiService.createPostService('', formData);
-      console.log('serverResult: ', this.serverResult);
 
       this._newProductObj.ImageName = this.serverResult.secure_url;
       if (this.serverResult.secure_url !== '') {
         this._isImgUploaded = true;
       }
-      console.log(
-        'this.serverResult.secure_url: ',
-        this.serverResult.secure_url
-      );
     } else {
       alert('בחר.י תמונה לפני לחיצה על כפתור זה');
     }
