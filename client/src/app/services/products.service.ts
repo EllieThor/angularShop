@@ -2,11 +2,7 @@ import { Injectable } from '@angular/core';
 import { Category, Product } from '../models/productsModel';
 import { ApiService } from './api.service';
 import { SettingsService } from './settings.service';
-
-import * as moment from 'moment';
-import 'moment/locale/pt-br';
 import { CartsService } from './carts.service';
-// moment().format('LLLL');
 
 @Injectable({
   providedIn: 'root',
@@ -26,6 +22,8 @@ export class ProductsService {
   _openCategory: number = 1;
 
   uploadedFiles: Array<File> = [];
+  _isImgUploaded: boolean = false;
+
   constructor(
     public apiService: ApiService,
     public settingsService: SettingsService,
@@ -54,14 +52,16 @@ export class ProductsService {
       };
       // `ProductName`, `Price`, `Description`, `ImageName`, `categoryID`
 
+      console.log('this._newProductObj: ', this._newProductObj);
       this.serverResult = await this.apiService.createPostService(
         url,
         newProdObj
       );
-      this._newProductObj = new Product();
+      console.log('aaaaaaaaa: ', this.serverResult);
       this.getProducts('/products/getProducts', {
-        categoryID: this.serverResult.categoryID,
+        categoryID: 2,
       });
+      this._newProductObj = new Product();
     }
   }
 
@@ -151,27 +151,59 @@ export class ProductsService {
     )) as Array<Product>;
   }
 
+  // fileChange(e: any) {
+  //   this.uploadedFiles = e.target.files;
+  // }
+  // // https://api.cloudinary.com/v1_1/dzxlvjeey/image/upload
+  // async uploadIMG(url: string) {
+  //   if (this.uploadedFiles.length !== 0) {
+  //     let formData = new FormData();
+
+  //     for (var i = 0; i < this.uploadedFiles.length; i++) {
+  //       formData.append(
+  //         'uploads[]',
+  //         this.uploadedFiles[i],
+  //         this.uploadedFiles[i].name
+  //       );
+  //     }
+
+  //     this._newProductObj.ImageName = this.uploadedFiles[0].name;
+
+  //     this.serverResult = await this.apiService.createPostService(
+  //       url,
+  //       formData
+  //     );
+  //   } else {
+  //     alert('בחר.י תמונה לפני לחיצה על כפתור זה');
+  //   }
+  // }
+
   fileChange(e: any) {
     this.uploadedFiles = e.target.files;
+
+    console.log('fileChange: ', e.target.files);
   }
 
-  async uploadIMG(url: string) {
+  async uploadIMG() {
     if (this.uploadedFiles.length !== 0) {
       let formData = new FormData();
+      formData.append(
+        'file',
+        this.uploadedFiles[0],
+        this.uploadedFiles[0].name
+      );
+      formData.append('upload_preset', 'online-shop');
 
-      for (var i = 0; i < this.uploadedFiles.length; i++) {
-        formData.append(
-          'uploads[]',
-          this.uploadedFiles[i],
-          this.uploadedFiles[i].name
-        );
+      this.serverResult = await this.apiService.createPostService('', formData);
+      console.log('serverResult: ', this.serverResult);
+
+      this._newProductObj.ImageName = this.serverResult.secure_url;
+      if (this.serverResult.secure_url !== '') {
+        this._isImgUploaded = true;
       }
-
-      this._newProductObj.ImageName = this.uploadedFiles[0].name;
-
-      this.serverResult = await this.apiService.createPostService(
-        url,
-        formData
+      console.log(
+        'this.serverResult.secure_url: ',
+        this.serverResult.secure_url
       );
     } else {
       alert('בחר.י תמונה לפני לחיצה על כפתור זה');

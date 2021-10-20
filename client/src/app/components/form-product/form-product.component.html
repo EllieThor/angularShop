@@ -44,17 +44,14 @@
 
   <input
     type="file"
-    id="filesToUpload"
     class="form-control m-2"
-    name="filesToUpload"
+    [ngClass]="productsService._isImgUploaded ? 'border-success' : ''"
     (change)="productsService.fileChange($event)"
   />
-  <div>{{ productsService._newProductObj.ImageName }}</div>
-  <!--  `ProductName`, `Price`, `Description`, `ImageName`, `categoryID` -->
 
   <button
     class="btn btn-outline-success m-2"
-    (click)="productsService.uploadIMG('/upload')"
+    (click)="productsService.uploadIMG()"
   >
     העלה תמונה
   </button>

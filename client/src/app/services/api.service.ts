@@ -17,7 +17,12 @@ export class ApiService {
     return new Promise(async (resolve, reject) => {
       try {
         await this.httpClient
-          .post(this.settingsService.baseUrl + url, ob)
+          .post(
+            url === ''
+              ? this.settingsService.uploadIMGUrl
+              : this.settingsService.baseUrl + url,
+            ob
+          )
           .subscribe(
             (data) => {
               resolve(data);
