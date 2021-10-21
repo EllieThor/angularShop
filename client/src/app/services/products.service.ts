@@ -81,6 +81,7 @@ export class ProductsService {
       url,
       ob
     )) as Array<Product>;
+    console.log('this._products after update: ', this._products);
 
     this._products.map((product) => {
       product.qnt = this.cartsService._cartProducts.find(
@@ -117,30 +118,11 @@ export class ProductsService {
         ob
       )) as any;
 
-      console.log('categoryID: ', this._newProductObj.categoryID);
       this.getProducts('/products/getProducts', {
         categoryID: this._newProductObj.categoryID,
       });
       this._newProductObj = new Product();
     }
-
-    let ob = {
-      ID: this._newProductObj.ID,
-      ProductName: this._newProductObj.ProductName,
-      Price: this._newProductObj.Price,
-      Description: this._newProductObj.Description,
-      ImageName: this._newProductObj.ImageName,
-      categoryID: this._newProductObj.categoryID,
-    };
-
-    this.serverResult = (await this.apiService.createPostService(
-      url,
-      ob
-    )) as any;
-    this.getProducts('/products/getProducts', {
-      categoryID: this._newProductObj.categoryID,
-    });
-    this._newProductObj = new Product();
   }
 
   async searchForProd(url: string) {
@@ -152,33 +134,6 @@ export class ProductsService {
       searchFor
     )) as Array<Product>;
   }
-
-  // fileChange(e: any) {
-  //   this.uploadedFiles = e.target.files;
-  // }
-  // // https://api.cloudinary.com/v1_1/dzxlvjeey/image/upload
-  // async uploadIMG(url: string) {
-  //   if (this.uploadedFiles.length !== 0) {
-  //     let formData = new FormData();
-
-  //     for (var i = 0; i < this.uploadedFiles.length; i++) {
-  //       formData.append(
-  //         'uploads[]',
-  //         this.uploadedFiles[i],
-  //         this.uploadedFiles[i].name
-  //       );
-  //     }
-
-  //     this._newProductObj.ImageName = this.uploadedFiles[0].name;
-
-  //     this.serverResult = await this.apiService.createPostService(
-  //       url,
-  //       formData
-  //     );
-  //   } else {
-  //     alert('בחר.י תמונה לפני לחיצה על כפתור זה');
-  //   }
-  // }
 
   fileChange(e: any) {
     this.uploadedFiles = e.target.files;
