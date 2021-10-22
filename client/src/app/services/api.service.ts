@@ -20,7 +20,7 @@ export class ApiService {
           .post(
             url === ''
               ? this.settingsService.uploadIMGUrl
-              : this.settingsService.baseUrl + url,
+              : this.settingsService.heroku + url,
             ob
           )
           .subscribe(
@@ -42,7 +42,7 @@ export class ApiService {
   createGetService(url: string, headParams?: any) {
     return new Promise(async (resolve, reject) => {
       try {
-        await this.httpClient.get(this.settingsService.baseUrl + url).subscribe(
+        await this.httpClient.get(this.settingsService.heroku + url).subscribe(
           (data) => {
             resolve(data);
           },

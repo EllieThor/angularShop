@@ -37,6 +37,7 @@
           *ngIf="usersService._currentUserObj.Role === 1"
           class="far fa-edit cursorPointer iconsColor"
           (click)="
+            settingsService._isCartVisible = true;
             productsService._showAdminForm = true;
             productsService._addVsEdit = 1;
             productsService._newProductObj = product

@@ -57,11 +57,11 @@ export class ProductsService {
         url,
         newProdObj
       );
-      console.log('aaaaaaaaa: ', this.serverResult);
       this.getProducts('/products/getProducts', {
         categoryID: this._newProductObj.categoryID,
       });
       this._newProductObj = new Product();
+      this.settingsService._isCartVisible = false;
     }
   }
 
@@ -122,6 +122,7 @@ export class ProductsService {
         categoryID: this._newProductObj.categoryID,
       });
       this._newProductObj = new Product();
+      this.settingsService._isCartVisible = false;
     }
   }
 
@@ -163,6 +164,7 @@ export class ProductsService {
   }
 
   addProdClick() {
+    this.settingsService._isCartVisible = true;
     this._showAdminForm = true;
     this._addVsEdit = 0;
     this._newProductObj = new Product();

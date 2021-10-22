@@ -1,6 +1,6 @@
 const Carts = require("../models/CartsModel");
 const CartsProductsModal = require("../models/CartsProductsModel");
-const ProductsModel = require("../models/ProductsModel");
+const ProductsModel = require("../models/productsModel");
 
 // READ (carts)
 exports.getCarts = async (req, res, next) => {

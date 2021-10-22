@@ -5,6 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class SettingsService {
   baseUrl: string = 'http://www.localhost:5001';
+  heroku: string = 'https://sweet-heart-online-grocery.herokuapp.com';
   uploadIMGUrl: string =
     'https://api.cloudinary.com/v1_1/dzxlvjeey/image/upload';
   hasLetters: any = /[a-zA-Z]/;

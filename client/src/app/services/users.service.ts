@@ -136,31 +136,48 @@ export class UsersServiceService {
 
   // READ
   async gatUserFromDB(url: string, event?: any) {
+    event.preventDefault();
     let getByPatterns = {
       userEmail: this._logInEmail,
       userPassword: this._logInPassword,
     };
 
-    this.serverResult = await this.apiService.createPostService(
-      url,
-      getByPatterns
-    );
+    if (this._logInEmail === '') {
+      alert('יש למלא כתובת מייל ');
+    } else if (this.settingsService.hasLSymbolForEmail.test(this._logInEmail)) {
+      alert('יש למלא כתובת מייל-ללא סימנים מיוחדים');
+    } else if (this._logInEmail === '') {
+      alert('יש למלא כתובת מייל חוקית');
+    } else if (!this._logInEmail.includes('@')) {
+      alert(' @ - יש למלא כתובת מייל חוקית חסר');
+    } else if (!this._logInEmail.includes('.')) {
+      alert('. - יש למלא כתובת מייל חוקית : חסרה נקודה');
+    } else if (this._logInEmail === '.@' || this._logInEmail === '@.') {
+      alert('יש למלא כתובת מייל מלאה חוץ מנקודה ושטרודל');
+    } else if (this._logInPassword === '') {
+      alert('יש למלא סיסמה');
+    } else {
+      this.serverResult = await this.apiService.createPostService(
+        url,
+        getByPatterns
+      );
 
-    this._currentUserObj = this.serverResult[0];
+      this._currentUserObj = this.serverResult[0];
 
-    if (this._currentUserObj.Role === 1) {
-      this.nav.navigate(['/shop']);
-    } else if (this._currentUserObj.ID) {
-      this._logInEmail = '';
-      this._logInPassword = '';
-      let getByPatterns = {
-        userID: this._currentUserObj.ID,
-      };
-      this.cartService.statusCartCheck('/carts/getCarts', getByPatterns);
-      if (!this.localStorageUser.user) {
-        localStorage.setItem('user', JSON.stringify(this._currentUserObj));
+      if (this._currentUserObj.Role === 1) {
+        this.nav.navigate(['/shop']);
+      } else if (this._currentUserObj.ID) {
+        this._logInEmail = '';
+        this._logInPassword = '';
+        let getByPatterns = {
+          userID: this._currentUserObj.ID,
+        };
+        this.cartService.statusCartCheck('/carts/getCarts', getByPatterns);
+        if (!this.localStorageUser.user) {
+          localStorage.setItem('user', JSON.stringify(this._currentUserObj));
+        }
+        this.nav.navigate(['/home']);
       }
-      this.nav.navigate(['/home']);
     }
   }
 

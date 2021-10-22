@@ -1,24 +1,21 @@
 const express = require("express");
 const app = express();
 
-// upload images plugins
-var multer = require("multer");
-var path = require("path");
+// require("dotenv").config();
 
 const cors = require("cors");
 const bodyParser = require("body-parser");
 
 const sequelize = require("./utils/database");
 
-const CategoriesModel = require("./models/CategoriesModel");
-const ProductsModel = require("./models/ProductsModel");
-const UsersModel = require("./models/UsersModel");
+const CategoriesModel = require("./models/categoriesModel");
+const ProductsModel = require("./models/productsModel");
+const UsersModel = require("./models/usersModel");
 const CartsModel = require("./models/CartsModel");
 const CartsProductsModel = require("./models/CartsProductsModel");
-const OrdersModel = require("./models/OrdersModel");
+const OrdersModel = require("./models//OrdersModel");
 
 CategoriesModel.hasMany(ProductsModel);
-// UsersModel.belongsTo(CartsModel);
 CartsModel.belongsTo(UsersModel);
 CartsProductsModel.belongsTo(ProductsModel);
 CartsModel.hasMany(CartsProductsModel);
@@ -33,60 +30,33 @@ app.use(
 app.use(bodyParser.json());
 
 var corsOptions = {
-  origin: "*",
+  // origin: "*",
+  origin: "https://grocery-online.netlify.app",
   optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
 };
-
+//s
 app.use(cors(corsOptions));
 
-const UsersRoute = require("./routs/UsersRoute.js");
+const UsersRoute = require("./routs/UsersRoute");
 app.use("/users", UsersRoute);
 
-const CartsRoute = require("./routs/CartsRoute.js");
+const CartsRoute = require("./routs/CartsRoute");
 app.use("/carts", CartsRoute);
 
-const ProductsRoute = require("./routs/ProductsRoute.js");
+const ProductsRoute = require("./routs/ProductsRoute");
 app.use("/products", ProductsRoute);
 
 const OrdersRoute = require("./routs/OrdersRoute");
 app.use("/orders", OrdersRoute);
 
-// IMAGE UPLOADING
-// specify the folder
-app.use(express.static(path.join(__dirname, "uploads")));
-app.use(function (req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  next();
-});
-
-var storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, "./uploads/");
-    // cb(null, "./assets/images/products/");
-  },
-  filename: function (req, file, cb) {
-    let imgEnd = file.originalname.split(".");
-    imgEnd = imgEnd[imgEnd.length - 1];
-    cb(null, file.originalname);
-  },
-});
-
-var upload = multer({ storage: storage });
-
-app.post("/upload", upload.array("uploads[]", 12), function (req, res) {
-  imgEnd = "";
-  res.send(req.files);
-});
-
 app.use((req, res) => {
-  res.send("Page NotFound");
+  res.send("Page NotFound!");
 });
 
 sequelize
   .sync()
   .then((result) => {
-    app.listen(5001);
+    app.listen(process.env.PORT || 5001);
     console.log("Connected DB !!");
   })
   .catch((err) => {

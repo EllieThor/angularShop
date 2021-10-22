@@ -1,5 +1,4 @@
 const Users = require("../models/usersModel");
-const Carts = require("../models/CartsModel");
 
 // READ
 exports.isIDExist = async (req, res, next) => {

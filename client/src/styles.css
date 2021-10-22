@@ -26,10 +26,11 @@
 .iconsColor {
   color: rgba(0, 0, 0, 0.699);
 }
-
+/* TODO: DELETE UNNEEDED KEYS */
 .hideMe {
   visibility: hidden;
 }
+
 /* GOOGLE FONTS */
 .HeeboFont {
   font-family: "Heebo", sans-serif;

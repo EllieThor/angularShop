@@ -3,6 +3,7 @@ import { Product } from 'src/app/models/productsModel';
 import { ApiService } from 'src/app/services/api.service';
 import { CartsService } from 'src/app/services/carts.service';
 import { ProductsService } from 'src/app/services/products.service';
+import { SettingsService } from 'src/app/services/settings.service';
 import { UsersServiceService } from 'src/app/services/users.service';
 
 @Component({
@@ -16,7 +17,8 @@ export class SingleProdCardComponent implements OnInit {
     public cartsService: CartsService,
     public productsService: ProductsService,
     public usersService: UsersServiceService,
-    public apiService: ApiService
+    public apiService: ApiService,
+    public settingsService: SettingsService
   ) {}
 
   serverResult: any;

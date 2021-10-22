@@ -1,6 +1,5 @@
-const Products = require("../models/ProductsModel");
-const Categories = require("../models/CategoriesModel");
-const Orders = require("../models/OrdersModel");
+const Products = require("../models/productsModel");
+const Categories = require("../models/categoriesModel");
 const { Op } = require("sequelize");
 
 // READ (products)
