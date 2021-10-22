@@ -146,8 +146,6 @@ export class UsersServiceService {
       alert('יש למלא כתובת מייל ');
     } else if (this.settingsService.hasLSymbolForEmail.test(this._logInEmail)) {
       alert('יש למלא כתובת מייל-ללא סימנים מיוחדים');
-    } else if (this._logInEmail === '') {
-      alert('יש למלא כתובת מייל חוקית');
     } else if (!this._logInEmail.includes('@')) {
       alert(' @ - יש למלא כתובת מייל חוקית חסר');
     } else if (!this._logInEmail.includes('.')) {
