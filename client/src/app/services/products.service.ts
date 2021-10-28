@@ -81,7 +81,6 @@ export class ProductsService {
       url,
       ob
     )) as Array<Product>;
-    console.log('this._products after update: ', this._products);
 
     this._products.map((product) => {
       product.qnt = this.cartsService._cartProducts.find(
