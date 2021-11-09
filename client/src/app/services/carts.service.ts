@@ -77,17 +77,12 @@ export class CartsService {
         this._currentCart = activeCart;
         this._recentCart = this._userCarts[1];
         await this.gatCartProducts('/carts/getCartProducts');
-        // this._welcomeByCartStatus =
-        //   this._fixedTotalToPay > 0
-        //     ? 2
-        //     : this._recentCart === undefined
-        //     ? 1
-        //     : 3;
-        if (this._fixedTotalToPay > 0) {
-          this._welcomeByCartStatus = 2;
-        } else {
-          this._welcomeByCartStatus = this._recentCart === undefined ? 1 : 3;
-        }
+        this._welcomeByCartStatus =
+          this._fixedTotalToPay > 0
+            ? 2
+            : this._recentCart === undefined
+            ? 1
+            : 3;
       }
     }
   }
