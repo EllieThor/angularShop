@@ -40,6 +40,7 @@
   >
     {{ cartService._fixedTotalToPay.toFixed(2) }} סכום לתשלום
   </h6>
+
   <h6
     class="text-end mx-auto"
     *ngIf="
@@ -54,6 +55,10 @@
       usersService._currentUserObj.ID && cartService._welcomeByCartStatus === 3
     "
   >
-    {{ cartService._recentCart.createdAt.split("T").shift() }}
+    {{
+      cartService._recentCart
+        ? cartService._recentCart.createdAt.split("T").shift()
+        : ""
+    }}
   </p>
 </div>

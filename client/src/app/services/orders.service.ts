@@ -96,7 +96,9 @@ export class OrdersService {
         ShippingCity: this._newOrder.ShippingCity,
         ShippingStreet: this._newOrder.ShippingStreet,
         ShippingDate: this._newOrder.ShippingDate,
-        CreditCard: this._newOrder.CreditCard,
+        CreditCard: this._newOrder.CreditCard.substring(
+          this._newOrder.CreditCard.length - 4
+        ),
         cartID: this.cartsService._currentCart.ID,
         userID: this.usersService._currentUserObj.ID,
       };
@@ -132,9 +134,11 @@ export class OrdersService {
     this.cartsService._cartProducts = [];
     this.cartsService._currentCart = new Cart();
     this.cartsService._recentCart = new Cart();
-    this.cartsService._welcomeByCartStatus = 0;
     this.cartsService._fixedTotalPriseForProd = 0;
     this.cartsService._fixedTotalToPay = 0;
     this.cartsService._qnt = 0;
+    this.cartsService.statusCartCheck('/carts/getCarts', {
+      userID: this.usersService._currentUserObj.ID,
+    });
   }
 }

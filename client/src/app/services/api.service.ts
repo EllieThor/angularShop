@@ -20,7 +20,7 @@ export class ApiService {
           .post(
             url === ''
               ? this.settingsService.uploadIMGUrl
-              : this.settingsService.heroku + url,
+              : this.settingsService.herokuUrl + url,
             ob
           )
           .subscribe(
@@ -42,15 +42,17 @@ export class ApiService {
   createGetService(url: string, headParams?: any) {
     return new Promise(async (resolve, reject) => {
       try {
-        await this.httpClient.get(this.settingsService.heroku + url).subscribe(
-          (data) => {
-            resolve(data);
-          },
-          (error) => {
-            this.errorService.errorHandlingHttp(error);
-            console.log('oops', error, error.error);
-          }
-        );
+        await this.httpClient
+          .get(this.settingsService.herokuUrl + url)
+          .subscribe(
+            (data) => {
+              resolve(data);
+            },
+            (error) => {
+              this.errorService.errorHandlingHttp(error);
+              console.log('oops', error, error.error);
+            }
+          );
       } catch (err) {
         console.log('ERROR : ', err);
         console.log(err);

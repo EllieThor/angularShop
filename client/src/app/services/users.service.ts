@@ -88,7 +88,8 @@ export class UsersServiceService {
   // CREATE
   async addNewUserToDB(url: string, event?: any) {
     event.preventDefault();
-
+    let phoneStr: number | string | undefined =
+      this._newUserObject.Phone?.toString();
     let newUserOBJ = {
       ID: Number(this._newUserIDStr),
       FirstName: this._newUserObject.FirstName,
@@ -105,16 +106,22 @@ export class UsersServiceService {
       alert('יש למלא שם פרטי');
     } else if (this._newUserObject.LastName === '') {
       alert('יש למלא שם משפחה');
-    } else if (this._newUserObject.Phone === 0) {
+    } else if (phoneStr === '' || phoneStr === undefined || phoneStr === null) {
       alert('יש למלא מספר טלפון ');
+    } else if (this.settingsService.hasLetters.test(phoneStr)) {
+      alert('יש למלא מספר טלפון- ספרות בלבד ללא אותיות');
+    } else if (phoneStr.length != 10) {
+      alert('יש למלא מספר טלפון- 10 ספרות');
+    } else if (this.settingsService.hasLSymbol.test(phoneStr)) {
+      alert('יש למלא מספר טלפון- ספרות ללא סימנים');
+    } else if (this._newUserObject.City === '') {
+      alert('יש למלא עיר');
     } else if (this._newUserObject.Street === '') {
       alert('יש למלא שם רחוב-ללא מספר');
     } else if (this._newUserObject.StreetNumber === 0) {
       alert('יש למלא מספר בניין');
     } else if (this._newUserObject.FlatNumber === 0) {
-      alert('יש למלא שם דירה');
-    } else if (this._newUserObject.City === '') {
-      alert('יש למלא עיר');
+      alert('יש למלא מספר דירה');
     } else {
       this.serverResult = await this.apiService.createPostService(
         url,
@@ -136,7 +143,6 @@ export class UsersServiceService {
 
   // READ
   async gatUserFromDB(url: string, event?: any) {
-    event.preventDefault();
     let getByPatterns = {
       userEmail: this._logInEmail,
       userPassword: this._logInPassword,

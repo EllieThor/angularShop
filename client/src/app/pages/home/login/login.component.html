@@ -5,8 +5,7 @@
     routerLink="/shop"
   >
     {{
-      cartsService._welcomeByCartStatus === 2 &&
-      cartsService._fixedTotalToPay > 0
+      cartsService._welcomeByCartStatus === 2
         ? "המשכ.י לקנייה"
         : "התחל.י בקנייה"
     }}

@@ -14,14 +14,16 @@ export class HomeComponent implements OnInit {
   ) {}
   _user: any;
   ngOnInit(): void {
-    this._user = localStorage.getItem('user');
+    if (this.usersService._currentUserObj.ID === undefined) {
+      this._user = localStorage.getItem('user');
 
-    this._user = JSON.parse(this._user);
-    if (this._user !== null) {
-      this.usersService._currentUserObj = this._user;
-      this.cartService.statusCartCheck('/carts/getCarts', {
-        userID: this.usersService._currentUserObj.ID,
-      });
+      this._user = JSON.parse(this._user);
+      if (this._user !== null) {
+        this.usersService._currentUserObj = this._user;
+        this.cartService.statusCartCheck('/carts/getCarts', {
+          userID: this.usersService._currentUserObj.ID,
+        });
+      }
     }
   }
 }

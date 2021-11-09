@@ -34,16 +34,12 @@ export class SuccessfulOrderComponent implements OnInit {
       this.printSingleProd(product)
     );
 
-    this._4credit = this.ordersService._successfulOrder.CreditCard.substring(
-      this.ordersService._successfulOrder.CreditCard.length - 4
-    );
-
     this._introduction = `SWEET HEART \n reception \n ${this.ordersService._successfulOrder.createdAt}\n \n`;
 
     this._summary = `\n סה"ס לתשלום \n ${this.ordersService._successfulOrder.FinalPrice.toFixed(
       2
     )}₪  \n \n \n  ארבע ספרות אחרונות של אמצעי תשלום : ${
-      this._4credit
+      this.ordersService._successfulOrder.CreditCard
     } \n \n תודה ולהתראות! :) יום טוב `;
 
     const blob = new Blob([this._introduction + this._text + this._summary], {
