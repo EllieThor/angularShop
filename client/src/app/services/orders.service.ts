@@ -55,7 +55,7 @@ export class OrdersService {
   }
 
   isShippingAvailable(what: any) {
-    var count = 0;
+    var count = 1;
     for (var i = 0; i < this._datesArr.length; i++) {
       if (
         this._datesArr[i].ShippingObj.day === what.day &&
