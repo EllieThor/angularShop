@@ -1,0 +1,265 @@
+[33mcommit 1f8e859009a49207ac8aff180f40d067a6902960[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: ellie thor <elliethor18@gmail.com>
+Date:   Tue Nov 9 21:59:25 2021 +0200
+
+    fix statusCartCheck problems
+
+[33mcommit 14ce0e393d4d0747aa3e6c2127f9dd1c6030193e[m
+Author: ellie thor <elliethor18@gmail.com>
+Date:   Tue Nov 9 21:48:46 2021 +0200
+
+    fix statusCartCheck problems
+
+[33mcommit 8971793ff6521356015dc699c659788fb52ad4f2[m
+Author: ellie thor <elliethor18@gmail.com>
+Date:   Tue Nov 9 21:05:27 2021 +0200
+
+    fix statusCartCheck problems
+
+[33mcommit 45f855c46a3f2f56afdfe4de27c68bdd21e9f245[m
+Author: ellie thor <elliethor18@gmail.com>
+Date:   Tue Nov 9 20:59:26 2021 +0200
+
+    fix statusCartCheck problems
+
+[33mcommit f954a8b4cf63499ce1c6fbe4dd4def384cee56b6[m
+Merge: 811a1e6 d573480
+Author: ellie thor <elliethor18@gmail.com>
+Date:   Thu Oct 28 21:07:23 2021 +0300
+
+    Merge branch 'main' of https://github.com/EllieThor/angularShop
+
+[33mcommit 811a1e6d37c91c2db6c31059052feedb0e0dbb07[m
+Author: ellie thor <elliethor18@gmail.com>
+Date:   Thu Oct 28 21:07:01 2021 +0300
+
+    remove console
+
+[33mcommit d5734804c783aa3eff7b9b193da6c9c7808df49c[m
+Author: EllieThor <74139385+EllieThor@users.noreply.github.com>
+Date:   Sun Oct 24 17:59:09 2021 +0300
+
+    Update README.md
+
+[33mcommit 7373b74beb4073cfd11cb73758f1a188447c8af9[m
+Author: EllieThor <74139385+EllieThor@users.noreply.github.com>
+Date:   Sun Oct 24 15:09:07 2021 +0300
+
+    Update README.md
+
+[33mcommit 867601d652e6734e154b02802735fd8cb7f617ce[m
+Author: ellie thor <elliethor18@gmail.com>
+Date:   Fri Oct 22 20:24:49 2021 +0300
+
+    add login validation
+
+[33mcommit 4e9fef75e3206ebd5070fd44217393643b27fe66[m
+Author: ellie thor <elliethor18@gmail.com>
+Date:   Fri Oct 22 20:20:58 2021 +0300
+
+    fix bugs
+
+[33mcommit 252e2cb4e7e36378a883a49c11ae3bca43a4e07a[m
+Author: ellie thor <elliethor18@gmail.com>
+Date:   Thu Oct 21 14:24:00 2021 +0300
+
+    fix getProducts after update
+
+[33mcommit 0d086c4dc85641736bd2b08bba6cd5f013fa598d[m
+Author: ellie thor <elliethor18@gmail.com>
+Date:   Wed Oct 20 22:31:27 2021 +0300
+
+    need fix get products after update product , need fix admin cart respinsive
+
+[33mcommit 8a63c0c46d7040334b7807eb56d5c13a7d55aed6[m
+Author: ellie thor <elliethor18@gmail.com>
+Date:   Wed Oct 20 21:38:42 2021 +0300
+
+    imge upload to cloudanary
+
+[33mcommit 96d5a0201e7457aa6de9eb4978a5da0e6f63b0a4[m
+Merge: b7edaa6 79073de
+Author: ellie thor <elliethor18@gmail.com>
+Date:   Tue Oct 19 17:58:11 2021 +0300
+
+    Merge branch 'main' of https://github.com/EllieThor/angularShop
+
+[33mcommit b7edaa6a7ec04c5b09721d6d3a02f9b34a23e970[m
+Author: ellie thor <elliethor18@gmail.com>
+Date:   Tue Oct 19 17:57:50 2021 +0300
+
+    final project
+
+[33mcommit 79073dea54b690ca6a81c2a71c0f9915816fb4fe[m
+Author: EllieThor <74139385+EllieThor@users.noreply.github.com>
+Date:   Tue Oct 19 17:50:10 2021 +0300
+
+    Delete ‫דיאגרמה ללא שם‬.drawio.png
+
+[33mcommit 6420e9ed502f95791c4101b2f8792a500471aada[m
+Author: EllieThor <74139385+EllieThor@users.noreply.github.com>
+Date:   Tue Oct 19 17:43:53 2021 +0300
+
+    products names
+
+[33mcommit 5cf8a1ebb837de5d3ab44c97afdea6710eb646d3[m
+Author: ellie thor <elliethor18@gmail.com>
+Date:   Tue Oct 19 17:41:08 2021 +0300
+
+    remove console.log from all project
+
+[33mcommit 00dfaa0895f55b9f74f2c10c857a67985195416f[m
+Author: ellie thor <elliethor18@gmail.com>
+Date:   Tue Oct 19 14:30:51 2021 +0300
+
+    highlight directive work!
+
+[33mcommit b5cf413a1e66c8d44283903159bfcd8907da1ca1[m
+Author: ellie thor <elliethor18@gmail.com>
+Date:   Sun Oct 17 18:43:23 2021 +0300
+
+    calendar work great!
+
+[33mcommit f60b890e5db8d22f6c9de4c27ee170c93896e1d1[m
+Author: ellie thor <elliethor18@gmail.com>
+Date:   Sun Oct 17 16:07:04 2021 +0300
+
+    add input calendar and date obj and available in ordar service
+
+[33mcommit 6c4c7af98df449b985a27e269439985641f67a25[m
+Author: ellie thor <elliethor18@gmail.com>
+Date:   Sat Oct 16 15:56:28 2021 +0300
+
+    add order date obj
+
+[33mcommit dd800fc81184e9112f76759cf2e0d969dfcbeb8b[m
+Author: ellie thor <elliethor18@gmail.com>
+Date:   Fri Oct 15 22:07:11 2021 +0300
+
+    highlight work on html element and not on the product name
+
+[33mcommit c8530bfeac487456ed5d01c3e6b5d2b5d19fd9ad[m
+Author: ellie thor <elliethor18@gmail.com>
+Date:   Fri Oct 15 11:30:20 2021 +0300
+
+    try add directive highlight work on element in the DOM but not on obj prodName in reception
+
+[33mcommit 322655b970fa54cfd38798ccec1df32653d9f90e[m
+Author: ellie thor <elliethor18@gmail.com>
+Date:   Tue Oct 12 18:28:59 2021 +0300
+
+    fix ngif on product area
+
+[33mcommit d23e576bd6eebc89434645aee74b9e274c212dfa[m
+Author: ellie thor <elliethor18@gmail.com>
+Date:   Tue Oct 12 15:28:45 2021 +0300
+
+    fix all respovsive cart header on different screens
+
+[33mcommit 4ed586bdebb92db39d69b180e4d41b994736a583[m
+Author: ellie thor <elliethor18@gmail.com>
+Date:   Tue Oct 12 14:01:33 2021 +0300
+
+    fix cart shop respovsive, need cheane icon by size
+
+[33mcommit 21c4c449a5f2f689063c1a436e3eaeb5d9abc731[m
+Merge: 30ca8ac e4c71fb
+Author: ellie thor <elliethor18@gmail.com>
+Date:   Tue Oct 12 13:32:50 2021 +0300
+
+    Merge branch 'main' of https://github.com/EllieThor/angularShop
+
+[33mcommit 30ca8ac7ff22718ea256274790be1036b86d2a9a[m
+Author: ellie thor <elliethor18@gmail.com>
+Date:   Tue Oct 12 13:32:39 2021 +0300
+
+    close/open cart icons move to cart header need fix responsive
+
+[33mcommit e4c71fbd1fe2d245b2451f56314c6d0414e7f0ea[m
+Author: EllieThor <74139385+EllieThor@users.noreply.github.com>
+Date:   Tue Oct 12 12:44:07 2021 +0300
+
+    ‫עדכון cart responsive scheme.png‬
+
+[33mcommit 98abb315e1d7ac814251a3263df7411702c9a3ff[m
+Author: ellie thor <elliethor18@gmail.com>
+Date:   Tue Oct 12 12:38:19 2021 +0300
+
+    save scrollbars
+
+[33mcommit d0bed5d64b2070f54737d1ec9171bd53540b3383[m
+Merge: 178b1a7 b95368b
+Author: ellie thor <elliethor18@gmail.com>
+Date:   Mon Oct 11 20:53:27 2021 +0300
+
+    Merge branch 'main' of https://github.com/EllieThor/angularShop
+
+[33mcommit 178b1a7ccb66ff706a0da5b76d98ac18333c1c04[m
+Author: ellie thor <elliethor18@gmail.com>
+Date:   Mon Oct 11 20:53:09 2021 +0300
+
+    add fn by screen size, need fix cart header
+
+[33mcommit b95368b3a76565527036f5396413a41d8dd8e964[m
+Author: EllieThor <74139385+EllieThor@users.noreply.github.com>
+Date:   Mon Oct 11 18:55:53 2021 +0300
+
+    ‫responsive cart.drawio.png‬
+
+[33mcommit c22b9f9cba9f2a07986cfdc38b4445d7d9430818[m
+Author: ellie thor <elliethor18@gmail.com>
+Date:   Mon Oct 11 16:05:30 2021 +0300
+
+    shop cart screen size
+
+[33mcommit 24c3d42691b516a9f71fc674d43efe66035cce67[m
+Author: ellie thor <elliethor18@gmail.com>
+Date:   Mon Oct 11 11:23:03 2021 +0300
+
+    filter pipe and cart screen
+
+[33mcommit 7917bee3abd477d96ebc005694260bc07ee79995[m
+Author: ellie thor <elliethor18@gmail.com>
+Date:   Sun Oct 10 23:55:44 2021 +0300
+
+    nedd style today td
+
+[33mcommit 0a6d1133f5bf882f7cf2297d746c91d3673671a5[m
+Author: ellie thor <elliethor18@gmail.com>
+Date:   Sun Oct 10 20:03:34 2021 +0300
+
+    calendar is work well, fix delete chosen date in move between month
+
+[33mcommit 3a1f9f065357ab31d121cd91fa1adb2350644ed3[m
+Author: ellie thor <elliethor18@gmail.com>
+Date:   Sun Oct 10 19:49:01 2021 +0300
+
+    fix if elses in somedayclicked
+
+[33mcommit 89901ebd2b933351b857aa4f5b8df5c954a6cef8[m
+Author: ellie thor <elliethor18@gmail.com>
+Date:   Sun Oct 10 17:12:39 2021 +0300
+
+    fix someday clicked today
+
+[33mcommit f1474f29d79f88416bdc8de6d0cbb51b0c77223d[m
+Author: ellie thor <elliethor18@gmail.com>
+Date:   Sun Oct 10 17:12:02 2021 +0300
+
+    a
+
+[33mcommit d966da3b038054628ff4c9818bee07400f40bed4[m
+Merge: 39212c7 11607cb
+Author: ellie thor <elliethor18@gmail.com>
+Date:   Sun Oct 10 17:08:53 2021 +0300
+
+    Merge branch 'main' of https://github.com/EllieThor/angularShop
+
+[33mcommit 39212c7b4f21a87c65cd4adbeb2bccab79c74b81[m
+Merge: 33a9185 900ba80
+Author: ellie thor <elliethor18@gmail.com>
+Date:   Sun Oct 10 17:03:50 2021 +0300
+
+    fix someday clicked today
+
+[33mcommit 11607cb332a6857a0270811

@@ -1,3 +1,4 @@
+<!-- USER  -->
 <div class="row" *ngIf="usersService._currentUserObj.Role !== 1">
   <div
     *ngIf="
@@ -75,8 +76,10 @@
   </div>
 </div>
 
+<!-- ADMIN  -->
 <div *ngIf="usersService._currentUserObj.Role === 1">
   <i
+    title="להוספת מוצר"
     class="fas fa-plus cursorPointer iconsColor"
     (click)="productsService.addProdClick()"
   ></i>

@@ -14,25 +14,17 @@
 
 <!-- admin cart -->
 <div *ngIf="usersService._currentUserObj.Role === 1">
-  <!-- <div class="row">
-    <div class="col-6">
-      <i
-        class="fas fa-plus cursorPointer"
-        (click)="productsService.addProdClick()"
-      ></i>
-    </div>
-    <div class="col-6"></div>
-  </div> -->
   <div class="bg-light-purple rounded p-3">
     <app-cart-header></app-cart-header>
   </div>
   <hr />
-  <!-- FIXME: d-none when productsService._showAdminForm = false  -->
-  <!-- <div *ngIf="productsService._showAdminForm"> -->
+
   <div [ngClass]="productsService._showAdminForm ? '' : 'd-none'">
     <i
+      title="סגירת טופס"
       class="far fa-times-circle cursorPointer iconsColor"
       (click)="productsService._showAdminForm = false"
+      (click)="checkSize()"
     ></i>
     <app-form-product></app-form-product>
   </div>

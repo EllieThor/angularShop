@@ -22,7 +22,7 @@ export class ShopComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.updateDays();
+    this.checkSize();
     this.productsService.getProducts('/products/getProducts', {
       categoryID: 1,
     });
@@ -32,7 +32,7 @@ export class ShopComponent implements OnInit {
   }
 
   // open close cart by screen
-  @HostListener('window:resize', []) updateDays() {
+  @HostListener('window:resize', []) checkSize() {
     // lg (for laptops and desktops - screens equal to or greater than 1200px wide)
     // md (for small laptops - screens equal to or greater than 992px wide)
     // sm (for tablets - screens equal to or greater than 768px wide)
