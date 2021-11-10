@@ -61,7 +61,7 @@ export class ProductsService {
         categoryID: this._newProductObj.categoryID,
       });
       this._newProductObj = new Product();
-      this.settingsService._isCartVisible = false;
+      this._showAdminForm = false;
     }
   }
 
@@ -121,7 +121,7 @@ export class ProductsService {
         categoryID: this._newProductObj.categoryID,
       });
       this._newProductObj = new Product();
-      this.settingsService._isCartVisible = false;
+      this._showAdminForm = false;
     }
   }
 
