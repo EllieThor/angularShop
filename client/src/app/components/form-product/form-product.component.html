@@ -1,5 +1,7 @@
 <form method="post" class="p-2 addProdForm">
-  <h5 class="mb-3 fw-normal text-center">הוסף מוצר</h5>
+  <h5 class="mb-3 fw-normal text-center">
+    {{ productsService._addVsEdit === 0 ? "הוספת מוצר" : "עריכת מוצר" }}
+  </h5>
   <input
     [(ngModel)]="productsService._newProductObj.ProductName"
     [ngModelOptions]="{ standalone: true }"

@@ -137,6 +137,7 @@ export class OrdersService {
     this.cartsService._fixedTotalPriseForProd = 0;
     this.cartsService._fixedTotalToPay = 0;
     this.cartsService._qnt = 0;
+    this._isRegexp = false;
     this.cartsService.statusCartCheck('/carts/getCarts', {
       userID: this.usersService._currentUserObj.ID,
     });
