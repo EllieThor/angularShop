@@ -127,7 +127,7 @@ export class InputCalendarComponent implements OnInit {
         this.validDate = true;
         this.inputText = formatted;
 
-        this.ordersService._newOrder.ShippingDate = jsDate;
+        this.ordersService._newOrder.ShippingDate = jsDate.setHours(13);
         this.ordersService._formattedShippingDate = formatted;
       } else {
         this.selectedTextNormal = '';

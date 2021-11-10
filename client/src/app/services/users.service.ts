@@ -118,9 +118,9 @@ export class UsersServiceService {
       alert('יש למלא עיר');
     } else if (this._newUserObject.Street === '') {
       alert('יש למלא שם רחוב-ללא מספר');
-    } else if (this._newUserObject.StreetNumber === 0) {
+    } else if (this._newUserObject.StreetNumber === undefined) {
       alert('יש למלא מספר בניין');
-    } else if (this._newUserObject.FlatNumber === 0) {
+    } else if (this._newUserObject.FlatNumber === undefined) {
       alert('יש למלא מספר דירה');
     } else {
       this.serverResult = await this.apiService.createPostService(
