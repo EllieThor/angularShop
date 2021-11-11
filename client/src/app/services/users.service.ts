@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { Cart } from '../models/cartsModel';
 import { User } from '../models/usersModel';
 import { ApiService } from './api.service';
 import { CartsService } from './carts.service';
@@ -28,7 +29,7 @@ export class UsersServiceService {
     public apiService: ApiService,
     public settingsService: SettingsService,
     public nav: Router,
-    public cartService: CartsService
+    public cartsService: CartsService
   ) {}
 
   // registration step 1
@@ -176,7 +177,7 @@ export class UsersServiceService {
         let getByPatterns = {
           userID: this._currentUserObj.ID,
         };
-        this.cartService.statusCartCheck('/carts/getCarts', getByPatterns);
+        this.cartsService.statusCartCheck('/carts/getCarts', getByPatterns);
         if (!this.localStorageUser.user) {
           localStorage.setItem('user', JSON.stringify(this._currentUserObj));
         }
@@ -189,5 +190,10 @@ export class UsersServiceService {
     localStorage.removeItem('user');
     this._currentUserObj = new User();
     this.nav.navigate(['/home']);
+
+    this.cartsService._userCarts = [];
+    this.cartsService._cartProducts = [];
+    this.cartsService._currentCart = new Cart();
+    this.cartsService._recentCart = new Cart();
   }
 }
