@@ -73,7 +73,9 @@ export class InputCalendarComponent implements OnInit {
 
   public locales: Array<string> = ['he | Hebrew', 'en | English'];
 
-  constructor(public ordersService: OrdersService) {
+  constructor(public ordersService: OrdersService) {}
+
+  ngOnInit(): void {
     this.onDisableDay();
     this.onDisableUntilYesterday();
   }
@@ -115,8 +117,6 @@ export class InputCalendarComponent implements OnInit {
   getCopyOfOptions(): IAngularMyDpOptions {
     return JSON.parse(JSON.stringify(this.myDatePickerOptions));
   }
-
-  ngOnInit(): void {}
 
   // callbacks
   onDateChanged(event: IMyDateModel): void {

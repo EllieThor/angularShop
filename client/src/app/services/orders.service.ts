@@ -108,6 +108,7 @@ export class OrdersService {
         url,
         newOrderObj
       )) as Order;
+
       if (this._successfulOrder) {
         this.cartsService.updateIsPaidCartStatus(
           '/carts/updateIsPaidCartStatus',
@@ -115,10 +116,6 @@ export class OrdersService {
             ID: this.cartsService._currentCart.ID,
           }
         );
-
-        this.cartsService.statusCartCheck('/carts/getCarts', {
-          userID: this._successfulOrder.userID,
-        });
       } else {
         alert('שגיאה, יש לטעון מחדש את העמוד');
       }

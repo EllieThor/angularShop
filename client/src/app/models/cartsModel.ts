@@ -19,4 +19,3 @@ export class Cart {
     this.updatedAt = updatedAt || '';
   }
 }
-// `ID`, `IsPaid`, `createdAt`, `updatedAt`, `userID`;

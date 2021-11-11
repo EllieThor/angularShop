@@ -32,18 +32,3 @@ export class CartProduct {
     this.product = product || {};
   }
 }
-//  {
-//         "ID": 1,
-//         "Qnt": 1,
-//         "TotalPrice": 50,
-//         "createdAt": "2021-08-26T12:42:17.000Z",
-//         "updatedAt": "2021-08-26T12:42:17.000Z",
-//         "productID": 40,
-//         "cartID": 31,
-//         "product": {
-//             "ProductName": "סימפוניה זיתים",
-//             "Price": 19.7,
-//             "ImageName": "1596962647453_ESB34_L_P_5839108_1.png"
-//         }
-//     }
-// item.Qnt * item.product.Price;

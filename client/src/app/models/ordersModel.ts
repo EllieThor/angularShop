@@ -34,30 +34,7 @@ export class Order {
     this.updatedAt = updatedAt || '';
   }
 }
-// {
-//     "ID": 10,
-//     "FinalPrice": 50,
-//     "ShippingCity": "3333",
-//     "ShippingStreet": "3333",
-//     "ShippingDate": "3333-01-01T00:00:00.000Z",
-//     "CreditCard": "33333333",
-//     "cartID": 35,
-//     "userID": 2147483647,
-//     "updatedAt": "2021-09-08T09:51:26.376Z",
-//     "createdAt": "2021-09-08T09:51:26.376Z"
-// }
 
-// export class ShippingDateCart {
-//   cartID: number;
-//   ShippingDate: string = '';
-//   ShippingObj: boolean = false;
-
-//   constructor(cartID: number, ShippingDate: string, ShippingObj: boolean) {
-//     this.cartID = cartID || 0;
-//     this.ShippingDate = ShippingDate || '';
-//     this.ShippingObj = ShippingObj || false;
-//   }
-// }
 export class ShippingDateCart {
   cartID: number;
   ShippingDate: string = '';

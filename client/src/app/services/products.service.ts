@@ -126,13 +126,19 @@ export class ProductsService {
   }
 
   async searchForProd(url: string) {
-    let searchFor = {
-      searchFor: this._searchFor,
-    };
-    this._products = (await this.apiService.createPostService(
-      url,
-      searchFor
-    )) as Array<Product>;
+    if (this._searchFor !== '') {
+      let searchFor = {
+        searchFor: this._searchFor,
+      };
+      this._products = (await this.apiService.createPostService(
+        url,
+        searchFor
+      )) as Array<Product>;
+    } else {
+      this.getProducts('/products/getProducts', {
+        categoryID: this._openCategory,
+      });
+    }
   }
 
   fileChange(e: any) {
