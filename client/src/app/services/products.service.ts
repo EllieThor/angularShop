@@ -12,14 +12,13 @@ export class ProductsService {
   _products: Array<Product> = [];
   _categories: Array<Category> = [];
   _newProductObj: Product = new Product();
+  _openCategory: number = 1;
   _searchFor: string = '';
   serverResult: any;
   // admin product form
   _showAdminForm: boolean = false;
   // add-0, edit-1
   _addVsEdit: number = 0;
-  _time: any;
-  _openCategory: number = 1;
 
   uploadedFiles: Array<File> = [];
   _isImgUploaded: boolean = false;
@@ -62,6 +61,7 @@ export class ProductsService {
       });
       this._newProductObj = new Product();
       this._showAdminForm = false;
+      this.checkSize();
     }
   }
 
@@ -122,11 +122,12 @@ export class ProductsService {
       });
       this._newProductObj = new Product();
       this._showAdminForm = false;
+      this.checkSize();
     }
   }
 
   async searchForProd(url: string) {
-    if (this._searchFor !== '') {
+    if (this._searchFor !== '' && this._searchFor.trim() !== '') {
       let searchFor = {
         searchFor: this._searchFor,
       };
@@ -175,4 +176,24 @@ export class ProductsService {
     this._newProductObj = new Product();
   }
   // `ID`, `ProductName`, `Price`, `Description`, `ImageName`, `createdAt`, `updatedAt`, `categoryID`
+  checkSize() {
+    // lg (for laptops and desktops - screens equal to or greater than 1200px wide)
+    // md (for small laptops - screens equal to or greater than 992px wide)
+    // sm (for tablets - screens equal to or greater than 768px wide)
+    // xs (for phones - screens less than 768px wide)
+
+    if (window.innerWidth >= 1200) {
+      this.settingsService._isCartVisible = true;
+      this.settingsService._screenSize = 'lg';
+    } else if (window.innerWidth >= 992) {
+      this.settingsService._isCartVisible = true;
+      this.settingsService._screenSize = 'md';
+    } else if (window.innerWidth >= 768) {
+      this.settingsService._isCartVisible = false;
+      this.settingsService._screenSize = 'sm';
+    } else if (window.innerWidth < 768) {
+      this.settingsService._isCartVisible = false;
+      this.settingsService._screenSize = 'xs';
+    }
+  }
 }
