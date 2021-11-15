@@ -28,7 +28,7 @@ export class CartHeaderComponent implements OnInit {
     if (this.cartsService._cartProducts.length !== 0) {
       this.nav.navigate(['/orders']);
     } else {
-      alert('אין מוצרים בעגלה');
+      alert('אין פריטים בעגלה');
     }
   }
 
@@ -37,7 +37,7 @@ export class CartHeaderComponent implements OnInit {
     let res;
     if (!ob.productID) {
       res = confirm(
-        'ברצונך להסיר את כל המוצרים מהעגלה? \nלחיצה על אישור תסיר את כל הפריטים מהעגלה'
+        'ברצונך להסיר את כל הפריטים מהעגלה? \nלחיצה על אישור תסיר את כל הפריטים מהעגלה'
       );
     }
 

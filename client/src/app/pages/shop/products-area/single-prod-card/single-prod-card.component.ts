@@ -85,7 +85,7 @@ export class SingleProdCardComponent implements OnInit {
     let res;
     if (!ob.productID) {
       res = confirm(
-        'ברצונך להסיר את כל המוצרים מהעגלה? \nלחיצה על אישור תסיר את כל הפריטים מהעגלה'
+        'ברצונך להסיר את כל הפריטים מהעגלה? \nלחיצה על אישור תסיר את כל הפריטים מהעגלה'
       );
     }
 

@@ -1,13 +1,13 @@
 <form method="post" class="p-2 addProdForm">
   <h5 class="mb-3 fw-normal text-center">
-    {{ productsService._addVsEdit === 0 ? "הוספת מוצר" : "עריכת מוצר" }}
+    {{ productsService._addVsEdit === 0 ? "הוספת פריט" : "עריכת פריט" }}
   </h5>
   <input
     [(ngModel)]="productsService._newProductObj.ProductName"
     [ngModelOptions]="{ standalone: true }"
     type="text"
     class="form-control m-2"
-    placeholder="שם המוצר"
+    placeholder="שם הפריט"
     required=""
     autoFocus=""
   />
@@ -62,7 +62,7 @@
     class="btn btn-outline-success m-2"
     (click)="productsService.addNewProd('/products/addProduct', $event)"
   >
-    הוסף מוצר
+    הוסף פריט
   </button>
 
   <button
