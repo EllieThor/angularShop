@@ -52,7 +52,7 @@ export class InputCalendarComponent implements OnInit {
 
   public model: IMyDateModel = {
     isRange: false,
-    singleDate: {},
+    singleDate: { jsDate: new Date() },
   }; // not initial date set
 
   public defMonth: IMyDefaultMonth = {
@@ -103,15 +103,17 @@ export class InputCalendarComponent implements OnInit {
     this.myDatePickerOptions = copy;
   }
 
-  async onDisableDay() {
+  onDisableDay() {
     let disabled: any = [];
-    this.ordersService._datesArr.map((date: any) => {
-      !date.isAvailable ? disabled.push(date.ShippingObj) : null;
-    });
+    if (this.ordersService._datesArr !== undefined) {
+      this.ordersService._datesArr.map((date: any) => {
+        !date.isAvailable ? disabled.push(date.ShippingObj) : null;
+      });
 
-    let copy = this.getCopyOfOptions();
-    copy.disableDates = disabled;
-    this.myDatePickerOptions = copy;
+      let copy = this.getCopyOfOptions();
+      copy.disableDates = disabled;
+      this.myDatePickerOptions = copy;
+    }
   }
 
   getCopyOfOptions(): IAngularMyDpOptions {
