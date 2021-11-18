@@ -78,9 +78,45 @@
 
 <!-- ADMIN  -->
 <div *ngIf="usersService._currentUserObj.Role === 1">
-  <i
-    title="להוספת פריט"
-    class="fas fa-plus cursorPointer iconsColor"
-    (click)="productsService.addProdClick()"
-  ></i>
+  <div class="row">
+    <div class="col-2">
+      <i
+        title="להוספת פריט"
+        class="fas fa-plus cursorPointer iconsColor"
+        (click)="productsService.addProdClick()"
+      ></i>
+    </div>
+    <div class="col-10">
+      <div
+        [ngClass]="
+          productsService._successEdit
+            ? 'text-end animate__animated animate__fadeIn'
+            : 'd-none'
+        "
+        [ngClass]="
+          productsService._exitAnimationEdit
+            ? 'text-end animate__animated  animate__fadeOut'
+            : 'd-none'
+        "
+      >
+        <i class="far fa-check-circle"></i>
+        פריט עודכן בהצלחה
+      </div>
+      <div
+        [ngClass]="
+          productsService._successAdd
+            ? 'text-end animate__animated animate__fadeIn'
+            : 'd-none'
+        "
+        [ngClass]="
+          productsService._exitAnimationAdd
+            ? 'text-end animate__animated  animate__fadeOut'
+            : 'd-none'
+        "
+      >
+        <i class="far fa-check-circle"></i>
+        פריט נוסף בהצלחה
+      </div>
+    </div>
+  </div>
 </div>

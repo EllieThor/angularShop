@@ -3,6 +3,7 @@ import { Category, Product } from '../models/productsModel';
 import { ApiService } from './api.service';
 import { SettingsService } from './settings.service';
 import { CartsService } from './carts.service';
+const timer = (time: number) => new Promise((res) => setTimeout(res, time));
 
 @Injectable({
   providedIn: 'root',
@@ -19,6 +20,11 @@ export class ProductsService {
   _showAdminForm: boolean = false;
   // add-0, edit-1
   _addVsEdit: number = 0;
+
+  _successAdd: boolean = false;
+  _successEdit: boolean = false;
+  _exitAnimationEdit: boolean = false;
+  _exitAnimationAdd: boolean = false;
 
   uploadedFiles: Array<File> = [];
   _isImgUploaded: boolean = false;
@@ -62,6 +68,19 @@ export class ProductsService {
       this._newProductObj = new Product();
       this._showAdminForm = false;
       this.checkSize();
+      // Animation IN
+      this._successAdd = true;
+
+      await timer(3000);
+
+      // Animation OUT
+      this._exitAnimationAdd = true;
+
+      await timer(2000);
+
+      // Animation RESET
+      this._successAdd = false;
+      this._exitAnimationAdd = false;
     }
   }
 
@@ -123,6 +142,19 @@ export class ProductsService {
       this._newProductObj = new Product();
       this._showAdminForm = false;
       this.checkSize();
+      // Animation IN
+      this._successEdit = true;
+
+      await timer(3000);
+
+      // Animation OUT
+      this._exitAnimationEdit = true;
+
+      await timer(2000);
+
+      // Animation RESET
+      this._successEdit = false;
+      this._exitAnimationEdit = false;
     }
   }
 
