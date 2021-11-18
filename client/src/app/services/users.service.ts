@@ -182,18 +182,15 @@ export class UsersServiceService {
             localStorage.setItem('user', JSON.stringify(this._currentUserObj));
           }
           this.nav.navigate(['/home']);
-        } else {
-          let res = (await this.apiService.createPostService(
-            '/users/findEmail',
-            {
-              userEmail: this._logInEmail,
-            }
-          )) as any;
-          console.log('res: ', res);
-          if (res.length === 0) {
-            alert('מייל לא קיים במערכת');
-          } else alert('סיסמה  שגויה, נסי.ה שנית');
         }
+      } else {
+        let res = (await this.apiService.createPostService('/users/findEmail', {
+          userEmail: this._logInEmail,
+        })) as any;
+        console.log('res: ', res);
+        if (res.length === 0) {
+          alert('מייל לא קיים במערכת');
+        } else alert('סיסמה  שגויה');
       }
     }
   }
