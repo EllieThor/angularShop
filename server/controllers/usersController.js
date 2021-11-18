@@ -49,3 +49,16 @@ exports.getUser = async (req, res, next) => {
       res.send(err);
     });
 };
+
+// READ
+exports.findEmail = async (req, res, next) => {
+  await Users.findAll({
+    where: { Email: req.body.userEmail },
+  })
+    .then((email) => {
+      res.send(email);
+    })
+    .catch((err) => {
+      res.send(err);
+    });
+};

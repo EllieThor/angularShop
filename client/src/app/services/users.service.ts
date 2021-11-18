@@ -166,22 +166,34 @@ export class UsersServiceService {
         url,
         getByPatterns
       );
+      if (this.serverResult.length > 0) {
+        this._currentUserObj = this.serverResult[0];
 
-      this._currentUserObj = this.serverResult[0];
-
-      if (this._currentUserObj.Role === 1) {
-        this.nav.navigate(['/shop']);
-      } else if (this._currentUserObj.ID) {
-        this._logInEmail = '';
-        this._logInPassword = '';
-        let getByPatterns = {
-          userID: this._currentUserObj.ID,
-        };
-        this.cartsService.statusCartCheck('/carts/getCarts', getByPatterns);
-        if (!this.localStorageUser.user) {
-          localStorage.setItem('user', JSON.stringify(this._currentUserObj));
+        if (this._currentUserObj.Role === 1) {
+          this.nav.navigate(['/shop']);
+        } else if (this._currentUserObj.ID) {
+          this._logInEmail = '';
+          this._logInPassword = '';
+          let getByPatterns = {
+            userID: this._currentUserObj.ID,
+          };
+          this.cartsService.statusCartCheck('/carts/getCarts', getByPatterns);
+          if (!this.localStorageUser.user) {
+            localStorage.setItem('user', JSON.stringify(this._currentUserObj));
+          }
+          this.nav.navigate(['/home']);
+        } else {
+          let res = (await this.apiService.createPostService(
+            '/users/findEmail',
+            {
+              userEmail: this._logInEmail,
+            }
+          )) as any;
+          console.log('res: ', res);
+          if (res.length === 0) {
+            alert('מייל לא קיים במערכת');
+          } else alert('סיסמה  שגויה, נסי.ה שנית');
         }
-        this.nav.navigate(['/home']);
       }
     }
   }
